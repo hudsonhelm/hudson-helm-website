@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 4 — Why Hudson Helm |
-| Phase status | **Complete and ready for authorized publication** |
+| Phase status | **Complete, pushed to GitHub, and published to production — awaiting user review** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 4 Why Hudson Helm implementation is complete and ready for the user-authorized GitHub push and production publication. Retain the approved hero and core messaging, four differentiator cards, prominent trust statement, compact light three-column principles section, and closing CTA. Do not begin Phase 5 without explicit user direction.
+Phase 4 Why Hudson Helm implementation is complete, pushed to GitHub, and published to production. Retain the approved hero and core messaging, four differentiator cards, prominent trust statement, compact light three-column principles section, closing CTA, and removed page-specific Rough Notation/Owl dependencies while awaiting the user's review or further instruction. Do not begin Phase 5 without explicit user direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phases 1–3 are complete, pushed, and published. Phase 4 Why Hudson Helm is locally complete and validated: the approved messaging is now organized as a compact hero, four differentiator cards, prominent trust statement, light three-column principles section, and one closing CTA. The redundant second stock image, repeated eyebrow labels, and page-specific Rough Notation/Owl dependencies are removed. GitHub push and production publication are authorized and pending. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week.
+Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phases 1–4 are complete, pushed, and published. Why Hudson Helm now organizes the approved messaging as a compact hero, four differentiator cards, prominent trust statement, light three-column principles section, and one closing CTA. The redundant second stock image, repeated eyebrow labels, and page-specific Rough Notation/Owl dependencies are removed. Site commit `16fabd6` was pushed, only `whyhudsonhelm.html` was uploaded through the saved production FTP session, and the remote file plus cache-busted public HTTPS response were verified. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week.
 
 ### Phase Progress
 
@@ -60,7 +60,7 @@ Phase 0 repository setup and source/browser inspection are complete with the rec
 | 1 | Shared Structure | Complete, published, and pushed |
 | 2 | Homepage | Complete, published, and pushed; user review pending |
 | 3 | What We Do | Complete, published, and pushed; user review pending |
-| 4 | Why Hudson Helm | Complete; publication authorized and pending |
+| 4 | Why Hudson Helm | Complete, published, and pushed; user review pending |
 | 5 | Who We Are | Not started |
 | 6 | Are We a Good Fit? | Not started |
 | 7 | Start Here | Not started |
@@ -124,6 +124,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Completed Phase 3 What We Do implementation and local validation. | Rebuilt the page into the approved hero, eight jump cards, eight detailed service sections, and one final CTA; merged the legacy taxonomy; removed redundant tabs, buttons, and page-specific Rough Notation/Owl dependencies; and passed structural, responsive, keyboard, asset, console, syntax, and diff checks. Publication was explicitly authorized and remained pending at this checkpoint. |
 | 2026-09-10 | Pushed and published the completed Phase 3 What We Do page. | Pushed site commit `140d6e3` to `origin/website-refresh`, uploaded only `whatwedo.html` through the saved WinSCP production FTP session, confirmed the remote file at 30,161 bytes, and verified a cache-busted public HTTPS 200 response contained the hero, eight jump cards, eight detail sections, Strategic IT Guidance, and final CTA while the old Core Services and Rough Notation markup were absent. |
 | 2026-09-10 | Completed Phase 4 Why Hudson Helm implementation and local validation. | Preserved the approved hero, core messaging, four differentiators, trust statement, and closing CTA; replaced the second image-heavy section with a compact light three-column treatment; reduced whitespace and eyebrow repetition; removed page-specific Rough Notation/Owl dependencies; and passed structural, responsive, accessibility, console, syntax, regression, and diff checks. GitHub push and production publication were explicitly authorized and remained pending at this checkpoint. |
+| 2026-09-10 | Pushed and published the completed Phase 4 Why Hudson Helm page. | Pushed site commit `16fabd6` to `origin/website-refresh`, uploaded only `whyhudsonhelm.html` through the saved WinSCP production FTP session, confirmed the remote file at 34,874 bytes, and verified a cache-busted public HTTPS 200 response contained the complete Phase 4 structure while the second stock image and obsolete Rough Notation/Owl references were absent. |
 
 ## Findings and Observations
 
@@ -170,6 +171,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - Page-specific Rough Notation and Owl Carousel references were removed, and the page now uses the existing local jQuery file instead of the older Google-hosted copy. The page has one semantic H1, logical H2/H3 hierarchy, no duplicate IDs, and no missing assets beyond the two previously authorized pending routes.
 - Browser checks at 1440px and 1366px showed full navigation and no horizontal overflow; 1024px and 390px collapsed cleanly, and the expanded phone menu exposed all seven destinations. The 1366px document height was reduced to 3,334px, versus the prior approximately five-screen composition. Card contrast and the full-page visual hierarchy were inspected, and the browser console returned no warnings or errors.
 - `node tools/check-phase4.cjs`, Phase 1–3 checks, the inspection helper, JavaScript syntax checks, and `git diff --check` passed. The dedicated Phase 4 check verifies preserved copy and cardinality, semantic structure, the compact principles treatment, closing CTA, and removal of the second image plus obsolete page dependencies.
+- With the user's explicit approval, site commit `16fabd6` was pushed to `origin/website-refresh`. Only `whyhudsonhelm.html` was uploaded through the saved WinSCP production FTP session; remote `stat` reported 34,874 bytes. A cache-busted public HTTPS request returned 200 and confirmed the hero, four differentiators, trust statement, three compact principles, and closing CTA while the removed second image and obsolete Rough Notation/Owl markers were absent. Project-only documentation and tools were not deployed.
 
 ### Repository and File Structure
 
@@ -236,7 +238,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
 | Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
 | Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/check-phase2.cjs` (homepage content and removed-dependency contract); `node tools/check-phase3.cjs` (What We Do content, taxonomy, jump-link, section, CTA, and dependency contract); `node tools/check-phase4.cjs` (Why Hudson Helm messaging, layout, hierarchy, CTA, and removed-dependency contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `node --check tools/check-phase2.cjs`; `node --check tools/check-phase3.cjs`; `node --check tools/check-phase4.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
-| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0` and Phase 3 `whatwedo.html` from site commit `140d6e3` were subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
+| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, and Phase 4 `whyhudsonhelm.html` from site commit `16fabd6` were subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
 
@@ -1420,7 +1422,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Reduce excessive page length and whitespace without deleting useful messaging — consolidated the flow and reduced the 1366px document height to 3,334px while retaining the substantive copy.
 - [x] Reduce unnecessary eyebrow-label repetition — removed all visible eyebrow labels from the page and used semantic hierarchy instead.
 - [x] Preserve the approved closing CTA concept — retained the exact concept, supporting copy, and Start Here conversion path.
-- [x] Satisfy the Shared Definition of Done for this phase — requirements rereviewed; local preview, responsive, navigation, accessibility, contrast, console, syntax, structural, regression, and diff checks passed; documentation and a dedicated Phase 4 check were updated; push and publication explicitly authorized and pending.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements rereviewed; local preview, responsive, navigation, accessibility, contrast, console, syntax, structural, regression, and diff checks passed; documentation and a dedicated Phase 4 check were updated; site commit `16fabd6` was pushed; only `whyhudsonhelm.html` was published with explicit approval and verified by remote stat plus public HTTPS response.
 
 ## Phase 5 — Who We Are
 
