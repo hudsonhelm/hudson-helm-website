@@ -10,12 +10,6 @@
 <link href="images/favicon.ico" rel="shortcut icon"/>
 <!--bootstrap css-->
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
-<!-- REVOLUTION STYLE SHEETS -->
-<link href="rev/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"/>
-<link href="rev/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="rev/css/rs6.css" rel="stylesheet" type="text/css"/>
-<!--owl carousel-->
-<link href="css/owl.carousel.min.css" rel="stylesheet"/>
 <!-- Animation CSS -->
 <link href="css/animations.min.css" rel="stylesheet"/>
 <!-- Magnefic Popup CSS -->
@@ -107,6 +101,162 @@
 .benefit.pt-4.pb-0 {
   padding-top: 40px !important;
   padding-bottom: 0 !important;
+}
+
+.hh-home-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 540px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background: #111 url("rev/assets/2-2.jpg") center / cover no-repeat;
+}
+
+.hh-home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.04));
+  pointer-events: none;
+}
+
+.hh-home-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hh-home-hero__content {
+  padding: 72px 0;
+}
+
+.hh-home-hero__eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: #8fbfff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hh-home-hero h1 {
+  max-width: 700px;
+  margin: 0 0 24px;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1.08;
+  text-transform: capitalize;
+}
+
+.hh-home-hero__description {
+  max-width: 650px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.hh-home-hero__image {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  margin-left: auto;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.whyus.hh-home-services {
+  padding: 72px 0 64px;
+}
+
+.hh-home-services .pq-section {
+  margin-bottom: 32px;
+}
+
+.hh-home-services .pq-icon-box.pq-style-2 {
+  min-height: 260px;
+}
+
+.hh-home-why {
+  padding: 64px 0 72px;
+  border-top: 1px solid rgba(143, 191, 255, 0.14);
+  background: linear-gradient(180deg, #000 0%, #07101d 100%);
+}
+
+.hh-home-why .pq-section {
+  max-width: 820px;
+  margin-bottom: 36px;
+}
+
+.hh-home-why__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 32px;
+  margin: 0 0 36px;
+  padding: 0;
+  list-style: none;
+}
+
+.hh-home-why__grid li {
+  position: relative;
+  padding: 4px 0 4px 32px;
+  color: #fff;
+  line-height: 1.55;
+}
+
+.hh-home-why__grid i {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  color: #8fbfff;
+}
+
+@media (max-width: 991px) {
+  .hh-home-hero {
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hh-home-hero__content {
+    padding: 64px 0 34px;
+  }
+
+  .hh-home-hero__description {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hh-home-hero__image {
+    max-width: 640px;
+    margin: 0 auto 58px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hh-home-hero__content {
+    padding-top: 50px;
+  }
+
+  .hh-home-hero__eyebrow {
+    font-size: 15px;
+  }
+
+  .hh-home-hero__description {
+    font-size: 16px;
+  }
+
+  .hh-home-hero__image {
+    margin-bottom: 44px;
+  }
+
+  .whyus.hh-home-services,
+  .hh-home-why {
+    padding: 52px 0;
+  }
+
+  .hh-home-why__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 
 
@@ -315,63 +465,24 @@ header#pq-header .pq-button:focus {
 </div>
 </header>
 <!--Header End-->
-<!--Banner Start-->
-<div class="banner py-0">
-<!-- START Home1 REVOLUTION SLIDER 6.3.2 --><p class="rs-p-wp-fix"></p>
-<rs-module-wrap data-alias="home-2" data-source="gallery" id="rev_slider_13_1_wrapper" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
-<rs-module data-version="6.3.2" id="rev_slider_13_1">
-<rs-slides>
-<rs-slide data-anim="ei:d;eo:d;s:600;r:default;t:crossfade;sl:d;" data-key="rs-38" data-thumb="rev/assets/2-2-50x100.jpg" data-title="Slide">
-<img class="rev-slidebg" data-bg="f:auto;r:repeat;" data-no-retina="" height="1080" src="rev/assets/2-2.jpg" title="2-2.jpg" width="1920"/>
-<!--
---><rs-layer data-frame_0="x:50,24px,18px,11px;y:0,0px,0px,0px;" data-frame_1="x:0,0px,0px,0px;y:0,0px,0px,0px;st:900;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:70,48,45,32;l:78,56,53,40;fw:700;a:left,center,center,center;" data-type="text" data-xy="x:l,c,c,c;xo:30px,1px,3px,0;y:m,t,t,t;yo:-49px,74px,59px,62px;" id="slider-13-slide-38-layer-0" style="z-index:10;font-family:Jost;text-transform:capitalize;">Dependable IT Support <br/> for Small Business 
-                            </rs-layer><!--
---><rs-layer data-color="#fd4a18" data-frame_0="x:50,27,20,12;" data-frame_1="st:700;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:18,18,18,16;l:30;fw:600;" data-type="text" data-xy="x:l,c,c,c;xo:30px,-1px,0,0;y:m,t,t,t;yo:-145px,38px,28px,27px;" id="slider-13-slide-38-layer-1" style="z-index:12;font-family:Jost;text-transform:uppercase;"># Managed IT Services 
-                            </rs-layer><!--
---><a class="rs-layer rev-btn" data-border="bor:5px,5px,5px,5px;" data-dim="minh:0px,none,none,none;" data-frame_0="x:50,27,20,12;" data-frame_1="st:1300;sp:1000;" data-frame_999="o:0;st:w;" data-frame_hover="c:#fff;bgc:#5a9ae2;bor:5px,5px,5px,5px;sp:100;e:power1.inOut;bri:110%;" data-padding="t:12;r:45,45,30,30;b:12;l:45,45,30,30;" data-rsp_ch="on" data-text="w:normal;s:18,18,16,14;l:30,30,24,22;" data-type="button" data-xy="x:l,c,c,c;xo:30px,-102px,-80px,-60px;y:m,m,m,t;yo:165px,-86px,-118px,155px;" href="whyhudsonhelm.html" id="slider-13-slide-38-layer-3" style="z-index:9;background-color:#2d6fb8;box-shadow:0 10px 24px rgba(32,83,145,0.32);" target="_self">Read More       
-                            </a><!--
---><rs-layer data-frame_0="x:50,27,20,12;" data-frame_1="st:1100;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:18,16,12,7;l:38,30,22,13;a:left,center,center,center;" data-type="text" data-vbility="t,t,f,f" data-xy="x:l,c,c,c;xo:30px,0,0,0;y:m,t,t,t;yo:70px,199px,151px,104px;" id="slider-13-slide-38-layer-4" style="z-index:11;">Responsive support, practical cybersecurity, and dependable service for businesses that need IT to simply work. 
-                            </rs-layer><!--
---><rs-layer data-border="bor:5px,5px,5px,5px;" data-dim="w:763px,416px,396px,244px;h:446px,243px,232px,142px;" data-frame_0="x:-50,-27,-20,-12;" data-frame_1="st:1700;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:20,10,7,4;l:0,13,9,6;" data-type="image" data-xy="x:r,c,c,c;xo:30px,0,0,11px;y:m,b,b,b;yo:18px,50px,50px,20px;" id="slider-13-slide-38-layer-6" style="z-index:13;"><img alt="1" data-no-retina="" height="620" src="rev/assets/bg-1.jpg" width="1060"/>
-</rs-layer><!--
---> </rs-slide>
-<rs-slide data-anim="ei:d;eo:d;s:600;r:default;t:crossfade;sl:d;" data-key="rs-39" data-thumb="rev/assets/2-2-50x100.jpg" data-title="Slide">
-<img class="rev-slidebg" data-bg="f:auto;r:repeat;" data-no-retina="" height="1080" src="rev/assets/2-2.jpg" title="2-2.jpg" width="1920"/>
-<!--
---><rs-layer data-frame_0="x:50,27,20,12;" data-frame_1="st:900;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:62,48,45,32;l:72,56,53,40;fw:700;a:left,center,center,center;" data-type="text" data-xy="x:l,c,c,c;xo:30px,0,15px,15px;y:m,t,t,t;yo:-49px,87px,80px,68px;" id="slider-13-slide-39-layer-0" style="z-index:10;font-family:Jost;text-transform:capitalize;">Security-Minded IT <br/> Without the Overhead 
-                            </rs-layer><!--
---><rs-layer data-color="#fd4a18" data-frame_0="x:50,27,20,12;" data-frame_1="st:700;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:18,18,18,16;l:30,26,26,30;fw:600;" data-type="text" data-xy="x:l,c,c,c;xo:31px,-1px,1px,0;y:m,t,t,t;yo:-145px,56px,52px,40px;" id="slider-13-slide-39-layer-1" style="z-index:12;font-family:Jost;text-transform:uppercase;"># Cybersecurity &amp; Stability 
-                            </rs-layer><!--
---><a class="rs-layer rev-btn" data-border="bor:5px,5px,5px,5px;" data-dim="minh:0px,none,none,none;" data-frame_0="x:50,27,20,12;" data-frame_1="st:1300;sp:1000;" data-frame_999="o:0;st:w;" data-frame_hover="c:#fff;bgc:#5a9ae2;bor:5px,5px,5px,5px;sp:100;e:power1.inOut;bri:110%;" data-padding="t:12;r:45,45,30,30;b:12;l:45,45,30,30;" data-rsp_ch="on" data-text="w:normal;s:16,18,16,14;l:32,32,24,24;" data-type="button" data-xy="x:l,c,c,c;xo:30px,-100px,-70px,-60px;y:m,m,t,t;yo:165px,-81px,208px,158px;" href="whyhudsonhelm.html" id="slider-13-slide-39-layer-3" style="z-index:9;background-color:#2d6fb8;box-shadow:0 10px 24px rgba(32,83,145,0.32);font-family:Nunito;" target="_self">Read More       
-                            </a><!--
---><rs-layer data-frame_0="x:50,27,20,12;" data-frame_1="st:1100;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:18,16,12,7;l:38,24,18,11;a:left,center,center,center;" data-type="text" data-vbility="t,t,f,f" data-xy="x:l,c,c,c;xo:30px,0,0,0;y:m,t,t,t;yo:77px,211px,160px,99px;" id="slider-13-slide-39-layer-4" style="z-index:11;">Protection, maintenance, and support designed for small teams that cannot afford downtime. 
-                            </rs-layer><!--
---><rs-layer data-border="bor:5px,5px,5px,5px;" data-dim="w:763px,416px,396px,244px;h:446px,243px,232px,142px;" data-frame_0="x:-50,-27,-20,-12;" data-frame_1="st:1700;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:20,10,7,4;l:0,13,9,6;" data-type="image" data-xy="x:r,c,c,c;xo:30px,0,6px,3px;y:m,b,b,b;yo:30px,50px,30px,20px;" id="slider-13-slide-39-layer-6" style="z-index:13;"><img alt="1" data-no-retina="" height="620" src="rev/assets/banner01.jpg" width="1060"/>
-</rs-layer><!--
---> </rs-slide>
-<rs-slide data-anim="ei:d;eo:d;s:600;r:default;t:crossfade;sl:d;" data-key="rs-40" data-thumb="rev/assets/2-2-50x100.jpg" data-title="Slide">
-<img class="rev-slidebg" data-bg="f:auto;r:repeat;" data-no-retina="" height="1080" src="rev/assets/2-2.jpg" title="2-2.jpg" width="1920"/>
-<!--
---><rs-layer data-frame_0="x:50,27,20,12;" data-frame_1="st:900;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:62,48,45,32;l:72,56,53,40;fw:700;a:left,center,center,center;" data-type="text" data-xy="x:l,c,c,c;xo:30px,0,15px,0;y:m,t,t,t;yo:-56px,95px,91px,65px;" id="slider-13-slide-40-layer-0" style="z-index:10;font-family:Jost;text-transform:capitalize;">Straightforward Service <br/>
-From People Who Care 
-                            </rs-layer><!--
---><rs-layer data-color="#fd4a18" data-frame_0="x:50,27,20,12;" data-frame_1="st:700;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:18,18,18,16;l:30;fw:600;" data-type="text" data-xy="x:l,c,c,c;xo:30px,-1px,0,0;y:m,t,t,t;yo:-145px,56px,52px,30px;" id="slider-13-slide-40-layer-1" style="z-index:12;font-family:Jost;text-transform:uppercase;"># Real Help, Sensible Cost<br/>
-</rs-layer><!--
---><a class="rs-layer rev-btn" data-border="bor:5px,5px,5px,5px;" data-dim="minh:0px,none,none,none;" data-frame_0="x:50,27,20,12;" data-frame_1="st:1300;sp:1000;" data-frame_999="o:0;st:w;" data-frame_hover="c:#fff;bgc:#5a9ae2;bor:5px,5px,5px,5px;sp:100;e:power1.inOut;bri:110%;" data-padding="t:12;r:45,45,30,30;b:12;l:45,45,30,30;" data-rsp_ch="on" data-text="w:normal;s:16,18,16,16;l:32,30,22,26;" data-type="button" data-xy="x:l,c,c,c;xo:30px,-100px,-60px,-70px;y:m,m,m,t;yo:165px,-72px,-92px,158px;" href="whyhudsonhelm.html" id="slider-13-slide-40-layer-3" style="z-index:9;background-color:#2d6fb8;box-shadow:0 10px 24px rgba(32,83,145,0.32);" target="_self">Read More       
-                            </a><!--
---><rs-layer data-frame_0="x:50,27,20,12;" data-frame_1="st:1100;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:18,16,12,7;l:38,24,18,11;a:left,center,center,center;" data-type="text" data-vbility="t,t,f,f" data-xy="x:l,c,c,c;xo:30px,0,0,0;y:m,t,t,t;yo:60px,217px,164px,101px;" id="slider-13-slide-40-layer-4" style="z-index:11;">Honest guidance, responsive support, and managed IT that fits the needs of small businesses in Northern New Jersey. 
-                            </rs-layer><!--
---><rs-layer data-border="bor:5px,5px,5px,5px;" data-dim="w:763px,416px,396px,244px;h:446px,243px,232px,142px;" data-frame_0="x:-50,-27,-20,-12;" data-frame_1="st:1700;sp:1000;" data-frame_999="o:0;st:w;" data-rsp_ch="on" data-text="w:normal;s:20,10,7,4;l:0,13,9,6;" data-type="image" data-xy="x:r,c,c,c;xo:30px,0,0,6px;y:m,b,b,b;yo:30px,50px,40px,15px;" id="slider-13-slide-40-layer-6" style="z-index:13;"><img alt="3" data-no-retina="" height="620" src="rev/assets/banner03.jpg" width="1060"/>
-</rs-layer><!--
---> </rs-slide>
-</rs-slides>
-<rs-static-layers><!--
---></rs-static-layers>
-</rs-module>
-</rs-module-wrap>
-<!-- END REVOLUTION SLIDER -->
+<!--Hero Start-->
+<section class="hh-home-hero">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<div class="hh-home-hero__content">
+<span class="hh-home-hero__eyebrow">Managed IT Services</span>
+<h1>Dependable IT Support For Small Business</h1>
+<p class="hh-home-hero__description">Responsive support, practical cybersecurity, and dependable service for businesses that need IT to simply work.</p>
 </div>
-<!--Banner End-->
+</div>
+<div class="col-lg-6">
+<img alt="Small-business team collaborating around a conference table" class="hh-home-hero__image" height="620" src="rev/assets/bg-1.jpg" width="1060"/>
+</div>
+</div>
+</div>
+</section>
+<!--Hero End-->
 <!--Servicebox Start-->
 
 <!--Servicebox End-->
@@ -385,17 +496,17 @@ From People Who Care
 
 <!--Tech End-->
 <!--Why Us Start-->
-<section class="whyus">
+<section class="whyus hh-home-services">
 <div class="container">
 <div class="row">
 <div class="col-lg-12">
 <div class="pq-section pq-style-1 text-center">
 <span class="pq-section-sub-title"># what we do</span>
-<h5 class="pq-section-title" data-high_text="Form" data-rough_color="#fd4a18" data-rough_type="underline" data-title_text="Practical IT Services for Small Business" id="form">Practical IT Services for Small Business</h5>
+<h2 class="pq-section-title">Practical IT Services for Small Business</h2>
 </div>
 </div>
 </div>
-<div class="row g-5 text-center justify-content-center">
+<div class="row g-4 text-center justify-content-center">
 <div class="col-xl-3 col-lg-4 col-md-6">
 <div class="pq-icon-box pq-style-2">
 <div class="pq-icon-box-icon">
@@ -404,7 +515,7 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Managed IT Services</h4>
+<h3 class="pq-icon-box-title">Managed IT Services</h3>
 <p class="pq-icon-box-description">Ongoing IT management to keep your systems stable, secure, and current.</p>
 </div>
 </div>
@@ -417,7 +528,7 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Responsive Support</h4>
+<h3 class="pq-icon-box-title">Responsive Support</h3>
 <p class="pq-icon-box-description">Fast remote and onsite help when your team needs answers and fixes.</p>
 </div>
 </div>
@@ -430,7 +541,7 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Cybersecurity</h4>
+<h3 class="pq-icon-box-title">Cybersecurity</h3>
 <p class="pq-icon-box-description">Endpoint protection, security hardening, and practical risk reduction.</p>
 </div>
 </div>
@@ -443,8 +554,8 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Support</h4>
-<p class="pq-icon-box-description">Administration, licensing, and support for cloud tools your business relies on.</p>
+<h3 class="pq-icon-box-title">Cloud &amp; Email</h3>
+<p class="pq-icon-box-description">Email, calendars, licensing, and cloud administration for the tools your business relies on.</p>
 </div>
 </div>
 </div>
@@ -456,7 +567,7 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Backup & Recovery</h4>
+<h3 class="pq-icon-box-title">Backup & Recovery</h3>
 <p class="pq-icon-box-description">Backups, recovery planning, and business continuity when things go sideways.</p>
 </div>
 </div>
@@ -469,8 +580,8 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Network & Wi-Fi</h4>
-<p class="pq-icon-box-description">Troubleshooting and improvement for firewalls, switches, wireless, and connectivity.</p>
+<h3 class="pq-icon-box-title">Network & Wi-Fi</h3>
+<p class="pq-icon-box-description">Setup, troubleshooting, and improvement for firewalls, switches, Wi-Fi, and connectivity.</p>
 </div>
 </div>
 </div>
@@ -482,7 +593,7 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Onboarding & Setup</h4>
+<h3 class="pq-icon-box-title">Onboarding & Setup</h3>
 <p class="pq-icon-box-description">New user, new PC, and new office setup handled cleanly and consistently.</p>
 </div>
 </div>
@@ -495,7 +606,7 @@ From People Who Care
 </span>
 </div>
 <div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Strategic IT Guidance</h4>
+<h3 class="pq-icon-box-title">Strategic IT Guidance</h3>
 <p class="pq-icon-box-description">Straightforward advice to help you make smart technology decisions.</p>
 </div>
 </div>
@@ -508,50 +619,24 @@ From People Who Care
 
 <!--Projects End-->
 <!--Benefits Start-->
-<section class="benefit pt-4 pb-0">
+<section class="hh-home-why">
 <div class="container">
-<div class="row align-items-center">
-<div class="col-lg-8 col-md-12">
+<div class="row">
+<div class="col-lg-10 col-md-12">
 <div class="pq-section pq-style-1 text-left">
-<span class="pq-section-sub-title"># our benefits</span>
-<h5 class="pq-section-title" data-high_text="Digital" data-rough_color="#fd4a18" data-rough_type="underline" data-title_text="Some Of Our Digital IT Services" id="digital">Why Small Businesses Choose Hudson Helm</h5>
-<p class="pq-section-description">Practical support, dependable service, and security-minded IT for small businesses that need real help without enterprise-sized overhead.</p>
+<span class="pq-section-sub-title"># why Hudson Helm</span>
+<h2 class="pq-section-title">Experienced IT Support, Personally Delivered</h2>
+<p class="pq-section-description">Hudson Helm gives small businesses practical, security-minded support without layers of enterprise overhead or unnecessary complexity.</p>
 </div>
-<ul class="pq-list-check mb-4">
-<li class="pq-list-item">
-<a href="#">
-<i class="ion ion-android-done-all"></i>
-<span>Responsive support when something breaks or your team gets stuck.</span>
-</a>
-</li>
-<li class="pq-list-item">
-<a href="#">
-<i class="ion ion-android-done-all"></i>
-<span>Managed IT that keeps systems secure, stable, and current.</span>
-</a>
-</li>
-<li class="pq-list-item">
-<a href="#">
-<i class="ion ion-android-done-all"></i>
-<span>Cybersecurity, backup, and recovery built for real-world small business needs.</span>
-</a>
-</li>
-<li class="pq-list-item">
-<a href="#">
-<i class="ion ion-android-done-all"></i>
-<span>Straightforward guidance without bloated contracts or unnecessary complexity.</span>
-</a>
-</li>
-<li class="pq-list-item">
-<a href="#">
-<i class="ion ion-android-done-all"></i>
-<span>Dependable service at a sensible cost.</span>
-</a>
-</li>
+<ul class="hh-home-why__grid">
+<li><i aria-hidden="true" class="ion ion-android-done-all"></i>Responsive, personal service when your team needs help.</li>
+<li><i aria-hidden="true" class="ion ion-android-done-all"></i>Experienced IT support without enterprise overhead.</li>
+<li><i aria-hidden="true" class="ion ion-android-done-all"></i>Security-minded guidance built into everyday IT decisions.</li>
+<li><i aria-hidden="true" class="ion ion-android-done-all"></i>Practical recommendations without unnecessary complexity.</li>
 </ul>
-<a class="pq-button" href="whyhudsonhelm.html">
+<a class="pq-button hh-blue-btn" href="whyhudsonhelm.html">
 <div class="pq-button-block">
-<span class="pq-button-text">Read More</span>
+<span class="pq-button-text">Why Hudson Helm</span>
 </div>
 </a>
 </div>
@@ -590,8 +675,6 @@ From People Who Care
 <script src="js/jquery.min.js"></script>
 <!--Bootstrap js-->
 <script src="js/bootstrap.min.js"></script>
-<!--Owl Carousel js-->
-<script src="js/owl.carousel.min.js"></script>
 <!--isotope js-->
 <script src="js/isotope.pkgd.min.js"></script>
 <!--countTo js-->
@@ -600,14 +683,7 @@ From People Who Care
 <script src="js/jquery.magnific-popup.min.js"></script>
 <!-- Animation JS -->
 <script src="js/wow.min.js"></script>
-<!--Rev Slider js-->
-<script src="rev/js/rbtools.min.js"></script>
-<script src="rev/js/rs6.min.js"></script>
-<script src="js/rev-custom.js"></script>
 <!--Custom js-->
-<script src="js/rough-script.js"></script>
-<script src="js/rough-notation.iife.js"></script>
-<script src="js/rough-custom.js"></script>
 <script src="js/custom.js"></script>
 </body>
 </html>
