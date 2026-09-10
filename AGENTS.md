@@ -91,6 +91,8 @@ If the runbook is incomplete during Phase 0, investigate and document missing in
 
 Perform validation appropriate to the affected work, including functional, responsive, accessibility, console, link/asset, security, and regression checks where applicable.
 
+Run the active phase's dedicated check listed in the Technical Runbook together with the prior phase checks before committing or publishing.
+
 Do not declare a phase complete merely because its primary visual change appears correct.
 
 ## After Completing a Material Task
