@@ -10,8 +10,6 @@
 <link href="images/favicon.ico" rel="shortcut icon"/>
 <!--bootstrap css-->
 <link href="css/bootstrap.min.css" rel="stylesheet"/>
-<!--owl carousel-->
-<link href="css/owl.carousel.min.css" rel="stylesheet"/>
 <!--progressbar css-->
 <link href="css/progressbar.css" rel="stylesheet"/>
 <!--icon css -->
@@ -346,6 +344,46 @@
         }
 </style>
 <link href="css/hudson-helm.css" rel="stylesheet"/>
+<style>
+html { scroll-behavior: smooth; }
+.hh-services-hero, .hh-service-nav, .hh-service-details, .hh-services-cta { background: #000; }
+.hh-services-hero { padding: 72px 0; }
+.hh-services-hero h1 { margin: 0 0 22px; font-size: clamp(2.35rem, 5vw, 4.5rem); line-height: 1.05; }
+.hh-services-hero .pq-section-description { max-width: 650px; margin-bottom: 0; font-size: 1.1rem; }
+.hh-services-hero img, .hh-service-section img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 18px; box-shadow: 0 18px 48px rgba(7, 18, 34, 0.38); }
+.hh-service-nav { padding: 68px 0 76px; border-top: 1px solid rgba(143, 190, 255, 0.14); }
+.hh-service-nav-intro { max-width: 760px; margin: 0 auto 38px; text-align: center; }
+.hh-service-nav-intro h2 { margin-bottom: 14px; }
+.hh-service-grid > div { display: flex; }
+.hh-service-card { display: flex; width: 100%; min-height: 250px; flex-direction: column; padding: 30px 26px; color: #fff; background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%); border: 1px solid rgba(113, 165, 233, 0.28); border-radius: 18px; box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28); text-decoration: none; transition: transform 180ms ease, border-color 180ms ease, background 180ms ease; }
+.hh-service-card:hover, .hh-service-card:focus-visible { color: #fff; background: linear-gradient(180deg, rgba(42, 73, 116, 0.94) 0%, rgba(28, 49, 77, 0.98) 100%); border-color: rgba(143, 190, 255, 0.62); transform: translateY(-4px); }
+.hh-service-card-icon { display: grid; width: 58px; height: 58px; margin-bottom: 22px; place-items: center; border-radius: 14px; background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%); box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32); }
+.hh-service-card-icon i { color: #fff; font-size: 30px; }
+.hh-service-card h3 { margin-bottom: 12px; font-size: 1.35rem; }
+.hh-service-card p { margin: 0; line-height: 1.6; }
+.hh-service-card-prompt { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 18px; color: #8fbfff; font-weight: 600; }
+.hh-service-card-prompt i { color: inherit; }
+.hh-service-details { padding-bottom: 34px; }
+.hh-service-section { padding: 76px 0; border-top: 1px solid rgba(143, 190, 255, 0.14); scroll-margin-top: 110px; }
+.hh-service-section:focus { outline: none; }
+.hh-service-section:focus-visible { outline: 3px solid #8fbfff; outline-offset: -3px; }
+.hh-service-copy { max-width: 590px; }
+.hh-service-copy h2 { margin-bottom: 18px; font-size: clamp(2rem, 4vw, 3rem); }
+.hh-service-copy p { margin-bottom: 22px; font-size: 1.05rem; line-height: 1.75; }
+.hh-service-copy ul { margin: 0; padding: 0; list-style: none; }
+.hh-service-copy li { position: relative; padding: 11px 0 11px 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); line-height: 1.55; }
+.hh-service-copy li::before { position: absolute; top: 11px; left: 0; color: #8fbfff; font-family: "Ionicons"; content: "\f121"; }
+.hh-services-cta { padding: 76px 0 88px; text-align: center; border-top: 1px solid rgba(143, 190, 255, 0.14); }
+.hh-services-cta p { max-width: 680px; margin: 0 auto 28px; font-size: 1.1rem; }
+@media (max-width: 991px) {
+    .hh-services-hero, .hh-service-nav, .hh-service-section, .hh-services-cta { padding-top: 56px; padding-bottom: 56px; }
+    .hh-service-visual { margin-top: 34px; }
+}
+@media (max-width: 575px) {
+    .hh-services-hero h1 { font-size: 2.4rem; }
+    .hh-service-card { min-height: 0; }
+}
+</style>
 </head>
 <body>
 <!-- Loading Start-->
@@ -403,134 +441,15 @@
 </div>
 </header>
 <!--Header End-->
-<!--Goals Start-->
-<section class="goals page-top-tight">
-<div class="container">
-<div class="row">
-<div class="col-lg-12">
-<div class="pq-section pq-style-1 text-center">
-<span class="pq-section-sub-title"># what we help with</span>
-<h5 class="pq-section-title" data-high_text="Form" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="We Run All Kinds Of Services In Form Of IT" id="form">Practical IT Services for Small Businesses</h5>
-</div>
-</div>
-</div>
-<div class="row g-5 text-center justify-content-center">
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-server"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Managed IT</h4>
-<p class="pq-icon-box-description">Keep systems updated, monitored, and running reliably so technology stops being a daily distraction.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-laptop"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">End-User Support</h4>
-<p class="pq-icon-box-description">Fast, plain-English help for workstations, printers, login issues, and the thousand little things that slow people down.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-android"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Microsoft 365</h4>
-<p class="pq-icon-box-description">Set up and support Microsoft 365, email, identity, licensing, Teams, and the security settings small businesses usually overlook.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-call-center"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Help Desk</h4>
-<p class="pq-icon-box-description">Remote and on-site support options with escalation, troubleshooting, and follow-through instead of vanishing into the void.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-design"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Network &amp; Infrastructure</h4>
-<p class="pq-icon-box-description">Build and maintain the environment behind the scenes, including servers, firewalls, Wi-Fi, backups, and line-of-business systems.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-analytics"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Cybersecurity</h4>
-<p class="pq-icon-box-description">Layer practical security controls around your business with endpoint protection, safer configuration, patching, and user-risk reduction.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-ecologic-light-bulb"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Projects &amp; Upgrades</h4>
-<p class="pq-icon-box-description">Handle migrations, office moves, standardization, onboarding improvements, and the cleanup jobs nobody ever seems to own.</p>
-</div>
-</div>
-</div>
-<div class="col-xl-3 col-lg-4 col-md-6">
-<div class="pq-icon-box pq-style-2">
-<div class="pq-icon-box-icon">
-<span class="pq-icon">
-<i class="flaticon-globe-1"></i>
-</span>
-</div>
-<div class="pq-icon-box-content">
-<h4 class="pq-icon-box-title">Vendor Coordination</h4>
-<p class="pq-icon-box-description">Work with ISPs, software vendors, copier companies, and other providers so your team is not stuck playing middleman.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!--Goals End-->
-<!--Benefits Start-->
-<section class="benefits pq-bg-dark pq-bg-img-2">
+<main>
+<!--Services Hero Start-->
+<section class="hh-services-hero">
 <div class="container">
 <div class="row align-items-center">
 <div class="col-xl-6 col-lg-6">
 <div class="pq-section pq-style-1 text-left">
 <span class="pq-section-sub-title"># why businesses hire us</span>
-<h5 class="pq-section-title pq-text-white" data-high_text="Exponentially" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="We Help You Grow Your Business Exponentially" id="exponentially">Dependable IT Without Enterprise-Level Overhead</h5>
+<h1>Dependable IT Without Enterprise-Level Overhead</h1>
 <p class="pq-section-description pq-text-white">Hudson Helm is built for smaller organizations that need real IT guidance, fast support, and a partner who can keep things moving without dragging them into a giant, overpriced contract.</p>
 </div>
 </div>
@@ -540,125 +459,37 @@
 </div>
 </div>
 </section>
-<!--Benefits End-->
-<!--Services Start-->
-<section class="service pq-pt-200">
-<div class="container">
-<div class="row">
-<div class="col-lg-12">
-<div class="pq-section pq-style-1 text-center">
-<span class="pq-section-sub-title"># our services</span>
-<h5 class="pq-section-title" data-high_text="Services" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="Provide Exclusive Services" id="services">Core Services We Offer</h5>
+<!--Services Hero End-->
+<!--Service Navigation Start-->
+<section aria-labelledby="service-overview-title" class="hh-service-nav"><div class="container">
+<div class="hh-service-nav-intro"><span class="pq-section-sub-title"># our services</span><h2 id="service-overview-title">Practical IT Services for Small Businesses</h2><p>Choose a service to see how Hudson Helm can support your business.</p></div>
+<div class="row g-4 hh-service-grid">
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#managed-it-services"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-server"></i></span><h3>Managed IT Services</h3><p>Ongoing oversight that keeps your everyday technology dependable and documented.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#responsive-support"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-call-center"></i></span><h3>Responsive Support</h3><p>Plain-English help when technology gets in the way of someone doing their job.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#cloud-email"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-android"></i></span><h3>Cloud &amp; Email</h3><p>Email, calendars, licensing, and cloud administration for the tools your business relies on.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#cybersecurity"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-analytics"></i></span><h3>Cybersecurity</h3><p>Practical, layered safeguards that reduce risk without making work harder.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#backup-recovery"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-data-analytics"></i></span><h3>Backup &amp; Recovery</h3><p>Monitored backups and recovery planning for the data your business cannot replace.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#network-wifi"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-design"></i></span><h3>Network &amp; Wi-Fi</h3><p>Setup, troubleshooting, and improvement for firewalls, switches, Wi-Fi, and connectivity.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#projects-consulting"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-ux-design"></i></span><h3>Projects &amp; Consulting</h3><p>Focused planning and execution for migrations, upgrades, moves, and cleanups.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+<div class="col-xl-3 col-md-6"><a class="hh-service-card" href="#strategic-it-guidance"><span aria-hidden="true" class="hh-service-card-icon"><i class="flaticon-ecologic-light-bulb"></i></span><h3>Strategic IT Guidance</h3><p>Clear priorities and practical advice that connect technology decisions to business needs.</p><span class="hh-service-card-prompt">Explore service <i aria-hidden="true" class="fas fa-arrow-down"></i></span></a></div>
+</div></div></section>
+<!--Service Navigation End-->
+<!--Service Details Start-->
+<div class="hh-service-details">
+<article class="hh-service-section" id="managed-it-services" tabindex="-1"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6"><div class="hh-service-copy"><h2>Managed IT Services</h2><p>Your technology should support the work, not become another job to manage. Hudson Helm provides ongoing oversight, maintenance, and coordination so the systems your team depends on stay reliable.</p><ul><li>Workstation, laptop, and basic server management</li><li>Patch management, standardization, and routine maintenance</li><li>Documentation and coordination with internet, software, and equipment vendors</li><li>Right-sized support without the overhead of a full internal IT department</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Business team reviewing plans together" loading="lazy" src="images/tabs/1.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="responsive-support" tabindex="-1"><div class="container"><div class="row align-items-center g-5 flex-lg-row-reverse"><div class="col-lg-6"><div class="hh-service-copy"><h2>Responsive Support</h2><p>When an employee cannot work, a ticket number is not enough. We troubleshoot clearly, follow issues through, and help people get back to business without unnecessary jargon or runaround.</p><ul><li>Remote and on-site troubleshooting when appropriate</li><li>Help with devices, printers, applications, logins, and everyday issues</li><li>Escalation and follow-through for problems that need deeper investigation</li><li>User onboarding, offboarding, and access changes</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Support team working through a technical issue" loading="lazy" src="images/tabs/2.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="cloud-email" tabindex="-1"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6"><div class="hh-service-copy"><h2>Cloud &amp; Email</h2><p>Email, calendars, shared files, and cloud accounts sit at the center of daily work. We handle the administration behind those tools so access stays organized, secure, and aligned with how your team operates.</p><ul><li>Microsoft 365 setup, licensing, migrations, and cleanup</li><li>Mailbox, calendar, Teams, OneDrive, and SharePoint support</li><li>Account permissions, identity settings, and multi-factor authentication</li><li>Cloud-service coordination and practical configuration guidance</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Colleagues reviewing business information on a tablet" loading="lazy" src="images/tabs/3.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="cybersecurity" tabindex="-1"><div class="container"><div class="row align-items-center g-5 flex-lg-row-reverse"><div class="col-lg-6"><div class="hh-service-copy"><h2>Cybersecurity</h2><p>Small-business security works best as a maintained set of sensible layers. We focus on reducing common risks with controls that protect the business while letting employees remain productive.</p><ul><li>Endpoint protection, patching, and baseline hardening</li><li>Multi-factor authentication and access-control guidance</li><li>Email and account security improvements</li><li>Clear, practical steps to reduce user and configuration risk</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Team discussing technology and security priorities" loading="lazy" src="images/tabs/4.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="backup-recovery" tabindex="-1"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6"><div class="hh-service-copy"><h2>Backup &amp; Recovery</h2><p>A backup matters only if it is current, monitored, and recoverable. We help protect important systems and data, then plan how the business can restore what it needs after a failure or mistake.</p><ul><li>Backup planning for devices, servers, and cloud data</li><li>Monitoring and review of backup status</li><li>Recovery-readiness checks and practical restore planning</li><li>Clear priorities for protecting business-critical information</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Business team reviewing a continuity plan" loading="lazy" src="images/tabs/1.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="network-wifi" tabindex="-1"><div class="container"><div class="row align-items-center g-5 flex-lg-row-reverse"><div class="col-lg-6"><div class="hh-service-copy"><h2>Network &amp; Wi-Fi</h2><p>Reliable connectivity is the foundation beneath nearly every business system. We set up, troubleshoot, and improve the network so employees and devices can connect securely and consistently.</p><ul><li>Firewall, switch, and wireless access-point setup</li><li>Wi-Fi coverage, performance, and connectivity troubleshooting</li><li>Network refreshes and practical equipment recommendations</li><li>Coordination with internet providers and cabling vendors</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Team working together around connected office computers" loading="lazy" src="images/tabs/2.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="projects-consulting" tabindex="-1"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-6"><div class="hh-service-copy"><h2>Projects &amp; Consulting</h2><p>Some technology work needs a defined plan rather than an open-ended support ticket. Hudson Helm keeps projects organized, communicates what is changing, and handles the details from preparation through completion.</p><ul><li>Email, file, platform, and device migrations</li><li>Office moves, network refreshes, and infrastructure upgrades</li><li>Technology assessments and environment cleanup</li><li>Planning, vendor coordination, and implementation support</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Consultants planning a business technology project" loading="lazy" src="images/tabs/3.jpg"/></div></div></div></article>
+<article class="hh-service-section" id="strategic-it-guidance" tabindex="-1"><div class="container"><div class="row align-items-center g-5 flex-lg-row-reverse"><div class="col-lg-6"><div class="hh-service-copy"><h2>Strategic IT Guidance</h2><p>Good technology decisions start with understanding the business, its risks, and where it is heading. We help owners turn competing needs into a practical plan and make informed choices about providers, systems, and investments.</p><ul><li>Prioritized technology roadmaps and budgeting guidance</li><li>Vendor and solution evaluation without unnecessary complexity</li><li>Planning for growth, staffing changes, and new locations</li><li>Clear recommendations connected to business goals and risk</li></ul></div></div><div class="col-lg-6 hh-service-visual"><img alt="Business leaders discussing long-term technology plans" loading="lazy" src="images/tabs/4.jpg"/></div></div></div></article>
 </div>
-</div>
-<div class="col-lg-12">
-<div class="pq-tabs-1">
-<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist"><a aria-controls="nav-home-0" aria-selected="true" class="pq-tabs nav-item nav-link active" data-bs-toggle="tab" href="#nav-0" id="nav-home-0" role="tab">
-<div class="pq-tabs-icon"><i class="flaticon-marketing"></i><span>Managed IT Services</span></div>
-</a><a aria-controls="nav-home-1" aria-selected="true" class="pq-tabs nav-item nav-link" data-bs-toggle="tab" href="#nav-1" id="nav-home-1" role="tab">
-<div class="pq-tabs-icon"><i class="flaticon-call-center"></i><span>Support &amp; Microsoft 365</span></div>
-</a><a aria-controls="nav-home-2" aria-selected="true" class="pq-tabs nav-item nav-link" data-bs-toggle="tab" href="#nav-2" id="nav-home-2" role="tab">
-<div class="pq-tabs-icon"><i class="flaticon-data-analytics"></i><span>Cybersecurity &amp; Backups</span></div>
-</a><a aria-controls="nav-home-3" aria-selected="true" class="pq-tabs nav-item nav-link" data-bs-toggle="tab" href="#nav-3" id="nav-home-3" role="tab">
-<div class="pq-tabs-icon"><i class="flaticon-ux-design"></i><span>Projects &amp; Consulting</span></div>
-</a></div>
-<div class="tab-content text-left" id="nav-tabContent">
-<div aria-labelledby="nav-home-0" class="tab-pane fade show active" id="nav-0" role="tabpanel">
-<div class="row align-items-center">
-<div class="col-lg-6">
-<img alt="seo-image" src="images/tabs/1.jpg"/>
-</div>
-<div class="col-lg-6">
-<div class="pq-tab-info">
-<h2>Managed IT Services</h2>
-<p>Small businesses choose Hudson Helm because they need IT that simply works. We focus on reliability, fast response times, and practical solutions—not unnecessary complexity. You get experienced support, proactive maintenance, and real cybersecurity protections without enterprise-level pricing. We stay small on purpose so every client gets attention, accountability, and results.</p>
-<p>Ongoing support for the systems your business relies on every day. We focus on stability, documentation, maintenance, and the kind of follow-through that keeps small problems from turning into outages.</p>
-<h3> </h3>
-<ul><li>Workstation, laptop, and basic server management</li><li>Patch management, standardization, and routine maintenance</li><li>Monitoring and issue response before users pile on</li><li>Right-sized support for offices that need real IT without a full internal department</li></ul>
-<div class="pq-btn-container">
-<div class="pq-button-block">
-<a class="pq-button" href="starthere.html">
-<span class="text">Read more</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div aria-labelledby="nav-home-1" class="tab-pane fade show" id="nav-1" role="tabpanel">
-<div class="row flex-row-reverse">
-<div class="col-lg-6">
-<img alt="seo-image" src="images/tabs/2.jpg"/>
-</div>
-<div class="col-lg-6 align-self-center">
-<div class="pq-tab-info">
-<h2>Support &amp; Microsoft 365</h2>
-<p>When employees need help, they need it quickly and without a lecture. We support the day-to-day user experience while also handling the Microsoft 365 side that powers email, collaboration, identity, and device access.</p>
-<h3> </h3>
-<ul><li>Remote troubleshooting for email, login, device, and application issues</li><li>Microsoft 365 setup, licensing, migrations, and cleanup</li><li>Teams, OneDrive, SharePoint, and mailbox support</li><li>User onboarding, offboarding, and permission management</li></ul>
-<div class="pq-btn-container">
-<div class="pq-button-block">
-<a class="pq-button" href="starthere.html">
-<span class="text">Read more</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div aria-labelledby="nav-home-2" class="tab-pane fade show" id="nav-2" role="tabpanel">
-<div class="row">
-<div class="col-lg-6">
-<img alt="seo-image" src="images/tabs/3.jpg"/>
-</div>
-<div class="col-lg-6 align-self-center">
-<div class="pq-tab-info">
-<h2>Cybersecurity &amp; Backups</h2>
-<p>Security for small business should be practical, layered, and maintained over time. We help reduce risk with better configuration, backups, safer user practices, and protection that fits your environment.</p>
-<h3> </h3>
-<ul><li>Endpoint protection, patching, and baseline hardening</li><li>Backup monitoring and recovery readiness</li><li>Multi-factor authentication and access control guidance</li><li>Common-sense security improvements that do not wreck productivity</li></ul>
-<div class="pq-btn-container">
-<div class="pq-button-block">
-<a class="pq-button" href="starthere.html">
-<span class="text">Read more</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div aria-labelledby="nav-home-3" class="tab-pane fade show" id="nav-3" role="tabpanel">
-<div class="row flex-row-reverse">
-<div class="col-lg-6">
-<img alt="seo-image" src="images/tabs/4.jpg"/>
-</div>
-<div class="col-lg-6 align-self-center">
-<div class="pq-tab-info">
-<h2>Projects &amp; Consulting</h2>
-<p>Some work is not a ticket. Office moves, migrations, cleanup projects, vendor wrangling, and infrastructure upgrades all need planning, communication, and somebody keeping the train on the tracks.</p>
-<h3> </h3>
-<ul><li>Technology assessments and environment cleanup</li><li>Network refreshes, Wi-Fi improvements, and site coordination</li><li>Email, file, and platform migrations</li><li>Planning and guidance for growing businesses that need a stronger IT foundation</li></ul>
-<div class="pq-btn-container">
-<div class="pq-button-block">
-<a class="pq-button" href="starthere.html">
-<span class="text">Read more</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!--Services End-->
+<!--Service Details End-->
+<!--Final CTA Start-->
+<section aria-labelledby="services-cta-title" class="hh-services-cta"><div class="container"><span class="pq-section-sub-title"># start a conversation</span><h2 id="services-cta-title">Not Sure Where to Begin?</h2><p>Tell us what is working, what is getting in the way, and what you want technology to do better. We will help you identify a practical next step.</p><a class="pq-button" href="starthere.html"><span class="pq-button-text">Start Here</span></a></div></section>
+<!--Final CTA End-->
+</main>
 
 <!--Footer Start-->
 <footer class="style-1" id="pq-footer">
@@ -689,8 +520,6 @@
 <script src="js/jquery.min.js"></script>
 <!--Bootstrap js-->
 <script src="js/bootstrap.min.js"></script>
-<!--Owl Carousel js-->
-<script src="js/owl.carousel.min.js"></script>
 <!--Progressbar js-->
 <script src="js/progressbar.js"></script>
 <!--Isotope js-->
@@ -702,9 +531,6 @@
 <!--Animation js -->
 <script src="js/wow.min.js"></script>
 <!--Custom js-->
-<script src="js/rough-script.js"></script>
-<script src="js/rough-notation.iife.js"></script>
-<script src="js/rough-custom.js"></script>
 <script src="js/custom.js"></script>
 </body>
 </html>

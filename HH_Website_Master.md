@@ -9,8 +9,8 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | --- | --- |
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
-| Current phase | Phase 2 — Homepage |
-| Phase status | **Complete, pushed to GitHub, and published to production — awaiting user review** |
+| Current phase | Phase 3 — What We Do |
+| Phase status | **Implementation complete and locally verified — publication authorized and pending** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 2 homepage implementation is complete, pushed to GitHub, and published to production. Retain the static first-slide hero, updated eight-card services section, tightened spacing, concise Why Hudson Helm teaser, and removed homepage carousel dependencies while awaiting the user's review or further instruction. Do not begin Phase 3 without explicit user direction.
+Phase 3 What We Do implementation is complete and locally verified. Publish the approved page update, record the resulting commit and production evidence, and then await the user's review or further instruction. Retain the approved hero-first structure, eight-card in-page navigation, eight detailed service sections, merged taxonomy, single closing CTA, and removed page-specific Rough Notation/Owl dependencies. Do not begin Phase 4 without explicit user direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phase 1 shared structure is complete and published to production: all six root pages use the normalized seven-item navigation, shared structural stylesheet, responsive laptop/mobile menu behavior, visible keyboard focus, consistent current-page state, and a consistent minimal footer. Phase 2 is complete, pushed to GitHub, and published to production: the homepage now uses the approved static first-slide hero, retains eight service cards with the approved copy updates, has tighter section spacing and a compact four-point Why Hudson Helm teaser, and no longer loads homepage carousel or Rough Notation code. The production homepage was uploaded from site commit `eb72ad0` through the saved WinSCP session and verified by remote stat plus a cache-busted public HTTPS request. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week. Phase 3 has not started.
+Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phase 1 shared structure and Phase 2 homepage work are complete, pushed, and published. Phase 3 What We Do implementation is complete and locally verified: the approved introduction is now the page hero, the eight service cards are accessible jump links, eight alternating detailed sections use the consolidated taxonomy, and one final CTA leads to Start Here. Redundant Core Services tabs, repeated detail buttons, and page-specific Rough Notation/Owl dependencies are removed. Publication was explicitly authorized by the user and is pending the recorded Git and FTP steps. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week.
 
 ### Phase Progress
 
@@ -59,7 +59,7 @@ Phase 0 repository setup and source/browser inspection are complete with the rec
 | 0 | Repository / Safety | Complete; documented runtime deferral |
 | 1 | Shared Structure | Complete, published, and pushed |
 | 2 | Homepage | Complete, published, and pushed; user review pending |
-| 3 | What We Do | Not started |
+| 3 | What We Do | Complete locally; publication authorized and pending |
 | 4 | Why Hudson Helm | Not started |
 | 5 | Who We Are | Not started |
 | 6 | Are We a Good Fit? | Not started |
@@ -121,6 +121,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Published the complete deployable site checkout containing Phase 1 to production with the user's explicit approval. | WinSCP uploaded the six root pages, mail handler, shared assets, bundled libraries, Revolution assets, and retained template pages from site commit `5f42c02`. Remote size previews reported nothing left to synchronize; all six public root pages and `css/hudson-helm.css` returned HTTP 200 with the Phase 1 markers present. Server-managed files and directories were preserved. Phase 2 remains unstarted. |
 | 2026-09-10 | Completed Phase 2 homepage implementation and local validation. | Replaced the three-slide Revolution hero with a static semantic hero retaining the approved first-slide assets, updated the two specified service cards, tightened section transitions, implemented a compact four-point Why Hudson Helm teaser, removed homepage-only carousel and Rough Notation dependencies, and passed structural, responsive, accessibility, console, syntax, and diff checks. No production deployment or GitHub push occurred. |
 | 2026-09-10 | Pushed the completed Phase 1 and Phase 2 implementation and published the Phase 2 homepage. | Pushed `website-refresh` through site commit `eb72ad0`, uploaded only deployable `index.html` through the saved WinSCP production FTP session, confirmed the remote file at 18,033 bytes, and verified the public HTTPS homepage returned 200 with Phase 2 markers present and Revolution markup absent. Project-only files were not deployed. |
+| 2026-09-10 | Completed Phase 3 What We Do implementation and local validation. | Rebuilt the page into the approved hero, eight jump cards, eight detailed service sections, and one final CTA; merged the legacy taxonomy; removed redundant tabs, buttons, and page-specific Rough Notation/Owl dependencies; and passed structural, responsive, keyboard, asset, console, syntax, and diff checks. Publication was explicitly authorized and remained pending at this checkpoint. |
 
 ## Findings and Observations
 
@@ -149,6 +150,15 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - Browser checks at 1440px, 1366px, 1024px, and 390px found no horizontal overflow. The static hero image loaded at every tested layout; the navigation remained expanded at desktop/laptop widths and collapsed correctly at 1024px and 390px. The 390px expanded menu retained all seven destinations.
 - Browser console review returned no warnings or errors. `node tools/check-phase2.cjs`, `node tools/check-phase1.cjs`, the inspection helper, JavaScript syntax checks, and `git diff --check` passed. The inspection helper confirmed one H1, the intended heading hierarchy, no duplicate IDs, and only the two previously authorized pending routes.
 - With the user's explicit approval, `website-refresh` was pushed to GitHub through site commit `eb72ad0`. Only `index.html` was then uploaded to production through the saved WinSCP FTP session; the remote stat reported 18,033 bytes. A cache-busted public HTTPS request returned 200 and confirmed the static hero, Cloud & Email card, and Why Hudson Helm teaser were present while Revolution markup was absent. Project-only documentation and tools were not deployed.
+
+### Phase 3 implementation evidence — September 10, 2026
+
+- `whatwedo.html` now begins with the approved **Dependable IT Without Enterprise-Level Overhead** introduction as its semantic single-H1 hero and retains `images/benefits/1.jpg`.
+- One eight-card grid provides descriptive in-page links to Managed IT Services, Responsive Support, Cloud & Email, Cybersecurity, Backup & Recovery, Network & Wi-Fi, Projects & Consulting, and Strategic IT Guidance. Every target is programmatically focusable and uses sticky-header scroll clearance.
+- Eight substantive sections use concise explanatory copy, four practical bullets, relevant retained imagery with descriptive alt text, lazy loading, and alternating desktop image placement. End-User Support and Help Desk were folded into Responsive Support; Microsoft 365 was folded into Cloud & Email; Vendor Coordination was incorporated where relevant; and Cybersecurity and Backup & Recovery are separate.
+- The four-tab Core Services block, repeated service-detail buttons, empty headings, generic image alt text, and page-specific Rough Notation and Owl Carousel references were removed. One final Start Here CTA remains after the detailed sections.
+- Browser checks at 1440px, 1366px, 1024px, and 390px found no horizontal overflow. Navigation remained expanded at desktop/laptop widths and collapsed correctly at tablet/phone widths, where all seven destinations were exposed. A jump-link check reached `#strategic-it-guidance`, focused the target, and placed it below the sticky header. All images loaded, the service-card keyboard focus ring was visible, and the console returned no warnings or errors.
+- `node tools/check-phase3.cjs`, Phase 1 and Phase 2 checks, the inspection helper, JavaScript syntax checks, and `git diff --check` passed. The dedicated Phase 3 check verifies the exact taxonomy and cardinality, jump targets, detail sections, single-H1 structure, CTA count, merged-category removal, and obsolete dependency removal.
 
 ### Repository and File Structure
 
@@ -214,7 +224,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Safe form-testing method | Verified empty submission in static preview. Preview rejects all POSTs and PHP GETs. DEFERRED to Phase 7: use an isolated PHP environment and local mail sink with outbound delivery prevented for valid-submit, malformed input and error-path tests; never use production SMTP for automated tests. |
 | Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
 | Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
-| Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/check-phase2.cjs` (homepage content and removed-dependency contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `node --check tools/check-phase2.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/check-phase2.cjs` (homepage content and removed-dependency contract); `node tools/check-phase3.cjs` (What We Do content, taxonomy, jump-link, section, CTA, and dependency contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `node --check tools/check-phase2.cjs`; `node --check tools/check-phase3.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
 | Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026, and the Phase 2 `index.html` from site commit `eb72ad0` was subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
@@ -1383,13 +1393,13 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 3 — What We Do
 
-- [ ] Move the approved introduction section into the page-hero position.
-- [ ] Implement the eight-card in-page jump navigation.
-- [ ] Implement one substantive detailed section for each approved service category.
-- [ ] Merge overlapping legacy service categories as specified.
-- [ ] Remove redundant Core Services navigation and unnecessary Learn More buttons.
-- [ ] Confirm the final page flow matches the approved specification.
-- [ ] Satisfy the Shared Definition of Done for this phase.
+- [x] Move the approved introduction section into the page-hero position — promoted the retained introduction and image into a semantic single-H1 hero.
+- [x] Implement the eight-card in-page jump navigation — added eight exact-category cards with descriptive links, focusable targets, and sticky-header scroll clearance.
+- [x] Implement one substantive detailed section for each approved service category — added eight concise sections with explanatory copy, practical bullets, descriptive retained imagery, and alternating desktop placement.
+- [x] Merge overlapping legacy service categories as specified — consolidated End-User Support/Help Desk, Microsoft 365, and Vendor Coordination into their approved destinations and separated Cybersecurity from Backup & Recovery.
+- [x] Remove redundant Core Services navigation and unnecessary Learn More buttons — removed the four-tab block, repeated detail buttons, and obsolete page-specific Rough Notation/Owl references.
+- [x] Confirm the final page flow matches the approved specification — verified Hero → eight jump cards → eight detailed sections → one Start Here CTA → global footer.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements rereviewed; local preview, responsive, navigation, jump-link, keyboard, accessibility, asset, console, syntax, structural, and diff checks passed; documentation and a dedicated Phase 3 regression check were updated; commit, push, and authorized production publication remain the immediate closeout steps.
 
 ## Phase 4 — Why Hudson Helm
 
