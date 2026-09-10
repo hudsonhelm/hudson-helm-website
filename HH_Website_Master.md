@@ -8,7 +8,6 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Field | Value |
 | --- | --- |
 | Document | `HH_Website_Master.md` |
-| Current version | `0.2.0` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 0 — Repository / Safety |
 | Phase status | **In progress — do not treat Phase 0 as complete** |
@@ -17,15 +16,37 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Default branch | `main` |
 | Active working branch | `website-refresh` |
 
-## Document Versioning and Archive Process
+Git and GitHub are the revision history for this document. Do not maintain a parallel document-version or archive-snapshot system.
 
-- Keep this file at the repository root as the single authoritative working document.
-- Update the version, last-updated date, project status, activity log, findings, decisions, open items, and change log whenever work materially changes the project record.
-- Create an immutable full-document snapshot in `archive/` before a material revision or phase transition.
-- Name archived snapshots `HH_Website_Master_vX.Y.Z.md`.
-- Use major versions for substantial changes in project direction, minor versions for material working-document updates or phase transitions, and patch versions for small corrections that deserve a recorded snapshot.
-- Do not edit an archived snapshot after it has been created. Correct or clarify information in the living master and record the change.
-- Do not create archive snapshots for inconsequential wording or formatting changes.
+## Operating Rules for This Master
+
+### Instruction Precedence
+
+When instructions or wording in this document appear to conflict, interpret them in this order:
+
+1. **Current Objective** and **Current Project Status** govern what work is permitted now.
+2. The **Decisions Record** governs deliberate project decisions that supersede earlier assumptions or planning language.
+3. The active phase checklist and the shared **Definition of Done** govern whether work may be treated as complete.
+4. The **Approved Implementation Specification / Requirements Reference** defines the intended finished state.
+5. The Activity Log and Findings sections are project history and evidence, not instructions to repeat prior work.
+
+Completed setup or implementation must not be repeated merely because an older requirements section describes it in future tense. If a genuine conflict remains after applying this precedence, record it as an open item rather than silently choosing a new direction.
+
+### Current Objective
+
+Complete the remaining **Phase 0 inspection and verification** work. The remaining work is primarily methodical inspection, inventory, comparison, and documentation.
+
+Do **not** begin Phase 1 substantive website implementation until every required Phase 0 item is either completed or explicitly resolved as `BLOCKED`, `DEFERRED`, or `N/A` with a reason. During Phase 0, changes should be limited to project documentation and work necessary to establish a safe inspection or preview workflow; do not begin the website refresh itself.
+
+### Checklist Status Conventions
+
+- `[ ]` — Not yet completed.
+- `[x]` — Completed and verified.
+- `BLOCKED — <reason>` — Cannot proceed until a specific dependency or user input is available.
+- `DEFERRED — <reason>` — Intentionally postponed; state where or when it will be handled.
+- `N/A — <reason>` — Evaluated and determined not to apply.
+
+When marking a substantial inspection or implementation item complete, record enough evidence in Findings, the Activity Log, or the relevant checklist note to show what was verified. Do not create verbose notes for trivial steps.
 
 ## Current Project Status
 
@@ -63,6 +84,10 @@ Phase 0 repository setup is complete. Phase 0 inspection and verification are st
 - [x] Performed an initial staged-content credential-pattern scan.
 - [x] Confirmed with the user that the SMTP value currently present in `mail.php` is a dummy credential and may be committed.
 
+### Completed Setup Guardrail
+
+The repository setup above is established project state. Do **not** reinitialize Git, recreate the GitHub repository, recreate the baseline commit, recreate existing branches, restore the legacy `.git` directory, or otherwise redo completed repository setup merely because the approved implementation specification below contains the original setup instructions. Revisit completed setup only if inspection reveals an actual problem that requires correction.
+
 ### Remaining Before Phase 0 Is Complete
 
 - [ ] Inspect the complete HTML structure and page relationships.
@@ -75,10 +100,13 @@ Phase 0 repository setup is complete. Phase 0 inspection and verification are st
 - [ ] Compare the local site with the live production site.
 - [ ] Confirm that the local snapshot represents the production version intended as the refresh baseline.
 - [ ] Identify an appropriate safe local or staging preview workflow, including PHP-dependent features.
+- [ ] Populate the Technical Runbook with confirmed preview steps, PHP/runtime requirements, dependency notes, validation commands, and known production differences.
 - [ ] Record inspection findings, risks, and recommended Phase 1 boundaries in this document.
 - [ ] Reconfirm the repository and working tree state before declaring Phase 0 complete.
 
 ## Activity Log
+
+Record meaningful project events only: phase transitions, significant inspections, material implementation milestones, important failures/recoveries, and user approvals or changes in direction. Do not turn this into a transcript of routine agent actions.
 
 | Date | Activity | Result |
 | --- | --- | --- |
@@ -87,9 +115,11 @@ Phase 0 repository setup is complete. Phase 0 inspection and verification are st
 | 2026-09-10 | Authenticated GitHub CLI as `hudsonhelm`. | Confirmed access to the intended GitHub account. |
 | 2026-09-10 | Created `hudsonhelm/hudson-helm-website`. | Private repository created with `main` as its default branch. |
 | 2026-09-10 | Created and pushed the baseline and working branches. | `main` and `website-refresh` both point to the complete baseline at commit `b7d5fa2`. |
-| 2026-09-10 | Converted the implementation brief into this versioned living master document. | Original brief archived as version `0.1.0`; living master advanced to version `0.2.0`. |
+| 2026-09-10 | Consolidated the implementation brief and project record into the root-level living master document. | Established the project status, checklist, findings, decisions, and open-items structure used to manage the refresh. |
 
 ## Findings and Observations
+
+Record confirmed inspection findings and evidence that materially inform implementation, risk, or maintenance. Distinguish confirmed facts from unresolved assumptions.
 
 ### Repository and File Structure
 
@@ -113,7 +143,30 @@ Phase 0 repository setup is complete. Phase 0 inspection and verification are st
 - `.env.example` documents the intended future SMTP and Turnstile environment-variable names without real secrets.
 - A more complete security and runtime inspection remains part of unfinished Phase 0 work.
 
+## Technical Runbook — Phase 0 Deliverable
+
+This section is the operational reference for future Codex sessions and maintainers. Populate it only with confirmed information discovered during Phase 0; do not guess at environment details.
+
+| Item | Current Record |
+| --- | --- |
+| Deployable site / repository root | `D:\HH_Website\HudsonHelm_Website_v64` |
+| Active working branch | `website-refresh` |
+| Production site | `https://hudsonhelm.com/` |
+| Local or staging preview method | **TBD — Phase 0 inspection** |
+| Local/staging preview URL | **TBD — Phase 0 inspection** |
+| PHP version / runtime | **TBD — Phase 0 inspection** |
+| Required PHP extensions / dependencies | **TBD — Phase 0 inspection** |
+| Safe form-testing method | **TBD — Phase 0 inspection** |
+| Turnstile local/staging test approach | **TBD — Phase 0 inspection** |
+| Hosting/runtime assumptions | **TBD — Phase 0 inspection** |
+| Validation / lint / scanning commands | **TBD — Phase 0 inspection** |
+| Known local/staging vs. production differences | **TBD — Phase 0 inspection** |
+
+Update this runbook when the environment or verified workflow materially changes.
+
 ## Decisions Record
+
+Record decisions that materially constrain or redirect future implementation. Do not use this table for trivial implementation details already captured by Git history.
 
 | Date | Decision | Reason |
 | --- | --- | --- |
@@ -122,19 +175,25 @@ Phase 0 repository setup is complete. Phase 0 inspection and verification are st
 | 2026-09-10 | Preserve the old `.git` directory outside the new repository. | Retains recoverability without importing unrelated personal-repository history. |
 | 2026-09-10 | Preserve legacy whitespace and template files in the baseline. | Cleanup and deletion must be intentional, reviewable work after inspection. |
 | 2026-09-10 | Publish the current `mail.php`. | The user confirmed its embedded SMTP value is a dummy credential and authorized publication. |
-| 2026-09-10 | Maintain one root-level living master and immutable versioned archives. | Prevents competing copies and provides an auditable record of project evolution. |
+| 2026-09-10 | Maintain one root-level living master and use Git/GitHub as its revision history. | Prevents competing copies and avoids maintaining a redundant parallel document-version/archive system. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
-- The new New Jersey business phone number has not yet been provided.
-- The exact registered LLC/legal entity name has not yet been confirmed for legal copy.
-- Real photographs, names, roles, and approved biographies for the Who We Are page have not yet been supplied.
-- The approved response-time expectation for Start Here has not yet been supplied.
-- Production Migadu SMTP configuration and Cloudflare Turnstile keys will be needed later and must be handled securely.
-- Customer endorsements are approved as a future enhancement but are not required for the initial refresh.
-- The local/staging runtime and preview process still needs to be determined during the remaining Phase 0 inspection.
+This is the canonical register for unresolved user inputs, blockers, and intentionally deferred decisions. Do not maintain a duplicate list elsewhere in this document. A missing input blocks only the affected feature unless explicitly stated otherwise.
+
+- **OPEN — New Jersey business phone number:** not yet provided. Blocks final replacement of the temporary 954 number only.
+- **OPEN — Exact registered LLC/legal entity name:** not yet confirmed for legal copy. Blocks only legal text that requires the exact entity name.
+- **OPEN — Who We Are content:** real photographs, names, roles, and approved biographies have not yet been supplied. The page structure may be built later without inventing people or content.
+- **OPEN — Start Here response-time expectation:** not yet supplied. Do not publish an unsupported response-time promise.
+- **DEFERRED — Production Migadu SMTP configuration and Cloudflare Turnstile keys:** needed during the relevant implementation/testing phases and must be handled securely.
+- **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
+- **OPEN — Local/staging runtime and preview process:** must be determined during the remaining Phase 0 inspection and recorded in the Technical Runbook.
 
 ---
+
+## Approved Implementation Specification / Requirements Reference
+
+The sections below define the approved requirements and intended finished state of the website. They retain some original planning language for context. **They do not override the Current Objective, Current Project Status, Decisions Record, or completed checklists above.** Treat already-completed setup instructions as historical requirements that have been satisfied, not as commands to perform them again.
 
 ## Project Goal
 
@@ -224,7 +283,7 @@ Maintain the authoritative living project document at the repository root:
 
 `HH_Website_Master.md`
 
-Archive immutable versioned snapshots in `archive/` according to the document-control process defined at the beginning of this file.
+Use Git and GitHub history to review or recover earlier versions of this document; do not create parallel versioned document snapshots as part of the normal workflow.
 
 Update the living master whenever implementation decisions or project status materially change.
 
@@ -1223,113 +1282,149 @@ Make sure fixing one page did not regress another.
 
 # Implementation Order
 
+The Phase Progress table near the top of this document is the status summary. The checklists below are the execution record for Phases 1–11. Phase 0 uses the more detailed **Phase 0 Working Checklist** near the top and must satisfy it before Phase 1 begins.
+
+## Shared Definition of Done — Applies to Every Implementation Phase
+
+A phase may be marked complete only when all applicable criteria below are satisfied. These are reusable criteria, not one-time project checkboxes; each phase has its own final checklist item confirming that this definition was satisfied.
+
+- Every phase-specific checklist item is completed or explicitly resolved as `BLOCKED`, `DEFERRED`, or `N/A` with a reason.
+- The relevant requirements sections were reviewed before and after implementation, and no unintended scope changes remain.
+- A local or safe staging preview was performed for affected pages/features where applicable.
+- Relevant functional, responsive, accessibility, security, and console checks were performed at the level appropriate to the phase.
+- The Git diff was reviewed for unintended changes, generated junk, accidental deletions, and unrelated formatting churn.
+- Relevant findings, decisions, blockers, and checklist states were updated in this master document.
+- Work was organized into a logical Git commit or commits where appropriate.
+- The working branch was pushed when appropriate so GitHub remains a current backup.
+- No production deployment occurred without explicit user approval.
+
+Passing this shared checklist does not replace the dedicated Phase 10 QA or Phase 11 regression pass.
+
 ## Phase 0 — Repository / Safety
 
-- Inspect local site
-- Verify or initialize Git
-- Create `.gitignore`
-- Create private GitHub repo if needed
-- Commit untouched baseline
-- Push baseline to GitHub
-- Create `website-refresh` branch
-- Maintain the brief and project record in `HH_Website_Master.md`
-- Confirm secrets are excluded
+Use the canonical **Phase 0 Working Checklist** near the top of this document. Do not duplicate or restart completed repository setup. Phase 0 is complete only when that checklist and the Technical Runbook requirements are satisfied.
 
 ## Phase 1 — Shared Structure
 
-- Shared CSS cleanup
-- Shared header/navigation
-- Global spacing conventions
-- Establish reusable components/patterns
+- [ ] Clean up shared CSS deliberately, preserving required legacy behavior and avoiding unrelated formatting churn.
+- [ ] Establish or normalize the shared header/navigation implementation.
+- [ ] Establish global spacing conventions.
+- [ ] Establish reusable components/patterns for later page work.
+- [ ] Confirm the seven-item primary navigation remains comfortable at common desktop widths and collapses cleanly on mobile.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 2 — Homepage
 
-- Static hero
-- Service-card changes
-- Spacing
-- Why Hudson Helm teaser
+- [ ] Replace the rotating hero with the approved static first-slide hero.
+- [ ] Apply the approved service-card content changes without adding cards or card buttons.
+- [ ] Reduce excessive Hero → service cards and service cards → Why Hudson Helm spacing.
+- [ ] Implement the concise Why Hudson Helm teaser and path to the full page.
+- [ ] Remove obsolete carousel controls/code from the homepage as appropriate without breaking shared dependencies needed elsewhere.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 3 — What We Do
 
-- New hero placement
-- 8-card jump navigation
-- Detailed service sections
-- Remove duplicate service navigation
+- [ ] Move the approved introduction section into the page-hero position.
+- [ ] Implement the eight-card in-page jump navigation.
+- [ ] Implement one substantive detailed section for each approved service category.
+- [ ] Merge overlapping legacy service categories as specified.
+- [ ] Remove redundant Core Services navigation and unnecessary Learn More buttons.
+- [ ] Confirm the final page flow matches the approved specification.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 4 — Why Hudson Helm
 
-- Preserve strong messaging
-- Compress layout
-- Remove redundant image/content
-- Reduce page height
+- [ ] Preserve the approved hero, core messaging, differentiator cards, and trust statement.
+- [ ] Compress the secondary section into the approved lighter treatment.
+- [ ] Remove the redundant second large stock photograph.
+- [ ] Reduce excessive page length and whitespace without deleting useful messaging.
+- [ ] Reduce unnecessary eyebrow-label repetition.
+- [ ] Preserve the approved closing CTA concept.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 5 — Who We Are
 
-- Build page structure
-- Integrate real team photos/bios when supplied
+- [ ] Create the dedicated Who We Are page structure.
+- [ ] Add Who We Are to primary navigation in the approved position.
+- [ ] Build profile treatment that accurately supports employees and consultants/contractors without misrepresenting roles.
+- [ ] Integrate real photos, names, roles, and approved biographies when supplied; otherwise record the affected content as blocked without inventing placeholders for publication.
+- [ ] Verify desktop and mobile navigation/layout behavior after adding the page.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 6 — Are We a Good Fit?
 
-- Compact hero
-- Scannable criteria
-- Not-a-fit section
-- Final CTA
+- [ ] Replace the oversized opening image treatment with the approved compact text + image hero.
+- [ ] Convert fit criteria into a scannable treatment using the approved concepts.
+- [ ] Preserve the **When The Fit Is Especially Strong** heading and relevant messaging.
+- [ ] Add the short, non-hostile **We May Not Be The Right Fit If...** section.
+- [ ] Remove redundant fit messaging and break apart the giant article-style block.
+- [ ] End with a concise Start Here CTA and target the approved overall page length where practical.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 7 — Start Here
 
-- Form
-- Migadu SMTP
-- Turnstile
-- Honeypot
-- Validation
-- Success/error states
+- [ ] Preserve the approved two-column desktop layout and natural mobile stacking.
+- [ ] Update locality language to **Serving New Jersey & New York** and remove the placeholder office address.
+- [ ] Implement the approved fields and remove the user-editable Subject field.
+- [ ] Implement authenticated Migadu SMTP delivery to `info@hudsonhelm.com`.
+- [ ] Implement the generated subject and protect against email-header injection.
+- [ ] Apply the approved high-priority mail headers.
+- [ ] Implement required validation, accessible messages, sending/success/failure states, and duplicate-submission protection.
+- [ ] Add the response-time expectation only after the user supplies an approved commitment.
+- [ ] Implement Cloudflare Turnstile Managed mode with server-side token validation.
+- [ ] Implement the hidden honeypot and required input sanitization/security handling.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 8 — Support Portal Shell
 
-- Login UI
-- Turnstile verification
-- Zero credential transmission
-- Local generic failure state
+- [ ] Build the approved Hudson Helm client-support login shell and supporting text.
+- [ ] Ensure username/password values never leave the browser and have no fallback submission path.
+- [ ] Implement Turnstile Managed mode and server-side verification of the Turnstile token only.
+- [ ] Implement the specified local generic authentication-failure behavior and password clearing.
+- [ ] Do not implement real/fake accounts, registration, password reset, ticket creation, or other prohibited dead-end workflows.
+- [ ] Structure the frontend/Turnstile integration so it can be reused with future real authentication.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 9 — Global Completion
 
-- Footer redesign
-- Privacy Policy
-- Custom 404
+- [ ] Redesign the global footer using the approved brand/navigation/contact/legal structure.
+- [ ] Apply approved locality language consistently.
+- [ ] Replace the temporary phone number everywhere only after the new number is supplied.
+- [ ] Create the Privacy Policy from the site's actual completed practices and integrations.
+- [ ] Create the custom Hudson Helm 404 page.
+- [ ] Confirm global navigation/footer consistency across all public pages.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 10 — QA
 
-- Metadata / SEO
-- Accessibility
-- Responsive QA
-- Performance
-- Security review
-- Broken-link / asset scan
+- [ ] Review and correct page titles, meta descriptions, canonical URLs, sitemap, robots, Open Graph/social metadata, and appropriate structured data.
+- [ ] Verify logical heading structure.
+- [ ] Complete the specified accessibility checks.
+- [ ] Complete responsive QA at the specified desktop, laptop, tablet, and phone widths.
+- [ ] Scan for broken links, missing assets, duplicate IDs, invalid HTML, console errors, mixed content, obsolete template references, and stale phone/locality/carousel remnants.
+- [ ] Review image sizing/compression, unnecessary JavaScript/CSS, duplicate libraries, and realistically fixable render-blocking resources.
+- [ ] Complete the specified security verification.
+- [ ] Record and fix QA findings.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 11 — Regression / Review
 
-- Full regression pass
-- Confirm Git working tree and history are clean
-- Push completed branch
-- Present finished local/staging site for user review
-- Do not deploy until explicitly approved
+- [ ] Run the complete QA pass again after fixes.
+- [ ] Confirm fixes did not regress other pages or shared behavior.
+- [ ] Confirm the Git working tree and history are clean and intentional.
+- [ ] Push the completed `website-refresh` branch.
+- [ ] Confirm the master document accurately reflects final branch state, decisions, and any deferred items.
+- [ ] Present the finished local/staging site for user review.
+- [ ] Do not deploy production until explicitly approved.
+- [ ] Satisfy the Shared Definition of Done for this phase.
 
 ---
 
-# Inputs That May Still Be Needed From User
+# Handling Missing Inputs
 
-Do not invent these if unavailable.
+The canonical list of unresolved user inputs, blockers, and deferred decisions is **Open Questions, Inputs, and Deferred Decisions** near the top of this document. Update that register rather than creating a second list here.
 
-1. New New Jersey business phone number
-2. Exact registered LLC/legal entity name if required for legal text
-3. Real photos for Who We Are
-4. Names, roles, and approved short biographies for Who We Are
-5. Confirmation of desired response-time promise for Start Here
-6. Migadu SMTP credentials/configuration — handle securely and never commit secrets
-7. Cloudflare Turnstile site key and secret — site key may be public; secret must remain server-side
-8. Customer endorsements when the future social-proof phase is implemented
-
-If a missing input blocks only one feature, continue with other non-blocked work rather than stopping the entire project.
+Do not invent missing inputs. If a missing input blocks only one feature, mark that feature appropriately and continue with other non-blocked work.
 
 ---
 
@@ -1377,21 +1472,3 @@ It is a deliberately small, experienced IT provider offering responsive, securit
 The site should communicate that confidently, simply, and without clutter.
 
 When faced with a choice between adding another element and making the existing message clearer, choose clarity.
-
----
-
-# Document Change Log
-
-## Version 0.2.0 — September 10, 2026
-
-- Renamed the living document to `HH_Website_Master.md` and moved it to the repository root.
-- Established the document-control, versioning, and immutable archive process.
-- Added current phase status and a complete Phase 0 working checklist.
-- Added the activity log, findings, decisions record, and open-items register.
-- Recorded repository creation and baseline work completed to date.
-- Kept Phase 0 explicitly in progress.
-
-## Version 0.1.0 — September 9, 2026
-
-- Original Hudson Helm Website Refresh implementation brief.
-- Preserved as `archive/HH_Website_Master_v0.1.0.md`.
