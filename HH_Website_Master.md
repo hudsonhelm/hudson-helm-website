@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 0 — Repository / Safety |
-| Phase status | **In progress — do not treat Phase 0 as complete** |
+| Phase status | **Inspection recorded; baseline selection awaiting user confirmation** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Complete the remaining **Phase 0 inspection and verification** work. The remaining work is primarily methodical inspection, inventory, comparison, and documentation.
+Resolve the Phase 0 baseline-selection question recorded below. Inspection results and the safe static-preview workflow are recorded. Do not begin Phase 1 without the user's next instruction.
 
 Do **not** begin Phase 1 substantive website implementation until every required Phase 0 item is either completed or explicitly resolved as `BLOCKED`, `DEFERRED`, or `N/A` with a reason. During Phase 0, changes should be limited to project documentation and work necessary to establish a safe inspection or preview workflow; do not begin the website refresh itself.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup is complete. Phase 0 inspection and verification are still outstanding. No Phase 1 implementation should begin until the remaining Phase 0 work has been completed and recorded here.
+Phase 0 repository setup and source/browser inspection are recorded. The local snapshot differs from served production JavaScript and CSS; confirmation of the intended baseline remains open. PHP execution and deployment-environment verification are explicitly deferred as described in the Technical Runbook. Phase 1 has not started.
 
 ### Phase Progress
 
@@ -90,19 +90,19 @@ The repository setup above is established project state. Do **not** reinitialize
 
 ### Remaining Before Phase 0 Is Complete
 
-- [ ] Inspect the complete HTML structure and page relationships.
-- [ ] Inspect CSS organization, dependencies, duplication, and reusable styles.
-- [ ] Inspect JavaScript behavior, dependencies, carousel code, menus, and template residue.
-- [ ] Inspect shared and duplicated header/footer implementations.
-- [ ] Inventory images, fonts, and other assets; identify candidates for reuse without deleting anything.
-- [ ] Inspect the contact form, PHPMailer integration, hosting assumptions, and PHP/runtime requirements.
-- [ ] Inspect existing SEO metadata, structured data, analytics, and third-party scripts.
-- [ ] Compare the local site with the live production site.
-- [ ] Confirm that the local snapshot represents the production version intended as the refresh baseline.
-- [ ] Identify an appropriate safe local or staging preview workflow, including PHP-dependent features.
-- [ ] Populate the Technical Runbook with confirmed preview steps, PHP/runtime requirements, dependency notes, validation commands, and known production differences.
-- [ ] Record inspection findings, risks, and recommended Phase 1 boundaries in this document.
-- [ ] Reconfirm the repository and working tree state before declaring Phase 0 complete.
+- [x] Inspect the complete HTML structure and page relationships — six root pages, navigation, forms and headings inventoried.
+- [x] Inspect CSS organization, dependencies, duplication, and reusable styles — shared template CSS and page overrides traced.
+- [x] Inspect JavaScript behavior, dependencies, carousel code, menus, and template residue — source review, syntax checks and browser logs recorded.
+- [x] Inspect shared and duplicated header/footer implementations — differences recorded below.
+- [x] Inventory images, fonts, and other assets; identify candidates for reuse without deleting anything — inventory and reference scan recorded.
+- [x] Inspect the contact form, PHPMailer integration, hosting assumptions, and PHP/runtime requirements — source inspection complete; runtime execution deferred below.
+- [x] Inspect existing SEO metadata, structured data, analytics, and third-party scripts — local and public response checks recorded.
+- [x] Compare the local site with the live production site — six HTML responses, four shared assets, browser rendering and infrastructure endpoints compared.
+- [ ] BLOCKED — Confirm intended baseline: production serves older form JavaScript and lacks local footer CSS. User confirmation requested to retain the committed local version; no files overwritten.
+- [x] Identify an appropriate safe local or staging preview workflow — loopback static preview verified; PHP execution explicitly deferred to Phase 7 before backend implementation/testing.
+- [x] Populate the Technical Runbook with confirmed preview steps, PHP/runtime requirements, dependency notes, validation commands, and known production differences.
+- [x] Record inspection findings, risks, and recommended Phase 1 boundaries in this document.
+- [x] Reconfirmed `website-refresh` and the intended GitHub remote; reviewed the focused documentation/inspection-helper diff. No website source changes or production deployment. Recheck clean/pushed state when resolving the baseline decision.
 
 ## Activity Log
 
@@ -116,6 +116,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Created `hudsonhelm/hudson-helm-website`. | Private repository created with `main` as its default branch. |
 | 2026-09-10 | Created and pushed the baseline and working branches. | `main` and `website-refresh` both point to the complete baseline at commit `b7d5fa2`. |
 | 2026-09-10 | Consolidated the implementation brief and project record into the root-level living master document. | Established the project status, checklist, findings, decisions, and open-items structure used to manage the refresh. |
+| 2026-09-10 | Completed the independent Phase 0 source inventory, public-site comparison, and safe static-browser inspection; added dependency-free inspection/preview helpers. | Recorded existing defects and production differences, verified helper syntax and preview safeguards, and populated the runbook. Baseline choice awaits user confirmation; PHP execution is deferred to Phase 7. Phase 1 and production are untouched. |
 
 ## Findings and Observations
 
@@ -141,7 +142,32 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - An initial scan found a hard-coded SMTP value in `mail.php` and example/default password strings in the bundled PHPMailer code.
 - The user confirmed that the value in `mail.php` is a dummy credential and explicitly approved publishing it to the private repository.
 - `.env.example` documents the intended future SMTP and Turnstile environment-variable names without real secrets.
-- A more complete security and runtime inspection remains part of unfinished Phase 0 work.
+- Phase 0 source-level security/runtime inspection is recorded below; PHP execution, delivery and deployment-environment validation remain explicitly deferred to Phase 7.
+
+### Inspection evidence — September 10, 2026
+
+- Six root HTML pages were inventoried with `node tools/inspect.cjs`. Five business pages lack an H1; only `404.html` has one. All six lack meta descriptions. No duplicate literal IDs were found by the source scanner. This is source triage, not full HTML validation.
+- Header/footer HTML is duplicated in each page; there is no shared include or build system. What We Do lacks the footer logo used on the other business pages; Home uses a different footer logo asset. The 404 retains template contact details, social links, search UI, copyright, and five broken root service links.
+- Inline CSS ranges from 5,330 to 14,138 characters per page. `css/style.css` provides the original orange/light template and imports Google Fonts (Jost and Nunito Sans); inline rules establish the dark/blue identity. Phase 1 must preserve cascade order when consolidating these overrides.
+- `js/custom.js` depends on jQuery plus Isotope, countTo, WOW and Magnific Popup; some plugin calls are unconditional even when matching widgets are absent. Bootstrap controls the mobile collapse. Owl/progressbar and Rough Notation scripts are loaded selectively. Home additionally loads Revolution Slider and `js/rev-custom.js`, which contains initialization for several template sliders.
+- Local homepage browser logs confirm null-match errors in `js/rough-custom.js:16` and null-element errors from `js/rough-script.js:49`. Record as baseline defects for later scoped correction.
+- Local `mail.php` requires Name, Email, Phone, Subject and Message; escapes HTML mail body, validates email, uses a honeypot, catches mail exceptions, and sends through PHPMailer 5.2.28 using Migadu SMTP over implicit TLS port 465. The user-approved dummy credential is unchanged. `.env.example` is documentation only; the handler does not load it. No Company field, Turnstile verification, input length caps or throttling are implemented. Form labels rely on placeholders except the honeypot; the response has `aria-live=polite`. PHP execution and delivery are not yet verified.
+- Public GET comparison found Cloudflare email obfuscation and a Cloudflare Insights beacon injected into production HTML. These integrations must be reflected in the eventual privacy policy even though they are absent from local source. `css/responsive.css` and `js/rev-custom.js` match after line-ending normalization. Production `css/style.css` lacks the local footer-mark block; production `js/custom.js` uses older click-based form validation. Local files therefore are not an exact production backup; baseline choice is awaiting user confirmation.
+- Safe static preview is available through `node tools/preview.cjs` at `http://127.0.0.1:8087`. It binds only to loopback, permits static asset extensions, denies dot paths/configuration/PHP, and rejects non-GET/HEAD requests. It does not emulate PHP, Cloudflare, server rewrites, or email delivery.
+
+### Asset, accessibility and infrastructure findings
+
+- Inventory includes 107 JPGs, 38 PNGs, 8 SVGs, 9 TTFs, 6 WOFFs and 5 WOFF2s across the existing source tree. Template/demo pages and library examples remain intact and are not a proposed public sitemap. No framework migration or asset deletion was performed.
+- Preserve first-slide `rev/assets/bg-1.jpg` and circuit background `rev/assets/2-2.jpg`; What We Do introduction uses `images/benefits/1.jpg`, Why Hudson Helm hero uses `images/benefits/2.jpg`, and Good Fit uses `images/blog/1.jpg`. Existing service-detail imagery lives under `images/tabs/`. The footer PNG `images/logos/hudson-helm-logo-w-trans.png` is 1,216,090 bytes; review sizing/compression in the performance phase.
+- Source checks found no missing direct local assets on the five business pages. The 404 links to five service pages absent at the root. CSS reference triage flags missing optional Owl video artwork, Revolution cursor/tile/loader assets, and a WOFF2 font; a duplicate `css/all.min.css` references a nonexistent root webfonts directory, while public pages load `fonts/font-awesome/css/all.min.css`. A CSS reference is not proof that the browser requests it; confirm usage before removal.
+- Local jQuery is 3.1.0; Why Hudson Helm instead loads Google-hosted 2.2.4. Bootstrap's source banner is 5.2.0. No root package manifest/build process, server routing configuration, sitemap or robots file is tracked. PHPMailer's nested Composer manifest is library metadata, not a site build setup.
+- All six local pages loaded their image elements during browser inspection. Home, What We Do, Why Hudson Helm and Start Here produce Rough Notation errors; the public Home and What We Do also show the error family. Start Here's empty-submit validation produced all five field messages without sending mail. At 390px, its mobile menu expanded with `aria-expanded=true`; Start Here CTA was absent from the expanded navigation. Global CSS removes link outlines with `!important`, so keyboard focus needs explicit review in Phase 1.
+- Public HTML differs only in inspected Cloudflare email/analytics lines; public server-side PHP source cannot be verified by public GET and was not requested. HTTP homepage GET remained HTTP rather than redirecting to HTTPS. HTTPS works. Public `robots.txt` is Cloudflare-managed (200), `sitemap.xml` returns 404, and a deliberately nonexistent page returns 404 without the local branded 404 title. A direct GET of `404.html` returns 200, which does not establish missing-route handling.
+- Preview guard checks passed: homepage 200; PHP GET 403; PHP POST 405; `.git/config` and master Markdown 403; nonexistent HTML 404. All local `js/*.js` passed `node --check`; runtime errors above demonstrate syntax success is not functional correctness. Preview helpers also passed syntax checks.
+
+### Recommended Phase 1 boundary
+
+Normalize common header markup and the shared dark/blue overrides across all six root pages; preserve source order and page-specific overrides until verified. Retain Bootstrap's grid/collapse initially. Establish spacing tokens around the existing 130px default section padding, buttons, cards and heroes; address the known focus and mobile CTA gaps. Inventory dependency users before changing shared script loading. Keep carousel removal and service/content rewrites in their assigned phases. Do not add dead navigation destinations for not-yet-built pages; explicitly resolve the Phase 1 seven-item navigation versus Phase 5 Who We Are timing before implementation. PHP, SMTP and Turnstile behavior belongs to later form phases.
 
 ## Technical Runbook — Phase 0 Deliverable
 
@@ -152,15 +178,15 @@ This section is the operational reference for future Codex sessions and maintain
 | Deployable site / repository root | `D:\HH_Website\HudsonHelm_Website_v64` |
 | Active working branch | `website-refresh` |
 | Production site | `https://hudsonhelm.com/` |
-| Local or staging preview method | **TBD — Phase 0 inspection** |
-| Local/staging preview URL | **TBD — Phase 0 inspection** |
-| PHP version / runtime | **TBD — Phase 0 inspection** |
-| Required PHP extensions / dependencies | **TBD — Phase 0 inspection** |
-| Safe form-testing method | **TBD — Phase 0 inspection** |
-| Turnstile local/staging test approach | **TBD — Phase 0 inspection** |
-| Hosting/runtime assumptions | **TBD — Phase 0 inspection** |
-| Validation / lint / scanning commands | **TBD — Phase 0 inspection** |
-| Known local/staging vs. production differences | **TBD — Phase 0 inspection** |
+| Local or staging preview method | From repository root run `node tools/preview.cjs`; Node v24.21.0 verified. Stop with Ctrl+C. Static inspection only; do not deploy this helper. |
+| Local/staging preview URL | `http://127.0.0.1:8087/` |
+| PHP version / runtime | No PHP executable on PATH or in checked Program Files, WinGet, XAMPP, Laragon, Scoop/tools locations. Production PHP version unknown. DEFERRED to Phase 7: establish compatible supported runtime before backend edits or execution. |
+| Required PHP extensions / dependencies | Bundled PHPMailer 5.2.28 declares PHP >=5.0 and ctype; handler uses `http_response_code` (PHP >=5.4), filter validation and JSON. SMTP TLS needs OpenSSL and socket/stream connectivity. These are source requirements, not a recommended production version or proof of installed extensions. Compatibility and library upgrade assessment required before Phase 7. |
+| Safe form-testing method | Verified empty submission in static preview. Preview rejects all POSTs and PHP GETs. DEFERRED to Phase 7: use an isolated PHP environment and local mail sink with outbound delivery prevented for valid-submit, malformed input and error-path tests; never use production SMTP for automated tests. |
+| Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
+| Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
+| Validation / lint / scanning commands | `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| Known local/staging vs. production differences | Older public form JS; missing public footer CSS additions; Cloudflare email protection, analytics injection and robots content only in public responses. Static preview cannot validate PHP, email, Cloudflare or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
 
@@ -187,7 +213,9 @@ This is the canonical register for unresolved user inputs, blockers, and intenti
 - **OPEN — Start Here response-time expectation:** not yet supplied. Do not publish an unsupported response-time promise.
 - **DEFERRED — Production Migadu SMTP configuration and Cloudflare Turnstile keys:** needed during the relevant implementation/testing phases and must be handled securely.
 - **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
-- **OPEN — Local/staging runtime and preview process:** must be determined during the remaining Phase 0 inspection and recorded in the Technical Runbook.
+- **OPEN — Intended baseline:** local CSS and form JavaScript differ from public production. Confirm whether to retain the committed local source as the refresh baseline. Production PHP cannot be compared from public responses.
+- **DEFERRED — PHP and hosting validation:** static preview is verified. Obtain origin runtime/hosting details and establish isolated PHP plus mail-sink testing before Phase 7. This does not block static shared-structure work after baseline confirmation.
+- **OPEN — Navigation timing:** Phase 1 requests seven items while Who We Are and Support are built in later phases. Resolve link availability when scoping Phase 1 so navigation does not introduce new dead destinations.
 
 ---
 
