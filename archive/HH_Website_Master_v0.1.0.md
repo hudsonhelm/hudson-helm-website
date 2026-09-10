@@ -1,6 +1,18 @@
 # Hudson Helm Website Refresh
 ## Project Implementation Brief
 
+## Archived Document Record
+
+| Field | Value |
+| --- | --- |
+| Archive version | `0.1.0` |
+| Original document date | September 9, 2026 |
+| Archived | September 10, 2026 |
+| Status | Superseded immutable snapshot |
+| Current living document | `../HH_Website_Master.md` |
+
+This file preserves the original approved implementation brief. It must not be edited after archival; future changes belong in the living master document.
+
 ## Project Goal
 
 Refresh the existing Hudson Helm website into a simpler, more professional, more impactful small-business MSP website.
