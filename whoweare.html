@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - Hudson Helm</title>
+    <meta name="description" content="Meet the people behind Hudson Helm and learn how our deliberately small team supports businesses across New Jersey and New York.">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animations.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        body p,
+        body a,
+        body span,
+        body li,
+        body h1,
+        body h2,
+        body h3 {
+            color: #fff;
+        }
+
+        #pq-loading,
+        #pq-footer,
+        #pq-footer .pq-footer-style-1,
+        #pq-footer .pq-copyright-footer {
+            background: #000;
+        }
+
+        .pq-button,
+        #back-to-top .top {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            color: #fff;
+        }
+
+        .hh-team-hero {
+            padding: 76px 0 70px;
+            border-bottom: 1px solid rgba(113, 165, 233, 0.18);
+        }
+
+        .hh-team-hero-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hh-team-hero h1 {
+            margin-bottom: 24px;
+            font-size: clamp(40px, 5vw, 66px);
+            line-height: 1.08;
+        }
+
+        .hh-team-hero p {
+            max-width: 790px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 18px;
+            line-height: 1.75;
+        }
+
+        .hh-team-section {
+            padding: 72px 0 76px;
+        }
+
+        .hh-team-notice {
+            max-width: 920px;
+            margin: 0 auto 36px;
+            padding: 16px 20px;
+            background: rgba(74, 143, 220, 0.14);
+            border: 1px solid rgba(143, 191, 255, 0.3);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .hh-team-notice strong {
+            color: #8fbfff;
+        }
+
+        .hh-lead-profile {
+            display: grid;
+            grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+            gap: 0;
+            max-width: 1120px;
+            margin: 0 auto 34px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(35, 63, 100, 0.94), rgba(15, 29, 48, 0.98));
+            border: 1px solid rgba(113, 165, 233, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 22px 56px rgba(5, 14, 26, 0.4);
+        }
+
+        .hh-lead-photo {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            object-fit: cover;
+            object-position: center 22%;
+        }
+
+        .hh-lead-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 52px;
+        }
+
+        .hh-profile-status {
+            display: inline-flex;
+            align-self: flex-start;
+            margin-bottom: 18px;
+            padding: 6px 10px;
+            background: rgba(143, 191, 255, 0.12);
+            border: 1px solid rgba(143, 191, 255, 0.28);
+            border-radius: 999px;
+            color: #b8d7ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .hh-lead-copy h2,
+        .hh-profile-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .hh-lead-copy h2 {
+            font-size: clamp(34px, 4vw, 50px);
+        }
+
+        .hh-profile-role {
+            display: block;
+            margin-bottom: 22px;
+            color: #8fbfff;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .hh-lead-copy p,
+        .hh-profile-card p {
+            color: rgba(255, 255, 255, 0.84);
+            line-height: 1.75;
+        }
+
+        .hh-profile-grid {
+            row-gap: 24px;
+        }
+
+        .hh-profile-grid > div {
+            display: flex;
+        }
+
+        .hh-profile-card {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(30, 54, 87, 0.92), rgba(15, 29, 48, 0.98));
+            border: 1px solid rgba(113, 165, 233, 0.26);
+            border-radius: 18px;
+            box-shadow: 0 16px 40px rgba(5, 14, 26, 0.32);
+        }
+
+        .hh-profile-photo {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        .hh-profile-card:nth-child(1) .hh-profile-photo { object-position: 46% 18%; }
+        .hh-profile-card:nth-child(2) .hh-profile-photo { object-position: 54% 22%; }
+        .hh-profile-card:nth-child(3) .hh-profile-photo { object-position: 50% 12%; }
+
+        .hh-profile-body {
+            padding: 28px 26px 30px;
+        }
+
+        .hh-profile-card h3 {
+            font-size: 26px;
+        }
+
+        .hh-profile-card .hh-profile-status {
+            margin-bottom: 14px;
+        }
+
+        .hh-profile-card .hh-profile-role {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .hh-team-values {
+            padding: 66px 0;
+            background: #f3f7fb;
+        }
+
+        .hh-team-values h2,
+        .hh-team-values h3,
+        .hh-team-values p {
+            color: #15273d;
+        }
+
+        .hh-team-values-heading {
+            max-width: 800px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .hh-team-values-heading h2 {
+            font-size: clamp(30px, 3vw, 44px);
+        }
+
+        .hh-value-card {
+            height: 100%;
+            padding: 28px;
+            background: #fff;
+            border: 1px solid rgba(45, 111, 184, 0.18);
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(20, 45, 76, 0.08);
+        }
+
+        .hh-value-card h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .hh-team-closing {
+            padding: 70px 0 76px;
+        }
+
+        .hh-team-cta {
+            padding: 42px 38px;
+            background: linear-gradient(135deg, rgba(35, 63, 100, 0.94), rgba(15, 29, 48, 0.98));
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            border-radius: 18px;
+        }
+
+        .hh-team-cta h2 {
+            margin-bottom: 14px;
+            font-size: clamp(30px, 3vw, 44px);
+        }
+
+        @media (max-width: 991px) {
+            .hh-lead-profile {
+                grid-template-columns: 1fr;
+            }
+
+            .hh-lead-photo {
+                min-height: 380px;
+                max-height: 520px;
+            }
+
+            .hh-lead-copy {
+                padding: 38px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hh-team-hero,
+            .hh-team-section,
+            .hh-team-values,
+            .hh-team-closing {
+                padding-top: 48px;
+                padding-bottom: 48px;
+            }
+
+            .hh-team-hero p {
+                font-size: 16px;
+            }
+
+            .hh-lead-photo {
+                min-height: 310px;
+            }
+
+            .hh-lead-copy,
+            .hh-team-cta {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/hudson-helm.css">
+</head>
+<body>
+    <div id="pq-loading">
+        <div id="pq-loading-center">
+            <img src="images/logos/wide_trans.png" alt="loading">
+        </div>
+    </div>
+
+    <header id="pq-header" class="pq-header-default">
+        <div class="pq-top-header">
+            <div class="container">
+                <div class="row flex-row-reverse">
+                    <div class="col-md-12">
+                        <div class="pq-header-contact">
+                            <ul>
+                                <li><a href="tel:9542256560"><i aria-hidden="true" class="fas fa-phone-flip"></i><span>954-225-6560</span></a></li>
+                                <li><a href="mailto:info@hudsonhelm.com"><i aria-hidden="true" class="fas fa-envelope"></i><span>info@hudsonhelm.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pq-bottom-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-light">
+                            <a aria-label="Hudson Helm home" class="navbar-brand" href="index.html">
+                                <img alt="Hudson Helm" class="img-fluid logo" src="images/logos/wide_trans.png">
+                            </a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="pq-menu-contain" id="pq-menu-contain">
+                                    <ul class="navbar-nav" id="pq-main-menu">
+                                        <li class="menu-item"><a href="index.html">Home</a></li>
+                                        <li class="menu-item"><a href="whatwedo.html">What We Do</a></li>
+                                        <li class="menu-item"><a href="whyhudsonhelm.html">Why Hudson Helm</a></li>
+                                        <li class="menu-item current-menu-item"><a aria-current="page" href="whoweare.html">Who We Are</a></li>
+                                        <li class="menu-item"><a href="areweagoodfit.html">Are We a Good Fit?</a></li>
+                                        <li class="menu-item"><a data-pending-page="true" href="support.html">Support</a></li>
+                                        <li class="menu-item hh-mobile-only"><a href="starthere.html">Start Here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="pq-button hh-desktop-cta" href="starthere.html"><span class="pq-button-text">Start Here</span></a>
+                            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                                <i aria-hidden="true" class="fas fa-bars"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hh-team-hero" aria-labelledby="who-we-are-title">
+            <div class="container">
+                <div class="hh-team-hero-inner">
+                    <h1 id="who-we-are-title">Experienced people. Direct communication. Clear accountability.</h1>
+                    <p>Hudson Helm is deliberately small. You know who is responsible for your technology, who is working on an issue, and who will follow it through. Our clients get experienced technical guidance without layers of account management or a revolving door of unfamiliar support staff.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hh-team-section" aria-labelledby="team-title">
+            <div class="container">
+                <div class="hh-team-notice" role="note">
+                    <strong>Team profiles in progress:</strong> photography and the three supporting profiles below are temporary and will be replaced with approved team information.
+                </div>
+
+                <article class="hh-lead-profile">
+                    <img class="hh-lead-photo" src="images/team/2.jpg" alt="Temporary stock portrait for Nelson Abreu">
+                    <div class="hh-lead-copy">
+                        <span class="hh-profile-status">Temporary photograph</span>
+                        <h2 id="team-title">Nelson Abreu</h2>
+                        <span class="hh-profile-role">Technical Director</span>
+                        <p>As Hudson Helm's founder and Technical Director, Nelson leads the company's technical strategy and remains directly involved in client environments. He focuses on translating business priorities into practical technology decisions, keeping projects accountable, and making sure clients understand both what is being recommended and why.</p>
+                        <p class="mb-0">That hands-on approach reflects how Hudson Helm is built: experienced guidance, direct communication, and ownership from the first conversation through the finished work.</p>
+                    </div>
+                </article>
+
+                <div class="row hh-profile-grid">
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-profile-card">
+                            <img class="hh-profile-photo" src="images/team/2.jpg" alt="Temporary stock portrait for placeholder network engineer profile">
+                            <div class="hh-profile-body">
+                                <span class="hh-profile-status">Placeholder profile</span>
+                                <h3>Cameron Reed</h3>
+                                <span class="hh-profile-role">Network Engineer</span>
+                                <p class="mb-0">Cameron focuses on reliable wired and wireless networks, secure connectivity, and practical troubleshooting. The goal is a network that supports the way a business works without unnecessary complexity.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-profile-card">
+                            <img class="hh-profile-photo" src="images/team/2.jpg" alt="Temporary stock portrait for placeholder systems engineer profile">
+                            <div class="hh-profile-body">
+                                <span class="hh-profile-status">Placeholder profile</span>
+                                <h3>Morgan Lee</h3>
+                                <span class="hh-profile-role">Systems Engineer</span>
+                                <p class="mb-0">Morgan works across servers, cloud services, identity, backups, and endpoint systems. The focus is on stable, well-documented environments that are easier to support and recover.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-profile-card">
+                            <img class="hh-profile-photo" src="images/team/2.jpg" alt="Temporary stock portrait for placeholder cybersecurity specialist profile">
+                            <div class="hh-profile-body">
+                                <span class="hh-profile-status">Placeholder profile</span>
+                                <h3>Jordan Patel</h3>
+                                <span class="hh-profile-role">Cybersecurity Specialist</span>
+                                <p class="mb-0">Jordan concentrates on sensible risk reduction, from identity protection and endpoint security to policy and incident readiness. Recommendations are grounded in the needs and budget of each business.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hh-team-values" aria-labelledby="team-values-title">
+            <div class="container">
+                <div class="hh-team-values-heading">
+                    <h2 id="team-values-title">A smaller team is a strength when it is built around experience and ownership.</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hh-value-card">
+                            <h3>You know who you are working with</h3>
+                            <p class="mb-0">Clear responsibility makes communication faster and helps prevent details from getting lost between departments.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hh-value-card">
+                            <h3>Experienced people stay involved</h3>
+                            <p class="mb-0">The people making recommendations remain close to the environment and accountable for how the work turns out.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hh-value-card">
+                            <h3>Advice stays practical</h3>
+                            <p class="mb-0">Technology decisions are explained in plain language and connected to real business priorities, risk, and budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hh-team-closing" aria-labelledby="team-closing-title">
+            <div class="container hh-team-cta">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 id="team-closing-title">Talk directly with the people responsible for your IT.</h2>
+                        <p class="mb-0">Tell us what is working, what is getting in the way, and what you want your technology to do better.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                        <a class="pq-button" href="starthere.html"><span class="text">Start the conversation</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="pq-footer" class="style-1">
+        <div class="pq-footer-style-1">
+            <div class="pq-copyright-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="hh-footer-branding">
+                                <span class="pq-copyright">Copyright 2026 Hudson Helm. All Rights Reserved.</span>
+                                <div class="hh-footer-logo-wrap">
+                                    <img alt="Hudson Helm" class="hh-footer-logo" src="images/logos/hudson-helm-logo-w-trans.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="back-to-top">
+        <a class="top" id="top" href="#"><i class="ion-ios-arrow-up"></i></a>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.countTo.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

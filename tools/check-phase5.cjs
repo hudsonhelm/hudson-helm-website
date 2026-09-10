@@ -1,0 +1,47 @@
+const fs = require('node:fs');
+const path = require('node:path');
+
+const root = path.resolve(__dirname, '..');
+const page = fs.readFileSync(path.join(root, 'whoweare.html'), 'utf8');
+const failures = [];
+
+function requireMatch(label, pattern) {
+  if (!pattern.test(page)) failures.push(`missing ${label}`);
+}
+
+requireMatch('semantic main content', /<main>/);
+requireMatch('single page hero', /<section class="hh-team-hero"[\s\S]*?<h1 id="who-we-are-title">/);
+requireMatch('Nelson Abreu lead profile', /<article class="hh-lead-profile">[\s\S]*?<h2 id="team-title">Nelson Abreu<\/h2>[\s\S]*?<span class="hh-profile-role">Technical Director<\/span>/);
+requireMatch('founder identification', /Hudson Helm's founder and Technical Director/);
+requireMatch('network engineer profile', /<h3>Cameron Reed<\/h3>[\s\S]*?<span class="hh-profile-role">Network Engineer<\/span>/);
+requireMatch('systems engineer profile', /<h3>Morgan Lee<\/h3>[\s\S]*?<span class="hh-profile-role">Systems Engineer<\/span>/);
+requireMatch('cybersecurity specialist profile', /<h3>Jordan Patel<\/h3>[\s\S]*?<span class="hh-profile-role">Cybersecurity Specialist<\/span>/);
+requireMatch('temporary-content notice', /Team profiles in progress:[\s\S]*?temporary/);
+requireMatch('placeholder labels', /Placeholder profile/);
+requireMatch('shared placeholder image', /images\/team\/2\.jpg/);
+requireMatch('closing Start Here CTA', /<section class="hh-team-closing"[\s\S]*?href="starthere\.html"/);
+
+const h1Count = (page.match(/<h1(?:\s|>)/g) || []).length;
+if (h1Count !== 1) failures.push(`expected one H1, found ${h1Count}`);
+
+const profileCount = (page.match(/<article class="hh-(?:lead-profile|profile-card)"/g) || []).length;
+if (profileCount !== 4) failures.push(`expected four profiles, found ${profileCount}`);
+
+const imageUses = (page.match(/src="images\/team\/2\.jpg"/g) || []).length;
+if (imageUses !== 4) failures.push(`expected the shared placeholder image four times, found ${imageUses}`);
+
+if (/data-pending-page="true" href="whoweare\.html"/.test(page)) {
+  failures.push('Who We Are remains marked as a pending destination');
+}
+
+if (/rough-(?:script|notation\.iife|custom)\.js|owl\.carousel\.min\.(?:css|js)/.test(page)) {
+  failures.push('obsolete page-specific dependency is present');
+}
+
+if (failures.length) {
+  console.error('Phase 5 Who We Are checks failed:');
+  failures.forEach((failure) => console.error(`- ${failure}`));
+  process.exitCode = 1;
+} else {
+  console.log('Phase 5 Who We Are checks passed.');
+}

@@ -6,6 +6,7 @@ const pages = [
   ['index.html', 'index.html'],
   ['whatwedo.html', 'whatwedo.html'],
   ['whyhudsonhelm.html', 'whyhudsonhelm.html'],
+  ['whoweare.html', 'whoweare.html'],
   ['areweagoodfit.html', 'areweagoodfit.html'],
   ['starthere.html', 'starthere.html'],
   ['404.html', null],
@@ -76,7 +77,7 @@ for (const [file, currentPage] of pages) {
     });
 
     const pendingLinks = links.filter((link) => /data-pending-page=["']true["']/.test(link.attrs));
-    if (pendingLinks.map((link) => link.href).join(',') !== 'whoweare.html,support.html') {
+    if (pendingLinks.map((link) => link.href).join(',') !== 'support.html') {
       fail(file, 'temporary pending-page links are not explicitly marked');
     }
   }
