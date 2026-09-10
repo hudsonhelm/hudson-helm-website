@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 1 — Shared Structure |
-| Phase status | **Complete locally — GitHub push pending explicit authorization** |
+| Phase status | **Complete and published to production — GitHub push pending explicit authorization** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,9 +34,9 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 1 is complete locally. Retain the normalized shared structure and await the user's review or further instruction before beginning Phase 2. Do not push the Phase 1 commit or begin Phase 2 without explicit user direction.
+Phase 1 is complete and published to production. Retain the normalized shared structure and await the user's review or further instruction before beginning Phase 2. Do not push the Phase 1 commits or begin Phase 2 without explicit user direction.
 
-Do **not** begin Phase 2 substantive homepage implementation until the user gives explicit direction after reviewing Phase 1. The Phase 1 commit may be reviewed locally before its GitHub push; this does not reopen or invalidate the completed Phase 0 or Phase 1 checklists.
+Do **not** begin Phase 2 substantive homepage implementation until the user gives explicit direction after reviewing the published Phase 1 site. The Phase 1 commits may be reviewed locally before their GitHub push; this does not reopen or invalidate the completed Phase 0 or Phase 1 checklists.
 
 ### Checklist Status Conventions
 
@@ -50,14 +50,14 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phase 1 shared structure is complete locally: all six root pages now use the normalized seven-item navigation, shared structural stylesheet, responsive laptop/mobile menu behavior, visible keyboard focus, consistent current-page state, and a consistent minimal footer. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week. Phase 2 has not started, and the Phase 1 GitHub push awaits explicit authorization.
+Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phase 1 shared structure is complete and published to production: all six root pages use the normalized seven-item navigation, shared structural stylesheet, responsive laptop/mobile menu behavior, visible keyboard focus, consistent current-page state, and a consistent minimal footer. The full deployable checkout at site commit `5f42c02` was uploaded through the saved WinSCP production session and verified by remote size comparison plus public HTTPS requests. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week. Phase 2 has not started, and the Phase 1 GitHub push awaits explicit authorization.
 
 ### Phase Progress
 
 | Phase | Name | Status |
 | --- | --- | --- |
 | 0 | Repository / Safety | Complete; documented runtime deferral |
-| 1 | Shared Structure | Complete locally; push pending |
+| 1 | Shared Structure | Complete and published; GitHub push pending |
 | 2 | Homepage | Not started |
 | 3 | What We Do | Not started |
 | 4 | Why Hudson Helm | Not started |
@@ -116,12 +116,13 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Created `hudsonhelm/hudson-helm-website`. | Private repository created with `main` as its default branch. |
 | 2026-09-10 | Created and pushed the baseline and working branches. | `main` and `website-refresh` both point to the complete baseline at commit `b7d5fa2`. |
 | 2026-09-10 | Consolidated the implementation brief and project record into the root-level living master document. | Established the project status, checklist, findings, decisions, and open-items structure used to manage the refresh. |
-| 2026-09-10 | Completed the independent Phase 0 source inventory, public-site comparison, and safe static-browser inspection; added dependency-free inspection/preview helpers. | Recorded existing defects and production differences, verified helper syntax and preview safeguards, and populated the runbook. Baseline choice awaits user confirmation; PHP execution is deferred to Phase 7. Phase 1 and production are untouched. |
+| 2026-09-10 | Completed the independent Phase 0 source inventory, public-site comparison, and safe static-browser inspection; added dependency-free inspection/preview helpers. | Recorded existing defects and production differences, verified helper syntax and preview safeguards, and populated the runbook. At that point the baseline choice awaited user confirmation; PHP execution was deferred to Phase 7, and Phase 1 and production were untouched. |
 | 2026-09-10 | Completed Phase 1 shared structure across all six root pages. | Added the shared Hudson Helm stylesheet and structural check, normalized the seven-item header/navigation and minimal footer, verified responsive and keyboard behavior, and kept Phase 2 untouched. GitHub push remains pending explicit authorization. |
+| 2026-09-10 | Published the complete deployable site checkout containing Phase 1 to production with the user's explicit approval. | WinSCP uploaded the six root pages, mail handler, shared assets, bundled libraries, Revolution assets, and retained template pages from site commit `5f42c02`. Remote size previews reported nothing left to synchronize; all six public root pages and `css/hudson-helm.css` returned HTTP 200 with the Phase 1 markers present. Server-managed files and directories were preserved. Phase 2 remains unstarted. |
 
 ## Findings and Observations
 
-Phase 0 closeout (September 10, 2026): the user's subsequent instruction to commit is taken as acceptance of the recommended committed-local baseline. All inspection items are resolved; runtime execution remains deferred as recorded in the runbook. Phase 1 remains unstarted.
+Phase 0 closeout (September 10, 2026): the user's subsequent instruction to commit is taken as acceptance of the recommended committed-local baseline. All inspection items are resolved; runtime execution remains deferred as recorded in the runbook. Phase 1 was unstarted at the time of this closeout.
 
 Record confirmed inspection findings and evidence that materially inform implementation, risk, or maintenance. Distinguish confirmed facts from unresolved assumptions.
 
@@ -134,6 +135,8 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - `node tools/check-phase1.cjs` passed for all six pages. `node tools/inspect.cjs`, JavaScript syntax checks, preview guard checks, and `git diff --check` remained clean apart from known legacy line-ending notices and the two authorized pending routes.
 - Browser console output retained the previously recorded Rough Notation null-match errors on affected pages. Phase 1 introduced no JavaScript or dependency changes; those existing page-specific errors remain assigned to later scoped correction.
 - Header/footer changes to `index.html` were structural only. Homepage hero, carousel, service content, spacing, and other Phase 2 work were not changed.
+- With explicit production approval, the full deployable checkout at site commit `5f42c02` was uploaded through WinSCP's saved `Hudson Helm` session on September 10, 2026. Project-only files (`.git`, `.env.example`, `.gitignore`, `.gitattributes`, `AGENTS.md`, `HH_Website_Master.md`, `docs`, and `tools`) were not deployed; server-managed `.well-known`, `.ftpquota`, `cgi-bin`, `error_log`, and the pre-existing `nc_assets` directory were not deleted.
+- WinSCP `stat` confirmed the deployed root-file sizes, including `index.html` at 25,559 bytes and `css/hudson-helm.css` at 7,283 bytes. Read-only `synchronize remote -preview -criteria=size` comparisons reported `Nothing to synchronize` for `css`, `fonts`, `images`, `js`, `PHPMailer`, `rev`, and `unused pages`. Cache-busted public HTTPS checks returned 200 for all six root pages and the shared stylesheet; every root page included the Phase 1 stylesheet reference and pending-link markers. The public stylesheet SHA-256 matched the local file exactly, and the two user-approved pending routes returned 404 as expected. Cloudflare continued to inject its production response additions.
 
 ### Repository and File Structure
 
@@ -165,7 +168,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - `js/custom.js` depends on jQuery plus Isotope, countTo, WOW and Magnific Popup; some plugin calls are unconditional even when matching widgets are absent. Bootstrap controls the mobile collapse. Owl/progressbar and Rough Notation scripts are loaded selectively. Home additionally loads Revolution Slider and `js/rev-custom.js`, which contains initialization for several template sliders.
 - Local homepage browser logs confirm null-match errors in `js/rough-custom.js:16` and null-element errors from `js/rough-script.js:49`. Record as baseline defects for later scoped correction.
 - Local `mail.php` requires Name, Email, Phone, Subject and Message; escapes HTML mail body, validates email, uses a honeypot, catches mail exceptions, and sends through PHPMailer 5.2.28 using Migadu SMTP over implicit TLS port 465. The user-approved dummy credential is unchanged. `.env.example` is documentation only; the handler does not load it. No Company field, Turnstile verification, input length caps or throttling are implemented. Form labels rely on placeholders except the honeypot; the response has `aria-live=polite`. PHP execution and delivery are not yet verified.
-- Public GET comparison found Cloudflare email obfuscation and a Cloudflare Insights beacon injected into production HTML. These integrations must be reflected in the eventual privacy policy even though they are absent from local source. `css/responsive.css` and `js/rev-custom.js` match after line-ending normalization. Production `css/style.css` lacks the local footer-mark block; production `js/custom.js` uses older click-based form validation. Local files therefore are not an exact production backup; baseline choice is awaiting user confirmation.
+- The pre-Phase 1 public GET comparison found Cloudflare email obfuscation and a Cloudflare Insights beacon injected into production HTML. These integrations must be reflected in the eventual privacy policy even though they are absent from local source. At that time `css/responsive.css` and `js/rev-custom.js` matched after line-ending normalization, while production `css/style.css` lacked the local footer-mark block and production `js/custom.js` used older click-based form validation. Those deployable-source differences were superseded by the approved full-site upload on September 10, 2026; Cloudflare response injections remain production-only.
 - Safe static preview is available through `node tools/preview.cjs` at `http://127.0.0.1:8087`. It binds only to loopback, permits static asset extensions, denies dot paths/configuration/PHP, and rejects non-GET/HEAD requests. It does not emulate PHP, Cloudflare, server rewrites, or email delivery.
 
 ### Asset, accessibility and infrastructure findings
@@ -191,6 +194,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Deployable site / repository root | `D:\HH_Website\HudsonHelm_Website_v64` |
 | Active working branch | `website-refresh` |
 | Production site | `https://hudsonhelm.com/` |
+| Confirmed production deployment method | `C:\Program Files (x86)\WinSCP\WinSCP.com` with the saved `Hudson Helm` session. The confirmed session uses plain FTP, not SFTP/FTPS. Upload only the deployable site files; do not publish project-only files or delete server-managed paths. |
 | Local or staging preview method | From repository root run `node tools/preview.cjs`; Node v24.21.0 verified. Stop with Ctrl+C. Static inspection only; do not deploy this helper. |
 | Local/staging preview URL | `http://127.0.0.1:8087/` |
 | PHP version / runtime | No PHP executable on PATH or in checked Program Files, WinGet, XAMPP, Laragon, Scoop/tools locations. Production PHP version unknown. DEFERRED to Phase 7: establish compatible supported runtime before backend edits or execution. |
@@ -199,7 +203,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
 | Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
 | Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
-| Known local/staging vs. production differences | Older public form JS; missing public footer CSS additions; Cloudflare email protection, analytics injection and robots content only in public responses. Static preview cannot validate PHP, email, Cloudflare or origin 404 routing. |
+| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
 
@@ -216,6 +220,7 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-10 | Publish the current `mail.php`. | The user confirmed its embedded SMTP value is a dummy credential and authorized publication. |
 | 2026-09-10 | Maintain one root-level living master and use Git/GitHub as its revision history. | Prevents competing copies and avoids maintaining a redundant parallel document-version/archive system. |
 | 2026-09-10 | Expose the complete seven-item navigation during Phase 1, including temporary missing Who We Are and Support destinations. | The user explicitly accepted broken links for approximately one week so shared navigation could be finalized before those later-phase pages exist. |
+| 2026-09-10 | Publish the complete deployable checkout after Phase 1 rather than only the changed files. | The user explicitly requested that the working checkout and live production payload be aligned. Existing server-managed paths were preserved, and project-only files were excluded. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
@@ -1353,7 +1358,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Establish global spacing conventions — added shared section-spacing tokens and compact/default utilities without changing Phase 2 page spacing.
 - [x] Establish reusable components/patterns for later page work — established shared header, navigation, focus, responsive and minimal-footer patterns in `css/hudson-helm.css`.
 - [x] Confirm the seven-item primary navigation remains comfortable at common desktop widths and collapses cleanly on mobile — verified at 1440px, 1366px, 1024px, and 390px with no horizontal overflow.
-- [x] Satisfy the Shared Definition of Done for this phase — structural, responsive, accessibility, console, diff and preview checks completed; local commit authorized, GitHub push explicitly pending user direction, and no production deployment occurred.
+- [x] Satisfy the Shared Definition of Done for this phase — structural, responsive, accessibility, console, diff and preview checks completed; site commit `5f42c02` published with explicit user approval and verified remotely/publicly; documentation recorded separately; GitHub push explicitly pending user direction.
 
 ## Phase 2 — Homepage
 
