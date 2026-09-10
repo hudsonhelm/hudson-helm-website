@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 0 — Repository / Safety |
-| Phase status | **Inspection recorded; baseline selection awaiting user confirmation** |
+| Phase status | **Complete — PHP execution/hosting validation deferred to Phase 7** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Resolve the Phase 0 baseline-selection question recorded below. Inspection results and the safe static-preview workflow are recorded. Do not begin Phase 1 without the user's next instruction.
+Phase 0 is complete with the documented PHP execution/hosting deferral. Retain the committed local source as the refresh baseline. Await the user's instruction before beginning Phase 1.
 
 Do **not** begin Phase 1 substantive website implementation until every required Phase 0 item is either completed or explicitly resolved as `BLOCKED`, `DEFERRED`, or `N/A` with a reason. During Phase 0, changes should be limited to project documentation and work necessary to establish a safe inspection or preview workflow; do not begin the website refresh itself.
 
@@ -50,13 +50,13 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are recorded. The local snapshot differs from served production JavaScript and CSS; confirmation of the intended baseline remains open. PHP execution and deployment-environment verification are explicitly deferred as described in the Technical Runbook. Phase 1 has not started.
+Phase 0 repository setup and source/browser inspection are complete. The committed local snapshot is the selected refresh baseline despite the recorded production JavaScript/CSS differences. PHP execution and deployment-environment verification are explicitly deferred as described in the Technical Runbook. Phase 1 has not started.
 
 ### Phase Progress
 
 | Phase | Name | Status |
 | --- | --- | --- |
-| 0 | Repository / Safety | In progress |
+| 0 | Repository / Safety | Complete; documented runtime deferral |
 | 1 | Shared Structure | Not started |
 | 2 | Homepage | Not started |
 | 3 | What We Do | Not started |
@@ -88,7 +88,7 @@ Phase 0 repository setup and source/browser inspection are recorded. The local s
 
 The repository setup above is established project state. Do **not** reinitialize Git, recreate the GitHub repository, recreate the baseline commit, recreate existing branches, restore the legacy `.git` directory, or otherwise redo completed repository setup merely because the approved implementation specification below contains the original setup instructions. Revisit completed setup only if inspection reveals an actual problem that requires correction.
 
-### Remaining Before Phase 0 Is Complete
+### Inspection and Verification — Complete with Recorded Deferrals
 
 - [x] Inspect the complete HTML structure and page relationships — six root pages, navigation, forms and headings inventoried.
 - [x] Inspect CSS organization, dependencies, duplication, and reusable styles — shared template CSS and page overrides traced.
@@ -98,11 +98,11 @@ The repository setup above is established project state. Do **not** reinitialize
 - [x] Inspect the contact form, PHPMailer integration, hosting assumptions, and PHP/runtime requirements — source inspection complete; runtime execution deferred below.
 - [x] Inspect existing SEO metadata, structured data, analytics, and third-party scripts — local and public response checks recorded.
 - [x] Compare the local site with the live production site — six HTML responses, four shared assets, browser rendering and infrastructure endpoints compared.
-- [ ] BLOCKED — Confirm intended baseline: production serves older form JavaScript and lacks local footer CSS. User confirmation requested to retain the committed local version; no files overwritten.
+- [x] Selected the committed local source as the refresh baseline following the user's instruction to commit after the baseline recommendation. Production differences remain documented; no files overwritten.
 - [x] Identify an appropriate safe local or staging preview workflow — loopback static preview verified; PHP execution explicitly deferred to Phase 7 before backend implementation/testing.
 - [x] Populate the Technical Runbook with confirmed preview steps, PHP/runtime requirements, dependency notes, validation commands, and known production differences.
 - [x] Record inspection findings, risks, and recommended Phase 1 boundaries in this document.
-- [x] Reconfirmed `website-refresh` and the intended GitHub remote; reviewed the focused documentation/inspection-helper diff. No website source changes or production deployment. Recheck clean/pushed state when resolving the baseline decision.
+- [x] Reconfirmed clean `website-refresh` at pushed inspection commit `f2de195` before this documentation-only closeout. No website source changes or production deployment.
 
 ## Activity Log
 
@@ -119,6 +119,8 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Completed the independent Phase 0 source inventory, public-site comparison, and safe static-browser inspection; added dependency-free inspection/preview helpers. | Recorded existing defects and production differences, verified helper syntax and preview safeguards, and populated the runbook. Baseline choice awaits user confirmation; PHP execution is deferred to Phase 7. Phase 1 and production are untouched. |
 
 ## Findings and Observations
+
+Phase 0 closeout (September 10, 2026): the user's subsequent instruction to commit is taken as acceptance of the recommended committed-local baseline. All inspection items are resolved; runtime execution remains deferred as recorded in the runbook. Phase 1 remains unstarted.
 
 Record confirmed inspection findings and evidence that materially inform implementation, risk, or maintenance. Distinguish confirmed facts from unresolved assumptions.
 
@@ -213,7 +215,7 @@ This is the canonical register for unresolved user inputs, blockers, and intenti
 - **OPEN — Start Here response-time expectation:** not yet supplied. Do not publish an unsupported response-time promise.
 - **DEFERRED — Production Migadu SMTP configuration and Cloudflare Turnstile keys:** needed during the relevant implementation/testing phases and must be handled securely.
 - **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
-- **OPEN — Intended baseline:** local CSS and form JavaScript differ from public production. Confirm whether to retain the committed local source as the refresh baseline. Production PHP cannot be compared from public responses.
+- **RESOLVED — Intended baseline:** retain the committed local source following the user's instruction to commit. Local CSS/form JavaScript differences remain documented; production PHP cannot be compared from public responses.
 - **DEFERRED — PHP and hosting validation:** static preview is verified. Obtain origin runtime/hosting details and establish isolated PHP plus mail-sink testing before Phase 7. This does not block static shared-structure work after baseline confirmation.
 - **OPEN — Navigation timing:** Phase 1 requests seven items while Who We Are and Support are built in later phases. Resolve link availability when scoping Phase 1 so navigation does not introduce new dead destinations.
 
