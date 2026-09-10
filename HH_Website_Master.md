@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 5 — Who We Are |
-| Phase status | **Implementation complete and locally validated — GitHub push and production publication pending** |
+| Phase status | **Complete, pushed to GitHub, and published to production — awaiting user review** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Complete the approved Phase 5 Who We Are delivery: retain Nelson Abreu's lead Technical Director/founder profile, the three user-authorized temporary supporting profiles, clear placeholder disclosure, the responsive one-row supporting profile treatment, and the resolved Who We Are navigation destination. Push the locally validated implementation, publish only the updated deployable HTML files with the user's explicit approval, verify the public result, and update the project record. Do not begin Phase 6 without explicit user direction.
+Phase 5 Who We Are is complete, pushed to GitHub, and published to production. Retain Nelson Abreu's lead Technical Director/founder profile, the three user-authorized temporary supporting profiles, clear placeholder disclosure, the responsive one-row supporting profile treatment, and the resolved Who We Are navigation destination while awaiting user review or approved real profile material. Do not begin Phase 6 without explicit user direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phases 1–4 are complete, pushed, and published. Phase 5 is implemented and locally validated: `whoweare.html` contains a large Nelson Abreu Technical Director/founder profile, three smaller temporary supporting profiles in one desktop row, visible placeholder disclosure, a compact positioning section, and a closing CTA. The same existing stock portrait is deliberately reused and cropped for all four profiles at the user's direction. The Who We Are pending-navigation marker is removed across the public root pages; Support remains the only temporary missing destination. GitHub push and production publication are pending.
+Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phases 1–5 are complete, pushed, and published. `whoweare.html` contains a large Nelson Abreu Technical Director/founder profile, three smaller temporary supporting profiles in one desktop row, visible placeholder disclosure, a compact positioning section, and a closing CTA. The same existing stock portrait is deliberately reused and cropped for all four profiles at the user's direction. Site commit `d6fb5ed` was pushed; the new page plus the six previously public root pages were uploaded through the saved production FTP session, remotely statted, and verified through cache-busted public HTTPS responses. The Who We Are pending-navigation marker is removed across all seven root pages; Support remains the only temporary missing destination.
 
 ### Phase Progress
 
@@ -61,7 +61,7 @@ Phase 0 repository setup and source/browser inspection are complete with the rec
 | 2 | Homepage | Complete, published, and pushed; user review pending |
 | 3 | What We Do | Complete, published, and pushed; user review pending |
 | 4 | Why Hudson Helm | Complete, published, and pushed; user review pending |
-| 5 | Who We Are | Implemented and locally validated; push/publication pending |
+| 5 | Who We Are | Complete, published, and pushed; user review pending |
 | 6 | Are We a Good Fit? | Not started |
 | 7 | Start Here | Not started |
 | 8 | Support Portal Shell | Not started |
@@ -126,6 +126,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Completed Phase 4 Why Hudson Helm implementation and local validation. | Preserved the approved hero, core messaging, four differentiators, trust statement, and closing CTA; replaced the second image-heavy section with a compact light three-column treatment; reduced whitespace and eyebrow repetition; removed page-specific Rough Notation/Owl dependencies; and passed structural, responsive, accessibility, console, syntax, regression, and diff checks. GitHub push and production publication were explicitly authorized and remained pending at this checkpoint. |
 | 2026-09-10 | Pushed and published the completed Phase 4 Why Hudson Helm page. | Pushed site commit `16fabd6` to `origin/website-refresh`, uploaded only `whyhudsonhelm.html` through the saved WinSCP production FTP session, confirmed the remote file at 34,874 bytes, and verified a cache-busted public HTTPS 200 response contained the complete Phase 4 structure while the second stock image and obsolete Rough Notation/Owl references were absent. |
 | 2026-09-10 | Completed Phase 5 Who We Are implementation and local validation. | Created the dedicated page with Nelson Abreu as Technical Director and founder/company lead, added three explicitly labeled temporary supporting profiles in one desktop row, reused one stock portrait with responsive crops as directed, resolved the Who We Are pending navigation state across all root pages, and passed structural, responsive, accessibility, console, asset, syntax, regression, and diff checks. GitHub push and production publication were explicitly authorized and remained pending at this checkpoint. |
+| 2026-09-10 | Pushed and published the completed Phase 5 Who We Are page and navigation resolution. | Pushed site commit `d6fb5ed` to `origin/website-refresh`; uploaded `whoweare.html` plus the six existing root HTML pages whose Who We Are pending marker changed; confirmed all seven remote file stats; and verified cache-busted public HTTPS 200 responses, live Phase 5 content, four shared-photo uses, the resolved Who We Are destination, and the still-explicit Support pending state. |
 
 ## Findings and Observations
 
@@ -181,6 +182,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - The Who We Are navigation item now resolves to the new page and is no longer marked pending across all seven root pages. `whoweare.html` has the correct active-page treatment. Support remains the only user-approved pending destination.
 - Browser checks at 1440px, 1366px, 1024px, and 390px found no horizontal overflow. The supporting profiles render in one desktop row and stack on mobile; the mobile navigation opens with all seven destinations; all images load; keyboard focus is visible; the page has one H1 and logical H2/H3 structure; and the browser console is clean after retaining the legacy dependencies required by `custom.js`.
 - `node tools/check-phase5.cjs`, Phase 1–4 checks, the inspection helper, JavaScript syntax checks, and `git diff --check` passed. The dedicated Phase 5 check verifies the lead/profile structure, titles, founder identification, placeholder disclosure, image reuse, CTA, single-H1 structure, resolved navigation state, and absence of page-specific Rough Notation/Owl dependencies.
+- With the user's explicit approval, site commit `d6fb5ed` was pushed to `origin/website-refresh`. WinSCP uploaded `index.html`, `whatwedo.html`, `whyhudsonhelm.html`, `whoweare.html`, `areweagoodfit.html`, `starthere.html`, and `404.html` to the production root. Remote `stat` reported the new `whoweare.html` at 19,589 bytes and confirmed all seven uploads. Cache-busted public HTTPS checks returned 200 for every page, verified Who We Are is no longer pending anywhere, confirmed Support remains explicitly pending, and confirmed the live Phase 5 page contains Nelson's title, all three supporting disciplines, the placeholder notice, and four shared-photo references. Project-only documentation and tools were not deployed.
 
 ### Repository and File Structure
 
@@ -247,7 +249,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
 | Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
 | Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/check-phase2.cjs` (homepage content and removed-dependency contract); `node tools/check-phase3.cjs` (What We Do content, taxonomy, jump-link, section, CTA, and dependency contract); `node tools/check-phase4.cjs` (Why Hudson Helm messaging, layout, hierarchy, CTA, and removed-dependency contract); `node tools/check-phase5.cjs` (Who We Are structure, profile roles, placeholder disclosure, navigation, CTA, and dependency contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `node --check tools/check-phase2.cjs`; `node --check tools/check-phase3.cjs`; `node --check tools/check-phase4.cjs`; `node --check tools/check-phase5.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
-| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, and Phase 4 `whyhudsonhelm.html` from site commit `16fabd6` were subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
+| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, Phase 4 `whyhudsonhelm.html` from site commit `16fabd6`, and the seven Phase 5 root-page HTML files from site commit `d6fb5ed` were subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
 
@@ -1441,7 +1443,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Build profile treatment that accurately supports employees and consultants/contractors without misrepresenting roles — used neutral profile structure and avoided employee/contractor claims for the temporary supporting profiles.
 - BLOCKED — Real photographs and the three supporting identities/biographies have not been supplied. The user explicitly authorized clearly disclosed fictional profiles and one reused stock portrait for temporary production use; the replacement requirement is recorded in the canonical open-items register.
 - [x] Verify desktop and mobile navigation/layout behavior after adding the page — verified at 1440px, 1366px, 1024px, and 390px with correct desktop row/mobile stacking, complete collapsed navigation, loaded images, and no horizontal overflow.
-- [ ] Satisfy the Shared Definition of Done for this phase — local preview, responsive, accessibility, console, syntax, structural, regression, and diff checks passed; focused commit, GitHub push, production publication, and public verification remain pending.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements rereviewed; local preview, responsive, navigation, accessibility, console, asset, syntax, structural, regression, and diff checks passed; site commit `d6fb5ed` pushed; seven affected root HTML files published with explicit approval and verified by remote stats plus cache-busted public HTTPS responses; documentation closeout recorded separately.
 
 ## Phase 6 — Are We a Good Fit?
 
