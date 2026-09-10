@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Are We a Good Fit? - Hudson Helm</title>
+    <meta name="description" content="See whether Hudson Helm is a good IT support and consulting fit for your small business in New Jersey or New York.">
     <!--favicon icon-->
     <link rel="shortcut icon" href="images/favicon.ico">
     <!--bootstrap css-->
@@ -385,6 +386,205 @@
         #pq-loading {
             background: #000;
         }
+
+        .hh-fit-hero {
+            padding: 68px 0;
+            border-bottom: 1px solid rgba(113, 165, 233, 0.18);
+        }
+
+        .hh-fit-hero-copy {
+            max-width: 610px;
+        }
+
+        .hh-fit-hero h1 {
+            margin-bottom: 18px;
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 1.05;
+        }
+
+        .hh-fit-hero h2 {
+            margin-bottom: 22px;
+            color: #8fbfff;
+            font-size: clamp(25px, 2.7vw, 36px);
+            line-height: 1.22;
+        }
+
+        .hh-fit-hero p,
+        .hh-fit-intro,
+        .hh-fit-not-card p,
+        .hh-fit-cta p {
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .hh-fit-hero-image {
+            display: block;
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            border-radius: 18px;
+            box-shadow: 0 20px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .hh-fit-criteria {
+            padding: 66px 0 72px;
+            background: #f3f7fb;
+        }
+
+        .hh-fit-criteria h2,
+        .hh-fit-criteria h3,
+        .hh-fit-criteria p {
+            color: #15273d;
+        }
+
+        .hh-fit-heading {
+            max-width: 850px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+
+        .hh-fit-heading h2,
+        .hh-fit-not h2,
+        .hh-fit-cta h2 {
+            margin-bottom: 16px;
+            font-size: clamp(31px, 3.5vw, 46px);
+            line-height: 1.16;
+        }
+
+        .hh-fit-heading p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .hh-fit-grid {
+            row-gap: 20px;
+        }
+
+        .hh-fit-grid > div {
+            display: flex;
+        }
+
+        .hh-fit-card {
+            display: flex;
+            width: 100%;
+            min-height: 138px;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid rgba(45, 111, 184, 0.18);
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(20, 45, 76, 0.08);
+        }
+
+        .hh-fit-card-icon {
+            flex: 0 0 auto;
+            margin-right: 16px;
+            color: #2d6fb8;
+            font-size: 22px;
+            line-height: 1.35;
+        }
+
+        .hh-fit-card h3 {
+            margin: 0 0 8px;
+            font-size: 21px;
+            line-height: 1.25;
+        }
+
+        .hh-fit-card p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .hh-fit-not {
+            padding: 66px 0;
+        }
+
+        .hh-fit-not-intro {
+            max-width: 560px;
+        }
+
+        .hh-fit-not-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .hh-fit-not-card {
+            position: relative;
+            height: 100%;
+            padding: 22px 22px 22px 52px;
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88), rgba(22, 38, 58, 0.96));
+            border: 1px solid rgba(113, 165, 233, 0.25);
+            border-radius: 14px;
+        }
+
+        .hh-fit-not-card i {
+            position: absolute;
+            top: 25px;
+            left: 22px;
+            color: #8fbfff;
+        }
+
+        .hh-fit-not-card p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .hh-fit-closing {
+            padding: 0 0 72px;
+        }
+
+        .hh-fit-cta {
+            padding: 40px 38px;
+            background: linear-gradient(135deg, rgba(35, 63, 100, 0.94), rgba(15, 29, 48, 0.98));
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            border-radius: 18px;
+        }
+
+        @media (max-width: 991px) {
+            .hh-fit-hero-image {
+                height: 340px;
+                margin-top: 36px;
+            }
+
+            .hh-fit-not-intro {
+                max-width: none;
+                margin-bottom: 28px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hh-fit-hero,
+            .hh-fit-criteria,
+            .hh-fit-not {
+                padding-top: 48px;
+                padding-bottom: 48px;
+            }
+
+            .hh-fit-closing {
+                padding-bottom: 48px;
+            }
+
+            .hh-fit-hero-image {
+                height: 260px;
+            }
+
+            .hh-fit-not-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hh-fit-cta {
+                padding: 30px 24px;
+            }
+        }
 </style>
 
     <link rel="stylesheet" href="css/hudson-helm.css">
@@ -448,33 +648,108 @@
         </div>
     </header>
     <!--Header End-->
-<!--Blog-Single Start-->
-    <section class="blog-single page-top-tight">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="pq-blog-post">
-                        <div class="pq-post-media">
-                            <img src="images/blog/1.jpg" alt="business team reviewing IT strategy">
+    <main>
+        <section class="hh-fit-hero" aria-labelledby="fit-page-title">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="hh-fit-hero-copy">
+                            <h1 id="fit-page-title">Are We a Good Fit?</h1>
+                            <h2>The Kind Of Business We Serve Best</h2>
+                            <p class="mb-0">Hudson Helm is built for organizations that depend on technology every day but do not want a giant, impersonal IT provider. We do our best work with businesses that need responsive support, practical guidance, and reliable systems—without turning every small request into a project.</p>
                         </div>
-                        <div class="pq-blog-contain">
-                            <h2 class="pq-blog-single-title">The kind of business we serve best</h2>
-                            <p>Hudson Helm is built for organizations that depend on technology every day but do not want a giant, impersonal IT provider. We do our best work with businesses that need responsive support, practical guidance, and systems that stay reliable without turning every small request into a project.</p>
-                            <p>We are usually the right fit for teams that value clear communication, fast follow-through, and a partner who can explain things in plain English. If your staff needs dependable help with workstations, Microsoft 365, security, networks, vendors, and the constant little issues that interrupt the day, that is exactly the kind of environment we are set up to support.</p>
-                            <h2 class="pq-blog-single-title">When the fit is especially strong</h2>
-                            <p>We tend to be a strong match for professional offices and established small businesses that want real support, not just ticket taking. That includes companies that have outgrown the “call a guy when something breaks” stage, but are not interested in paying enterprise-level prices for enterprise theater.</p>
-                            <p>Our clients usually want a steady hand: someone to keep things organized, secure, and moving forward. They appreciate consistency, sensible standards, and advice that respects both budget and reality. They want their people to be productive, their systems to be protected, and their technology decisions to make business sense.</p>
-                            <div class="pq-blog-single-info">
-                                <h2 class="pq-blog-single-title">We may be a good fit if...</h2>
-                                <p>You want an IT partner who is responsive, proactive, and easy to reach. You want helpdesk support that feels personal, cybersecurity that is taken seriously, and technology planning that is grounded in what your business actually needs. If that sounds like the way you want IT handled, Hudson Helm is probably worth a conversation.</p>
-                            </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="hh-fit-hero-image" src="images/blog/1.jpg" alt="Business team reviewing technology plans together">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hh-fit-criteria" aria-labelledby="fit-criteria-title">
+            <div class="container">
+                <div class="hh-fit-heading">
+                    <h2 id="fit-criteria-title">When The Fit Is Especially Strong</h2>
+                    <p>We tend to be a strong match for professional offices and established small businesses that want real support, not just ticket taking. The following qualities usually lead to the most productive long-term relationships.</p>
+                </div>
+                <div class="row hh-fit-grid">
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-fit-card">
+                            <i class="fas fa-users hh-fit-card-icon" aria-hidden="true"></i>
+                            <div><h3>About 5–50 employees</h3><p>Your team is large enough to depend on technology, but not large enough to need an internal IT department.</p></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-fit-card">
+                            <i class="fas fa-laptop hh-fit-card-icon" aria-hidden="true"></i>
+                            <div><h3>Technology matters every day</h3><p>Reliable computers, cloud services, connectivity, and business systems are essential to keeping work moving.</p></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-fit-card">
+                            <i class="fas fa-headset hh-fit-card-icon" aria-hidden="true"></i>
+                            <div><h3>Responsive support has value</h3><p>Your staff benefits from accessible remote help and practical onsite support when the situation calls for it.</p></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-fit-card">
+                            <i class="fas fa-shield-halved hh-fit-card-icon" aria-hidden="true"></i>
+                            <div><h3>Security is taken seriously</h3><p>You are willing to make sensible improvements that protect people, information, and business continuity.</p></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-fit-card">
+                            <i class="fas fa-compass hh-fit-card-icon" aria-hidden="true"></i>
+                            <div><h3>Practical advice comes first</h3><p>You prefer clear recommendations shaped by business needs and budget—not complexity for its own sake.</p></div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <article class="hh-fit-card">
+                            <i class="fas fa-handshake hh-fit-card-icon" aria-hidden="true"></i>
+                            <div><h3>You want an ongoing relationship</h3><p>You value consistency, ownership, and familiar people over anonymous ticket handling and one-off fixes.</p></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hh-fit-not" aria-labelledby="not-fit-title">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col-lg-5">
+                        <div class="hh-fit-not-intro">
+                            <h2 id="not-fit-title">We May Not Be The Right Fit If...</h2>
+                            <p class="hh-fit-intro mb-0">A clear fit works both ways. Another provider may serve you better if your priorities or preferred support model look like these.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <ul class="hh-fit-not-list">
+                            <li class="hh-fit-not-card"><i class="fas fa-circle" aria-hidden="true"></i><p>Your only priority is finding the lowest-cost break/fix provider.</p></li>
+                            <li class="hh-fit-not-card"><i class="fas fa-circle" aria-hidden="true"></i><p>Basic maintenance and security are not investments your business is prepared to make.</p></li>
+                            <li class="hh-fit-not-card"><i class="fas fa-circle" aria-hidden="true"></i><p>You require the scale and structure of a large national or enterprise help desk.</p></li>
+                            <li class="hh-fit-not-card"><i class="fas fa-circle" aria-hidden="true"></i><p>You want IT to remain entirely reactive rather than becoming more organized and proactive.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hh-fit-closing" aria-labelledby="fit-closing-title">
+            <div class="container">
+                <div class="hh-fit-cta">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h2 id="fit-closing-title">Not sure yet? A straightforward conversation is a good place to start.</h2>
+                            <p class="mb-0">Tell us how your business works, where technology is getting in the way, and what better support would look like.</p>
+                        </div>
+                        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                            <a class="pq-button" href="starthere.html"><span class="text">Start Here</span></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--Blog-Single End-->
+        </section>
+    </main>
 
     <!--Footer Start-->
     <footer id="pq-footer" class="style-1">
