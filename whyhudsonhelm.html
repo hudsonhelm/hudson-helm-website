@@ -9,8 +9,6 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <!--bootstrap css-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!--owl carousel css-->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <!--progressbar css-->
     <link rel="stylesheet" href="css/progressbar.css">
     <!--animation css-->
@@ -508,6 +506,221 @@
             }
         }
 
+        .hh-why-hero,
+        .hh-why-differentiators,
+        .hh-why-trust,
+        .hh-why-principles,
+        .hh-why-closing {
+            position: relative;
+        }
+
+        .hh-why-hero {
+            padding: 72px 0 68px;
+            border-bottom: 1px solid rgba(113, 165, 233, 0.16);
+        }
+
+        .hh-why-hero h1,
+        .hh-why-trust h2,
+        .hh-why-closing h2 {
+            color: #fff;
+        }
+
+        .hh-why-hero h1 {
+            margin-bottom: 24px;
+            font-size: clamp(38px, 4.4vw, 64px);
+            line-height: 1.08;
+        }
+
+        .hh-why-hero-copy {
+            max-width: 650px;
+        }
+
+        .hh-why-hero-copy p {
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .hh-why-hero .hh-why-image-wrap img {
+            min-height: 390px;
+            max-height: 480px;
+        }
+
+        .hh-why-differentiators {
+            padding: 68px 0 72px;
+        }
+
+        .hh-why-section-heading {
+            max-width: 820px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .hh-why-section-heading h2 {
+            margin-bottom: 0;
+            font-size: clamp(30px, 3vw, 44px);
+        }
+
+        .hh-why-differentiators .row {
+            row-gap: 24px;
+        }
+
+        .hh-why-differentiators .hh-why-card {
+            min-height: 270px;
+            padding: 30px 26px;
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%) !important;
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            border-radius: 18px;
+            box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28);
+        }
+
+        .hh-why-differentiators .hh-why-card .pq-icon-box-title {
+            min-height: 0;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .hh-why-differentiators .hh-why-card .pq-icon-box-description {
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .hh-why-differentiators .hh-why-card .pq-icon i {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            color: #fff;
+        }
+
+        .hh-why-trust {
+            padding: 64px 0;
+            background: linear-gradient(135deg, rgba(24, 47, 78, 0.92), rgba(10, 22, 38, 0.98));
+            border-top: 1px solid rgba(113, 165, 233, 0.2);
+            border-bottom: 1px solid rgba(113, 165, 233, 0.2);
+        }
+
+        .hh-why-trust-inner {
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hh-why-trust h2 {
+            font-size: clamp(32px, 3.6vw, 50px);
+            line-height: 1.18;
+            margin-bottom: 22px;
+        }
+
+        .hh-why-trust p {
+            max-width: 820px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        .hh-why-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px 28px;
+            max-width: 920px;
+            margin: 30px auto 0;
+            text-align: left;
+        }
+
+        .hh-why-list li {
+            margin-bottom: 0;
+        }
+
+        .hh-why-principles {
+            padding: 64px 0 70px;
+            background: #f3f7fb;
+        }
+
+        .hh-why-principles h2,
+        .hh-why-principles h3,
+        .hh-why-principles p {
+            color: #15273d;
+        }
+
+        .hh-why-principles .row {
+            row-gap: 22px;
+        }
+
+        .hh-why-principle {
+            height: 100%;
+            padding: 28px;
+            background: #fff;
+            border: 1px solid rgba(45, 111, 184, 0.18);
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(20, 45, 76, 0.08);
+        }
+
+        .hh-why-principle-number {
+            display: block;
+            margin-bottom: 12px;
+            color: #2d6fb8;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .hh-why-principle h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .hh-why-principle p {
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        .hh-why-closing {
+            padding: 70px 0 76px;
+        }
+
+        .hh-why-closing .hh-why-cta {
+            padding: 42px 38px;
+        }
+
+        .hh-why-closing h2 {
+            margin-bottom: 14px;
+            font-size: clamp(30px, 3vw, 44px);
+            line-height: 1.2;
+        }
+
+        @media (max-width: 991px) {
+            .hh-why-hero {
+                padding: 56px 0 60px;
+            }
+
+            .hh-why-hero .hh-why-image-wrap {
+                margin-top: 12px;
+            }
+
+            .hh-why-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hh-why-hero,
+            .hh-why-differentiators,
+            .hh-why-trust,
+            .hh-why-principles,
+            .hh-why-closing {
+                padding-top: 48px;
+                padding-bottom: 48px;
+            }
+
+            .hh-why-hero .hh-why-image-wrap img {
+                min-height: 250px;
+            }
+
+            .hh-why-differentiators .hh-why-card {
+                min-height: 0;
+            }
+
+            .hh-why-closing .hh-why-cta {
+                padding: 30px 22px;
+            }
+        }
+
 </style>
 
     <link rel="stylesheet" href="css/hudson-helm.css">
@@ -571,13 +784,13 @@
     </header>
     <!--Header End-->
 
-    <section class="aboutus page-top-tight pq-pb-130">
+    <main>
+    <section class="hh-why-hero" aria-labelledby="why-hudson-helm">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-lg-6">
-                    <div class="pq-section pq-style-1 text-left">
-                        <span class="pq-section-sub-title"># why hudson helm</span>
-                        <h5 class="pq-section-title pq-text-white" data-high_text="Businesses" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="Why Businesses Choose Hudson Helm" id="why-hudson-helm">A smaller MSP by design, so your business never feels like a ticket number.</h5>
+                    <div class="hh-why-hero-copy">
+                        <h1 id="why-hudson-helm">A smaller MSP by design, so your business never feels like a ticket number.</h1>
                         <p class="pq-section-description pq-text-white">Hudson Helm is built for companies that need dependable IT, clear communication, and a partner who takes ownership. We stay intentionally lean so we can move quickly, stay accountable, and give clients experienced support without the overhead and sprawl that often come with larger providers.</p>
                         <p class="pq-section-description pq-text-white">That means practical recommendations, responsive help, better follow-through, and technology decisions that make sense for the way your business actually works.</p>
                         <div class="pq-btn-container mt-4">
@@ -598,13 +811,12 @@
         </div>
     </section>
 
-    <section class="goals pq-pb-100">
+    <section class="hh-why-differentiators" aria-labelledby="why-differentiators-title">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="pq-section pq-style-1 text-center mb-5">
-                        <span class="pq-section-sub-title"># what you can expect</span>
-                        <h5 class="pq-section-title" data-high_text="Expect" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="What You Can Expect">The kind of service smaller businesses usually wish they got from their IT provider.</h5>
+                    <div class="hh-why-section-heading">
+                        <h2 id="why-differentiators-title">The kind of service smaller businesses usually wish they got from their IT provider.</h2>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6">
@@ -647,78 +859,60 @@
         </div>
     </section>
 
-    <section class="benefits pq-pb-100">
+    <section class="hh-why-trust" aria-labelledby="why-trust-title">
         <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-6">
-                    <div class="hh-why-image-wrap">
-                        <img src="images/tabs/4.jpg" alt="IT planning session" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="pq-section pq-style-1 text-left">
-                        <span class="pq-section-sub-title"># our approach</span>
-                        <h5 class="pq-section-title pq-text-white" data-high_text="Approach" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="How We Work">We are not trying to be the biggest shop in the room. We are trying to be the one you trust.</h5>
-                        <p class="pq-section-description pq-text-white">A lot of smaller companies end up with one of two bad options: a bargain provider that never calls back, or a larger MSP that treats them like an account tier. Hudson Helm exists in the middle on purpose.</p>
-                        <ul class="pq-list-check hh-why-list mt-4">
+            <div class="hh-why-trust-inner">
+                        <h2 id="why-trust-title">We are not trying to be the biggest shop in the room. We are trying to be the one you trust.</h2>
+                        <p>A lot of smaller companies end up with one of two bad options: a bargain provider that never calls back, or a larger MSP that treats them like an account tier. Hudson Helm exists in the middle on purpose.</p>
+                        <ul class="hh-why-list">
                             <li><i class="ion ion-checkmark-round"></i><span>We learn your environment and the way your team actually operates.</span></li>
                             <li><i class="ion ion-checkmark-round"></i><span>We recommend improvements that are worth the cost, not whatever happens to be fashionable this quarter.</span></li>
                             <li><i class="ion ion-checkmark-round"></i><span>We communicate in plain English and keep you informed when work is in progress.</span></li>
                             <li><i class="ion ion-checkmark-round"></i><span>We build for reliability first, because drama is fun in television and terrible in business IT.</span></li>
                         </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <section class="service pq-pb-100">
+    <section class="hh-why-principles" aria-labelledby="why-principles-title">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="pq-section pq-style-1 text-center mb-5">
-                        <span class="pq-section-sub-title"># how we work differently</span>
-                        <h5 class="pq-section-title" data-high_text="Differently" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="How We Work Differently">Built around responsiveness, accountability, and common sense.</h5>
+                    <div class="hh-why-section-heading">
+                        <h2 id="why-principles-title">Built around responsiveness, accountability, and common sense.</h2>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="pq-fancy-box hh-why-fancy">
-                        <div class="pq-fancy-box-content">
-                            <span class="pq-fancy-box-number">01</span>
-                            <h4 class="pq-fancy-box-title">Direct communication</h4>
-                            <p class="pq-fancy-box-description">You should not need detective skills to figure out who is handling your issue. We keep communication straightforward and easy to follow.</p>
-                        </div>
+                    <div class="hh-why-principle">
+                            <span class="hh-why-principle-number">01</span>
+                            <h3>Direct communication</h3>
+                            <p>You should not need detective skills to figure out who is handling your issue. We keep communication straightforward and easy to follow.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="pq-fancy-box hh-why-fancy">
-                        <div class="pq-fancy-box-content">
-                            <span class="pq-fancy-box-number">02</span>
-                            <h4 class="pq-fancy-box-title">A cleaner, calmer environment</h4>
-                            <p class="pq-fancy-box-description">Standardization, patching, backups, documentation, and routine cleanup are not glamorous. They are also why fewer things catch fire.</p>
-                        </div>
+                    <div class="hh-why-principle">
+                            <span class="hh-why-principle-number">02</span>
+                            <h3>A cleaner, calmer IT environment</h3>
+                            <p>Standardization, patching, backups, documentation, and routine cleanup are not glamorous. They are also why fewer things catch fire.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="pq-fancy-box hh-why-fancy">
-                        <div class="pq-fancy-box-content">
-                            <span class="pq-fancy-box-number">03</span>
-                            <h4 class="pq-fancy-box-title">Advice with your budget in mind</h4>
-                            <p class="pq-fancy-box-description">We will tell you what matters, what can wait, and where to spend carefully. Not every answer needs to arrive attached to a forklift of licensing.</p>
-                        </div>
+                    <div class="hh-why-principle">
+                            <span class="hh-why-principle-number">03</span>
+                            <h3>Advice with your budget in mind</h3>
+                            <p>We will tell you what matters, what can wait, and where to spend carefully. Not every answer needs to arrive attached to a forklift of licensing.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="counter pq-pb-130">
+    <section class="hh-why-closing" aria-labelledby="why-closing-title">
         <div class="container hh-why-cta">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <div class="pq-section pq-style-1 text-left mb-0">
-                        <span class="pq-section-sub-title"># ready to talk</span>
-                        <h5 class="pq-section-title pq-text-white" data-high_text="Talk" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="Let's Talk">If your current IT feels slow, reactive, overpriced, or just harder than it should be, that is fixable.</h5>
+                    <div>
+                        <h2 id="why-closing-title">If your current IT feels slow, reactive, overpriced, or just harder than it should be, that is fixable.</h2>
                         <p class="pq-section-description pq-text-white mb-0">Hudson Helm works best with businesses that want dependable support, sensible guidance, and a technology partner who treats the relationship like it matters.</p>
                     </div>
                 </div>
@@ -730,6 +924,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!--Footer Start-->
     <footer id="pq-footer" class="style-1">
@@ -758,11 +953,9 @@
     </div>
     <!--Back to top End-->
     <!--Jquery js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <!--Bootstrap js-->
     <script src="js/bootstrap.min.js"></script>
-    <!--Owl Carousel js-->
-    <script src="js/owl.carousel.min.js"></script>
     <!--Progressbar js-->
     <script src="js/progressbar.js"></script>
     <!--Isotope js -->
@@ -774,9 +967,6 @@
     <!-- Animation JS -->
     <script src="js/wow.min.js"></script>
     <!--Custom js-->
-    <script src="js/rough-script.js"></script>
-    <script src="js/rough-notation.iife.js"></script>
-    <script src="js/rough-custom.js"></script>
     <script src="js/custom.js"></script>
 </body>
 
