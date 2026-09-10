@@ -9,8 +9,8 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | --- | --- |
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
-| Current phase | Phase 0 — Repository / Safety |
-| Phase status | **Complete — PHP execution/hosting validation deferred to Phase 7** |
+| Current phase | Phase 1 — Shared Structure |
+| Phase status | **Complete locally — GitHub push pending explicit authorization** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,9 +34,9 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 0 is complete with the documented PHP execution/hosting deferral. Retain the committed local source as the refresh baseline. Await the user's instruction before beginning Phase 1.
+Phase 1 is complete locally. Retain the normalized shared structure and await the user's review or further instruction before beginning Phase 2. Do not push the Phase 1 commit or begin Phase 2 without explicit user direction.
 
-Do **not** begin Phase 1 substantive website implementation until every required Phase 0 item is either completed or explicitly resolved as `BLOCKED`, `DEFERRED`, or `N/A` with a reason. During Phase 0, changes should be limited to project documentation and work necessary to establish a safe inspection or preview workflow; do not begin the website refresh itself.
+Do **not** begin Phase 2 substantive homepage implementation until the user gives explicit direction after reviewing Phase 1. The Phase 1 commit may be reviewed locally before its GitHub push; this does not reopen or invalidate the completed Phase 0 or Phase 1 checklists.
 
 ### Checklist Status Conventions
 
@@ -50,14 +50,14 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are complete. The committed local snapshot is the selected refresh baseline despite the recorded production JavaScript/CSS differences. PHP execution and deployment-environment verification are explicitly deferred as described in the Technical Runbook. Phase 1 has not started.
+Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phase 1 shared structure is complete locally: all six root pages now use the normalized seven-item navigation, shared structural stylesheet, responsive laptop/mobile menu behavior, visible keyboard focus, consistent current-page state, and a consistent minimal footer. The user explicitly accepted temporary missing destinations for Who We Are and Support for approximately one week. Phase 2 has not started, and the Phase 1 GitHub push awaits explicit authorization.
 
 ### Phase Progress
 
 | Phase | Name | Status |
 | --- | --- | --- |
 | 0 | Repository / Safety | Complete; documented runtime deferral |
-| 1 | Shared Structure | Not started |
+| 1 | Shared Structure | Complete locally; push pending |
 | 2 | Homepage | Not started |
 | 3 | What We Do | Not started |
 | 4 | Why Hudson Helm | Not started |
@@ -117,12 +117,23 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Created and pushed the baseline and working branches. | `main` and `website-refresh` both point to the complete baseline at commit `b7d5fa2`. |
 | 2026-09-10 | Consolidated the implementation brief and project record into the root-level living master document. | Established the project status, checklist, findings, decisions, and open-items structure used to manage the refresh. |
 | 2026-09-10 | Completed the independent Phase 0 source inventory, public-site comparison, and safe static-browser inspection; added dependency-free inspection/preview helpers. | Recorded existing defects and production differences, verified helper syntax and preview safeguards, and populated the runbook. Baseline choice awaits user confirmation; PHP execution is deferred to Phase 7. Phase 1 and production are untouched. |
+| 2026-09-10 | Completed Phase 1 shared structure across all six root pages. | Added the shared Hudson Helm stylesheet and structural check, normalized the seven-item header/navigation and minimal footer, verified responsive and keyboard behavior, and kept Phase 2 untouched. GitHub push remains pending explicit authorization. |
 
 ## Findings and Observations
 
 Phase 0 closeout (September 10, 2026): the user's subsequent instruction to commit is taken as acceptance of the recommended committed-local baseline. All inspection items are resolved; runtime execution remains deferred as recorded in the runbook. Phase 1 remains unstarted.
 
 Record confirmed inspection findings and evidence that materially inform implementation, risk, or maintenance. Distinguish confirmed facts from unresolved assumptions.
+
+### Phase 1 implementation evidence — September 10, 2026
+
+- All six root pages load `css/hudson-helm.css` after legacy page styles. The shared layer defines spacing tokens and utilities, header/navigation layout, laptop/mobile collapse behavior, visible `:focus-visible` treatment, and minimal footer normalization. Existing page-specific visual rules remain in place for later phase-scoped cleanup.
+- The header presents the approved seven destinations in consistent order. Start Here remains a desktop CTA and is also present inside the collapsed menu. Active pages expose `aria-current="page"`; the primary navigation and logo link have accessible labels, and decorative header icons are hidden from assistive technology.
+- Who We Are points to `whoweare.html` and Support points to `support.html`; both are deliberately marked `data-pending-page="true"`. The user approved these temporary missing destinations for approximately one week.
+- Desktop checks at 1440px and 1366px showed the complete navigation with no horizontal overflow. At 1024px and 390px the menu collapsed, opened successfully, displayed all seven items, and produced no horizontal overflow. Keyboard testing showed a visible focus ring.
+- `node tools/check-phase1.cjs` passed for all six pages. `node tools/inspect.cjs`, JavaScript syntax checks, preview guard checks, and `git diff --check` remained clean apart from known legacy line-ending notices and the two authorized pending routes.
+- Browser console output retained the previously recorded Rough Notation null-match errors on affected pages. Phase 1 introduced no JavaScript or dependency changes; those existing page-specific errors remain assigned to later scoped correction.
+- Header/footer changes to `index.html` were structural only. Homepage hero, carousel, service content, spacing, and other Phase 2 work were not changed.
 
 ### Repository and File Structure
 
@@ -187,7 +198,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Safe form-testing method | Verified empty submission in static preview. Preview rejects all POSTs and PHP GETs. DEFERRED to Phase 7: use an isolated PHP environment and local mail sink with outbound delivery prevented for valid-submit, malformed input and error-path tests; never use production SMTP for automated tests. |
 | Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
 | Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
-| Validation / lint / scanning commands | `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
 | Known local/staging vs. production differences | Older public form JS; missing public footer CSS additions; Cloudflare email protection, analytics injection and robots content only in public responses. Static preview cannot validate PHP, email, Cloudflare or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
@@ -204,6 +215,7 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-10 | Preserve legacy whitespace and template files in the baseline. | Cleanup and deletion must be intentional, reviewable work after inspection. |
 | 2026-09-10 | Publish the current `mail.php`. | The user confirmed its embedded SMTP value is a dummy credential and authorized publication. |
 | 2026-09-10 | Maintain one root-level living master and use Git/GitHub as its revision history. | Prevents competing copies and avoids maintaining a redundant parallel document-version/archive system. |
+| 2026-09-10 | Expose the complete seven-item navigation during Phase 1, including temporary missing Who We Are and Support destinations. | The user explicitly accepted broken links for approximately one week so shared navigation could be finalized before those later-phase pages exist. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
@@ -217,7 +229,7 @@ This is the canonical register for unresolved user inputs, blockers, and intenti
 - **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
 - **RESOLVED — Intended baseline:** retain the committed local source following the user's instruction to commit. Local CSS/form JavaScript differences remain documented; production PHP cannot be compared from public responses.
 - **DEFERRED — PHP and hosting validation:** static preview is verified. Obtain origin runtime/hosting details and establish isolated PHP plus mail-sink testing before Phase 7. This does not block static shared-structure work after baseline confirmation.
-- **OPEN — Navigation timing:** Phase 1 requests seven items while Who We Are and Support are built in later phases. Resolve link availability when scoping Phase 1 so navigation does not introduce new dead destinations.
+- **TEMPORARY — Who We Are and Support destinations:** the user approved temporary missing routes for approximately one week beginning September 10, 2026. `whoweare.html` and `support.html` are clearly marked pending in source and must be resolved when their pages are implemented or before the temporary allowance expires.
 
 ---
 
@@ -1336,12 +1348,12 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 1 — Shared Structure
 
-- [ ] Clean up shared CSS deliberately, preserving required legacy behavior and avoiding unrelated formatting churn.
-- [ ] Establish or normalize the shared header/navigation implementation.
-- [ ] Establish global spacing conventions.
-- [ ] Establish reusable components/patterns for later page work.
-- [ ] Confirm the seven-item primary navigation remains comfortable at common desktop widths and collapses cleanly on mobile.
-- [ ] Satisfy the Shared Definition of Done for this phase.
+- [x] Clean up shared CSS deliberately, preserving required legacy behavior and avoiding unrelated formatting churn — added a final shared site layer while retaining page-specific rules for their assigned phases.
+- [x] Establish or normalize the shared header/navigation implementation — normalized all six root pages with consistent contact details, ordering, active state, mobile Start Here access, and accessibility labels.
+- [x] Establish global spacing conventions — added shared section-spacing tokens and compact/default utilities without changing Phase 2 page spacing.
+- [x] Establish reusable components/patterns for later page work — established shared header, navigation, focus, responsive and minimal-footer patterns in `css/hudson-helm.css`.
+- [x] Confirm the seven-item primary navigation remains comfortable at common desktop widths and collapses cleanly on mobile — verified at 1440px, 1366px, 1024px, and 390px with no horizontal overflow.
+- [x] Satisfy the Shared Definition of Done for this phase — structural, responsive, accessibility, console, diff and preview checks completed; local commit authorized, GitHub push explicitly pending user direction, and no production deployment occurred.
 
 ## Phase 2 — Homepage
 

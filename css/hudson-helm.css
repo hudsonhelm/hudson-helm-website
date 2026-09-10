@@ -1,0 +1,296 @@
+/*
+ * Hudson Helm shared site layer
+ *
+ * Loaded after legacy template and page-level styles so shared structure,
+ * navigation, spacing, and accessibility behavior remain consistent.
+ */
+
+:root {
+	--hh-color-bg: #000;
+	--hh-color-surface: #0b1522;
+	--hh-color-text: #fff;
+	--hh-color-accent: #4a8fdc;
+	--hh-color-accent-light: #8fbfff;
+	--hh-color-focus: #f5bf42;
+	--hh-space-section: 96px;
+	--hh-space-section-compact: 60px;
+	--hh-space-section-mobile: 64px;
+}
+
+/* Shared section-spacing primitives for current and later phases. */
+.hh-section {
+	padding-block: var(--hh-space-section);
+}
+
+.hh-section--compact,
+.page-top-tight {
+	padding-top: var(--hh-space-section-compact);
+}
+
+/* Shared header foundation. */
+header#pq-header,
+header#pq-header .pq-bottom-header,
+header#pq-header .pq-bottom-header .navbar,
+header#pq-header.pq-header-sticky,
+header#pq-header.pq-header-default .pq-bottom-header.pq-header-sticky,
+header#pq-header.pq-header-sticky .pq-bottom-header,
+header#pq-header.pq-header-sticky .pq-bottom-header .navbar {
+	background: var(--hh-color-bg) !important;
+}
+
+header#pq-header .pq-top-header {
+	background: var(--hh-color-bg);
+}
+
+header#pq-header .pq-bottom-header {
+	border-top: 1px solid rgba(113, 165, 233, 0.16);
+	border-bottom: 1px solid rgba(113, 165, 233, 0.16);
+}
+
+header#pq-header .pq-bottom-header .navbar {
+	display: flex;
+	align-items: center;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-brand {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+	padding: 0;
+	line-height: 1;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-brand img.logo {
+	height: 78px !important;
+	width: auto;
+	max-height: none;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-collapse {
+	flex: 0 0 auto;
+	margin-left: auto;
+}
+
+header#pq-header .pq-menu-contain {
+	display: flex;
+	align-items: center;
+	width: auto;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-nav {
+	display: flex;
+	align-items: center;
+	margin: 0 24px 0 0;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-nav li {
+	margin-right: 18px;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-nav li:last-child {
+	margin-right: 0;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-nav li,
+header#pq-header .pq-bottom-header .navbar .navbar-nav li > a,
+header#pq-header .pq-bottom-header .navbar .navbar-nav li i,
+.navbar-light .navbar-toggler i {
+	color: var(--hh-color-text);
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a,
+header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a:hover,
+header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-parent > a,
+header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-ancestor > a,
+header#pq-header .hh-desktop-cta[aria-current="page"] {
+	color: var(--hh-color-accent-light) !important;
+}
+
+header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:hover,
+header#pq-header .pq-bottom-header .navbar .navbar-nav li:hover > a {
+	color: var(--hh-color-accent-light) !important;
+}
+
+header#pq-header .pq-button {
+	flex: 0 0 auto;
+	background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+	box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+}
+
+header#pq-header .pq-button:hover,
+header#pq-header .pq-button:focus {
+	background: linear-gradient(180deg, #5a9ae2 0%, #347ac6 100%);
+	color: var(--hh-color-text);
+}
+
+.hh-mobile-only {
+	display: none !important;
+}
+
+/* Restore a visible keyboard focus indicator removed by the legacy theme. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+	outline: 3px solid var(--hh-color-focus) !important;
+	outline-offset: 3px;
+}
+
+header#pq-header .navbar-toggler:focus-visible {
+	box-shadow: 0 0 0 4px rgba(245, 191, 66, 0.32);
+}
+
+/* Keep the seven-item navigation usable at laptop and smaller widths. */
+@media (max-width: 1199px) {
+	:root {
+		--hh-space-section: var(--hh-space-section-mobile);
+	}
+
+	.navbar-expand-lg .navbar-toggler {
+		display: block;
+	}
+
+	.navbar-expand-lg .navbar-collapse.collapse:not(.show) {
+		display: none !important;
+	}
+
+	.navbar-expand-lg .navbar-collapse.collapse.show,
+	.navbar-expand-lg .navbar-collapse.collapsing {
+		display: block !important;
+	}
+
+	header#pq-header .pq-bottom-header .navbar .navbar-collapse {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		max-height: calc(100vh - 88px);
+		margin-left: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background: var(--hh-color-surface);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.42);
+	}
+
+	header#pq-header .pq-menu-contain,
+	header#pq-header .pq-bottom-header .navbar .navbar-nav {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+
+	header#pq-header .pq-bottom-header .navbar .navbar-nav li {
+		display: block;
+		float: none;
+		width: 100%;
+		margin: 0;
+		line-height: normal;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	header#pq-header .pq-bottom-header .navbar .navbar-nav li > a {
+		display: block;
+		width: 100%;
+		padding: 15px 20px;
+	}
+
+	header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a,
+	header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a:hover,
+	header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:hover {
+		background: rgba(74, 143, 220, 0.18);
+		color: var(--hh-color-text) !important;
+	}
+
+	header#pq-header .hh-desktop-cta {
+		display: none !important;
+	}
+
+	header#pq-header .hh-mobile-only {
+		display: block !important;
+	}
+
+	header#pq-header .pq-bottom-header .navbar .navbar-brand img.logo {
+		height: 56px !important;
+	}
+}
+
+@media (max-width: 767px) {
+	header#pq-header .pq-top-header .pq-header-contact ul {
+		display: flex;
+		justify-content: center;
+	}
+
+	header#pq-header .pq-top-header .pq-header-contact ul li {
+		padding: 8px 10px;
+	}
+
+	header#pq-header .pq-top-header .pq-header-contact ul li i {
+		margin-right: 6px;
+	}
+}
+
+@media (max-width: 479px) {
+	header#pq-header .pq-top-header .pq-header-contact ul {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	header#pq-header .pq-top-header .pq-header-contact ul li {
+		width: 100%;
+		padding: 5px 10px;
+		border: 0;
+		text-align: center;
+	}
+}
+
+/* Minimal footer normalization; the complete redesign remains Phase 9. */
+footer#pq-footer,
+footer#pq-footer .pq-footer-style-1,
+footer#pq-footer .pq-copyright-footer {
+	background: var(--hh-color-bg);
+}
+
+footer#pq-footer .pq-copyright-footer .hh-footer-branding {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+footer#pq-footer .pq-copyright-footer .hh-footer-branding .pq-copyright {
+	flex: 1 1 auto;
+	width: auto;
+	margin: 0;
+	color: var(--hh-color-text);
+	text-align: left;
+}
+
+footer#pq-footer .pq-copyright-footer .hh-footer-logo-wrap {
+	display: flex;
+	flex: 0 0 auto;
+	justify-content: flex-end;
+}
+
+footer#pq-footer .pq-copyright-footer .hh-footer-logo {
+	display: block;
+	height: 56px;
+	width: auto;
+	max-height: none;
+	opacity: 0.95;
+}
+
+@media (max-width: 767px) {
+	footer#pq-footer .pq-copyright-footer .hh-footer-branding {
+		flex-direction: column;
+	}
+
+	footer#pq-footer .pq-copyright-footer .hh-footer-branding .pq-copyright {
+		text-align: center;
+	}
+
+	footer#pq-footer .pq-copyright-footer .hh-footer-logo-wrap {
+		justify-content: center;
+	}
+}
