@@ -19,7 +19,3 @@ temp/
 .env.*
 !.env.example
 
-# The current mail handler contains local SMTP credentials.
-# Keep it untracked until it is converted to environment-based configuration.
-mail.php
-
