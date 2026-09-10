@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Here - Hudson Helm</title>
+    <!--favicon icon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.min.css">
+    <!--icon css -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css">
+    <!--style css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+    
+
+<style>
+        .page-top-tight {
+            padding-top: 60px;
+        }
+
+        @media (min-width: 992px) {
+            #pq-header .navbar {
+                display: flex;
+                align-items: center;
+            }
+
+            #pq-header .navbar-brand {
+                margin-right: auto;
+            }
+
+            #pq-header .navbar .navbar-collapse {
+                flex: 0 0 auto;
+                margin-left: auto;
+            }
+
+            #pq-header #pq-menu-contain {
+                display: flex;
+                align-items: center;
+            }
+
+            #pq-header #pq-main-menu {
+                margin-left: 0;
+                margin-right: 30px;
+            }
+
+            #pq-header .pq-button {
+                flex: 0 0 auto;
+            }
+        }
+
+        #pq-header .navbar-brand {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            line-height: 1;
+        }
+
+        #pq-header .navbar-brand img.logo {
+            height: 78px !important;
+            width: auto;
+            max-height: none;
+        }
+
+        @media (max-width: 991px) {
+            #pq-header .navbar-brand img.logo {
+                height: 56px !important;
+            }
+        }
+
+        #pq-footer .hh-footer-logo,
+        #pq-footer .pq-footer-logo {
+            height: 78px;
+            width: auto;
+            max-height: none;
+        }
+
+        @media (max-width: 991px) {
+            #pq-footer .hh-footer-logo,
+            #pq-footer .pq-footer-logo {
+                height: 56px;
+            }
+        }
+
+        body,
+        .page-not-found,
+        .contact-form,
+        .aboutus,
+        .about-us,
+        .exclusive,
+        .blog-single,
+        .sidebar,
+        .counter,
+        .py-0.pq-mt-220 {
+            background: #000;
+            color: #fff;
+        }
+
+        body p,
+        body li,
+        body span,
+        body a,
+        body label,
+        body input,
+        body textarea,
+        body select,
+        body .breadcrumb-item,
+        body .pq-section-description,
+        body .pq-icon-box-description,
+        body .pq-list-check li a span,
+        body .progress-title,
+        body .progress-value,
+        body .pq-tab-info ul li,
+        body .pq-post-meta ul li,
+        body .pq-post-meta ul li a,
+        body .pq-comment-box,
+        body .comment-content,
+        body .widget,
+        body .widget a,
+        body .pq-fancy-list-box,
+        body .pq-fancy-box-sub-title,
+        body .pq-footer-recent-post-info a,
+        body .pq-footer-items-info span,
+        body .pq-footer-items-info a,
+        body .pq-blog-single-info,
+        body .pq-comment-metadata,
+        body .comment-notes,
+        body .required-field-message {
+            color: #fff;
+        }
+
+        body h1,
+        body h2,
+        body h3,
+        body h4,
+        body h5,
+        body h6,
+        body .pq-section-title,
+        body .pq-icon-box.pq-style-2 .pq-icon-box-title,
+        body .pq-blog-title a,
+        body .pq-tab-info h2,
+        body .pq-tab-info h3,
+        body .pq-breadcrumb-title h1,
+        body .pq-error-text,
+        body .pq-error-block h2,
+        body .pq-blog-single-title,
+        body .widget-title,
+        body .footer-title,
+        body .pq-image-box-title,
+        body .pq-fancy-title,
+        body .pq-fancy-box-title,
+        body .pq-counter-num-prefix,
+        body .pq-counter-prefix,
+        body .pq-counter-description,
+        body .pq-comment-box .title a {
+            color: #fff;
+            box-shadow: none;
+        }
+
+        header#pq-header,
+        header#pq-header .pq-bottom-header,
+        header#pq-header .pq-bottom-header .navbar,
+        header#pq-header.pq-header-sticky,
+        header#pq-header.pq-header-default .pq-bottom-header.pq-header-sticky,
+        header#pq-header.pq-header-sticky .pq-bottom-header,
+        header#pq-header.pq-header-sticky .pq-bottom-header .navbar {
+            background: #000 !important;
+        }
+
+        header#pq-header .pq-top-header,
+        #pq-footer,
+        #pq-footer .pq-footer-style-1,
+        #pq-footer .pq-copyright-footer {
+            background: #000;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li i,
+        .navbar-light .navbar-toggler i {
+            color: #fff;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-parent > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-ancestor > a {
+            color: #8fbfff !important;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li:hover > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li:hover > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-item > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-parent > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-ancestor > a,
+        body a:hover,
+        .pq-post-meta ul li a:hover,
+        .pq-blog-title a:hover,
+        .widget a:hover,
+        .breadcrumb-item a:hover {
+            color: #4a8fdc !important;
+        }
+
+        header#pq-header .pq-button,
+        .pq-button,
+        .pq-btn-link,
+        .service .pq-button,
+        .blog .pq-button,
+        .form-btn,
+        .search-submit {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+            color: #fff;
+            border: none;
+        }
+
+        header#pq-header .pq-button:hover,
+        header#pq-header .pq-button:focus,
+        .pq-button:hover,
+        .pq-button:focus,
+        .pq-btn-link:hover,
+        .pq-btn-link:focus,
+        .service .pq-button:hover,
+        .service .pq-button:focus,
+        .blog .pq-button:hover,
+        .blog .pq-button:focus,
+        .form-btn:hover,
+        .form-btn:focus,
+        .search-submit:hover,
+        .search-submit:focus {
+            background: linear-gradient(180deg, #5a9ae2 0%, #347ac6 100%);
+            color: #fff;
+        }
+
+        .pq-breadcrumb,
+        .goals,
+        .benefits,
+        .service,
+        .client,
+        .blog,
+        .counter,
+        .pq-bg-grey,
+        .pq-bg-dark,
+        .pq-bg-map {
+            background: #000 !important;
+            background-image: none !important;
+        }
+
+        .pq-breadcrumb {
+            border-top: 1px solid rgba(113, 165, 233, 0.18);
+            border-bottom: 1px solid rgba(113, 165, 233, 0.18);
+        }
+
+        .pq-breadcrumb .breadcrumb-item.active,
+        .pq-breadcrumb .breadcrumb-item a,
+        .pq-breadcrumb .breadcrumb-item i,
+        .goals .pq-section-sub-title,
+        .benefits .pq-section-sub-title,
+        .service .pq-section-sub-title,
+        .blog .pq-section-sub-title,
+        .aboutus .pq-section-sub-title,
+        .about-us .pq-section-sub-title,
+        .exclusive .pq-section-sub-title,
+        .contact-form .pq-section-sub-title,
+        .pq-post-date a span,
+        .pq-post-meta ul li i,
+        .pq-image-box-description.pq-text-primary,
+        .pq-fancy-box-title,
+        .reply a,
+        .pq-error-text {
+            color: #8fbfff;
+        }
+
+        .pq-error-block,
+        .pq-contact-form-p,
+        .form-div,
+        .pq-image-box.pq-style-2,
+        .pq-fancy-box,
+        .pq-fancybox-boxslider,
+        .pq-blog-post,
+        .pq-blog-post .pq-blog-contain,
+        .pq-blog-single .pq-blog-post,
+        .pq-comment-area,
+        .pq-comment-info,
+        .widget,
+        .sidebar .search-form,
+        .pq-widget-menu,
+        .pq-footer-items,
+        .pq-footer-bottom-list,
+        .counter .container,
+        .pq-counter,
+        .page-not-found .pq-error-block {
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28);
+            border-radius: 18px;
+        }
+
+        .pq-footer-bottom-list,
+        .counter .container {
+            overflow: hidden;
+        }
+
+        .pq-fancy-box:hover,
+        .pq-fancybox-boxslider:hover,
+        .pq-blog-post:hover,
+        .pq-comment-info:hover,
+        .widget:hover,
+        .pq-image-box.pq-style-2:hover,
+        .page-not-found .pq-error-block:hover {
+            background: linear-gradient(180deg, rgba(42, 73, 116, 0.94) 0%, rgba(28, 49, 77, 0.98) 100%);
+            border-color: rgba(143, 190, 255, 0.45);
+            box-shadow: 0 20px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .benefits img,
+        .service .tab-content img,
+        .blog .pq-post-media img,
+        .pq-blog-single .pq-post-media img,
+        .pq-image8 img,
+        .pq-image9 img,
+        .pq-image10 img,
+        .pq-fancy-media img,
+        .pq-footer-recent-post-media img,
+        .pq-comment-avatar img {
+            border-radius: 18px;
+            box-shadow: 0 18px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .pq-progressbar-style-1 .pq-progress-bar {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .pq-progressbar-style-1 .pq-progress-bar span.show-progress {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+        }
+
+        .pq-contactform input,
+        .pq-contactform textarea,
+        .comment-form input,
+        .comment-form textarea,
+        .search-form input {
+            background: rgba(10, 18, 29, 0.95);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        .pq-contactform input::placeholder,
+        .pq-contactform textarea::placeholder,
+        .comment-form input::placeholder,
+        .comment-form textarea::placeholder,
+        .search-form input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .pq-contactform input:hover,
+        .pq-contactform textarea:hover,
+        .pq-contactform input:focus,
+        .pq-contactform textarea:focus,
+        .pq-contactform input:focus:invalid,
+        .pq-contactform textarea:focus:invalid,
+        .pq-contactform input:invalid:focus,
+        .pq-contactform textarea:invalid:focus,
+        .pq-contactform input:hover:invalid,
+        .pq-contactform textarea:hover:invalid,
+        .pq-contactform .form-control:hover,
+        .pq-contactform .form-control:focus,
+        .comment-form input:hover,
+        .comment-form textarea:hover,
+        .comment-form input:focus,
+        .comment-form textarea:focus,
+        .search-form input:hover,
+        .search-form input:focus {
+            border-color: #4a8fdc !important;
+            box-shadow: 0 0 0 3px rgba(74, 143, 220, 0.22) !important;
+            outline: none !important;
+            -webkit-appearance: none;
+            appearance: none;
+            accent-color: #4a8fdc;
+        }
+
+        .pq-contactform input:invalid,
+        .pq-contactform textarea:invalid {
+            border-color: rgba(113, 165, 233, 0.28);
+            box-shadow: none;
+        }
+
+        .pq-contactform button.form-btn {
+            border: 0;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .pq-contactform button.form-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .pq-form-response {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .pq-form-response.is-success {
+            color: #7bd389;
+        }
+
+        .pq-form-response.is-error {
+            color: #ff8a8a;
+        }
+
+        .pq-contact-form-p .pq-icon-box.pq-style-5,
+        .pq-comment-area ol li,
+        .widget ul li,
+        .pq-list-check li,
+        .pq-fancy-list-box li {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .pq-post-date a,
+        #back-to-top .top {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+        }
+
+
+
+        .pq-contact-form-p .pq-icon-box.pq-style-5 .pq-icon i,
+        .pq-contact-form-p .pq-icon-box.pq-style-5 .pq-icon a,
+        .pq-contact-form-p .pq-icon-box.pq-style-5 .pq-icon svg {
+            color: #4a8fdc !important;
+        }
+
+        .pq-contact-form-p a {
+            color: #ffffff;
+        }
+
+        .pq-contact-form-p a:hover {
+            color: #8fbfff !important;
+        }
+
+        #pq-loading {
+            background: #000;
+        }
+</style>
+
+</head>
+<body>
+
+    <!-- Loading Start-->
+    <div id="pq-loading">
+        <div id="pq-loading-center">
+            <img src="images/logos/wide_trans.png" alt="loading">
+        </div>
+    </div>
+    <!--Loading End -->
+
+    <!--Header Start-->
+    <header id="pq-header" class="pq-header-default">
+        <div class="pq-top-header">
+            <div class="container">
+                <div class="row flex-row-reverse">
+                    
+                    <div class="col-md-12">
+                        <div class="pq-header-contact ">
+                            <ul>
+                                <li>
+                                    <a href="tel:9542256560"><i class="fas fa-phone-flip"></i><span>954-225-6560</span></a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@hudsonhelm.com"><i class="fas fa-envelope"></i><span>info@hudsonhelm.com</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pq-bottom-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html">
+                                <img class="img-fluid logo" src="images/logos/wide_trans.png" alt="Hudson Helm">
+                            </a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div id="pq-menu-contain" class="pq-menu-contain">
+                                    <ul id="pq-main-menu" class="navbar-nav">
+                                        <li class="menu-item"><a href="index.html">Home</a></li>
+                                        <li class="menu-item"><a href="whatwedo.html">What We Do</a></li>
+                                        <li class="menu-item"><a href="whyhudsonhelm.html">Why Hudson Helm?</a></li>
+                                        <li class="menu-item"><a href="areweagoodfit.html">Are We a Good Fit?</a></li>
+                                        <li class="menu-item"><a href="#">Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="starthere.html" class="pq-button">
+                                <div class="pq-button-block">
+    
+                                    <span class="pq-button-text">Start Here</span>
+                                </div>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header End-->
+<!--Contacts & Forms Start-->
+    <section class="contact-form page-top-tight">
+        <div class="container">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-5">
+                    <div class="pq-bg-dark pq-contact-form-p">
+                        <div class="pq-section pq-style-1 text-left">
+                            <h5 class="pq-section-title pq-text-white" id="contacts" data-high_text="Contact" data-title_text="Get in Touch" data-rough_color="#4a8fdc" data-rough_type="underline">Get in Touch</h5>
+                            <p class="pq-section-description pq-text-white">Tell us a little about your business, your current setup, and where technology is getting in the way. We'll review it and get back to you with practical next steps.</p>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="pq-icon-box pq-style-5">
+                                        <div class="pq-icon">
+                                            <a href="#"><i class="ion ion-ios-location"></i></a>
+                                        </div>
+                                        <div class="pq-icon-box-content">
+                                            <h4 class="pq-text-white">Office Address</h4>
+                                            <p class="pq-text-white mb-0">Address coming soon.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pq-icon-box pq-style-5">
+                                        <div class="pq-icon">
+                                            <a href="#"><i class="ion ion-email"></i></a>
+                                        </div>
+                                        <div class="pq-icon-box-content">
+                                            <h4 class="pq-text-white">Email Address</h4>
+                                            <p class="pq-text-white mb-0"><a href="mailto:info@hudsonhelm.com">info@hudsonhelm.com</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="pq-icon-box pq-style-5">
+                                        <div class="pq-icon">
+                                            <a href="#"><i class="fas fa-phone"></i></a>
+                                        </div>
+                                        <div class="pq-icon-box-content">
+                                            <h4 class="pq-text-white">Phone Number</h4>
+                                            <p class="pq-text-white mb-0"><a href="tel:9542256560">954-225-6560</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 mt-4 mt-lg-0">
+                    <div class="form-div">
+                        <div class="pq-section pq-style-1 text-left">
+                            <h5 class="pq-section-title" id="quote" data-high_text="Start" data-title_text="Start the Conversation" data-rough_color="#4a8fdc" data-rough_type="underline">Start the Conversation</h5>
+                            <p class="pq-section-description">Whether you need reliable day-to-day support, better cybersecurity, or a fresh set of eyes on your current environment, this is the place to start.</p>
+                        </div>
+                        <form action="mail.php" method="post" class="pq-contactform pq-applyform" novalidate>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <input type="text" id="first-name" name="name" class="name-field" placeholder="Your Name" autocomplete="name" required>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <input type="email" id="e-mail" name="email" class="e-mail-field" placeholder="Email" autocomplete="email" required>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <input type="text" id="phone-number" name="phone" class="phone-number-field" placeholder="Cell Phone" autocomplete="tel" required>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <input type="text" id="subject" name="subject" class="subject-field" placeholder="Subject" required>
+                                </div>
+                                <div class="col-lg-12 d-none" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                                    <label for="company-website">Leave this field empty</label>
+                                    <input type="text" id="company-website" name="website" class="website-field" tabindex="-1" autocomplete="off">
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea id="message" name="message" rows="5" cols="10" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="pq-button form-btn">
+                                        <div class="pq-button-block">
+                                            <span class="pq-button-text">Send Request</span>
+                                        </div>
+                                    </button>
+                                    <div class="pq-form-response mt-3" aria-live="polite"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Contacts & Forms End-->
+
+
+    <!--Footer Start-->
+    <footer id="pq-footer" class="style-1">
+        <div class="pq-footer-style-1">
+            <div class="pq-copyright-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="hh-footer-branding">
+                                <span class="pq-copyright"><a target="_blank" href="#">Copyright 2026 Hudson Helm. All Rights Reserved.</a></span>
+                                <div class="hh-footer-logo-wrap">
+                                    <img alt="Hudson Helm" class="hh-footer-logo" src="images/logos/hudson-helm-logo-w-trans.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+
+    <!--Back to top Start-->
+    <div id="back-to-top">
+        <a class="top" id="#top" href="#"> <i class="ion-ios-arrow-up"></i> </a>
+    </div>
+    <!--Back to top End-->
+    
+    <!--Jquery js-->
+    <script src="js/jquery.min.js"></script>
+    <!--Bootstrap js-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--Isotope js-->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <!--Counter js -->
+    <script src="js/jquery.countTo.min.js"></script>
+    <!--Magnefic Popup js -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!--Animation js -->
+    <script src="js/wow.min.js"></script>
+    <!--Custom js-->
+    <script src="js/rough-script.js"></script>
+    <script src="js/rough-notation.iife.js"></script>
+    <script src="js/rough-custom.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

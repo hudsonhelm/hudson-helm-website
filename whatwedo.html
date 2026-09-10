@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What We Do - Hudson Helm</title>
+<!--favicon icon-->
+<link href="images/favicon.ico" rel="shortcut icon"/>
+<!--bootstrap css-->
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<!--owl carousel-->
+<link href="css/owl.carousel.min.css" rel="stylesheet"/>
+<!--progressbar css-->
+<link href="css/progressbar.css" rel="stylesheet"/>
+<!--icon css -->
+<link href="fonts/font-awesome/css/all.min.css" rel="stylesheet"/>
+<link href="fonts/flaticon/font/flaticon.css" rel="stylesheet"/>
+<link href="css/ionicons.min.css" rel="stylesheet"/>
+<link href="fonts/themify-icons/themify-icons.css" rel="stylesheet"/>
+<!--style css-->
+<link href="css/style.css" rel="stylesheet"/>
+<!--responsive css-->
+<link href="css/responsive.css" rel="stylesheet"/>
+<style>
+        .page-top-tight {
+            padding-top: 60px;
+        }
+
+        @media (min-width: 992px) {
+            #pq-header .navbar {
+                display: flex;
+                align-items: center;
+            }
+
+            #pq-header .navbar-brand {
+                margin-right: auto;
+            }
+
+            #pq-header .navbar .navbar-collapse {
+                flex: 0 0 auto;
+                margin-left: auto;
+            }
+
+            #pq-header #pq-menu-contain {
+                display: flex;
+                align-items: center;
+            }
+
+            #pq-header #pq-main-menu {
+                margin-left: 0;
+                margin-right: 30px;
+            }
+
+            #pq-header .pq-button {
+                flex: 0 0 auto;
+            }
+        }
+
+        #pq-header .navbar-brand {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            line-height: 1;
+        }
+
+        #pq-header .navbar-brand img.logo {
+            height: 78px !important;
+            width: auto;
+            max-height: none;
+        }
+
+        @media (max-width: 991px) {
+            #pq-header .navbar-brand img.logo {
+                height: 56px !important;
+            }
+        }
+
+        #pq-footer .hh-footer-logo {
+            height: 78px;
+            width: auto;
+            max-height: none;
+        }
+
+        @media (max-width: 991px) {
+            #pq-footer .hh-footer-logo {
+                height: 56px;
+            }
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        body p,
+        body li,
+        body span,
+        body a,
+        body .pq-section-description,
+        body .pq-icon-box-description,
+        body .pq-list-check li a span,
+        body .progress-title,
+        body .progress-value,
+        body .pq-tab-info ul li,
+        body .pq-post-meta ul li,
+        body .pq-post-meta ul li a {
+            color: #fff;
+        }
+
+        body h1,
+        body h2,
+        body h3,
+        body h4,
+        body h5,
+        body h6,
+        body .pq-section-title,
+        body .pq-icon-box.pq-style-2 .pq-icon-box-title,
+        body .pq-blog-title a,
+        body .pq-tab-info h2,
+        body .pq-tab-info h3 {
+            color: #fff;
+            box-shadow: none;
+        }
+
+        header#pq-header,
+        header#pq-header .pq-bottom-header,
+        header#pq-header .pq-bottom-header .navbar,
+        header#pq-header.pq-header-sticky,
+        header#pq-header.pq-header-default .pq-bottom-header.pq-header-sticky,
+        header#pq-header.pq-header-sticky .pq-bottom-header,
+        header#pq-header.pq-header-sticky .pq-bottom-header .navbar {
+            background: #000 !important;
+        }
+
+        header#pq-header .pq-top-header,
+        #pq-footer,
+        #pq-footer .pq-footer-style-1,
+        #pq-footer .pq-copyright-footer {
+            background: #000;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li i,
+        .navbar-light .navbar-toggler i {
+            color: #fff;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item a:hover {
+            color: #fff;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li a:hover,
+        body a:hover,
+        .pq-post-meta ul li a:hover,
+        .pq-blog-title a:hover {
+            color: #4a8fdc;
+        }
+
+        header#pq-header .pq-button,
+        .pq-button,
+        .pq-btn-link,
+        .service .pq-button,
+        .blog .pq-button {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+        }
+
+        header#pq-header .pq-button:hover,
+        header#pq-header .pq-button:focus,
+        .pq-button:hover,
+        .pq-button:focus,
+        .pq-btn-link:hover,
+        .pq-btn-link:focus,
+        .service .pq-button:hover,
+        .service .pq-button:focus,
+        .blog .pq-button:hover,
+        .blog .pq-button:focus {
+            background: linear-gradient(180deg, #5a9ae2 0%, #347ac6 100%);
+            color: #fff;
+        }
+
+        .goals,
+        .benefits,
+        .service,
+        .client,
+        .blog {
+            background: #000 !important;
+            background-image: none !important;
+        }
+
+        .goals .row.g-5 {
+            align-items: stretch;
+        }
+
+        .goals .col-xl-3,
+        .goals .col-lg-4,
+        .goals .col-md-6 {
+            display: flex;
+        }
+
+        .goals .pq-icon-box.pq-style-2 {
+            width: 100%;
+            min-height: 282px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28);
+        }
+
+        .goals .pq-icon-box.pq-style-2:hover {
+            background: linear-gradient(180deg, rgba(42, 73, 116, 0.94) 0%, rgba(28, 49, 77, 0.98) 100%);
+            border-color: rgba(143, 190, 255, 0.45);
+            box-shadow: 0 20px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .goals .pq-icon-box.pq-style-2 .pq-icon-box-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+        }
+
+        .goals .pq-icon-box.pq-style-2 .pq-icon-box-title {
+            min-height: 72px;
+        }
+
+        .goals .pq-icon-box.pq-style-2 .pq-icon i,
+        .service .pq-tabs-1 .nav-tabs .nav-link.active .pq-tabs-icon i,
+        .service .pq-tabs-1 .nav-tabs .nav-link:hover .pq-tabs-icon i {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+        }
+
+        .goals .pq-section-sub-title,
+        .benefits .pq-section-sub-title,
+        .service .pq-section-sub-title,
+        .blog .pq-section-sub-title {
+            color: #8fbfff;
+        }
+
+        .benefits img,
+        .service .tab-content img,
+        .blog .pq-post-media img {
+            border-radius: 18px;
+            box-shadow: 0 18px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .pq-progressbar-style-1 .pq-progress-bar {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .pq-progressbar-style-1 .pq-progress-bar span.show-progress {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+        }
+
+        .service .pq-tabs-1 .nav-tabs {
+            gap: 14px;
+            border-bottom: 0;
+        }
+
+        .service .pq-tabs-1 .nav-tabs .nav-link {
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28);
+            color: #fff;
+        }
+
+        .service .pq-tabs-1 .nav-tabs .nav-link .pq-tabs-icon span,
+        .service .pq-tabs-1 .nav-tabs .nav-link .pq-tabs-icon i {
+            color: #fff;
+        }
+
+        .service .pq-tabs-1 .nav-tabs .nav-link.active,
+        .service .pq-tabs-1 .nav-tabs .nav-link:hover {
+            background: linear-gradient(180deg, rgba(42, 73, 116, 0.94) 0%, rgba(28, 49, 77, 0.98) 100%);
+            border-color: rgba(143, 190, 255, 0.45);
+            color: #fff;
+        }
+
+        .service .tab-content,
+        .blog .pq-blog-post {
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28);
+            border-radius: 18px;
+        }
+
+        .service .tab-pane,
+        .blog .pq-blog-contain {
+            color: #fff;
+        }
+
+        .service .pq-tab-info ul li {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .client .pq-client-box,
+        .client .pq-clientbox-style-1 {
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            border-radius: 18px;
+        }
+
+        .blog .pq-post-date a {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            color: #fff;
+        }
+
+        .blog .pq-post-meta ul li i,
+        .blog .pq-post-date a span {
+            color: #8fbfff;
+        }
+
+        #pq-loading {
+            background: #000;
+        }
+
+        #back-to-top .top {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+        }
+    </style>
+
+<style>
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-parent > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-ancestor > a {
+            color: #8fbfff !important;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li:hover > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li:hover > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-item > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-parent > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-ancestor > a {
+            color: #8fbfff !important;
+        }
+</style>
+</head>
+<body>
+<!-- Loading Start-->
+<div id="pq-loading">
+<div id="pq-loading-center">
+<img alt="loading" src="images/logos/wide_trans.png"/>
+</div>
+</div>
+<!--Loading End -->
+<!--Header Start-->
+<header class="pq-header-default" id="pq-header">
+<div class="pq-top-header">
+<div class="container">
+<div class="row flex-row-reverse">
+<div class="col-md-12">
+<div class="pq-header-contact">
+<ul>
+<li>
+<a href="tel:9542256560"><i class="fas fa-phone-flip"></i><span>954-225-6560</span></a>
+</li>
+<li>
+<a href="mailto:info@hudsonhelm.com"><i class="fas fa-envelope"></i><span>info@hudsonhelm.com</span></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pq-bottom-header">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<nav class="navbar navbar-expand-lg navbar-light">
+<a class="navbar-brand" href="index.html">
+<img alt="Hudson Helm" class="img-fluid logo" src="images/logos/wide_trans.png"/>
+</a>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="pq-menu-contain" id="pq-menu-contain">
+<ul class="navbar-nav" id="pq-main-menu">
+<li class="menu-item"><a href="index.html">Home</a></li>
+<li class="menu-item current-menu-item"><a href="whatwedo.html">What We Do</a></li>
+<li class="menu-item"><a href="whyhudsonhelm.html">Why Hudson Helm?</a></li>
+<li class="menu-item"><a href="areweagoodfit.html">Are We a Good Fit?</a></li>
+<li class="menu-item"><a href="#">Support</a></li>
+</ul>
+</div>
+</div>
+<a class="pq-button" href="starthere.html">
+<div class="pq-button-block">
+<span class="pq-button-text">Start Here</span>
+</div>
+</a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+<i class="fas fa-bars"></i>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!--Header End-->
+<!--Goals Start-->
+<section class="goals page-top-tight">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="pq-section pq-style-1 text-center">
+<span class="pq-section-sub-title"># what we help with</span>
+<h5 class="pq-section-title" data-high_text="Form" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="We Run All Kinds Of Services In Form Of IT" id="form">Practical IT Services for Small Businesses</h5>
+</div>
+</div>
+</div>
+<div class="row g-5 text-center justify-content-center">
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-server"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Managed IT</h4>
+<p class="pq-icon-box-description">Keep systems updated, monitored, and running reliably so technology stops being a daily distraction.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-laptop"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">End-User Support</h4>
+<p class="pq-icon-box-description">Fast, plain-English help for workstations, printers, login issues, and the thousand little things that slow people down.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-android"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Microsoft 365</h4>
+<p class="pq-icon-box-description">Set up and support Microsoft 365, email, identity, licensing, Teams, and the security settings small businesses usually overlook.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-call-center"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Help Desk</h4>
+<p class="pq-icon-box-description">Remote and on-site support options with escalation, troubleshooting, and follow-through instead of vanishing into the void.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-design"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Network &amp; Infrastructure</h4>
+<p class="pq-icon-box-description">Build and maintain the environment behind the scenes, including servers, firewalls, Wi-Fi, backups, and line-of-business systems.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-analytics"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Cybersecurity</h4>
+<p class="pq-icon-box-description">Layer practical security controls around your business with endpoint protection, safer configuration, patching, and user-risk reduction.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-ecologic-light-bulb"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Projects &amp; Upgrades</h4>
+<p class="pq-icon-box-description">Handle migrations, office moves, standardization, onboarding improvements, and the cleanup jobs nobody ever seems to own.</p>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-4 col-md-6">
+<div class="pq-icon-box pq-style-2">
+<div class="pq-icon-box-icon">
+<span class="pq-icon">
+<i class="flaticon-globe-1"></i>
+</span>
+</div>
+<div class="pq-icon-box-content">
+<h4 class="pq-icon-box-title">Vendor Coordination</h4>
+<p class="pq-icon-box-description">Work with ISPs, software vendors, copier companies, and other providers so your team is not stuck playing middleman.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--Goals End-->
+<!--Benefits Start-->
+<section class="benefits pq-bg-dark pq-bg-img-2">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<div class="pq-section pq-style-1 text-left">
+<span class="pq-section-sub-title"># why businesses hire us</span>
+<h5 class="pq-section-title pq-text-white" data-high_text="Exponentially" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="We Help You Grow Your Business Exponentially" id="exponentially">Dependable IT Without Enterprise-Level Overhead</h5>
+<p class="pq-section-description pq-text-white">Hudson Helm is built for smaller organizations that need real IT guidance, fast support, and a partner who can keep things moving without dragging them into a giant, overpriced contract.</p>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 mt-4 mt-lg-0">
+<img alt="Office team collaborating" src="images/benefits/1.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!--Benefits End-->
+<!--Services Start-->
+<section class="service pq-pt-200">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="pq-section pq-style-1 text-center">
+<span class="pq-section-sub-title"># our services</span>
+<h5 class="pq-section-title" data-high_text="Services" data-rough_color="#4a8fdc" data-rough_type="underline" data-title_text="Provide Exclusive Services" id="services">Core Services We Offer</h5>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="pq-tabs-1">
+<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist"><a aria-controls="nav-home-0" aria-selected="true" class="pq-tabs nav-item nav-link active" data-bs-toggle="tab" href="#nav-0" id="nav-home-0" role="tab">
+<div class="pq-tabs-icon"><i class="flaticon-marketing"></i><span>Managed IT Services</span></div>
+</a><a aria-controls="nav-home-1" aria-selected="true" class="pq-tabs nav-item nav-link" data-bs-toggle="tab" href="#nav-1" id="nav-home-1" role="tab">
+<div class="pq-tabs-icon"><i class="flaticon-call-center"></i><span>Support &amp; Microsoft 365</span></div>
+</a><a aria-controls="nav-home-2" aria-selected="true" class="pq-tabs nav-item nav-link" data-bs-toggle="tab" href="#nav-2" id="nav-home-2" role="tab">
+<div class="pq-tabs-icon"><i class="flaticon-data-analytics"></i><span>Cybersecurity &amp; Backups</span></div>
+</a><a aria-controls="nav-home-3" aria-selected="true" class="pq-tabs nav-item nav-link" data-bs-toggle="tab" href="#nav-3" id="nav-home-3" role="tab">
+<div class="pq-tabs-icon"><i class="flaticon-ux-design"></i><span>Projects &amp; Consulting</span></div>
+</a></div>
+<div class="tab-content text-left" id="nav-tabContent">
+<div aria-labelledby="nav-home-0" class="tab-pane fade show active" id="nav-0" role="tabpanel">
+<div class="row align-items-center">
+<div class="col-lg-6">
+<img alt="seo-image" src="images/tabs/1.jpg"/>
+</div>
+<div class="col-lg-6">
+<div class="pq-tab-info">
+<h2>Managed IT Services</h2>
+<p>Small businesses choose Hudson Helm because they need IT that simply works. We focus on reliability, fast response times, and practical solutions—not unnecessary complexity. You get experienced support, proactive maintenance, and real cybersecurity protections without enterprise-level pricing. We stay small on purpose so every client gets attention, accountability, and results.</p>
+<p>Ongoing support for the systems your business relies on every day. We focus on stability, documentation, maintenance, and the kind of follow-through that keeps small problems from turning into outages.</p>
+<h3> </h3>
+<ul><li>Workstation, laptop, and basic server management</li><li>Patch management, standardization, and routine maintenance</li><li>Monitoring and issue response before users pile on</li><li>Right-sized support for offices that need real IT without a full internal department</li></ul>
+<div class="pq-btn-container">
+<div class="pq-button-block">
+<a class="pq-button" href="starthere.html">
+<span class="text">Read more</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="nav-home-1" class="tab-pane fade show" id="nav-1" role="tabpanel">
+<div class="row flex-row-reverse">
+<div class="col-lg-6">
+<img alt="seo-image" src="images/tabs/2.jpg"/>
+</div>
+<div class="col-lg-6 align-self-center">
+<div class="pq-tab-info">
+<h2>Support &amp; Microsoft 365</h2>
+<p>When employees need help, they need it quickly and without a lecture. We support the day-to-day user experience while also handling the Microsoft 365 side that powers email, collaboration, identity, and device access.</p>
+<h3> </h3>
+<ul><li>Remote troubleshooting for email, login, device, and application issues</li><li>Microsoft 365 setup, licensing, migrations, and cleanup</li><li>Teams, OneDrive, SharePoint, and mailbox support</li><li>User onboarding, offboarding, and permission management</li></ul>
+<div class="pq-btn-container">
+<div class="pq-button-block">
+<a class="pq-button" href="starthere.html">
+<span class="text">Read more</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="nav-home-2" class="tab-pane fade show" id="nav-2" role="tabpanel">
+<div class="row">
+<div class="col-lg-6">
+<img alt="seo-image" src="images/tabs/3.jpg"/>
+</div>
+<div class="col-lg-6 align-self-center">
+<div class="pq-tab-info">
+<h2>Cybersecurity &amp; Backups</h2>
+<p>Security for small business should be practical, layered, and maintained over time. We help reduce risk with better configuration, backups, safer user practices, and protection that fits your environment.</p>
+<h3> </h3>
+<ul><li>Endpoint protection, patching, and baseline hardening</li><li>Backup monitoring and recovery readiness</li><li>Multi-factor authentication and access control guidance</li><li>Common-sense security improvements that do not wreck productivity</li></ul>
+<div class="pq-btn-container">
+<div class="pq-button-block">
+<a class="pq-button" href="starthere.html">
+<span class="text">Read more</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-labelledby="nav-home-3" class="tab-pane fade show" id="nav-3" role="tabpanel">
+<div class="row flex-row-reverse">
+<div class="col-lg-6">
+<img alt="seo-image" src="images/tabs/4.jpg"/>
+</div>
+<div class="col-lg-6 align-self-center">
+<div class="pq-tab-info">
+<h2>Projects &amp; Consulting</h2>
+<p>Some work is not a ticket. Office moves, migrations, cleanup projects, vendor wrangling, and infrastructure upgrades all need planning, communication, and somebody keeping the train on the tracks.</p>
+<h3> </h3>
+<ul><li>Technology assessments and environment cleanup</li><li>Network refreshes, Wi-Fi improvements, and site coordination</li><li>Email, file, and platform migrations</li><li>Planning and guidance for growing businesses that need a stronger IT foundation</li></ul>
+<div class="pq-btn-container">
+<div class="pq-button-block">
+<a class="pq-button" href="starthere.html">
+<span class="text">Read more</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--Services End-->
+
+<!--Footer Start-->
+<footer class="style-1" id="pq-footer">
+<div class="pq-footer-style-1">
+<div class="pq-copyright-footer">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div class="hh-footer-branding">
+<span class="pq-copyright"><a href="#" target="_blank">Copyright 2026 Hudson Helm. All Rights Reserved.</a></span>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!--Footer End-->
+<!--Back to top Start-->
+<div id="back-to-top">
+<a class="top" href="#" id="#top"> <i class="ion-ios-arrow-up"></i> </a>
+</div>
+<!--Back to top End-->
+<!--Jquery js-->
+<script src="js/jquery.min.js"></script>
+<!--Bootstrap js-->
+<script src="js/bootstrap.min.js"></script>
+<!--Owl Carousel js-->
+<script src="js/owl.carousel.min.js"></script>
+<!--Progressbar js-->
+<script src="js/progressbar.js"></script>
+<!--Isotope js-->
+<script src="js/isotope.pkgd.min.js"></script>
+<!--Counter js -->
+<script src="js/jquery.countTo.min.js"></script>
+<!--Magnefic Popup js -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!--Animation js -->
+<script src="js/wow.min.js"></script>
+<!--Custom js-->
+<script src="js/rough-script.js"></script>
+<script src="js/rough-notation.iife.js"></script>
+<script src="js/rough-custom.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

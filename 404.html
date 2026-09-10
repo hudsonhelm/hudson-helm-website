@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techrix – It solution HTML Template</title>
+    <!--favicon icon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--icon css -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css">
+    <!--style css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+
+<style>
+        .page-top-tight {
+            padding-top: 60px;
+        }
+
+        @media (min-width: 992px) {
+            #pq-header .navbar {
+                display: flex;
+                align-items: center;
+            }
+
+            #pq-header .navbar-brand {
+                margin-right: auto;
+            }
+
+            #pq-header .navbar .navbar-collapse {
+                flex: 0 0 auto;
+                margin-left: auto;
+            }
+
+            #pq-header #pq-menu-contain {
+                display: flex;
+                align-items: center;
+            }
+
+            #pq-header #pq-main-menu {
+                margin-left: 0;
+                margin-right: 30px;
+            }
+
+            #pq-header .pq-button {
+                flex: 0 0 auto;
+            }
+        }
+
+        #pq-header .navbar-brand {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            line-height: 1;
+        }
+
+        #pq-header .navbar-brand img.logo {
+            height: 78px !important;
+            width: auto;
+            max-height: none;
+        }
+
+        @media (max-width: 991px) {
+            #pq-header .navbar-brand img.logo {
+                height: 56px !important;
+            }
+        }
+
+        #pq-footer .hh-footer-logo,
+        #pq-footer .pq-footer-logo {
+            height: 78px;
+            width: auto;
+            max-height: none;
+        }
+
+        @media (max-width: 991px) {
+            #pq-footer .hh-footer-logo,
+            #pq-footer .pq-footer-logo {
+                height: 56px;
+            }
+        }
+
+        body,
+        .page-not-found,
+        .contact-form,
+        .aboutus,
+        .about-us,
+        .exclusive,
+        .blog-single,
+        .sidebar,
+        .counter,
+        .py-0.pq-mt-220 {
+            background: #000;
+            color: #fff;
+        }
+
+        body p,
+        body li,
+        body span,
+        body a,
+        body label,
+        body input,
+        body textarea,
+        body select,
+        body .breadcrumb-item,
+        body .pq-section-description,
+        body .pq-icon-box-description,
+        body .pq-list-check li a span,
+        body .progress-title,
+        body .progress-value,
+        body .pq-tab-info ul li,
+        body .pq-post-meta ul li,
+        body .pq-post-meta ul li a,
+        body .pq-comment-box,
+        body .comment-content,
+        body .widget,
+        body .widget a,
+        body .pq-fancy-list-box,
+        body .pq-fancy-box-sub-title,
+        body .pq-footer-recent-post-info a,
+        body .pq-footer-items-info span,
+        body .pq-footer-items-info a,
+        body .pq-blog-single-info,
+        body .pq-comment-metadata,
+        body .comment-notes,
+        body .required-field-message {
+            color: #fff;
+        }
+
+        body h1,
+        body h2,
+        body h3,
+        body h4,
+        body h5,
+        body h6,
+        body .pq-section-title,
+        body .pq-icon-box.pq-style-2 .pq-icon-box-title,
+        body .pq-blog-title a,
+        body .pq-tab-info h2,
+        body .pq-tab-info h3,
+        body .pq-breadcrumb-title h1,
+        body .pq-error-text,
+        body .pq-error-block h2,
+        body .pq-blog-single-title,
+        body .widget-title,
+        body .footer-title,
+        body .pq-image-box-title,
+        body .pq-fancy-title,
+        body .pq-fancy-box-title,
+        body .pq-counter-num-prefix,
+        body .pq-counter-prefix,
+        body .pq-counter-description,
+        body .pq-comment-box .title a {
+            color: #fff;
+            box-shadow: none;
+        }
+
+        header#pq-header,
+        header#pq-header .pq-bottom-header,
+        header#pq-header .pq-bottom-header .navbar,
+        header#pq-header.pq-header-sticky,
+        header#pq-header.pq-header-default .pq-bottom-header.pq-header-sticky,
+        header#pq-header.pq-header-sticky .pq-bottom-header,
+        header#pq-header.pq-header-sticky .pq-bottom-header .navbar {
+            background: #000 !important;
+        }
+
+        header#pq-header .pq-top-header,
+        #pq-footer,
+        #pq-footer .pq-footer-style-1,
+        #pq-footer .pq-copyright-footer {
+            background: #000;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li i,
+        .navbar-light .navbar-toggler i {
+            color: #fff;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-parent > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-ancestor > a {
+            color: #8fbfff !important;
+        }
+
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li:hover > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li > a:hover,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li:hover > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-item > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-parent > a,
+        header#pq-header .pq-bottom-header .navbar .navbar-nav li .sub-menu li.current-menu-ancestor > a,
+        body a:hover,
+        .pq-post-meta ul li a:hover,
+        .pq-blog-title a:hover,
+        .widget a:hover,
+        .breadcrumb-item a:hover {
+            color: #4a8fdc !important;
+        }
+
+        header#pq-header .pq-button,
+        .pq-button,
+        .pq-btn-link,
+        .service .pq-button,
+        .blog .pq-button,
+        .form-btn,
+        .search-submit {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+            color: #fff;
+            border: none;
+        }
+
+        header#pq-header .pq-button:hover,
+        header#pq-header .pq-button:focus,
+        .pq-button:hover,
+        .pq-button:focus,
+        .pq-btn-link:hover,
+        .pq-btn-link:focus,
+        .service .pq-button:hover,
+        .service .pq-button:focus,
+        .blog .pq-button:hover,
+        .blog .pq-button:focus,
+        .form-btn:hover,
+        .form-btn:focus,
+        .search-submit:hover,
+        .search-submit:focus {
+            background: linear-gradient(180deg, #5a9ae2 0%, #347ac6 100%);
+            color: #fff;
+        }
+
+        .pq-breadcrumb,
+        .goals,
+        .benefits,
+        .service,
+        .client,
+        .blog,
+        .counter,
+        .pq-bg-grey,
+        .pq-bg-dark,
+        .pq-bg-map {
+            background: #000 !important;
+            background-image: none !important;
+        }
+
+        .pq-breadcrumb {
+            border-top: 1px solid rgba(113, 165, 233, 0.18);
+            border-bottom: 1px solid rgba(113, 165, 233, 0.18);
+        }
+
+        .pq-breadcrumb .breadcrumb-item.active,
+        .pq-breadcrumb .breadcrumb-item a,
+        .pq-breadcrumb .breadcrumb-item i,
+        .goals .pq-section-sub-title,
+        .benefits .pq-section-sub-title,
+        .service .pq-section-sub-title,
+        .blog .pq-section-sub-title,
+        .aboutus .pq-section-sub-title,
+        .about-us .pq-section-sub-title,
+        .exclusive .pq-section-sub-title,
+        .contact-form .pq-section-sub-title,
+        .pq-post-date a span,
+        .pq-post-meta ul li i,
+        .pq-image-box-description.pq-text-primary,
+        .pq-fancy-box-title,
+        .reply a,
+        .pq-error-text {
+            color: #8fbfff;
+        }
+
+        .pq-error-block,
+        .pq-contact-form-p,
+        .form-div,
+        .pq-image-box.pq-style-2,
+        .pq-fancy-box,
+        .pq-fancybox-boxslider,
+        .pq-blog-post,
+        .pq-blog-post .pq-blog-contain,
+        .pq-blog-single .pq-blog-post,
+        .pq-comment-area,
+        .pq-comment-info,
+        .widget,
+        .sidebar .search-form,
+        .pq-widget-menu,
+        .pq-footer-items,
+        .pq-footer-bottom-list,
+        .counter .container,
+        .pq-counter,
+        .page-not-found .pq-error-block {
+            background: linear-gradient(180deg, rgba(34, 60, 96, 0.88) 0%, rgba(22, 38, 58, 0.96) 100%);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            box-shadow: 0 16px 40px rgba(6, 15, 28, 0.28);
+            border-radius: 18px;
+        }
+
+        .pq-footer-bottom-list,
+        .counter .container {
+            overflow: hidden;
+        }
+
+        .pq-fancy-box:hover,
+        .pq-fancybox-boxslider:hover,
+        .pq-blog-post:hover,
+        .pq-comment-info:hover,
+        .widget:hover,
+        .pq-image-box.pq-style-2:hover,
+        .page-not-found .pq-error-block:hover {
+            background: linear-gradient(180deg, rgba(42, 73, 116, 0.94) 0%, rgba(28, 49, 77, 0.98) 100%);
+            border-color: rgba(143, 190, 255, 0.45);
+            box-shadow: 0 20px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .benefits img,
+        .service .tab-content img,
+        .blog .pq-post-media img,
+        .pq-blog-single .pq-post-media img,
+        .pq-image8 img,
+        .pq-image9 img,
+        .pq-image10 img,
+        .pq-fancy-media img,
+        .pq-footer-recent-post-media img,
+        .pq-comment-avatar img {
+            border-radius: 18px;
+            box-shadow: 0 18px 48px rgba(7, 18, 34, 0.38);
+        }
+
+        .pq-progressbar-style-1 .pq-progress-bar {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .pq-progressbar-style-1 .pq-progress-bar span.show-progress {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+        }
+
+        .pq-contactform input,
+        .pq-contactform textarea,
+        .comment-form input,
+        .comment-form textarea,
+        .search-form input {
+            background: rgba(10, 18, 29, 0.95);
+            border: 1px solid rgba(113, 165, 233, 0.28);
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        .pq-contactform input::placeholder,
+        .pq-contactform textarea::placeholder,
+        .comment-form input::placeholder,
+        .comment-form textarea::placeholder,
+        .search-form input::placeholder {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .pq-contact-form-p .pq-icon-box.pq-style-5,
+        .pq-comment-area ol li,
+        .widget ul li,
+        .pq-list-check li,
+        .pq-fancy-list-box li {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .pq-post-date a,
+        #back-to-top .top {
+            background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+        }
+
+        #pq-loading {
+            background: #000;
+        }
+</style>
+
+</head>
+
+<body>
+
+    <!-- Loading Start-->
+    <div id="pq-loading">
+        <div id="pq-loading-center">
+            <img src="images/logos/wide_trans.png" alt="loading">
+        </div>
+    </div>
+    <!--Loading End -->
+
+    <!--Header Start-->
+    <header id="pq-header" class="pq-header-default">
+        <div class="pq-top-header">
+            <div class="container">
+                <div class="row flex-row-reverse">
+                    <div class="col-md-6 text-right">
+                        <div class="pq-header-social text-right">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pq-header-contact ">
+                            <ul>
+                                <li>
+                                    <a href="tel:+180045647824"><i
+                                            class="fas fa-phone-flip"></i><span>+1-800-456-478-24</span></a>
+                                </li>
+                                <li>
+                                    <a href="mailto:peacefulqode@gmail.com"><i
+                                            class="fas fa-envelope"></i><span>peacefulqode@gmail.com</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pq-bottom-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html">
+                                <img class="img-fluid logo" src="images/logos/wide_trans.png" alt="Hudson Helm">
+                            </a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div id="pq-menu-contain" class="pq-menu-contain">
+                                    <ul id="pq-main-menu" class="navbar-nav ml-auto">
+                                        <li class="menu-item"><a href="index.html">Home</a></li>
+                                        <li class="menu-item"><a href="#">What We Do</a></li>
+                                        <li class="menu-item"><a href="#">Why Hudson Helm</a></li>
+                                        <li class="menu-item"><a href="#">Are We a Good Fit?</a></li>
+                                        <li class="menu-item"><a href="#">Support</a></li>
+                                        <li class="menu-item"><a href="starthere.html">Start Here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pq-menu-search-block">
+                                <a href="javascript:void(0)" id="pq-seacrh-btn"><i class="fa fa-search"></i></a>
+                                <div class="pq-search-form">
+
+                                    <form role="search" method="get" class="search-form" action="index.html">
+                                        <label>
+                                            <span class="screen-reader-text">Search for:</span>
+                                            <input type="search" class="search-field" placeholder="Search …" value=""
+                                                name="s">
+                                        </label>
+                                        <button type="submit" class="search-submit">
+                                            <span class="screen-reader-text">Search</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <a href="starthere.html" class="pq-button">
+                                <div class="pq-button-block">
+                                    <span class="pq-button-text">Free Quote</span>
+                                </div>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header End-->
+
+    <!--Breadcrumb Start-->
+    <div class="pq-breadcrumb pq-bg-dark pq-bg-img-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb">
+                        <div class="pq-breadcrumb-title">
+                            <h1>Page Not Found</h1>
+                        </div>
+                        <div class="pq-breadcrumb-container">
+                            <ol class="breadcrumb align-items-center">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home me-2"></i>Home</a>
+                                </li>
+                                <li class="breadcrumb-item active">Error 404</li>
+                            </ol>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Breadcrumb End-->
+
+    <!--Page Not Found Start-->
+    <section class="page-not-found">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="pq-error-block">
+                        <div class="pq-error-text">404</div>
+                        <h2>404 Error</h2>
+                        <p>Oops! This Page is Not Found</p>
+                        <a href="index.html" class="pq-button">
+                            <div class="pq-button-block">
+                                <span class="pq-button-text">Back To Home</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Page Not Found End-->
+
+    <!--Footer Start-->
+    <footer id="pq-footer" class="style-1">
+        <div class="pq-footer-style-1">
+            <div class="pq-footer-top">
+                <!-- footer top list  -->
+                <div class="pq-footer-bottom-list">
+                    <div class="container">
+                        <div class="row g-0">
+                            <div class="col-lg-4 p-0">
+                                <div class="pq-footer-items">
+                                    <i class="ti-location-pin"></i>
+                                    <div class="pq-footer-items-info">
+                                        <h4>Address</h4>
+                                        <span> 457,Gourandai Los Angeles,USA </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 p-0">
+                                <div class="pq-footer-items">
+                                    <i class="ti-mobile"></i>
+                                    <div class="pq-footer-items-info">
+                                        <h4>call Us On</h4>
+                                        <a href="tel:+180045647824">
+                                            <span>+1-800-456-478-24</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 p-0">
+                                <div class="pq-footer-items border-0">
+                                    <i class="ti-email"></i>
+                                    <div class="pq-footer-items-info">
+                                        <h4>Email Us</h4>
+                                        <a href="mailto:peacefulqode@gmail.com"><span>peacefulqode@gmail.com</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer top list -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="widget">
+                                <img src="images/logos/footer-logo.png" class="pq-footer-logo" alt="gym-footer-logo">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered.</p>
+                                <div class="pq-footer-social">
+                                    <ul>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3  col-md-6">
+                            <div class="widget">
+                                <h4 class="footer-title">Our Services</h4>
+                                <div class="menu-useful-service-links-container">
+                                    <ul id="menu-useful-service-links" class="menu">
+                                        <li>
+                                            <a href="software-development.html">Software Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="web-development.html">Web Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="mobile-development.html">Mobile Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="app-development.html">App Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="qa-testing.html">QA Testing</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3  col-md-6">
+                            <div class="widget">
+                                <h4 class="footer-title">Useful link</h4>
+                                <div class="menu-useful-link-container">
+                                    <ul id="menu-usefull-link" class="menu">
+                                        <li>
+                                            <a href="#">Fact Search Engine</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Learn and Code</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Video Sharing Website</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">File &amp; URL Scanner</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Online Software Package</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3  col-md-6">
+                            <div class="pq-widget-menu widget">
+                                <h4 class="footer-title">Recent post</h4>
+                                <div class="pq-footer-recent-post">
+                                    <div class="pq-footer-recent-post-media">
+                                        <a href="areweagoodfit.html">
+                                            <img src="images/footer-blog/1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="pq-footer-recent-post-info">
+                                        <h6><a href="areweagoodfit.html">App promotes sales
+                                                &amp; profits In It Solutions</a></h6>
+                                        <a href="areweagoodfit.html"
+                                            class="pq-post-date">January <span>26</span>, 2021 </a>
+                                    </div>
+                                </div>
+                                <div class="pq-footer-recent-post">
+                                    <div class="pq-footer-recent-post-media">
+                                        <a href="areweagoodfit.html">
+                                            <img src="images/footer-blog/2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="pq-footer-recent-post-info">
+                                        <h6><a href="areweagoodfit.html">In Depth Industry
+                                                &amp; Ecosystem Analysis</a></h6>
+                                        <a href="areweagoodfit.html"
+                                            class="pq-post-date">January <span>26</span>, 2021 </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pq-copyright-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <span class="pq-copyright"><a target="_blank" href="#"> Copyright 2022 Techtrix All Rights
+                                    Reserved.</a></span>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="pq-footer-link">
+                                <ul>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Term Of Use</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer End-->
+
+    <!--Back to top Start-->
+    <div id="back-to-top">
+        <a class="top" id="#top" href="#"> <i class="ion-ios-arrow-up"></i> </a>
+    </div>
+    <!--Back to top End-->
+
+    <!--Jquery js-->
+    <script src="js/jquery.min.js"></script>
+    <!--Bootstrap js-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--Isotope js-->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <!--Counter js -->
+    <script src="js/jquery.countTo.min.js"></script>
+    <!--Magnefic Popup js -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!--Animation js -->
+    <script src="js/wow.min.js"></script>
+    <!--Custom js-->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
