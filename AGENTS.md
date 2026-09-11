@@ -97,6 +97,8 @@ For contact-form or other mail-delivery work, use Cloudflare's official testing 
 
 The Phase 7 placeholder production publication is intentionally fail-closed: until real Migadu and Turnstile values are securely installed, the public form must remain unavailable and must not attempt delivery or accept unverified submissions.
 
+Keep Start Here as one concise, form-first workflow. Do not reintroduce a separate introductory contact card or large Service Area, Email Address, and Phone Number rows; keep the compact direct-contact alternative below the form.
+
 Do not declare a phase complete merely because its primary visual change appears correct.
 
 ## After Completing a Material Task

@@ -460,48 +460,54 @@
             padding: 72px 0;
         }
 
-        .hh-start-page .row {
-            align-items: stretch !important;
+        .hh-start-page .container {
+            max-width: 980px;
         }
 
-        .hh-start-page .pq-contact-form-p,
         .hh-start-page .form-div {
-            height: 100%;
-            padding: 42px;
+            padding: 46px 50px;
         }
 
-        .hh-start-page h1,
-        .hh-start-page h2 {
-            margin-bottom: 18px;
+        .hh-start-page h1 {
+            margin: 0 0 14px;
+        }
+
+        .hh-start-intro {
+            max-width: 780px;
+            margin: 0;
+            line-height: 1.65;
         }
 
         .hh-response-time {
-            margin: 18px 0 0;
+            margin: 18px 0 26px;
             padding: 14px 16px;
             border-left: 3px solid #4a8fdc;
             background: rgba(74, 143, 220, 0.1);
             border-radius: 0 8px 8px 0;
         }
 
-        .hh-start-page .pq-icon-box .pq-icon {
-            color: #4a8fdc;
+        .hh-direct-contact {
+            margin-top: 26px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
         }
 
-        .hh-start-page .pq-icon-box.pq-style-5 {
-            display: flex;
-            align-items: flex-start;
-            text-align: left;
+        .hh-direct-contact p {
+            margin: 0;
         }
 
-        .hh-start-page .pq-icon-box.pq-style-5 .pq-icon {
-            flex: 0 0 34px;
-            margin: 3px 14px 0 0;
-            font-size: 28px;
-            line-height: 1;
+        .hh-direct-contact .hh-direct-options {
+            margin-top: 8px;
         }
 
-        .hh-start-page .pq-icon-box.pq-style-5 .pq-icon-box-content {
-            min-width: 0;
+        .hh-direct-contact a {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .hh-direct-contact a:hover,
+        .hh-direct-contact a:focus {
+            color: #8fbfff;
         }
 
         .hh-field {
@@ -567,17 +573,51 @@
                 padding: 52px 0;
             }
 
-            .hh-start-page .pq-contact-form-p,
             .hh-start-page .form-div {
-                height: auto;
-                padding: 34px;
+                padding: 38px;
             }
         }
 
         @media (max-width: 575px) {
-            .hh-start-page .pq-contact-form-p,
+            .hh-start-page {
+                padding: 34px 0 42px;
+            }
+
             .hh-start-page .form-div {
                 padding: 28px 22px;
+            }
+
+            .hh-start-intro {
+                line-height: 1.55;
+            }
+
+            .hh-response-time {
+                margin: 16px 0 22px;
+                padding: 12px 14px;
+            }
+
+            .hh-field {
+                margin-bottom: 16px;
+            }
+
+            .hh-field label {
+                margin-bottom: 5px;
+            }
+
+            .hh-direct-contact {
+                margin-top: 22px;
+                padding-top: 18px;
+            }
+
+            #back-to-top {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            #back-to-top .top {
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
             }
         }
 </style>
@@ -638,54 +678,13 @@
     <!--Contacts & Forms Start-->
     <section class="contact-form hh-start-page" aria-labelledby="start-here-title">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-12 col-lg-5">
-                    <div class="pq-bg-dark pq-contact-form-p">
-                        <div class="pq-section pq-style-1 text-left">
-                            <h1 class="pq-section-title pq-text-white" id="start-here-title">Start Here</h1>
-                            <p class="pq-section-description pq-text-white">Tell us a little about your business, your current setup, and where technology is getting in the way. We'll review it and get back to you with practical next steps.</p>
-                            <p class="hh-response-time pq-text-white">We'll usually respond within one business day.</p>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="pq-icon-box pq-style-5">
-                                        <div class="pq-icon" aria-hidden="true">
-                                            <i class="ion ion-ios-location"></i>
-                                        </div>
-                                        <div class="pq-icon-box-content">
-                                            <h3 class="pq-text-white h4">Service Area</h3>
-                                            <p class="pq-text-white mb-0">Serving New Jersey &amp; New York</p>
-                                        </div>
-                                    </div>
-                                    <div class="pq-icon-box pq-style-5">
-                                        <div class="pq-icon" aria-hidden="true">
-                                            <i class="ion ion-email"></i>
-                                        </div>
-                                        <div class="pq-icon-box-content">
-                                            <h3 class="pq-text-white h4">Email Address</h3>
-                                            <p class="pq-text-white mb-0"><a href="mailto:info@hudsonhelm.com">info@hudsonhelm.com</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="pq-icon-box pq-style-5">
-                                        <div class="pq-icon" aria-hidden="true">
-                                            <i class="fas fa-phone"></i>
-                                        </div>
-                                        <div class="pq-icon-box-content">
-                                            <h3 class="pq-text-white h4">Phone Number</h3>
-                                            <p class="pq-text-white mb-0"><a href="tel:9542256560">954-225-6560</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="form-div">
+                <div class="pq-section pq-style-1 text-left">
+                    <h1 class="pq-section-title" id="start-here-title">Start Here</h1>
+                    <p class="pq-section-description hh-start-intro">Tell us a little about your business, your current technology environment, and what's getting in the way. Whether you need reliable day-to-day IT support, stronger cybersecurity, or a fresh set of eyes on your existing setup, we'll review your request and follow up with practical next steps.</p>
+                    <p class="hh-response-time">We'll usually respond within one business day.</p>
                 </div>
-                <div class="col-12 col-lg-7">
-                    <div class="form-div">
-                        <div class="pq-section pq-style-1 text-left">
-                            <h2 class="pq-section-title" id="contact-form-title">Start the Conversation</h2>
-                            <p class="pq-section-description">Whether you need reliable day-to-day support, better cybersecurity, or a fresh set of eyes on your current environment, this is the place to start.</p>
-                        </div>
-                        <form action="mail.php" method="post" class="pq-contactform hh-contact-form" aria-labelledby="contact-form-title" novalidate>
+                <form action="mail.php" method="post" class="pq-contactform hh-contact-form" aria-labelledby="start-here-title" novalidate>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="hh-field">
@@ -740,8 +739,10 @@
                                     <div class="pq-form-response mt-3" role="status" aria-live="polite" aria-atomic="true"></div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                </form>
+                <div class="hh-direct-contact" aria-label="Direct contact options">
+                    <p><strong>Serving New Jersey &amp; New York</strong></p>
+                    <p class="hh-direct-options">Prefer to reach us directly?<br><a href="mailto:info@hudsonhelm.com">info@hudsonhelm.com</a> <span aria-hidden="true">·</span> <a href="tel:9542256560">954-225-6560</a></p>
                 </div>
             </div>
         </div>

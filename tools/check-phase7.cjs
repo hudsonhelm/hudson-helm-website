@@ -21,9 +21,13 @@ function forbid(label, content, pattern) {
 requireMatch('meta description', page, /<meta name="description" content="[^"]+">/);
 requireMatch('semantic main content', page, /<main>[\s\S]*<\/main>/);
 requireMatch('single Start Here H1', page, /<h1[^>]+id="start-here-title"[^>]*>Start Here<\/h1>/);
+requireMatch('revised introduction', page, /Tell us a little about your business, your current technology environment, and what's getting in the way\. Whether you need reliable day-to-day IT support, stronger cybersecurity, or a fresh set of eyes on your existing setup, we'll review your request and follow up with practical next steps\./);
 requireMatch('approved service area', page, /Serving New Jersey &amp; New York/);
 requireMatch('approved response commitment', page, /We'll usually respond within one business day\./);
-requireMatch('two-column layout', page, /class="col-12 col-lg-5"[\s\S]*class="col-12 col-lg-7"/);
+requireMatch('single form workflow', page, /<div class="form-div">[\s\S]*id="start-here-title"[\s\S]*class="hh-response-time"[\s\S]*<form[^>]+aria-labelledby="start-here-title"[\s\S]*<div class="hh-direct-contact"/);
+requireMatch('compact direct email link', page, /Prefer to reach us directly\?<br><a href="mailto:info@hudsonhelm\.com">info@hudsonhelm\.com<\/a>/);
+requireMatch('compact direct phone link', page, /<a href="tel:9542256560">954-225-6560<\/a>/);
+requireMatch('mobile back-to-top offset', page, /@media \(max-width: 575px\)[\s\S]*#back-to-top\s*\{[\s\S]*bottom: 12px/);
 requireMatch('name field label', page, /<label for="contact-name">Name/);
 requireMatch('company field', page, /name="company"[^>]+required/);
 requireMatch('email field', page, /name="email"[^>]+required/);
@@ -42,6 +46,9 @@ forbid('placeholder office address', page, /Office Address|Address coming soon/i
 forbid('user-editable subject', page, /name="subject"|id="subject"/);
 forbid('legacy shared form binding', page, /pq-applyform/);
 forbid('Rough Notation dependency', page, /rough-(?:script|notation|custom)/);
+forbid('duplicate form heading', page, /Start the Conversation/i);
+forbid('standalone contact labels', page, />Service Area<|>Email Address<|>Phone Number</i);
+forbid('legacy split contact columns', page, /col-12 col-lg-(?:5|7)/);
 
 requireMatch('configuration endpoint fetch', client, /fetch\('form-config\.php'/);
 requireMatch('duplicate submission guard', client, /if \(submitting \|\| !validateForm\(\)\)/);
