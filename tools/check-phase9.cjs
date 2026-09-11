@@ -55,7 +55,7 @@ for (const file of pages) {
 const privacy = fs.readFileSync(path.join(root, 'privacy.html'), 'utf8');
 for (const required of [
   '<title>Privacy Policy - Hudson Helm</title>',
-  'Effective date:</strong> September 11, 2026',
+  'Effective date:</strong> September 10, 2026',
   'Information you provide',
   'Client Support Portal',
   'Cloudflare Turnstile',
