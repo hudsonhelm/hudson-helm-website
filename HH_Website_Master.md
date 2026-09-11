@@ -1598,7 +1598,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 - [x] Redesign and later compact the global footer — the initial three-part footer and first compact row were superseded by the user's September 11 refinements; all nine public root pages now use the approved responsive logo/copyright/locality/privacy row with no positioning sentence or tall upper area.
 - [x] Apply approved locality language consistently — public Phase 9 locality copy now uses **Serving New Jersey & New York** and the superseded broader Start Here wording is absent.
-- BLOCKED — The replacement New Jersey phone number has not been supplied. The temporary 954 number and all matching `tel:` links were removed from public root pages rather than preserved or replaced with invented data; adding the new number remains a narrow future update.
+- [x] Add the permanent New Jersey business phone number consistently — **862-232-8023** is linked as `tel:+18622328023` in every compact global footer and appropriate direct-contact copy; the former temporary 954 number remains absent.
 - [x] Create the Privacy Policy from the site's actual completed practices and integrations — added a policy effective September 10, 2026 covering Start Here, the token-only portal boundary, operational/security data, Cloudflare Turnstile, Migadu, cookies/analytics, sharing, retention, safeguards, and privacy contact.
 - [x] Create the custom Hudson Helm 404 page — replaced the legacy template page with a branded single-H1 route containing clear Home, What We Do, and Start Here paths.
 - [x] Confirm global navigation/footer consistency across all public pages — Phase 1 and Phase 9 checks cover the same seven-destination header and complete footer across nine root pages.
