@@ -23,6 +23,7 @@ requireMatch('responsive support criterion', /Responsive support has value/);
 requireMatch('security criterion', /Security is taken seriously/);
 requireMatch('practical advice criterion', /Practical advice comes first/);
 requireMatch('ongoing relationship criterion', /You want an ongoing relationship/);
+requireMatch('orange mobile navigation toggle', /header#pq-header \.pq-bottom-header \.navbar-toggler\s*\{[^}]*background:\s*#fd4a18;/);
 requireMatch('not-fit section', /<section class="hh-fit-not"[\s\S]*?<h2 id="not-fit-title">We May Not Be The Right Fit If\.\.\.<\/h2>/);
 requireMatch('closing Start Here CTA', /<section class="hh-fit-closing"[\s\S]*?href="starthere\.html"[\s\S]*?>Start Here</);
 

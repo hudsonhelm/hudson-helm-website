@@ -21,6 +21,7 @@ requireMatch('Responsive support', /<h4 class="pq-icon-box-title">Responsive sup
 requireMatch('Practical security', /<h4 class="pq-icon-box-title">Practical security<\/h4>/);
 requireMatch('Right-sized IT', /<h4 class="pq-icon-box-title">Right-sized IT<\/h4>/);
 requireMatch('Ownership', /<h4 class="pq-icon-box-title">Ownership<\/h4>/);
+requireMatch('centered differentiator icon glyphs', /\.hh-why-differentiators \.hh-why-card \.pq-icon i\s*\{[^}]*text-align:\s*center;/);
 requireMatch('trust statement', /<h2 id="why-trust-title">We are not trying to be the biggest shop in the room\. We are trying to be the one you trust\.<\/h2>/);
 requireMatch('light three-column treatment', /<section class="hh-why-principles"[\s\S]*?Direct communication[\s\S]*?A cleaner, calmer IT environment[\s\S]*?Advice with your budget in mind/);
 requireMatch('approved closing CTA', /<section class="hh-why-closing"[\s\S]*?If your current IT feels slow, reactive, overpriced, or just harder than it should be, that is fixable\.[\s\S]*?href="starthere\.html"/);
