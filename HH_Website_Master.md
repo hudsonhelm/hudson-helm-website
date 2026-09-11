@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
 | Current phase | Phase 7 — Start Here |
-| Phase status | **Implementation and local validation complete; approved fail-closed placeholder publication pending** |
+| Phase status | **Published in approved fail-closed placeholder state; production credentials required for operation** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Publish the locally validated Phase 7 implementation in the user-approved fail-closed placeholder state, then verify that the public page is available and the form clearly remains unavailable without real credentials. Real Migadu and Cloudflare Turnstile values and a live delivery test remain required before the contact workflow can be marked operational. Do not publish Cloudflare test credentials or restore embedded SMTP credentials. Do not begin Phase 8 early.
+Complete Phase 7 operational activation by securely configuring real Migadu and Cloudflare Turnstile values and verifying a live non-automated delivery. The implementation is already committed, pushed, and published in the user-approved fail-closed placeholder state. Do not publish Cloudflare test credentials or restore embedded SMTP credentials. Do not begin Phase 8 early.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–6 are complete, pushed, and published. Phase 7 implementation and local validation are complete: the Start Here page has the approved responsive layout and fields, the approved one-business-day response language, accessible client states, a honeypot, server-verified Turnstile, authenticated SMTP configuration, PHPMailer 7.1.0, generated priority subjects, and input/header hardening. Production PHP 8.2.33 with cURL, OpenSSL, filter, and JSON was verified through a temporary diagnostic that was removed and confirmed 404. The user authorized publication with placeholder credentials on September 10, 2026; this deliberately leaves the public form fail-closed and unavailable until real Migadu/Turnstile values are securely installed. Support remains the only temporary missing destination.
+Phases 1–6 are complete, pushed, and published. Phase 7 implementation and local validation are complete and site commit `8abd519` is pushed and published: the Start Here page has the approved responsive layout and fields, the approved one-business-day response language, accessible client states, a honeypot, server-verified Turnstile, authenticated SMTP configuration, PHPMailer 7.1.0, generated priority subjects, and input/header hardening. Production PHP 8.2.33 with cURL, OpenSSL, filter, and JSON was verified through a temporary diagnostic that was removed and confirmed 404. The user authorized publication with placeholder credentials on September 10, 2026; the verified public form deliberately returns an unavailable state until real Migadu/Turnstile values are securely installed. Support remains the only temporary missing destination.
 
 ### Phase Progress
 
@@ -63,7 +63,7 @@ Phases 1–6 are complete, pushed, and published. Phase 7 implementation and loc
 | 4 | Why Hudson Helm | Complete, published, and pushed; user review pending |
 | 5 | Who We Are | Complete, published, and pushed; user review pending |
 | 6 | Are We a Good Fit? | Complete, published, and pushed; user review pending |
-| 7 | Start Here | Implementation and local validation complete; production configuration required |
+| 7 | Start Here | Published fail-closed; production credentials and live delivery verification required |
 | 8 | Support Portal Shell | Not started |
 | 9 | Global Completion | Not started |
 | 10 | QA | Not started |
@@ -129,7 +129,8 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Pushed and published the completed Phase 5 Who We Are page and navigation resolution. | Pushed site commit `d6fb5ed` to `origin/website-refresh`; uploaded `whoweare.html` plus the six existing root HTML pages whose Who We Are pending marker changed; confirmed all seven remote file stats; and verified cache-busted public HTTPS 200 responses, live Phase 5 content, four shared-photo uses, the resolved Who We Are destination, and the still-explicit Support pending state. |
 | 2026-09-10 | Completed Phase 6 Are We a Good Fit? implementation and local validation. | Replaced the oversized blog layout with a compact split hero, six scannable fit criteria, four tactful not-fit criteria, and one concise Start Here CTA. Responsive, navigation, accessibility-structure, console, asset, syntax, regression, and diff checks passed. The user explicitly authorized the commit, GitHub push, and production publication; those steps remained pending at this checkpoint. |
 | 2026-09-10 | Pushed and published the completed Phase 6 Are We a Good Fit? page. | Pushed site commit `d5b8f10` to `origin/website-refresh`, uploaded only `areweagoodfit.html` through the saved WinSCP production FTP session, confirmed the remote file at 28,721 bytes, and verified a cache-busted public HTTPS 200 response contained the full Phase 6 structure while the old blog wrapper and redundant good-fit block were absent. |
-| 2026-09-10 | Implemented and locally validated Phase 7 Start Here through the production-configuration boundary. | Rebuilt the accessible responsive form, upgraded to PHPMailer 7.1.0, added fail-closed private configuration, generated priority subjects, server-side Turnstile, security controls, deterministic integration tests, and Firefox responsive checks. Production PHP 8.2.33 and required extensions were verified; real Migadu and Turnstile values remain required before activation, commit/push, and publication. |
+| 2026-09-10 | Implemented and locally validated Phase 7 Start Here through the production-configuration boundary. | Rebuilt the accessible responsive form, upgraded to PHPMailer 7.1.0, added fail-closed private configuration, generated priority subjects, server-side Turnstile, security controls, deterministic integration tests, and Firefox responsive checks. Production PHP 8.2.33 and required extensions were verified; real Migadu and Turnstile values remain required before operational activation. |
+| 2026-09-10 | Pushed and published Phase 7 in the user-approved fail-closed placeholder state. | Pushed site commit `8abd519` to `origin/website-refresh`; synchronized the exact production `/PHPMailer` directory to 7.1.0, removing obsolete 5.2 files; and uploaded `starthere.html`, `mail.php`, `form-config.php`, `includes/contact-config.php`, and `js/start-here.js`. Cache-busted HTTPS checks confirmed the new page and response copy, PHPMailer 7.1.0, a no-store JSON 503 from the placeholder configuration endpoint, GET rejection on `mail.php`, 404 protection for direct config-loader access, and removal of the legacy PHPMailer entry point. |
 
 ## Findings and Observations
 
@@ -204,6 +205,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - Official PHP 8.5.10 was used locally for syntax and integration testing. `tools/test-phase7.cjs` exercised Cloudflare's official pass, fail, and duplicate test credentials against the live Siteverify endpoint while all mail was captured by an isolated local SMTP sink. Required/optional validation, honeypot behavior, header-injection resistance, generated subject, priority headers, HTML escaping, and success/error responses passed without production mail delivery.
 - Firefox-primary visual checks at 1366px and an actual 390px viewport confirmed the approved desktop layout, natural mobile stacking, readable labels/content, and no horizontal clipping. A 1024px browser check retained the intended two-column presentation. Phase 1–7 structural checks, PHP and JavaScript syntax checks, the inspection helper, and `git diff --check` passed.
 - A temporary uniquely named production diagnostic confirmed PHP 8.2.33 with cURL, OpenSSL, filter, and JSON enabled. The diagnostic was deleted immediately after use, and a cache-busted public request confirmed HTTP 404. No production form files or credentials were changed during this diagnostic.
+- Production publication from site commit `8abd519` was verified over cache-busted HTTPS. `starthere.html` returned 200 with the approved response sentence, dedicated script, and Turnstile loader; `form-config.php` returned the intended no-store/nosniff 503 JSON because placeholders are not accepted as configuration; `mail.php` rejected GET with 405; direct access to `includes/contact-config.php` and the removed legacy `PHPMailer/class.phpmailer.php` returned 404; and `PHPMailer/VERSION` returned 7.1.0.
 
 ### Repository and File Structure
 
@@ -270,7 +272,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Turnstile local/staging test approach | `tools/test-phase7.cjs` verifies pass, fail, and `timeout-or-duplicate` behavior through the real Siteverify endpoint using Cloudflare's official public test credentials. Test credentials work on localhost but must never be deployed. Production must use a hostname-restricted real widget and secret. |
 | Hosting/runtime assumptions | The origin is Namecheap-hosted PHP behind Cloudflare. PHP 8.2.33 and required extensions are confirmed; arbitrary environment-variable support and the private configuration placement still require production setup. The handler also supports `/home/<account>/hudson-helm-config.php`-style placement one level above the public site root. |
 | Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase7.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The Phase 7 integration test requires outbound HTTPS only to Cloudflare Siteverify and captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
-| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, Phase 4 `whyhudsonhelm.html` from site commit `16fabd6`, the seven Phase 5 root-page HTML files from site commit `d6fb5ed`, and Phase 6 `areweagoodfit.html` from site commit `d5b8f10` were subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
+| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, Phase 4 `whyhudsonhelm.html` from site commit `16fabd6`, the seven Phase 5 root-page HTML files from site commit `d6fb5ed`, Phase 6 `areweagoodfit.html` from site commit `d5b8f10`, and the Phase 7 runtime from site commit `8abd519` were subsequently uploaded and verified publicly. Phase 7 is intentionally fail-closed because production credentials are still placeholders. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate real email delivery or final production Turnstile behavior. |
 
 Update this runbook when the environment or verified workflow materially changes.
 
@@ -1493,6 +1495,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - BLOCKED — Cloudflare Turnstile Managed mode and server-side Siteverify validation are implemented; official pass/fail/duplicate tests pass, but the approved placeholder publication deliberately leaves the widget unavailable until real production sitekey/secret values are configured.
 - [x] Implement the hidden honeypot and required input sanitization/security handling.
 - BLOCKED — The operational-contact-form portion of the Shared Definition of Done awaits real production secrets and a live non-automated delivery verification. The user separately authorized commit/push and fail-closed placeholder publication; the focused implementation and documentation diff review is complete.
+- [x] Commit, push, and publish the approved fail-closed placeholder implementation — site commit `8abd519` was pushed and the exact production runtime payload was verified over HTTPS.
 
 ## Phase 8 — Support Portal Shell
 
