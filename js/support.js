@@ -31,6 +31,14 @@
     response.classList.toggle('is-working', state === 'working');
   }
 
+  function setCredentialFailureResponse() {
+    setResponse('Invalid username or password. Please contact ', 'error');
+    const supportLink = document.createElement('a');
+    supportLink.href = 'mailto:support@hudsonhelm.com';
+    supportLink.textContent = 'Support';
+    response.append(supportLink);
+  }
+
   function setSubmitting(isSubmitting) {
     submitting = isSubmitting;
     submitButton.disabled = isSubmitting;
@@ -131,7 +139,7 @@
 
       password.value = '';
       setFieldError(password, '');
-      setResponse('Invalid username or password.', 'error');
+      setCredentialFailureResponse();
       resetTurnstile();
       password.focus();
     } catch {

@@ -21,7 +21,7 @@ requireMatch('portal title', page, /<title>Client Support Portal - Hudson Helm<\
 requireMatch('meta description', page, /<meta name="description" content="[^"]+">/);
 requireMatch('semantic main content', page, /<main class="hh-support-main">[\s\S]*<\/main>/);
 requireMatch('single portal H1', page, /<h1 id="support-title"><span>Client<\/span><span>Support<\/span><span>Portal<\/span><\/h1>/);
-requireMatch('versioned compact Support stylesheet', page, /css\/hudson-helm\.css\?v=20260911-support-tight/);
+requireMatch('versioned Support contact stylesheet', page, /css\/hudson-helm\.css\?v=20260911-support-contact/);
 requireMatch('username field', page, /<input id="support-username" type="text"[^>]+autocomplete="username"[^>]+required/);
 requireMatch('password field', page, /<input id="support-password" type="password"[^>]+autocomplete="current-password"[^>]+required/);
 requireMatch('Sign In action', page, /id="support-sign-in"[^>]+type="submit"[\s\S]*>Sign In</);
@@ -29,7 +29,7 @@ requireMatch('native fallback guard', page, /<form id="support-login"[^>]+onsubm
 requireMatch('active-customer text', page, /Client portal access is provided to active Hudson Helm customers\./);
 requireMatch('Turnstile widget', page, /id="support-turnstile-widget"/);
 requireMatch('Turnstile API', page, /challenges\.cloudflare\.com\/turnstile\/v0\/api\.js\?onload=onSupportTurnstileLoad/);
-requireMatch('page-specific client', page, /src="js\/support\.js"/);
+requireMatch('versioned page-specific client', page, /src="js\/support\.js\?v=20260911-support-contact"/);
 requireMatch('accessible response', page, /id="support-login-response"[^>]+role="status"[^>]+aria-live="polite"/);
 requireMatch('Support active navigation', page, /current-menu-item"><a aria-current="page" href="support\.html">Support<\/a>/);
 
@@ -49,7 +49,7 @@ requireMatch('explicit Turnstile rendering', client, /turnstile\.render/);
 requireMatch('support action', client, /action: 'support'/);
 requireMatch('disabled hidden response field', client, /'response-field': false/);
 requireMatch('token-only request body', client, /const body = new URLSearchParams\(\);\s*body\.set\('cf-turnstile-response', turnstileToken\)/);
-requireMatch('local generic rejection', client, /setResponse\('Invalid username or password\.', 'error'\)/);
+requireMatch('local generic rejection with Support contact', client, /setResponse\('Invalid username or password\. Please contact ', 'error'\)[\s\S]*supportLink\.href = 'mailto:support@hudsonhelm\.com'[\s\S]*supportLink\.textContent = 'Support'[\s\S]*setCredentialFailureResponse\(\)/);
 requireMatch('password clearing', client, /password\.value = ''/);
 requireMatch('Turnstile reset', client, /turnstile\.reset/);
 forbid('form serialization', client, /new FormData\s*\(\s*form\s*\)/);
@@ -73,6 +73,7 @@ const sharedStyles = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 
 requireMatch('top-aligned Support columns', sharedStyles, /\.hh-support-shell\s*\{[^}]*align-items:\s*start;/);
 requireMatch('one-word Support heading lines', sharedStyles, /\.hh-support-intro h1 span\s*\{[^}]*display:\s*block;/);
 requireMatch('collapsed empty login response', sharedStyles, /\.hh-login-response:empty\s*\{[^}]*min-height:\s*0;[^}]*margin-top:\s*0;/);
+requireMatch('visible Support response link', sharedStyles, /\.hh-login-response a\s*\{[^}]*color:\s*inherit;[^}]*text-decoration:\s*underline;/);
 
 if (failures.length) {
   console.error('Phase 8 Support Portal checks failed:');

@@ -582,6 +582,11 @@ footer#pq-footer .pq-copyright-footer .hh-footer-logo {
 	margin-top: 0;
 }
 
+.hh-login-response a {
+	color: inherit;
+	text-decoration: underline;
+}
+
 .hh-login-response.is-error {
 	color: #ffaaa3;
 }
