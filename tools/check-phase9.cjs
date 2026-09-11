@@ -46,9 +46,15 @@ for (const file of pages) {
     if (footer.includes(removed)) fail(file, `removed upper-footer content remains: ${removed}`);
   }
 
-  if (!/css\/hudson-helm\.css\?v=20260911-header-phone/.test(html)) {
-    fail(file, 'header-and-phone shared stylesheet version is missing');
+  if (!/css\/hudson-helm\.css\?v=20260911-back-to-top/.test(html)) {
+    fail(file, 'back-to-top shared stylesheet version is missing');
   }
+
+  if (!html.includes('id="back-to-top"')) fail(file, 'back-to-top control is missing');
+  if (!html.includes('aria-label="Back to top"') || !html.includes('id="top"')) {
+    fail(file, 'back-to-top control is not wired or accessibly labeled');
+  }
+  if (html.includes('id="#top"')) fail(file, 'invalid back-to-top target remains');
 
   if (/954[- ]?225[- ]?6560|tel:9542256560|Northern New Jersey|\bNYC\b|Philadelphia/i.test(html)) {
     fail(file, 'temporary phone or superseded locality copy remains');
@@ -92,7 +98,7 @@ if (/Techrix|Oops! This Page|404 Error/.test(notFound)) fail('404.html', 'legacy
 if (!/^ErrorDocument 404 \/404\.html\s*$/m.test(apacheConfig)) fail('.htaccess', 'custom 404 routing is missing');
 
 const sharedCss = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
-for (const required of ['.hh-footer-legal-row', '.hh-footer-logo', '.hh-footer-brand-logo', '.hh-footer-locality', '.hh-footer-phone', '.hh-legal-copy', '.hh-not-found']) {
+for (const required of ['.hh-footer-legal-row', '.hh-footer-logo', '.hh-footer-brand-logo', '.hh-footer-locality', '.hh-footer-phone', '.hh-legal-copy', '.hh-not-found', '#back-to-top .top', 'border: 2px solid #fd4a18']) {
   if (!sharedCss.includes(required)) fail('css/hudson-helm.css', `missing ${required}`);
 }
 

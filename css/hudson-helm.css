@@ -27,6 +27,16 @@
 	padding-top: var(--hh-space-section-compact);
 }
 
+/* Shared back-to-top treatment. */
+#back-to-top .top,
+#back-to-top .top:hover,
+#back-to-top .top:focus-visible {
+	background: linear-gradient(180deg, #4a8fdc 0%, #2d6fb8 100%);
+	color: #fff;
+	border: 2px solid #fd4a18;
+	box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
+}
+
 /* Shared header foundation. */
 header#pq-header,
 header#pq-header .pq-bottom-header,
