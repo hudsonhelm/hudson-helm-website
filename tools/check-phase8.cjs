@@ -40,6 +40,7 @@ forbid('form action', page, /<form id="support-login"[^>]+\baction=/);
 forbid('form method', page, /<form id="support-login"[^>]+\bmethod=/);
 forbid('prohibited workflow text', page, /Forgot Password|Registration|Password reset|Ticket creation/i);
 forbid('visible placeholder messaging', page, /Coming Soon|Under Construction|Ticketing system not available/i);
+forbid('removed browser-storage note', page, /Your sign-in details stay in this browser during this access check\.|support-form-note/);
 
 requireMatch('configuration endpoint fetch', client, /fetch\('support-config\.php'/);
 requireMatch('verification endpoint fetch', client, /fetch\('support-verify\.php'/);
