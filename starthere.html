@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Here - Hudson Helm</title>
+    <meta name="description" content="Start a conversation with Hudson Helm about practical IT support, cybersecurity, cloud, and technology needs across New Jersey and New York.">
     <!--favicon icon-->
     <link rel="shortcut icon" href="images/favicon.ico">
     <!--bootstrap css-->
@@ -454,19 +455,136 @@
         #pq-loading {
             background: #000;
         }
+
+        .hh-start-page {
+            padding: 72px 0;
+        }
+
+        .hh-start-page .row {
+            align-items: stretch !important;
+        }
+
+        .hh-start-page .pq-contact-form-p,
+        .hh-start-page .form-div {
+            height: 100%;
+            padding: 42px;
+        }
+
+        .hh-start-page h1,
+        .hh-start-page h2 {
+            margin-bottom: 18px;
+        }
+
+        .hh-response-time {
+            margin: 18px 0 0;
+            padding: 14px 16px;
+            border-left: 3px solid #4a8fdc;
+            background: rgba(74, 143, 220, 0.1);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .hh-start-page .pq-icon-box .pq-icon {
+            color: #4a8fdc;
+        }
+
+        .hh-start-page .pq-icon-box.pq-style-5 {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .hh-start-page .pq-icon-box.pq-style-5 .pq-icon {
+            flex: 0 0 34px;
+            margin: 3px 14px 0 0;
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .hh-start-page .pq-icon-box.pq-style-5 .pq-icon-box-content {
+            min-width: 0;
+        }
+
+        .hh-field {
+            margin-bottom: 20px;
+        }
+
+        .hh-field label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .hh-required-note,
+        .hh-optional-note {
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.72);
+        }
+
+        .hh-start-page .pq-contactform input,
+        .hh-start-page .pq-contactform textarea {
+            width: 100%;
+            margin: 0;
+        }
+
+        .hh-start-page .pq-contactform [aria-invalid="true"] {
+            border-color: #ff8a8a !important;
+        }
+
+        .hh-field-error {
+            display: block;
+            margin-top: 6px;
+            color: #ffb0b0;
+            font-size: 14px;
+        }
+
+        .hh-honeypot {
+            position: absolute !important;
+            left: -10000px !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+
+        .hh-turnstile-wrap {
+            min-height: 68px;
+            margin-bottom: 18px;
+        }
+
+        .hh-turnstile-status {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .pq-form-response {
+            min-height: 24px;
+        }
+
+        @media (max-width: 991px) {
+            .hh-start-page {
+                padding: 52px 0;
+            }
+
+            .hh-start-page .pq-contact-form-p,
+            .hh-start-page .form-div {
+                height: auto;
+                padding: 34px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hh-start-page .pq-contact-form-p,
+            .hh-start-page .form-div {
+                padding: 28px 22px;
+            }
+        }
 </style>
 
     <link rel="stylesheet" href="css/hudson-helm.css">
 </head>
 <body>
-
-    <!-- Loading Start-->
-    <div id="pq-loading">
-        <div id="pq-loading-center">
-            <img src="images/logos/wide_trans.png" alt="loading">
-        </div>
-    </div>
-    <!--Loading End -->
 
     <!--Header Start-->
     <header id="pq-header" class="pq-header-default">
@@ -516,41 +634,43 @@
         </div>
     </header>
     <!--Header End-->
-<!--Contacts & Forms Start-->
-    <section class="contact-form page-top-tight">
+    <main>
+    <!--Contacts & Forms Start-->
+    <section class="contact-form hh-start-page" aria-labelledby="start-here-title">
         <div class="container">
-            <div class="row g-0 align-items-center">
-                <div class="col-lg-5">
+            <div class="row g-4">
+                <div class="col-12 col-lg-5">
                     <div class="pq-bg-dark pq-contact-form-p">
                         <div class="pq-section pq-style-1 text-left">
-                            <h5 class="pq-section-title pq-text-white" id="contacts" data-high_text="Contact" data-title_text="Get in Touch" data-rough_color="#4a8fdc" data-rough_type="underline">Get in Touch</h5>
+                            <h1 class="pq-section-title pq-text-white" id="start-here-title">Start Here</h1>
                             <p class="pq-section-description pq-text-white">Tell us a little about your business, your current setup, and where technology is getting in the way. We'll review it and get back to you with practical next steps.</p>
+                            <p class="hh-response-time pq-text-white">We'll usually respond within one business day.</p>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="pq-icon-box pq-style-5">
-                                        <div class="pq-icon">
-                                            <a href="#"><i class="ion ion-ios-location"></i></a>
+                                        <div class="pq-icon" aria-hidden="true">
+                                            <i class="ion ion-ios-location"></i>
                                         </div>
                                         <div class="pq-icon-box-content">
-                                            <h4 class="pq-text-white">Office Address</h4>
-                                            <p class="pq-text-white mb-0">Address coming soon.</p>
+                                            <h3 class="pq-text-white h4">Service Area</h3>
+                                            <p class="pq-text-white mb-0">Serving New Jersey &amp; New York</p>
                                         </div>
                                     </div>
                                     <div class="pq-icon-box pq-style-5">
-                                        <div class="pq-icon">
-                                            <a href="#"><i class="ion ion-email"></i></a>
+                                        <div class="pq-icon" aria-hidden="true">
+                                            <i class="ion ion-email"></i>
                                         </div>
                                         <div class="pq-icon-box-content">
-                                            <h4 class="pq-text-white">Email Address</h4>
+                                            <h3 class="pq-text-white h4">Email Address</h3>
                                             <p class="pq-text-white mb-0"><a href="mailto:info@hudsonhelm.com">info@hudsonhelm.com</a></p>
                                         </div>
                                     </div>
                                     <div class="pq-icon-box pq-style-5">
-                                        <div class="pq-icon">
-                                            <a href="#"><i class="fas fa-phone"></i></a>
+                                        <div class="pq-icon" aria-hidden="true">
+                                            <i class="fas fa-phone"></i>
                                         </div>
                                         <div class="pq-icon-box-content">
-                                            <h4 class="pq-text-white">Phone Number</h4>
+                                            <h3 class="pq-text-white h4">Phone Number</h3>
                                             <p class="pq-text-white mb-0"><a href="tel:9542256560">954-225-6560</a></p>
                                         </div>
                                     </div>
@@ -559,40 +679,65 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7 mt-4 mt-lg-0">
+                <div class="col-12 col-lg-7">
                     <div class="form-div">
                         <div class="pq-section pq-style-1 text-left">
-                            <h5 class="pq-section-title" id="quote" data-high_text="Start" data-title_text="Start the Conversation" data-rough_color="#4a8fdc" data-rough_type="underline">Start the Conversation</h5>
+                            <h2 class="pq-section-title" id="contact-form-title">Start the Conversation</h2>
                             <p class="pq-section-description">Whether you need reliable day-to-day support, better cybersecurity, or a fresh set of eyes on your current environment, this is the place to start.</p>
                         </div>
-                        <form action="mail.php" method="post" class="pq-contactform pq-applyform" novalidate>
+                        <form action="mail.php" method="post" class="pq-contactform hh-contact-form" aria-labelledby="contact-form-title" novalidate>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="first-name" name="name" class="name-field" placeholder="Your Name" autocomplete="name" required>
+                                    <div class="hh-field">
+                                        <label for="contact-name">Name <span class="hh-required-note">(required)</span></label>
+                                        <input type="text" id="contact-name" name="name" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error">
+                                        <span class="hh-field-error" id="contact-name-error"></span>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="email" id="e-mail" name="email" class="e-mail-field" placeholder="Email" autocomplete="email" required>
+                                    <div class="hh-field">
+                                        <label for="contact-company">Company <span class="hh-required-note">(required)</span></label>
+                                        <input type="text" id="contact-company" name="company" autocomplete="organization" maxlength="150" required aria-describedby="contact-company-error">
+                                        <span class="hh-field-error" id="contact-company-error"></span>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="phone-number" name="phone" class="phone-number-field" placeholder="Cell Phone" autocomplete="tel" required>
+                                    <div class="hh-field">
+                                        <label for="contact-email">Email <span class="hh-required-note">(required)</span></label>
+                                        <input type="email" id="contact-email" name="email" autocomplete="email" maxlength="254" inputmode="email" required aria-describedby="contact-email-error">
+                                        <span class="hh-field-error" id="contact-email-error"></span>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
-                                    <input type="text" id="subject" name="subject" class="subject-field" placeholder="Subject" required>
+                                    <div class="hh-field">
+                                        <label for="contact-phone">Phone <span class="hh-optional-note">(optional)</span></label>
+                                        <input type="tel" id="contact-phone" name="phone" autocomplete="tel" maxlength="50" inputmode="tel" aria-describedby="contact-phone-error">
+                                        <span class="hh-field-error" id="contact-phone-error"></span>
+                                    </div>
                                 </div>
-                                <div class="col-lg-12 d-none" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                                <div class="col-lg-12 hh-honeypot" aria-hidden="true">
                                     <label for="company-website">Leave this field empty</label>
                                     <input type="text" id="company-website" name="website" class="website-field" tabindex="-1" autocomplete="off">
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea id="message" name="message" rows="5" cols="10" placeholder="Your Message" required></textarea>
+                                    <div class="hh-field">
+                                        <label for="contact-message">How can we help? <span class="hh-required-note">(required)</span></label>
+                                        <textarea id="contact-message" name="message" rows="6" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
+                                        <span class="hh-field-error" id="contact-message-error"></span>
+                                    </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button type="submit" class="pq-button form-btn">
+                                    <div class="hh-turnstile-wrap">
+                                        <p class="hh-turnstile-status" id="turnstile-status">Loading spam protection...</p>
+                                        <div id="turnstile-widget" aria-describedby="turnstile-error"></div>
+                                        <span class="hh-field-error" id="turnstile-error"></span>
+                                    </div>
+                                    <button type="submit" class="pq-button form-btn" disabled>
                                         <div class="pq-button-block">
                                             <span class="pq-button-text">Send Request</span>
                                         </div>
                                     </button>
-                                    <div class="pq-form-response mt-3" aria-live="polite"></div>
+                                    <div class="pq-form-response mt-3" role="status" aria-live="polite" aria-atomic="true"></div>
                                 </div>
                             </div>
                         </form>
@@ -602,6 +747,7 @@
         </div>
     </section>
     <!--Contacts & Forms End-->
+    </main>
 
 
     <!--Footer Start-->
@@ -635,18 +781,9 @@
     <script src="js/jquery.min.js"></script>
     <!--Bootstrap js-->
     <script src="js/bootstrap.min.js"></script>
-    <!--Isotope js-->
-    <script src="js/isotope.pkgd.min.js"></script>
-    <!--Counter js -->
-    <script src="js/jquery.countTo.min.js"></script>
-    <!--Magnefic Popup js -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <!--Animation js -->
-    <script src="js/wow.min.js"></script>
     <!--Custom js-->
-    <script src="js/rough-script.js"></script>
-    <script src="js/rough-notation.iife.js"></script>
-    <script src="js/rough-custom.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/start-here.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&amp;render=explicit" async defer></script>
 </body>
 </html>

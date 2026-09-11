@@ -93,6 +93,10 @@ Perform validation appropriate to the affected work, including functional, respo
 
 Run the active phase's dedicated check listed in the Technical Runbook together with the prior phase checks before committing or publishing.
 
+For contact-form or other mail-delivery work, use Cloudflare's official testing credentials and an isolated local SMTP sink for automated tests. Never point automated tests at production SMTP, never deploy Turnstile test credentials, and keep production secrets outside the public root and Git history.
+
+The Phase 7 placeholder production publication is intentionally fail-closed: until real Migadu and Turnstile values are securely installed, the public form must remain unavailable and must not attempt delivery or accept unverified submissions.
+
 Do not declare a phase complete merely because its primary visual change appears correct.
 
 ## After Completing a Material Task

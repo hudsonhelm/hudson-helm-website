@@ -9,8 +9,8 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | --- | --- |
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
-| Current phase | Phase 6 — Are We a Good Fit? |
-| Phase status | **Complete, pushed to GitHub, and published to production — awaiting user review** |
+| Current phase | Phase 7 — Start Here |
+| Phase status | **Implementation and local validation complete; approved fail-closed placeholder publication pending** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 6 Are We a Good Fit? is complete, pushed to GitHub, and published to production. Retain its compact text-and-image hero, six scannable fit criteria, tactful four-item not-fit filter, and concise Start Here CTA while awaiting user review. Do not begin Phase 7 without explicit user direction.
+Publish the locally validated Phase 7 implementation in the user-approved fail-closed placeholder state, then verify that the public page is available and the form clearly remains unavailable without real credentials. Real Migadu and Cloudflare Turnstile values and a live delivery test remain required before the contact workflow can be marked operational. Do not publish Cloudflare test credentials or restore embedded SMTP credentials. Do not begin Phase 8 early.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phase 0 repository setup and source/browser inspection are complete with the recorded runtime deferral. Phases 1–6 are complete, pushed, and published. `areweagoodfit.html` now uses a compact split hero, six scannable fit criteria, four tactful not-fit criteria, and one Start Here CTA. Site commit `d5b8f10` was pushed; only the affected page was uploaded through the saved production FTP session, remotely statted at 28,721 bytes, and verified through a cache-busted public HTTPS response. Support remains the only temporary missing destination.
+Phases 1–6 are complete, pushed, and published. Phase 7 implementation and local validation are complete: the Start Here page has the approved responsive layout and fields, the approved one-business-day response language, accessible client states, a honeypot, server-verified Turnstile, authenticated SMTP configuration, PHPMailer 7.1.0, generated priority subjects, and input/header hardening. Production PHP 8.2.33 with cURL, OpenSSL, filter, and JSON was verified through a temporary diagnostic that was removed and confirmed 404. The user authorized publication with placeholder credentials on September 10, 2026; this deliberately leaves the public form fail-closed and unavailable until real Migadu/Turnstile values are securely installed. Support remains the only temporary missing destination.
 
 ### Phase Progress
 
@@ -63,7 +63,7 @@ Phase 0 repository setup and source/browser inspection are complete with the rec
 | 4 | Why Hudson Helm | Complete, published, and pushed; user review pending |
 | 5 | Who We Are | Complete, published, and pushed; user review pending |
 | 6 | Are We a Good Fit? | Complete, published, and pushed; user review pending |
-| 7 | Start Here | Not started |
+| 7 | Start Here | Implementation and local validation complete; production configuration required |
 | 8 | Support Portal Shell | Not started |
 | 9 | Global Completion | Not started |
 | 10 | QA | Not started |
@@ -129,6 +129,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Pushed and published the completed Phase 5 Who We Are page and navigation resolution. | Pushed site commit `d6fb5ed` to `origin/website-refresh`; uploaded `whoweare.html` plus the six existing root HTML pages whose Who We Are pending marker changed; confirmed all seven remote file stats; and verified cache-busted public HTTPS 200 responses, live Phase 5 content, four shared-photo uses, the resolved Who We Are destination, and the still-explicit Support pending state. |
 | 2026-09-10 | Completed Phase 6 Are We a Good Fit? implementation and local validation. | Replaced the oversized blog layout with a compact split hero, six scannable fit criteria, four tactful not-fit criteria, and one concise Start Here CTA. Responsive, navigation, accessibility-structure, console, asset, syntax, regression, and diff checks passed. The user explicitly authorized the commit, GitHub push, and production publication; those steps remained pending at this checkpoint. |
 | 2026-09-10 | Pushed and published the completed Phase 6 Are We a Good Fit? page. | Pushed site commit `d5b8f10` to `origin/website-refresh`, uploaded only `areweagoodfit.html` through the saved WinSCP production FTP session, confirmed the remote file at 28,721 bytes, and verified a cache-busted public HTTPS 200 response contained the full Phase 6 structure while the old blog wrapper and redundant good-fit block were absent. |
+| 2026-09-10 | Implemented and locally validated Phase 7 Start Here through the production-configuration boundary. | Rebuilt the accessible responsive form, upgraded to PHPMailer 7.1.0, added fail-closed private configuration, generated priority subjects, server-side Turnstile, security controls, deterministic integration tests, and Firefox responsive checks. Production PHP 8.2.33 and required extensions were verified; real Migadu and Turnstile values remain required before activation, commit/push, and publication. |
 
 ## Findings and Observations
 
@@ -194,6 +195,16 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - `node tools/check-phase6.cjs`, Phase 1–5 checks, the inspection helper, JavaScript syntax checks, and `git diff --check` passed. The dedicated Phase 6 check verifies required structure and messaging, card cardinality, CTA, single-H1 structure, removal of the blog wrapper and redundant fit section, and absence of an external jQuery dependency.
 - With the user's explicit approval, site commit `d5b8f10` was pushed to `origin/website-refresh`. Only `areweagoodfit.html` was uploaded through the saved WinSCP production FTP session; remote `stat` reported 28,721 bytes. A cache-busted public HTTPS request returned 200 and confirmed the hero, six fit cards, four not-fit items, and closing CTA while the old blog wrapper and redundant **We May Be A Good Fit If...** section were absent. Project-only documentation and tools were not deployed.
 
+### Phase 7 implementation evidence — September 10, 2026
+
+- `starthere.html` now preserves the two-column desktop concept and stacks at mobile widths. It has one H1, visible labels, Name/Company/Email/optional Phone/Message fields, the approved **Serving New Jersey & New York** locality, and the approved **We'll usually respond within one business day.** expectation. The placeholder office address, editable Subject field, Rough Notation dependencies, and page loading overlay were removed.
+- `js/start-here.js` provides field-specific accessible errors, an atomic live response region, sending/success/failure states, request timeout handling, a disabled in-flight submit control, and Turnstile rendering/reset behavior. The page-specific form no longer binds to the legacy shared form handler.
+- `mail.php` now reads configuration from environment variables or an optional `hudson-helm-config.php` one level above the public root, fails closed when secrets are absent, validates the Turnstile token through Siteverify, enforces action/hostname checks, validates required fields and length caps, strips header-control characters, escapes HTML, and sends through authenticated SMTP only outside isolated tests. It generates `[WEBSITE LEAD] Website Info Request from <Company Name>` and the approved high-priority headers.
+- PHPMailer 5.2.28 was replaced with PHPMailer 7.1.0. Obsolete bundled examples, legacy classes, OAuth helper, and unused extras were removed; the maintained namespaced `src` implementation and upstream license/package documentation are retained.
+- Official PHP 8.5.10 was used locally for syntax and integration testing. `tools/test-phase7.cjs` exercised Cloudflare's official pass, fail, and duplicate test credentials against the live Siteverify endpoint while all mail was captured by an isolated local SMTP sink. Required/optional validation, honeypot behavior, header-injection resistance, generated subject, priority headers, HTML escaping, and success/error responses passed without production mail delivery.
+- Firefox-primary visual checks at 1366px and an actual 390px viewport confirmed the approved desktop layout, natural mobile stacking, readable labels/content, and no horizontal clipping. A 1024px browser check retained the intended two-column presentation. Phase 1–7 structural checks, PHP and JavaScript syntax checks, the inspection helper, and `git diff --check` passed.
+- A temporary uniquely named production diagnostic confirmed PHP 8.2.33 with cURL, OpenSSL, filter, and JSON enabled. The diagnostic was deleted immediately after use, and a cache-busted public request confirmed HTTP 404. No production form files or credentials were changed during this diagnostic.
+
 ### Repository and File Structure
 
 - `D:\HH_Website` is a containing workspace; the deployable site and Git repository root are `D:\HH_Website\HudsonHelm_Website_v64`.
@@ -253,12 +264,12 @@ This section is the operational reference for future Codex sessions and maintain
 | Confirmed production deployment method | `C:\Program Files (x86)\WinSCP\WinSCP.com` with the saved `Hudson Helm` session. The confirmed session uses plain FTP, not SFTP/FTPS. Upload only the deployable site files; do not publish project-only files or delete server-managed paths. |
 | Local or staging preview method | From repository root run `node tools/preview.cjs`; Node v24.21.0 verified. Stop with Ctrl+C. Static inspection only; do not deploy this helper. |
 | Local/staging preview URL | `http://127.0.0.1:8087/` |
-| PHP version / runtime | No PHP executable on PATH or in checked Program Files, WinGet, XAMPP, Laragon, Scoop/tools locations. Production PHP version unknown. DEFERRED to Phase 7: establish compatible supported runtime before backend edits or execution. |
-| Required PHP extensions / dependencies | Bundled PHPMailer 5.2.28 declares PHP >=5.0 and ctype; handler uses `http_response_code` (PHP >=5.4), filter validation and JSON. SMTP TLS needs OpenSSL and socket/stream connectivity. These are source requirements, not a recommended production version or proof of installed extensions. Compatibility and library upgrade assessment required before Phase 7. |
-| Safe form-testing method | Verified empty submission in static preview. Preview rejects all POSTs and PHP GETs. DEFERRED to Phase 7: use an isolated PHP environment and local mail sink with outbound delivery prevented for valid-submit, malformed input and error-path tests; never use production SMTP for automated tests. |
-| Turnstile local/staging test approach | Not implemented yet. DEFERRED to Phases 7/8: use provider test keys with actual server verification; test invalid/expired tokens and ensure credential-free portal requests. No CAPTCHA or production form submitted in Phase 0. |
-| Hosting/runtime assumptions | Static HTML plus PHP mail endpoint behind Cloudflare observed; origin server, runtime, rewrite rules, secret injection and mail connectivity cannot be confirmed from public responses. Obtain hosting details before backend/staging/deployment work. |
-| Validation / lint / scanning commands | `node tools/check-phase1.cjs` (shared header, navigation, footer and stylesheet contract); `node tools/check-phase2.cjs` (homepage content and removed-dependency contract); `node tools/check-phase3.cjs` (What We Do content, taxonomy, jump-link, section, CTA, and dependency contract); `node tools/check-phase4.cjs` (Why Hudson Helm messaging, layout, hierarchy, CTA, and removed-dependency contract); `node tools/check-phase5.cjs` (Who We Are structure, profile roles, placeholder disclosure, navigation, CTA, and dependency contract); `node tools/check-phase6.cjs` (Are We a Good Fit structure, criteria, non-fit filter, CTA, hierarchy, and legacy-wrapper contract); `node tools/inspect.cjs` (read-only regex inventory; not a full HTML validator); `node --check tools/preview.cjs`; `node --check tools/inspect.cjs`; `node --check tools/check-phase1.cjs`; `node --check tools/check-phase2.cjs`; `node --check tools/check-phase3.cjs`; `node --check tools/check-phase4.cjs`; `node --check tools/check-phase5.cjs`; `node --check tools/check-phase6.cjs`; `Get-ChildItem js -Filter '*.js'` with `node --check` per file; `git diff --check`. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| PHP version / runtime | Production PHP 8.2.33 verified September 10, 2026 through a temporary version/extension diagnostic; the diagnostic was removed and its public URL confirmed 404. Official portable PHP 8.5.10 was used for local Phase 7 syntax and integration tests. |
+| Required PHP extensions / dependencies | Production cURL, OpenSSL, filter, and JSON extensions were verified enabled. Phase 7 uses PHPMailer 7.1.0's namespaced source and requires PHP 8.1+ because the project handler uses current return types; production PHP 8.2.33 satisfies that requirement. |
+| Safe form-testing method | Run `tools/test-phase7.cjs` with `PHP_BIN` set to a PHP 8.1+ executable and, when the local PHP build requires it, `PHP_CA_BUNDLE` set to a trusted CA bundle. The test uses Cloudflare's official public Turnstile test credentials and a local SMTP sink; it never uses production SMTP. |
+| Turnstile local/staging test approach | `tools/test-phase7.cjs` verifies pass, fail, and `timeout-or-duplicate` behavior through the real Siteverify endpoint using Cloudflare's official public test credentials. Test credentials work on localhost but must never be deployed. Production must use a hostname-restricted real widget and secret. |
+| Hosting/runtime assumptions | The origin is Namecheap-hosted PHP behind Cloudflare. PHP 8.2.33 and required extensions are confirmed; arbitrary environment-variable support and the private configuration placement still require production setup. The handler also supports `/home/<account>/hudson-helm-config.php`-style placement one level above the public site root. |
+| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase7.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The Phase 7 integration test requires outbound HTTPS only to Cloudflare Siteverify and captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
 | Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, Phase 4 `whyhudsonhelm.html` from site commit `16fabd6`, the seven Phase 5 root-page HTML files from site commit `d6fb5ed`, and Phase 6 `areweagoodfit.html` from site commit `d5b8f10` were subsequently uploaded and verified publicly. Cloudflare email protection, analytics injection, and robots content remain production-response additions. Static preview still cannot validate PHP, email delivery, Cloudflare behavior, or origin 404 routing. |
 
 Update this runbook when the environment or verified workflow materially changes.
@@ -278,6 +289,10 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-10 | Expose the complete seven-item navigation during Phase 1, including temporary missing Who We Are and Support destinations. | The user explicitly accepted broken links for approximately one week so shared navigation could be finalized before those later-phase pages exist. |
 | 2026-09-10 | Publish the complete deployable checkout after Phase 1 rather than only the changed files. | The user explicitly requested that the working checkout and live production payload be aligned. Existing server-managed paths were preserved, and project-only files were excluded. |
 | 2026-09-10 | Use clearly disclosed temporary content for the initial Who We Are page. | The user explicitly directed use of one reusable placeholder photograph plus invented names and biographies for a Network Engineer, Systems Engineer, and Cybersecurity Specialist, approved temporary production publication, and plans to supply the real people and biographies later. |
+| 2026-09-10 | Publish the response expectation **We'll usually respond within one business day.** | The user supplied and approved this exact Start Here commitment. |
+| 2026-09-10 | Upgrade the contact form from PHPMailer 5.2.28 to the current maintained PHPMailer 7.1.0 release. | The user explicitly requested replacement of the ancient bundled release; production PHP 8.2.33 supports the updated implementation. |
+| 2026-09-10 | Use Cloudflare's official public pass/fail/duplicate credentials only for automated/local testing. | These credentials work on localhost and provide deterministic Siteverify results; production still requires real hostname-restricted credentials. |
+| 2026-09-10 | Publish Phase 7 with placeholder credentials in a fail-closed state. | The user explicitly authorized temporary publication before real Migadu and Turnstile values are available. Placeholder and test values must never authorize mail or verification; the public form must report that it is temporarily unavailable. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
@@ -286,11 +301,11 @@ This is the canonical register for unresolved user inputs, blockers, and intenti
 - **OPEN — New Jersey business phone number:** not yet provided. Blocks final replacement of the temporary 954 number only.
 - **OPEN — Exact registered LLC/legal entity name:** not yet confirmed for legal copy. Blocks only legal text that requires the exact entity name.
 - **TEMPORARY — Who We Are content:** real photographs and the three supporting team identities/biographies have not yet been supplied. The user authorized one reusable stock portrait and clearly disclosed fictional supporting profiles for the initial page and production publication. Replace Cameron Reed, Morgan Lee, Jordan Patel, their biographies, and all temporary photography/labels when approved real material is supplied.
-- **OPEN — Start Here response-time expectation:** not yet supplied. Do not publish an unsupported response-time promise.
-- **DEFERRED — Production Migadu SMTP configuration and Cloudflare Turnstile keys:** needed during the relevant implementation/testing phases and must be handled securely.
+- **RESOLVED — Start Here response-time expectation:** the user approved **We'll usually respond within one business day.**
+- **BLOCKED — Operational production contact form:** the user authorized a temporary fail-closed publication with placeholder credentials. Real Migadu username/password plus a real Turnstile sitekey/secret are still required before the form can accept submissions. Store them securely as server environment values or in `hudson-helm-config.php` one level above the public root; do not paste them into tracked files or deploy test credentials.
 - **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
 - **RESOLVED — Intended baseline:** retain the committed local source following the user's instruction to commit. Local CSS/form JavaScript differences remain documented; production PHP cannot be compared from public responses.
-- **DEFERRED — PHP and hosting validation:** static preview is verified. Obtain origin runtime/hosting details and establish isolated PHP plus mail-sink testing before Phase 7. This does not block static shared-structure work after baseline confirmation.
+- **RESOLVED — PHP and hosting validation:** production PHP 8.2.33 and required cURL/OpenSSL/filter/JSON extensions were verified. Local PHP 8.5.10 plus an isolated SMTP sink and Cloudflare's official credentials validated Phase 7 without production email delivery.
 - **TEMPORARY — Support destination:** the user approved the missing `support.html` route for approximately one week beginning September 10, 2026. It remains clearly marked pending in source and must be resolved when its page is implemented or before the temporary allowance expires. The Who We Are destination is resolved by Phase 5.
 
 ---
@@ -1467,17 +1482,17 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 7 — Start Here
 
-- [ ] Preserve the approved two-column desktop layout and natural mobile stacking.
-- [ ] Update locality language to **Serving New Jersey & New York** and remove the placeholder office address.
-- [ ] Implement the approved fields and remove the user-editable Subject field.
-- [ ] Implement authenticated Migadu SMTP delivery to `info@hudsonhelm.com`.
-- [ ] Implement the generated subject and protect against email-header injection.
-- [ ] Apply the approved high-priority mail headers.
-- [ ] Implement required validation, accessible messages, sending/success/failure states, and duplicate-submission protection.
-- [ ] Add the response-time expectation only after the user supplies an approved commitment.
-- [ ] Implement Cloudflare Turnstile Managed mode with server-side token validation.
-- [ ] Implement the hidden honeypot and required input sanitization/security handling.
-- [ ] Satisfy the Shared Definition of Done for this phase.
+- [x] Preserve the approved two-column desktop layout and natural mobile stacking — verified at 1366px, 1024px, and an actual 390px Firefox viewport.
+- [x] Update locality language to **Serving New Jersey & New York** and remove the placeholder office address.
+- [x] Implement the approved fields and remove the user-editable Subject field — Name, Company, Email, optional Phone, and Message use visible labels and matched client/server limits.
+- BLOCKED — Authenticated Migadu SMTP delivery to `info@hudsonhelm.com` is implemented and passes an isolated SMTP-sink test, but the approved placeholder publication deliberately leaves delivery unavailable until real production credentials are configured and verified.
+- [x] Implement the generated subject and protect against email-header injection — verified with embedded CR/LF input in the integration suite.
+- [x] Apply the approved high-priority mail headers — verified from the captured MIME message.
+- [x] Implement required validation, accessible messages, sending/success/failure states, and duplicate-submission protection.
+- [x] Add the approved response-time expectation: **We'll usually respond within one business day.**
+- BLOCKED — Cloudflare Turnstile Managed mode and server-side Siteverify validation are implemented; official pass/fail/duplicate tests pass, but the approved placeholder publication deliberately leaves the widget unavailable until real production sitekey/secret values are configured.
+- [x] Implement the hidden honeypot and required input sanitization/security handling.
+- BLOCKED — The operational-contact-form portion of the Shared Definition of Done awaits real production secrets and a live non-automated delivery verification. The user separately authorized commit/push and fail-closed placeholder publication; the focused implementation and documentation diff review is complete.
 
 ## Phase 8 — Support Portal Shell
 
