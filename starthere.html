@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Here - Hudson Helm</title>
-    <meta name="description" content="Start a conversation with Hudson Helm about practical IT support, cybersecurity, cloud, and technology needs across New Jersey and New York.">
+    <meta name="description" content="Start a conversation with Hudson Helm about practical IT support, cybersecurity, cloud, and technology needs across the greater New Jersey, New York, and Philadelphia metropolitan area.">
     <!--favicon icon-->
     <link rel="shortcut icon" href="images/favicon.ico">
     <!--bootstrap css-->
@@ -483,35 +483,14 @@
         }
 
         .hh-direct-contact {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid rgba(255, 255, 255, 0.16);
+            text-align: center;
         }
 
         .hh-direct-contact p {
             margin: 0;
-        }
-
-        .hh-direct-contact .hh-direct-options {
-            text-align: right;
-        }
-
-        .hh-direct-contact .hh-direct-options br {
-            display: none;
-        }
-
-        .hh-direct-contact a {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .hh-direct-contact a:hover,
-        .hh-direct-contact a:focus {
-            color: #8fbfff;
         }
 
         .hh-field {
@@ -590,7 +569,41 @@
             border: 0 !important;
         }
 
-        .hh-start-page .pq-contactform button.form-btn {
+        .hh-form-actions {
+            display: grid;
+            grid-template-columns: minmax(180px, 1fr) minmax(150px, 220px) minmax(330px, 1fr);
+            align-items: end;
+            gap: 22px;
+        }
+
+        .hh-submit-action {
+            justify-self: start;
+        }
+
+        .hh-action-logo {
+            align-self: end;
+            justify-self: center;
+            width: 100%;
+            max-width: 210px;
+            height: auto;
+            margin-bottom: 2px;
+        }
+
+        .hh-email-action {
+            justify-self: end;
+            min-width: 0;
+            text-align: right;
+        }
+
+        .hh-email-prompt {
+            margin: 0 0 5px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .hh-start-page .pq-contactform .hh-orange-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -602,10 +615,16 @@
             box-shadow: 0 8px 18px rgba(255, 75, 31, 0.24);
         }
 
-        .hh-start-page .pq-contactform button.form-btn:hover,
-        .hh-start-page .pq-contactform button.form-btn:focus {
+        .hh-start-page .pq-contactform .hh-orange-action:hover,
+        .hh-start-page .pq-contactform .hh-orange-action:focus {
             background: #e64017;
             color: #ffffff;
+        }
+
+        .hh-email-button {
+            box-sizing: border-box;
+            max-width: 100%;
+            white-space: nowrap;
         }
 
         .hh-start-page .pq-contactform button.form-btn:disabled {
@@ -637,6 +656,37 @@
             }
         }
 
+        @media (max-width: 767px) {
+            .hh-form-actions {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 12px;
+            }
+
+            .hh-submit-action,
+            .hh-email-action {
+                justify-self: center;
+                text-align: center;
+            }
+
+            .hh-email-action {
+                width: 100%;
+                max-width: 340px;
+            }
+
+            .hh-action-logo {
+                max-width: 190px;
+                margin: 0;
+            }
+
+            .hh-email-button {
+                width: 100%;
+                padding-right: 14px;
+                padding-left: 14px;
+                white-space: normal;
+            }
+        }
+
         @media (max-width: 575px) {
             .hh-start-page {
                 padding: 12px 0 14px;
@@ -659,18 +709,9 @@
             }
 
             .hh-direct-contact {
-                display: block;
                 margin-top: 10px;
                 padding-top: 10px;
-            }
-
-            .hh-direct-contact .hh-direct-options {
-                margin-top: 6px;
-                text-align: left;
-            }
-
-            .hh-direct-contact .hh-direct-options br {
-                display: initial;
+                text-align: center;
             }
 
             #back-to-top {
@@ -794,18 +835,24 @@
                                         <div id="turnstile-widget" aria-describedby="turnstile-error"></div>
                                         <span class="hh-field-error hh-turnstile-copy" id="turnstile-error"></span>
                                     </div>
-                                    <button type="submit" class="pq-button form-btn" disabled>
-                                        <div class="pq-button-block">
-                                            <span class="pq-button-text">Submit</span>
+                                    <div class="hh-form-actions">
+                                        <div class="hh-submit-action">
+                                            <button type="submit" class="pq-button form-btn hh-orange-action" disabled>
+                                                <span class="pq-button-text">Submit</span>
+                                            </button>
                                         </div>
-                                    </button>
+                                        <img class="hh-action-logo" src="images/logos/wide_trans.png" alt="Hudson Helm">
+                                        <div class="hh-email-action">
+                                            <p class="hh-email-prompt">Prefer to e-mail us directly?</p>
+                                            <a class="pq-button hh-orange-action hh-email-button" href="mailto:info@hudsonhelm.com">Click Here to e-mail Info@HudsonHelm.com</a>
+                                        </div>
+                                    </div>
                                     <div class="pq-form-response mt-3" role="status" aria-live="polite" aria-atomic="true"></div>
                                 </div>
                             </div>
                 </form>
                 <div class="hh-direct-contact" aria-label="Direct contact options">
-                    <p><strong>Serving New Jersey &amp; New York</strong></p>
-                    <p class="hh-direct-options">Prefer to reach us directly?<br><a href="mailto:info@hudsonhelm.com">info@hudsonhelm.com</a> <span aria-hidden="true">·</span> <a href="tel:9542256560">954-225-6560</a></p>
+                    <p><strong>Serving the greater New Jersey / New York / Philadelphia metropolitan area.</strong></p>
                 </div>
             </div>
         </div>

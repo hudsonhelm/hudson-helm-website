@@ -97,7 +97,7 @@ For contact-form or other mail-delivery work, use Cloudflare's official testing 
 
 Phase 7 is operational in production. Preserve fail-closed behavior whenever the protected production configuration is absent or invalid; never substitute test, placeholder, or client-visible secret values.
 
-Keep Start Here as one concise, form-first workflow. Do not reintroduce a separate introductory contact card or large Service Area, Email Address, and Phone Number rows; keep the compact direct-contact alternative below the form. Preserve the wider compact desktop card, inline response commitment, short message field, orange **Submit** action, and visually hidden Turnstile status copy unless the user explicitly revises them.
+Keep Start Here as one concise, form-first workflow. Do not reintroduce a separate introductory contact card or large Service Area, Email Address, and Phone Number rows. Preserve the wider compact desktop card, inline response commitment, short message field, visually hidden Turnstile status copy, and three-part action row: orange **Submit** at left, Hudson Helm logo centered, and the matching direct-email action at right. Keep the centered greater New Jersey / New York / Philadelphia service-area line below unless the user explicitly revises it.
 
 The production credential source is stored locally outside the active repository at `D:\HH_Website\PrivateConfig\HudsonHelmContactProduction.php`. The FTP account is chrooted to the public root, so production uses the untracked guarded `/includes/contact-production.php` fallback protected by `/includes/.htaccess`; never stage, commit, print, or deploy that credential file anywhere else. Prefer environment variables or the above-web-root config path if hosting access later permits them.
 

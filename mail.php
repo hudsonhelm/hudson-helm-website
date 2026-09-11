@@ -125,7 +125,7 @@ $website = input_value('website');
 $turnstileToken = input_value('cf-turnstile-response');
 
 if ($website !== '') {
-    respond(true, 'Thanks. Your request has been sent.');
+    respond(true, "Thanks, your request has been sent. We'll be back with you soon.");
 }
 
 if ($name === '' || $company === '' || $email === '' || $message === '') {
@@ -241,7 +241,7 @@ try {
         . "How can we help?\n{$message}\n";
 
     $mail->send();
-    respond(true, 'Thanks. Your request has been sent.');
+    respond(true, "Thanks, your request has been sent. We'll be back with you soon.");
 } catch (MailerException | RuntimeException $exception) {
     error_log('Hudson Helm contact form: email delivery failed.');
     respond(false, 'Sorry, your request could not be sent right now. Please email info@hudsonhelm.com.', 500);

@@ -52,6 +52,16 @@
         responseBox.textContent = message;
     }
 
+    function setSuccessResponse() {
+        var lead = document.createElement('strong');
+        lead.textContent = 'Thanks, your request has been sent.';
+        responseBox.classList.remove('is-error');
+        responseBox.classList.add('is-success');
+        responseBox.textContent = '';
+        responseBox.appendChild(lead);
+        responseBox.appendChild(document.createTextNode(" We'll be back with you soon."));
+    }
+
     function setFieldError(field, message) {
         field.error.textContent = message || '';
         if (message) {
@@ -218,7 +228,7 @@
 
             form.reset();
             clearErrors();
-            setResponse(response.message || 'Thanks. Your request has been sent.', 'success');
+            setSuccessResponse();
         } catch (error) {
             var message = error && error.name === 'AbortError'
                 ? 'The request took too long. Please check your connection and try again.'
