@@ -9,8 +9,8 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | --- | --- |
 | Document | `HH_Website_Master.md` |
 | Last updated | September 11, 2026 |
-| Current phase | Phase 9 — Global Completion |
-| Phase status | **Phase 9 implementation complete and locally verified; GitHub push and production publication pending** |
+| Current phase | Phase 10 — QA |
+| Phase status | **Phase 9 complete, pushed, published, and verified; Phase 10 not started** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Complete the approved Phase 9 publication workflow: preserve the verified global footer, locality wording, Privacy Policy, custom 404 page, removed temporary phone number, legal identity, and all Phase 1–8 contracts; then push the reviewed implementation, publish only the approved deployable payload, verify production, and record closeout evidence.
+Phase 9 is complete, pushed, published, and verified. Preserve the global footer, locality wording, Privacy Policy, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Await explicit direction before beginning Phase 10.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–8 remain complete, pushed, published, and verified. Phase 9 is implemented and locally verified across nine public root pages: the placeholder footer is replaced with the approved brand/navigation/contact/legal structure; locality is standardized to **Serving New Jersey & New York**; the supplied legal identity is used in the legal row and Privacy Policy; the temporary 954 number is removed rather than replaced with invented data; and dedicated Privacy Policy and custom 404 pages are present. All Phase 1–9 structural checks and desktop/mobile render review pass. GitHub push and production publication remain pending under the user's explicit approval.
+Phases 1–9 are complete, pushed, published, and verified. Across nine public root pages, the placeholder footer is replaced with the approved brand/navigation/contact/legal structure; locality is standardized to **Serving New Jersey & New York**; the supplied legal identity is used in the legal row and Privacy Policy; the temporary 954 number is removed rather than replaced with invented data; and dedicated Privacy Policy and custom 404 pages are live. All Phase 1–9 checks and desktop/mobile render review passed. Cache-busted HTTPS checks confirmed every published page and shared stylesheet, and an unknown production route returns HTTP 404 while rendering the branded custom page.
 
 ### Phase Progress
 
@@ -65,7 +65,7 @@ Phases 1–8 remain complete, pushed, published, and verified. Phase 9 is implem
 | 6 | Are We a Good Fit? | Complete, published, pushed, and user-approved |
 | 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Complete, operational, published, and pushed |
-| 9 | Global Completion | Implementation complete and locally verified; publication pending |
+| 9 | Global Completion | Complete, published, pushed, and verified; phone addition remains blocked on input |
 | 10 | QA | Not started |
 | 11 | Regression / Review | Not started |
 
@@ -156,6 +156,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Added and published a Support email link in the portal's generic credential rejection. | Commit `47ac061` changed the generic local-only rejection to “Invalid username or password. Please contact Support,” with only Support linked to `mailto:support@hudsonhelm.com`. The link is created through DOM methods rather than HTML injection, inherits the error color, and is underlined; the token-only server boundary remains unchanged. All Phase 1–8 checks, JavaScript syntax, the inspection helper, and `git diff --check` passed. The commit was pushed, and only `support.html`, `css/hudson-helm.css`, and `js/support.js` were uploaded. Cache-busted production requests returned 200 and confirmed the exact message, mailto destination, link text, DOM construction, underline rule, and versioned asset URLs. |
 | 2026-09-11 | Received the Phase 9 legal identity and publication authorization. | The user confirmed **Royal Court Holdings, LLC dba Hudson Helm** and authorized Phase 9 implementation, GitHub push, and narrow FTP publication without further approval unless blocked. |
 | 2026-09-11 | Implemented and locally validated Phase 9 Global Completion. | Replaced the placeholder footer across nine public root pages, standardized locality to **Serving New Jersey & New York**, removed the temporary 954 number, created the practice-specific Privacy Policy and branded 404 page, and added Phase 9 regression coverage. All Phase 1–9 checks, the inspection helper, `git diff --check`, and desktop/mobile Chrome and Firefox render reviews passed after correcting the footer logo asset. GitHub push and production publication remained pending at this checkpoint. |
+| 2026-09-11 | Pushed, published, and verified Phase 9 Global Completion. | Pushed implementation commit `bcc689e`, uploaded the nine public HTML pages and shared stylesheet, and verified HTTP 200 plus Phase 9 markers across every route. The first real missing-route check revealed that the host was not using `404.html`; after confirming no root `.htaccess` existed, commit `17be72d` added the narrow `ErrorDocument 404 /404.html` rule and it was published. A final unknown-route request returned HTTP 404 with the custom page, Phase 9 stylesheet, footer, legal identity, and no legacy template copy. |
 
 ## Findings and Observations
 
@@ -261,6 +262,8 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - `privacy.html` documents the site's actual Start Here collection, browser-local Support credentials, normal technical/security information, Cloudflare Turnstile, Migadu email delivery, cookies/analytics posture, sharing, retention, safeguards, and contact path. Cloudflare's current Turnstile Privacy Addendum and Migadu's current Privacy Policy were reviewed before drafting.
 - `404.html` is now a concise Hudson Helm page with a single H1, `noindex, follow`, the shared header/footer, and clear paths to Home, What We Do, and Start Here; legacy Techrix and generic error copy are absent.
 - `node tools/check-phase1.cjs` through `node tools/check-phase9.cjs`, the inspection helper, syntax validation, stale phone/locality scans, and `git diff --check` passed. Chrome desktop renders and true 390px Firefox renders confirmed readable wrapping, responsive navigation, footer stacking, visible actions, and no apparent horizontal overflow. The connected browser surface was unavailable, so installed local headless browsers were used against the safe loopback preview.
+- Implementation commits `bcc689e` and `17be72d` were pushed to `origin/website-refresh`. WinSCP uploaded only the nine public HTML pages, `css/hudson-helm.css`, and the one-line root `.htaccess`; documentation, tools, and protected configuration were excluded. Remote stats confirmed all payload files.
+- Cache-busted public HTTPS checks returned 200 for every explicit page and the stylesheet, with matching Phase 9 footer, legal, locality, privacy-link, and no-temporary-phone markers. An unknown route returned HTTP 404 while rendering the custom Hudson Helm content, confirming that the new `ErrorDocument` rule is active.
 
 ### Repository and File Structure
 
@@ -326,8 +329,8 @@ This section is the operational reference for future Codex sessions and maintain
 | Safe form-testing method | Run `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN` set to a PHP 8.1+ executable and, when the local PHP build requires it, `PHP_CA_BUNDLE` set to a trusted CA bundle. Both use Cloudflare's official public Turnstile test credentials; Phase 7 captures mail in a local SMTP sink, while Phase 8 verifies the token-only request contract and rejects simulated credential leakage. They never use production SMTP or secrets. |
 | Turnstile local/staging test approach | `tools/test-phase7.cjs` and `tools/test-phase8.cjs` verify pass, fail, and `timeout-or-duplicate` behavior through the real Siteverify endpoint using Cloudflare's official public test credentials. Test credentials work on localhost but must never be deployed. Production uses the existing hostname-restricted real widget and secret, with separate `contact` and `support` action validation. |
 | Hosting/runtime assumptions | The origin is Namecheap-hosted PHP behind Cloudflare. PHP 8.2.33 and required extensions are confirmed. The handler prefers environment variables or `/home/<account>/hudson-helm-config.php`-style placement above the public root, but the saved FTP account is chrooted at `/`; it therefore also supports an untracked, direct-request-guarded `/includes/contact-production.php` protected by `/includes/.htaccess`. The local source copy lives outside the active repository under `D:\HH_Website\PrivateConfig`. |
-| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase8.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, `support-config.php`, `support-verify.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The integration tests require outbound HTTPS only to Cloudflare Siteverify; Phase 7 captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
-| Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 through Phase 7 page/runtime changes were subsequently uploaded and verified. Phase 8 site commit `442fcfe` and stylesheet-version correction `7f0b285` are live: all eight public headers expose Support, the portal and token-only endpoints are deployed, and the real Turnstile widget is operational. Phase 7 and Phase 8 share real protected Turnstile credentials in an untracked server-only file. Cloudflare email protection, analytics injection, and robots content remain production-response additions; the protected production credential file intentionally exists only locally and server-side, never in Git. |
+| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase9.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, `support-config.php`, `support-verify.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The integration tests require outbound HTTPS only to Cloudflare Siteverify; Phase 7 captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| Known local/staging vs. production differences | Phase 9 commits `bcc689e` and `17be72d` are live: nine root pages use the complete global footer and Phase 9 stylesheet, `privacy.html` is public, and the root `.htaccess` serves the custom `404.html` while retaining HTTP 404 status. Phase 7 and Phase 8 share real protected Turnstile credentials in an untracked server-only file. Cloudflare email protection, analytics injection, and robots content remain production-response additions; the protected production credential file intentionally exists only locally and server-side, never in Git. |
 
 Update this runbook when the environment or verified workflow materially changes.
 
@@ -1583,7 +1586,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Create the Privacy Policy from the site's actual completed practices and integrations — added an effective-dated policy covering Start Here, the token-only portal boundary, operational/security data, Cloudflare Turnstile, Migadu, cookies/analytics, sharing, retention, safeguards, and privacy contact.
 - [x] Create the custom Hudson Helm 404 page — replaced the legacy template page with a branded single-H1 route containing clear Home, What We Do, and Start Here paths.
 - [x] Confirm global navigation/footer consistency across all public pages — Phase 1 and Phase 9 checks cover the same seven-destination header and complete footer across nine root pages.
-- [ ] Satisfy the Shared Definition of Done for this phase — local structural, functional, responsive, accessibility-oriented, content, regression, diff, and browser checks pass; GitHub push, production publication, and live verification remain pending.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; structural, functional, responsive, accessibility-oriented, content, security, syntax, regression, diff, Git, FTP, and live production checks passed; commits `bcc689e` and `17be72d` were pushed, the narrow deployable payload was published, and real missing-route behavior was verified.
 
 ## Phase 10 — QA
 
