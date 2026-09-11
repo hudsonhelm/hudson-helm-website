@@ -23,7 +23,10 @@ requireMatch('Right-sized IT', /<h4 class="pq-icon-box-title">Right-sized IT<\/h
 requireMatch('Ownership', /<h4 class="pq-icon-box-title">Ownership<\/h4>/);
 requireMatch('centered differentiator icon glyphs', /\.hh-why-differentiators \.hh-why-card \.pq-icon i\s*\{[^}]*text-align:\s*center;/);
 requireMatch('trust statement', /<h2 id="why-trust-title">We are not trying to be the biggest shop in the room\. We are trying to be the one you trust\.<\/h2>/);
-requireMatch('light three-column treatment', /<section class="hh-why-principles"[\s\S]*?Direct communication[\s\S]*?A cleaner, calmer IT environment[\s\S]*?Advice with your budget in mind/);
+requireMatch('dark three-column treatment', /<section class="hh-why-principles"[\s\S]*?Direct communication[\s\S]*?A cleaner, calmer IT environment[\s\S]*?Advice with your budget in mind/);
+requireMatch('black principles background', /\.hh-why-principles\s*\{[^}]*background:\s*#000;/);
+requireMatch('blue principles cards', /\.hh-why-principle\s*\{[^}]*background:\s*linear-gradient\(180deg, rgba\(34, 60, 96, 0\.88\)/);
+forbid('numbered principle labels', /hh-why-principle-number|>0[1-3]<\/span>/);
 requireMatch('approved closing CTA', /<section class="hh-why-closing"[\s\S]*?If your current IT feels slow, reactive, overpriced, or just harder than it should be, that is fixable\.[\s\S]*?href="starthere\.html"/);
 
 const cards = (page.match(/class="pq-icon-box pq-style-2 hh-why-card"/g) || []).length;
