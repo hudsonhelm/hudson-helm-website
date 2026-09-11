@@ -457,38 +457,38 @@
         }
 
         .hh-start-page {
-            padding: 72px 0;
+            padding: 8px 0 4px;
         }
 
         .hh-start-page .container {
-            max-width: 980px;
+            max-width: 1160px;
         }
 
         .hh-start-page .form-div {
-            padding: 46px 50px;
+            padding: 18px 26px;
         }
 
         .hh-start-page h1 {
-            margin: 0 0 14px;
+            margin: 0 0 8px;
         }
 
         .hh-start-intro {
-            max-width: 780px;
+            max-width: 1040px;
             margin: 0;
-            line-height: 1.65;
+            line-height: 1.35;
         }
 
         .hh-response-time {
-            margin: 18px 0 26px;
-            padding: 14px 16px;
-            border-left: 3px solid #4a8fdc;
-            background: rgba(74, 143, 220, 0.1);
-            border-radius: 0 8px 8px 0;
+            font-weight: 600;
         }
 
         .hh-direct-contact {
-            margin-top: 26px;
-            padding-top: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 8px;
+            padding-top: 8px;
             border-top: 1px solid rgba(255, 255, 255, 0.16);
         }
 
@@ -497,7 +497,11 @@
         }
 
         .hh-direct-contact .hh-direct-options {
-            margin-top: 8px;
+            text-align: right;
+        }
+
+        .hh-direct-contact .hh-direct-options br {
+            display: none;
         }
 
         .hh-direct-contact a {
@@ -511,13 +515,13 @@
         }
 
         .hh-field {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
         }
 
         .hh-field label {
             display: block;
-            margin-bottom: 7px;
-            font-size: 15px;
+            margin-bottom: 4px;
+            font-size: 14px;
             font-weight: 600;
         }
 
@@ -532,6 +536,17 @@
         .hh-start-page .pq-contactform textarea {
             width: 100%;
             margin: 0;
+        }
+
+        .hh-start-page .pq-contactform input {
+            height: 46px;
+            padding: 10px 14px;
+        }
+
+        .hh-start-page .pq-contactform textarea {
+            height: 88px;
+            min-height: 88px;
+            padding: 10px 14px;
         }
 
         .hh-start-page .pq-contactform [aria-invalid="true"] {
@@ -555,49 +570,88 @@
 
         .hh-turnstile-wrap {
             min-height: 68px;
-            margin-bottom: 18px;
+            margin-bottom: 6px;
         }
 
-        .hh-turnstile-status {
-            margin: 0 0 8px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.76);
+        .hh-turnstile-wrap.is-unavailable {
+            min-height: 0;
+            margin: 0;
+        }
+
+        .hh-turnstile-copy {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        .hh-start-page .pq-contactform button.form-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 11px 28px;
+            border-radius: 4px;
+            background: #ff4b1f;
+            color: #ffffff;
+            box-shadow: 0 8px 18px rgba(255, 75, 31, 0.24);
+        }
+
+        .hh-start-page .pq-contactform button.form-btn:hover,
+        .hh-start-page .pq-contactform button.form-btn:focus {
+            background: #e64017;
+            color: #ffffff;
+        }
+
+        .hh-start-page .pq-contactform button.form-btn:disabled {
+            background: #ff4b1f;
+            color: #ffffff;
+            opacity: 1;
         }
 
         .pq-form-response {
             min-height: 24px;
         }
 
+        .pq-form-response:empty {
+            min-height: 0;
+            margin-top: 0 !important;
+        }
+
+        body footer#pq-footer .pq-copyright-footer {
+            padding: 10px 0;
+        }
+
         @media (max-width: 991px) {
             .hh-start-page {
-                padding: 52px 0;
+                padding: 14px 0 8px;
             }
 
             .hh-start-page .form-div {
-                padding: 38px;
+                padding: 22px 24px;
             }
         }
 
         @media (max-width: 575px) {
             .hh-start-page {
-                padding: 34px 0 42px;
+                padding: 12px 0 14px;
             }
 
             .hh-start-page .form-div {
-                padding: 28px 22px;
+                padding: 20px 18px;
             }
 
             .hh-start-intro {
                 line-height: 1.55;
             }
 
-            .hh-response-time {
-                margin: 16px 0 22px;
-                padding: 12px 14px;
-            }
-
             .hh-field {
-                margin-bottom: 16px;
+                margin-bottom: 11px;
             }
 
             .hh-field label {
@@ -605,8 +659,18 @@
             }
 
             .hh-direct-contact {
-                margin-top: 22px;
-                padding-top: 18px;
+                display: block;
+                margin-top: 10px;
+                padding-top: 10px;
+            }
+
+            .hh-direct-contact .hh-direct-options {
+                margin-top: 6px;
+                text-align: left;
+            }
+
+            .hh-direct-contact .hh-direct-options br {
+                display: initial;
             }
 
             #back-to-top {
@@ -681,8 +745,7 @@
             <div class="form-div">
                 <div class="pq-section pq-style-1 text-left">
                     <h1 class="pq-section-title" id="start-here-title">Start Here</h1>
-                    <p class="pq-section-description hh-start-intro">Tell us a little about your business, your current technology environment, and what's getting in the way. Whether you need reliable day-to-day IT support, stronger cybersecurity, or a fresh set of eyes on your existing setup, we'll review your request and follow up with practical next steps.</p>
-                    <p class="hh-response-time">We'll usually respond within one business day.</p>
+                    <p class="pq-section-description hh-start-intro">Tell us a little about your business, your current technology environment, and what's getting in the way. Whether you need reliable day-to-day IT support, stronger cybersecurity, or a fresh set of eyes on your existing setup, we'll review your request and follow up with practical next steps. <span class="hh-response-time">We'll usually respond within one business day.</span></p>
                 </div>
                 <form action="mail.php" method="post" class="pq-contactform hh-contact-form" aria-labelledby="start-here-title" novalidate>
                             <div class="row">
@@ -721,19 +784,19 @@
                                 <div class="col-lg-12">
                                     <div class="hh-field">
                                         <label for="contact-message">How can we help? <span class="hh-required-note">(required)</span></label>
-                                        <textarea id="contact-message" name="message" rows="6" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
+                                        <textarea id="contact-message" name="message" rows="4" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
                                         <span class="hh-field-error" id="contact-message-error"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="hh-turnstile-wrap">
-                                        <p class="hh-turnstile-status" id="turnstile-status">Loading spam protection...</p>
+                                        <p class="hh-turnstile-status hh-turnstile-copy" id="turnstile-status">Loading spam protection...</p>
                                         <div id="turnstile-widget" aria-describedby="turnstile-error"></div>
-                                        <span class="hh-field-error" id="turnstile-error"></span>
+                                        <span class="hh-field-error hh-turnstile-copy" id="turnstile-error"></span>
                                     </div>
                                     <button type="submit" class="pq-button form-btn" disabled>
                                         <div class="pq-button-block">
-                                            <span class="pq-button-text">Send Request</span>
+                                            <span class="pq-button-text">Submit</span>
                                         </div>
                                     </button>
                                     <div class="pq-form-response mt-3" role="status" aria-live="polite" aria-atomic="true"></div>

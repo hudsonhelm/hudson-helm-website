@@ -1,0 +1,3 @@
+<Files "contact-production.php">
+    Require all denied
+</Files>

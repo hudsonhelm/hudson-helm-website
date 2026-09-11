@@ -9,6 +9,7 @@
     var responseBox = form.querySelector('.pq-form-response');
     var submitButton = form.querySelector('.form-btn');
     var submitLabel = submitButton.querySelector('.pq-button-text');
+    var turnstileWrap = document.querySelector('.hh-turnstile-wrap');
     var turnstileStatus = document.getElementById('turnstile-status');
     var turnstileError = document.getElementById('turnstile-error');
     var widgetId = null;
@@ -99,7 +100,7 @@
     function setSubmitting(isSubmitting) {
         submitting = isSubmitting;
         submitButton.disabled = isSubmitting || !turnstileToken;
-        submitLabel.textContent = isSubmitting ? 'Sending...' : 'Send Request';
+        submitLabel.textContent = isSubmitting ? 'Sending...' : 'Submit';
     }
 
     function resetTurnstile() {
@@ -113,6 +114,7 @@
     function showTurnstileUnavailable() {
         turnstileStatus.textContent = 'The online form is temporarily unavailable. Please email info@hudsonhelm.com.';
         turnstileError.textContent = 'Spam protection could not be loaded.';
+        turnstileWrap.classList.add('is-unavailable');
         submitButton.disabled = true;
     }
 
@@ -135,6 +137,7 @@
                 throw new Error('Turnstile configuration is unavailable.');
             }
 
+            turnstileWrap.classList.remove('is-unavailable');
             widgetId = window.turnstile.render('#turnstile-widget', {
                 sitekey: config.turnstileSiteKey,
                 action: 'contact',

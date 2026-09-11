@@ -9,7 +9,8 @@ if (realpath($_SERVER['SCRIPT_FILENAME'] ?? '') === __FILE__) {
 
 /**
  * Load optional production values from a PHP file one directory above the
- * public site root. Environment variables take precedence over this file.
+ * public site root. A guarded in-root fallback supports FTP accounts that are
+ * chrooted to the public directory. Environment variables take precedence.
  */
 function hh_private_config(): array
 {
@@ -20,12 +21,18 @@ function hh_private_config(): array
     }
 
     $config = [];
-    $privateConfigPath = dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'hudson-helm-config.php';
+    $privateConfigPaths = [
+        dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'hudson-helm-config.php',
+        __DIR__ . DIRECTORY_SEPARATOR . 'contact-production.php',
+    ];
 
-    if (is_readable($privateConfigPath)) {
-        $loaded = require $privateConfigPath;
-        if (is_array($loaded)) {
-            $config = $loaded;
+    foreach ($privateConfigPaths as $privateConfigPath) {
+        if (is_readable($privateConfigPath)) {
+            $loaded = require $privateConfigPath;
+            if (is_array($loaded)) {
+                $config = $loaded;
+                break;
+            }
         }
     }
 
