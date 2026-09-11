@@ -17,7 +17,6 @@ const expectedNavigation = [
   ['Why Hudson Helm', 'whyhudsonhelm.html'],
   ['Who We Are', 'whoweare.html'],
   ['Are We a Good Fit?', 'areweagoodfit.html'],
-  ['Support', 'support.html'],
   ['Start Here', 'starthere.html'],
 ];
 
@@ -77,8 +76,8 @@ for (const [file, currentPage] of pages) {
     });
 
     const pendingLinks = links.filter((link) => /data-pending-page=["']true["']/.test(link.attrs));
-    if (pendingLinks.map((link) => link.href).join(',') !== 'support.html') {
-      fail(file, 'temporary pending-page links are not explicitly marked');
+    if (pendingLinks.length !== 0) {
+      fail(file, 'temporary pending-page links remain in primary navigation');
     }
   }
 
@@ -117,6 +116,10 @@ for (const requiredToken of [
   if (!sharedCss.includes(requiredToken)) {
     fail('css/hudson-helm.css', `missing ${requiredToken}`);
   }
+}
+
+if (!/header#pq-header \.hh-desktop-cta \.pq-button-text\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;[\s\S]*line-height: 1;/.test(sharedCss)) {
+  fail('css/hudson-helm.css', 'header Start Here CTA typography does not match the form actions');
 }
 
 if (failures.length) {

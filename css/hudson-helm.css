@@ -117,6 +117,12 @@ header#pq-header .pq-button {
 	box-shadow: 0 10px 24px rgba(32, 83, 145, 0.32);
 }
 
+header#pq-header .hh-desktop-cta .pq-button-text {
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 1;
+}
+
 header#pq-header .pq-button:hover,
 header#pq-header .pq-button:focus {
 	background: linear-gradient(180deg, #5a9ae2 0%, #347ac6 100%);
