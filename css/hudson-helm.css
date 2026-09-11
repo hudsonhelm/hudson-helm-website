@@ -577,6 +577,11 @@ footer#pq-footer .pq-copyright-footer .hh-footer-logo {
 	text-align: center;
 }
 
+.hh-login-response:empty {
+	min-height: 0;
+	margin-top: 0;
+}
+
 .hh-login-response.is-error {
 	color: #ffaaa3;
 }

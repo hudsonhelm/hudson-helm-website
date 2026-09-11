@@ -21,7 +21,7 @@ requireMatch('portal title', page, /<title>Client Support Portal - Hudson Helm<\
 requireMatch('meta description', page, /<meta name="description" content="[^"]+">/);
 requireMatch('semantic main content', page, /<main class="hh-support-main">[\s\S]*<\/main>/);
 requireMatch('single portal H1', page, /<h1 id="support-title"><span>Client<\/span><span>Support<\/span><span>Portal<\/span><\/h1>/);
-requireMatch('versioned aligned Support stylesheet', page, /css\/hudson-helm\.css\?v=20260911-support-align/);
+requireMatch('versioned compact Support stylesheet', page, /css\/hudson-helm\.css\?v=20260911-support-tight/);
 requireMatch('username field', page, /<input id="support-username" type="text"[^>]+autocomplete="username"[^>]+required/);
 requireMatch('password field', page, /<input id="support-password" type="password"[^>]+autocomplete="current-password"[^>]+required/);
 requireMatch('Sign In action', page, /id="support-sign-in"[^>]+type="submit"[\s\S]*>Sign In</);
@@ -72,6 +72,7 @@ requireMatch('documented support action', environmentExample, /SUPPORT_TURNSTILE
 const sharedStyles = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
 requireMatch('top-aligned Support columns', sharedStyles, /\.hh-support-shell\s*\{[^}]*align-items:\s*start;/);
 requireMatch('one-word Support heading lines', sharedStyles, /\.hh-support-intro h1 span\s*\{[^}]*display:\s*block;/);
+requireMatch('collapsed empty login response', sharedStyles, /\.hh-login-response:empty\s*\{[^}]*min-height:\s*0;[^}]*margin-top:\s*0;/);
 
 if (failures.length) {
   console.error('Phase 8 Support Portal checks failed:');
