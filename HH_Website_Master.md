@@ -167,6 +167,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Received and implemented the permanent New Jersey business number. | Added **862-232-8023** as a click-to-call link in every compact footer and in appropriate Start Here and Privacy Policy contact copy without restoring the removed header contact bar. Updated regression coverage and responsive footer styling; validation, commit, push, and publication remained pending at this checkpoint. |
 | 2026-09-11 | Pushed, published, and verified the combined header and permanent-phone release. | Pushed header commit `f635693` and phone commit `e0c122c`; uploaded only the nine public root HTML pages plus `css/hudson-helm.css`; and confirmed all ten remote file stats. Cache-busted HTTPS returned 200 for every page and the stylesheet with no top contact bar, orange default navigation, blue interactive/current states, the correct `tel:+18622328023` link, and no former 954 number. Live 1280px and 390px renders confirmed the compact header/footer, correct computed colors, same-row mobile Phone/Privacy links, and no horizontal overflow. |
 | 2026-09-11 | Restyled and locally validated the Why Hudson Helm principles cards. | Removed the `01`–`03` labels, moved each heading to the top of its card, reduced the section/card height, changed the section background to black, and reused the established blue card gradient, border, radius, and shadow. Phase 1–9 checks, the inspection helper, JavaScript syntax, and `git diff --check` passed. Browser review at 1280px and 390px confirmed 217px equal-height desktop cards, natural-height mobile stacking, the requested colors, and no horizontal overflow. GitHub push and production publication remain pending. |
+| 2026-09-11 | Revised and locally validated the Are We a Good Fit messaging and spacing. | Changed the blue hero H1 to sentence case, removed its secondary heading, enlarged the hero description, renamed the fit section to **We may be a good fit if...**, and revised all six card headings to complete that thought without changing their descriptive copy. The requested introduction replaces the former two-sentence version, and the dot/text in the two shorter not-fit cards is lowered by 6px. Phase 1–9 checks, the inspection helper, JavaScript syntax, and `git diff --check` passed. GitHub push and production publication remain pending. |
 
 ## Findings and Observations
 
@@ -226,7 +227,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 
 ### Phase 6 implementation evidence — September 10, 2026
 
-- `areweagoodfit.html` now follows compact text-and-image Hero → six-card **When The Fit Is Especially Strong** criteria → four-item **We May Not Be The Right Fit If...** filter → one Start Here CTA. The existing `images/blog/1.jpg` asset is retained in a restrained responsive crop.
+- `areweagoodfit.html` now follows compact text-and-image Hero → six-card **We may be a good fit if...** criteria → four-item **We May Not Be The Right Fit If...** filter → one Start Here CTA. The existing `images/blog/1.jpg` asset is retained in a restrained responsive crop.
 - The six cards cover the approved business-size, day-to-day technology, responsive remote/onsite support, security, practical-advice, and ongoing-relationship concepts. The not-fit language remains direct without being hostile or condescending, and the redundant standalone **We May Be A Good Fit If...** block is removed.
 - The page has one semantic H1, logical H2/H3 structure, descriptive image text, a meta description, no duplicate IDs, and no missing assets beyond the previously authorized Support route. Browser checks at 1366px, 1024px, and 390px found no horizontal overflow; the tablet/mobile navigation collapsed and opened correctly, all images loaded, and the console returned no warnings or errors.
 - `node tools/check-phase6.cjs`, Phase 1–5 checks, the inspection helper, JavaScript syntax checks, and `git diff --check` passed. The dedicated Phase 6 check verifies required structure and messaging, card cardinality, CTA, single-H1 structure, removal of the blog wrapper and redundant fit section, and absence of an external jQuery dependency.
@@ -909,7 +910,7 @@ The existing full-width image consumes too much of the first screen.
 
 Convert the top into a compact text + image hero.
 
-Use **Are We a Good Fit?** and preserve **The Kind Of Business We Serve Best** as a major message.
+Use the sentence-case blue heading **Are we a good fit?** without a secondary hero heading. The introductory paragraph beneath it is 2pt larger than its former treatment.
 
 Place intro text alongside the existing image rather than below a massive image.
 
@@ -927,7 +928,7 @@ Communicate concepts such as:
 - Practical recommendations are preferred over unnecessary complexity
 - The business wants an ongoing technology relationship rather than anonymous ticket handling
 
-Preserve the existing heading **When The Fit Is Especially Strong**.
+Use **We may be a good fit if...** and phrase each of the six card headings so it completes that thought.
 
 ## Not-a-Fit Section
 
@@ -1561,7 +1562,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 - [x] Replace the oversized opening image treatment with the approved compact text + image hero — retained the existing business-team image in a restrained responsive crop alongside the H1 and major positioning message.
 - [x] Convert fit criteria into a scannable treatment using the approved concepts — implemented six concise cards covering business size, technology reliance, support, security, practical advice, and an ongoing relationship.
-- [x] Preserve the **When The Fit Is Especially Strong** heading and relevant messaging — retained the exact heading and condensed the strongest existing positioning into its introduction.
+- [x] Present the criteria under **We may be a good fit if...** with sentence-completing card headings — revised the section heading and all six card headings while preserving every descriptive paragraph.
 - [x] Add the short, non-hostile **We May Not Be The Right Fit If...** section — added four direct but respectful filtering criteria.
 - [x] Remove redundant fit messaging and break apart the giant article-style block — removed the blog wrapper and repetitive good-fit close in favor of four distinct semantic sections.
 - [x] End with a concise Start Here CTA and target the approved overall page length where practical — implemented one closing CTA and reduced the page to 2,277px at a 1366×768 desktop viewport.
