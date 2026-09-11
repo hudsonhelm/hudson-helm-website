@@ -28,20 +28,22 @@ for (const file of pages) {
   }
 
   for (const required of [
-    'class="hh-footer-main"',
-    'class="hh-footer-grid"',
+    'class="hh-footer-legal-row"',
+    'class="hh-footer-summary"',
+    'class="hh-footer-locality"',
     'Serving New Jersey &amp; New York',
-    'mailto:info@hudsonhelm.com',
-    'href="starthere.html"',
-    'href="support.html"',
     'Royal Court Holdings, LLC dba Hudson Helm',
     'href="privacy.html"',
   ]) {
     if (!footer.includes(required)) fail(file, `footer is missing ${required}`);
   }
 
-  if (!/css\/hudson-helm\.css\?v=20260911-phase9/.test(html)) {
-    fail(file, 'Phase 9 shared stylesheet version is missing');
+  for (const removed of ['hh-footer-main', 'hh-footer-grid', 'hh-footer-brand-logo', '>Explore<', '>Connect<', 'hh-footer-email', 'hh-footer-actions']) {
+    if (footer.includes(removed)) fail(file, `removed upper-footer content remains: ${removed}`);
+  }
+
+  if (!/css\/hudson-helm\.css\?v=20260911-footer-compact/.test(html)) {
+    fail(file, 'compact-footer shared stylesheet version is missing');
   }
 
   if (/954[- ]?225[- ]?6560|tel:9542256560|Northern New Jersey|\bNYC\b|Philadelphia/i.test(html)) {
@@ -65,6 +67,9 @@ for (const required of [
   if (!privacy.includes(required)) fail('privacy.html', `missing ${required}`);
 }
 if ((privacy.match(/<h1(?:\s|>)/g) || []).length !== 1) fail('privacy.html', 'must contain exactly one H1');
+if (privacy.includes('How Royal Court Holdings, LLC dba Hudson Helm handles information submitted through this website.')) {
+  fail('privacy.html', 'explanatory hero subtitle remains');
+}
 
 const notFound = fs.readFileSync(path.join(root, '404.html'), 'utf8');
 const apacheConfig = fs.readFileSync(path.join(root, '.htaccess'), 'utf8');
@@ -83,7 +88,7 @@ if (/Techrix|Oops! This Page|404 Error/.test(notFound)) fail('404.html', 'legacy
 if (!/^ErrorDocument 404 \/404\.html\s*$/m.test(apacheConfig)) fail('.htaccess', 'custom 404 routing is missing');
 
 const sharedCss = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
-for (const required of ['.hh-footer-grid', '.hh-footer-legal-row', '.hh-legal-copy', '.hh-not-found']) {
+for (const required of ['.hh-footer-legal-row', '.hh-footer-summary', '.hh-footer-locality', '.hh-legal-copy', '.hh-not-found']) {
   if (!sharedCss.includes(required)) fail('css/hudson-helm.css', `missing ${required}`);
 }
 

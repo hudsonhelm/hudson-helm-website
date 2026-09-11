@@ -99,10 +99,10 @@ for (const [file, currentPage] of pages) {
     fail(file, 'shared copyright text is inconsistent');
   }
 
-  if (!footer.includes('images/logos/wide_trans.png')
+  if (!footer.includes('class="hh-footer-summary"')
       || !footer.includes('Serving New Jersey &amp; New York')
       || !footer.includes('href="privacy.html"')) {
-    fail(file, 'shared footer logo is inconsistent');
+    fail(file, 'shared compact footer is inconsistent');
   }
 
   if (/peacefulqode|Los Angeles|Lorem Ipsum|Techtrix/i.test(`${header}${footer}`)) {

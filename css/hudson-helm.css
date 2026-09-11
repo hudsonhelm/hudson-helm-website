@@ -258,6 +258,13 @@ footer#pq-footer .hh-footer-legal {
 	background: var(--hh-color-bg);
 }
 
+footer#pq-footer,
+footer#pq-footer.style-1 {
+	margin-top: 0;
+	background-color: var(--hh-color-bg);
+	background-image: none;
+}
+
 footer#pq-footer {
 	border-top: 1px solid rgba(113, 165, 233, 0.2);
 	color: #b8c5d4;
@@ -440,6 +447,69 @@ footer#pq-footer .hh-footer-legal a {
 	}
 }
 
+/* Compact global footer refinement. */
+footer#pq-footer .hh-footer-legal-row {
+	display: grid;
+	grid-template-columns: minmax(280px, 1.2fr) minmax(300px, 1.35fr) auto auto;
+	align-items: center;
+	gap: 16px 24px;
+	padding: 18px 0;
+}
+
+footer#pq-footer .hh-footer-legal p {
+	margin: 0;
+	color: #8595a8;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+footer#pq-footer .hh-footer-summary {
+	max-width: 410px;
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+footer#pq-footer .hh-footer-locality {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin: 0;
+	color: #b8c5d4;
+	font-size: 13px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+footer#pq-footer .hh-footer-legal a {
+	font-size: 13px;
+	white-space: nowrap;
+}
+
+@media (max-width: 1199px) {
+	footer#pq-footer .hh-footer-legal-row {
+		grid-template-columns: minmax(280px, 1fr) minmax(300px, 1.15fr) auto;
+	}
+
+	footer#pq-footer .hh-footer-legal a {
+		grid-column: 3;
+		grid-row: 1 / span 2;
+	}
+}
+
+@media (max-width: 767px) {
+	footer#pq-footer .hh-footer-legal-row {
+		grid-template-columns: 1fr;
+		gap: 7px;
+		padding: 15px 0;
+	}
+
+	footer#pq-footer .hh-footer-legal a {
+		grid-column: auto;
+		grid-row: auto;
+	}
+}
+
 /* Phase 9 Privacy Policy and custom 404 pages. */
 .hh-legal-hero,
 .hh-not-found {
@@ -455,6 +525,10 @@ footer#pq-footer .hh-footer-legal a {
 .hh-not-found h1 {
 	margin-bottom: 18px;
 	color: #fff;
+}
+
+.hh-legal-hero h1 {
+	margin-bottom: 0;
 }
 
 .hh-legal-hero p {
