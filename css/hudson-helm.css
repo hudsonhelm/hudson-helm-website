@@ -133,6 +133,22 @@ header#pq-header .hh-desktop-cta .pq-button-text {
 	line-height: 1;
 }
 
+/* Start Here uses the inverse header emphasis without changing other pages. */
+body.hh-start-here-page header#pq-header .pq-bottom-header .navbar .navbar-nav li > a,
+body.hh-start-here-page header#pq-header .pq-bottom-header .navbar .navbar-nav li.current-menu-item > a,
+body.hh-start-here-page header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:hover,
+body.hh-start-here-page header#pq-header .pq-bottom-header .navbar .navbar-nav li > a:focus-visible {
+	color: #4a8fdc !important;
+}
+
+body.hh-start-here-page header#pq-header .hh-desktop-cta,
+body.hh-start-here-page header#pq-header .hh-desktop-cta:hover,
+body.hh-start-here-page header#pq-header .hh-desktop-cta:focus-visible {
+	background: #fd4a18;
+	color: #fff !important;
+	box-shadow: 0 10px 24px rgba(253, 74, 24, 0.28);
+}
+
 header#pq-header .pq-button:hover,
 header#pq-header .pq-button:focus {
 	background: linear-gradient(180deg, #5a9ae2 0%, #347ac6 100%);

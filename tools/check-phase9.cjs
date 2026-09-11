@@ -46,8 +46,11 @@ for (const file of pages) {
     if (footer.includes(removed)) fail(file, `removed upper-footer content remains: ${removed}`);
   }
 
-  if (!/css\/hudson-helm\.css\?v=20260911-back-to-top/.test(html)) {
-    fail(file, 'back-to-top shared stylesheet version is missing');
+  const stylesheetVersion = file === 'starthere.html'
+    ? 'css/hudson-helm.css?v=20260911-start-here-header'
+    : 'css/hudson-helm.css?v=20260911-back-to-top';
+  if (!html.includes(stylesheetVersion)) {
+    fail(file, 'expected shared stylesheet version is missing');
   }
 
   if (!html.includes('id="back-to-top"')) fail(file, 'back-to-top control is missing');

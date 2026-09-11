@@ -3,6 +3,7 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
 const page = fs.readFileSync(path.join(root, 'starthere.html'), 'utf8');
+const sharedCss = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
 const client = fs.readFileSync(path.join(root, 'js', 'start-here.js'), 'utf8');
 const mail = fs.readFileSync(path.join(root, 'mail.php'), 'utf8');
 const configEndpoint = fs.readFileSync(path.join(root, 'form-config.php'), 'utf8');
@@ -51,6 +52,10 @@ requireMatch('visually hidden Turnstile status', page, /id="turnstile-status"[^>
 requireMatch('orange email action', page, /\.hh-orange-action\s*\{[\s\S]*min-height: 44px;[\s\S]*background: #ff4b1f[\s\S]*class="pq-button hh-orange-action hh-email-button"/);
 requireMatch('header-matched blue Submit', page, /\.hh-submit-button\s*\{[\s\S]*background: linear-gradient\(180deg, #4a8fdc 0%, #2d6fb8 100%\);[\s\S]*box-shadow: 0 10px 24px rgba\(32, 83, 145, 0\.32\);[\s\S]*class="pq-button form-btn hh-submit-button"/);
 requireMatch('header-matched Submit hover', page, /\.hh-submit-button:hover,[\s\S]*\.hh-submit-button:focus\s*\{[\s\S]*background: linear-gradient\(180deg, #5a9ae2 0%, #347ac6 100%\)/);
+requireMatch('Start Here page scope', page, /<body class="hh-start-here-page">/);
+requireMatch('Start Here header stylesheet version', page, /css\/hudson-helm\.css\?v=20260911-start-here-header/);
+requireMatch('Start Here blue header links', sharedCss, /body\.hh-start-here-page header#pq-header[\s\S]*navbar-nav li > a[\s\S]*color: #4a8fdc !important;/);
+requireMatch('Start Here orange desktop CTA', sharedCss, /body\.hh-start-here-page header#pq-header \.hh-desktop-cta,[\s\S]*background: #fd4a18;[\s\S]*color: #fff !important;/);
 requireMatch('Turnstile API', page, /challenges\.cloudflare\.com\/turnstile\/v0\/api\.js/);
 requireMatch('page-specific form client', page, /src="js\/start-here\.js"/);
 requireMatch('accessible live response', page, /class="pq-form-response[^>]+role="status"[^>]+aria-live="polite"/);
