@@ -20,7 +20,8 @@ function forbid(label, content, pattern) {
 requireMatch('portal title', page, /<title>Client Support Portal - Hudson Helm<\/title>/);
 requireMatch('meta description', page, /<meta name="description" content="[^"]+">/);
 requireMatch('semantic main content', page, /<main class="hh-support-main">[\s\S]*<\/main>/);
-requireMatch('single portal H1', page, /<h1 id="support-title">Client Support Portal<\/h1>/);
+requireMatch('single portal H1', page, /<h1 id="support-title"><span>Client<\/span><span>Support<\/span><span>Portal<\/span><\/h1>/);
+requireMatch('versioned aligned Support stylesheet', page, /css\/hudson-helm\.css\?v=20260911-support-align/);
 requireMatch('username field', page, /<input id="support-username" type="text"[^>]+autocomplete="username"[^>]+required/);
 requireMatch('password field', page, /<input id="support-password" type="password"[^>]+autocomplete="current-password"[^>]+required/);
 requireMatch('Sign In action', page, /id="support-sign-in"[^>]+type="submit"[\s\S]*>Sign In</);
@@ -67,6 +68,10 @@ forbid('credential handling on server', verifier, /username|password/i);
 requireMatch('public sitekey endpoint', configEndpoint, /hh_config\('TURNSTILE_SITE_KEY'\)/);
 requireMatch('no-store public config', configEndpoint, /Cache-Control: no-store/);
 requireMatch('documented support action', environmentExample, /SUPPORT_TURNSTILE_ACTION=support/);
+
+const sharedStyles = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
+requireMatch('top-aligned Support columns', sharedStyles, /\.hh-support-shell\s*\{[^}]*align-items:\s*start;/);
+requireMatch('one-word Support heading lines', sharedStyles, /\.hh-support-intro h1 span\s*\{[^}]*display:\s*block;/);
 
 if (failures.length) {
   console.error('Phase 8 Support Portal checks failed:');
