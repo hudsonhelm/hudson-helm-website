@@ -43,7 +43,7 @@ for (const [file, currentPage] of pages) {
     continue;
   }
 
-  if (!/<link\b[^>]*href=["']css\/hudson-helm\.css["'][^>]*>/i.test(head)) {
+  if (!/<link\b[^>]*href=["']css\/hudson-helm\.css(?:\?v=[^"']+)?["'][^>]*>/i.test(head)) {
     fail(file, 'does not load the shared Hudson Helm stylesheet');
   }
 
