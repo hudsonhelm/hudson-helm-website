@@ -32,6 +32,7 @@ requireMatch('direct email prompt', page, /Prefer to e-mail us directly\?/);
 requireMatch('direct email action', page, /href="mailto:info@hudsonhelm\.com">Click Here to e-mail Info@HudsonHelm\.com<\/a>/);
 requireMatch('action-row logo', page, /class="hh-action-logo" src="images\/logos\/wide_trans\.png" alt="Hudson Helm"/);
 requireMatch('three-part action row', page, /class="hh-form-actions"[\s\S]*class="hh-submit-action"[\s\S]*class="hh-action-logo"[\s\S]*class="hh-email-action"/);
+requireMatch('emphasized wider Submit action', page, /\.hh-submit-action \.form-btn\s*\{\s*min-width: 136px;[\s\S]*\.hh-submit-action \.pq-button-text\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
 requireMatch('locality-only lower row', page, /<div class="hh-direct-contact"[^>]*>\s*<p><strong>Serving the greater New Jersey \/ New York \/ Philadelphia metropolitan area\.<\/strong><\/p>\s*<\/div>/);
 requireMatch('centered service area', page, /\.hh-direct-contact\s*\{[\s\S]*text-align: center/);
 requireMatch('mobile back-to-top offset', page, /@media \(max-width: 575px\)[\s\S]*#back-to-top\s*\{[\s\S]*bottom: 12px/);
