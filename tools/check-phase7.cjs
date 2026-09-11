@@ -30,10 +30,10 @@ requireMatch('single form workflow', page, /<div class="form-div">[\s\S]*id="sta
 requireMatch('wider desktop card', page, /\.hh-start-page \.container\s*\{[\s\S]*max-width: 1160px/);
 requireMatch('direct email prompt', page, /Prefer to e-mail us directly\?/);
 requireMatch('direct email action', page, /href="mailto:info@hudsonhelm\.com">Click Here to e-mail Info@HudsonHelm\.com<\/a>/);
-requireMatch('action-row logo', page, /class="hh-action-logo" src="images\/logos\/wide_trans\.png" alt="Hudson Helm"/);
-requireMatch('three-part action row', page, /class="hh-form-actions"[\s\S]*class="hh-submit-action"[\s\S]*class="hh-action-logo"[\s\S]*class="hh-email-action"/);
+requireMatch('Submit-Turnstile-email action row', page, /class="hh-form-actions"[\s\S]*class="hh-submit-action"[\s\S]*class="hh-turnstile-wrap"[\s\S]*id="turnstile-widget"[\s\S]*class="hh-email-action"/);
+requireMatch('compact action-row spacing', page, /\.hh-form-actions\s*\{[\s\S]*grid-template-columns: auto auto 1fr auto;[\s\S]*column-gap: 24px;[\s\S]*margin-top: 4px;/);
 requireMatch('emphasized wider Submit action', page, /\.hh-submit-action \.form-btn\s*\{\s*min-width: 136px;[\s\S]*\.hh-submit-action \.pq-button-text\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
-requireMatch('left-aligned email prompt', page, /\.hh-email-prompt\s*\{[\s\S]*margin: 0 0 10px;[\s\S]*font-size: 16px;[\s\S]*text-align: left;/);
+requireMatch('left-aligned email prompt', page, /\.hh-email-prompt\s*\{[\s\S]*margin: 0 0 10px;[\s\S]*font-size: 18px;[\s\S]*text-align: left;/);
 requireMatch('matching email button typography', page, /\.hh-email-button\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
 requireMatch('locality-only lower row', page, /<div class="hh-direct-contact"[^>]*>\s*<p><strong>Serving the greater New Jersey \/ New York \/ Philadelphia metropolitan area\.<\/strong><\/p>\s*<\/div>/);
 requireMatch('centered service area', page, /\.hh-direct-contact\s*\{[\s\S]*text-align: center/);
@@ -64,6 +64,7 @@ forbid('duplicate form heading', page, /Start the Conversation/i);
 forbid('standalone contact labels', page, />Service Area<|>Email Address<|>Phone Number</i);
 forbid('legacy split contact columns', page, /col-12 col-lg-(?:5|7)/);
 forbid('retired direct-contact copy', page, /Prefer to reach us directly|hh-direct-options/);
+forbid('removed action-row logo', page, /hh-action-logo/);
 
 requireMatch('configuration endpoint fetch', client, /fetch\('form-config\.php'/);
 requireMatch('duplicate submission guard', client, /if \(submitting \|\| !validateForm\(\)\)/);
