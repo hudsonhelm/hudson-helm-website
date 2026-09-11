@@ -9,8 +9,8 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | --- | --- |
 | Document | `HH_Website_Master.md` |
 | Last updated | September 10, 2026 |
-| Current phase | Phase 7 — Start Here |
-| Phase status | **Published in approved fail-closed placeholder state; production credentials required for operation** |
+| Current phase | Phase 8 — Support Portal Shell |
+| Phase status | **Phase 7 complete, published, pushed, and operational; Phase 8 not started** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Complete Phase 7 operational activation by securely configuring real Migadu and Cloudflare Turnstile values and verifying a live non-automated delivery. The implementation is already committed, pushed, and published in the user-approved fail-closed placeholder state. Do not publish Cloudflare test credentials or restore embedded SMTP credentials. Do not begin Phase 8 early.
+Phase 7 is complete, pushed, published, and operational. Preserve its compact form-first layout, protected production configuration, server-side Turnstile verification, and authenticated Migadu delivery. Await explicit direction before beginning Phase 8; do not expose production credentials or weaken the fail-closed configuration path.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–6 are complete, pushed, and published. Phase 7 implementation, the superseding form-first design revision in site commit `59b2480`, and local validation are complete, pushed, and published: the Start Here page has the approved concise hierarchy and fields, the approved one-business-day response language, accessible client states, a honeypot, server-verified Turnstile, authenticated SMTP configuration, PHPMailer 7.1.0, generated priority subjects, and input/header hardening. Production PHP 8.2.33 with cURL, OpenSSL, filter, and JSON was verified through a temporary diagnostic that was removed and confirmed 404. The user authorized publication with placeholder credentials on September 10, 2026; the verified public form deliberately returns an unavailable state until real Migadu/Turnstile values are securely installed. Support remains the only temporary missing destination.
+Phases 1–7 are complete, pushed, published, and verified. The compact Start Here follow-up in site commit `4b5959c` provides the approved wider form-first layout, inline one-business-day response commitment, shorter message field, visually hidden status output, orange **Submit** action, accessible client states, a honeypot, server-verified Turnstile, authenticated Migadu delivery, PHPMailer 7.1.0, generated priority subjects, and input/header hardening. Production PHP 8.2.33 with cURL, OpenSSL, filter, and JSON is confirmed. Real credentials are stored only in a local source file outside the repository and a guarded untracked production file; Cloudflare accepted the production Turnstile secret, Migadu accepted a clearly labeled SMTP delivery test, and public checks confirmed the real widget configuration without exposing secrets. Support remains the only temporary missing destination.
 
 ### Phase Progress
 
@@ -63,7 +63,7 @@ Phases 1–6 are complete, pushed, and published. Phase 7 implementation, the su
 | 4 | Why Hudson Helm | Complete, published, and pushed; user review pending |
 | 5 | Who We Are | Complete, published, and pushed; user review pending |
 | 6 | Are We a Good Fit? | Complete, published, and pushed; user review pending |
-| 7 | Start Here | Published fail-closed; production credentials and live delivery verification required |
+| 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Not started |
 | 9 | Global Completion | Not started |
 | 10 | QA | Not started |
@@ -134,6 +134,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-10 | Implemented and locally validated the requested Phase 7 Start Here design revision. | Removed the redundant standalone contact card, moved the webform into one centered primary card, applied the supplied introduction, retained the response-time callout and all fields, moved service area and linked direct-contact alternatives below the form, tightened mobile spacing, and offset the narrow-screen back-to-top control. Phase 1–7 checks, the full Phase 7 behavioral integration suite, and browser checks at 1366px, 1024px, and an actual 390px Firefox viewport passed; publication remained pending at this checkpoint. |
 | 2026-09-10 | Pushed and published the Phase 7 Start Here design revision. | Pushed site commit `59b2480` to `origin/website-refresh`, uploaded only `starthere.html`, and confirmed the remote file at 28,657 bytes. Cache-busted HTTPS returned 200 with the exact revised introduction, response note, one workflow and H1, compact direct-contact content, and no old heading or split columns; the placeholder configuration remained fail-closed at 503. A second cached live Firefox render at 390px confirmed the complete heading and unobstructed mobile layout. |
 | 2026-09-10 | Implemented and locally validated the compact Start Here follow-up and production credential path. | Widened the desktop card, reduced outer/card/field spacing, folded the response commitment into the introduction, shortened the message field, moved Turnstile status copy offscreen while retaining assistive output, renamed and restyled the orange **Submit** button, collapsed unavailable-widget space, and tightened the form-to-footer transition. With an actual test-widget footprint, the full form and Submit action fit at 1366×768 while only secondary contact/footer content remained below; 390px remained readable and unobstructed. The user supplied real Turnstile and Migadu values, which were stored locally outside the active repository; publication and live verification remained pending at this checkpoint. |
+| 2026-09-10 | Published the compact Start Here follow-up and activated the production form. | Pushed site commit `4b5959c`; uploaded the guarded server rule, config loader, untracked production-only credential file, form JavaScript, and Start Here page. Public HTTPS checks confirmed the compact page, orange **Submit** action, real widget configuration, protected credential file returning 403, and no client-visible SMTP or Turnstile secret. Cloudflare Siteverify accepted the production secret, Migadu accepted a clearly labeled SMTP delivery test to `info@hudsonhelm.com`, and the tracked diff remained free of supplied credential values. |
 
 ## Findings and Observations
 
@@ -208,6 +209,10 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - Official PHP 8.5.10 was used locally for syntax and integration testing. `tools/test-phase7.cjs` exercised Cloudflare's official pass, fail, and duplicate test credentials against the live Siteverify endpoint while all mail was captured by an isolated local SMTP sink. Required/optional validation, honeypot behavior, header-injection resistance, generated subject, priority headers, HTML escaping, and success/error responses passed without production mail delivery.
 - Firefox/Edge visual checks at 1366px, 1024px, and an actual 390px Firefox viewport confirmed the revised single-card hierarchy, readable line lengths, compact mobile spacing, direct-contact placement, and no horizontal clipping. The narrow-screen back-to-top control remained clear of the form, direct-contact block, and footer content. Phase 1–7 structural checks, the full Phase 7 PHP/Turnstile/SMTP-sink integration suite, JavaScript syntax checks, the inspection helper, and `git diff --check` passed after the revision.
 - A temporary uniquely named production diagnostic confirmed PHP 8.2.33 with cURL, OpenSSL, filter, and JSON enabled. The diagnostic was deleted immediately after use, and a cache-busted public request confirmed HTTP 404. No production form files or credentials were changed during this diagnostic.
+- The compact follow-up keeps the primary form and orange **Submit** action within a 1366×768 viewport when the official Turnstile widget footprint is present; only the secondary direct-contact/footer content remains below. The 390px layout remains readable and unobstructed.
+- Production activation uses an untracked `includes/contact-production.php` guarded by `includes/.htaccess`; direct HTTPS access returns 403. Its canonical local source is `D:\HH_Website\PrivateConfig\HudsonHelmContactProduction.php`, outside the repository and covered by a parent ignore rule. The public configuration endpoint exposes only the site key and safe widget settings.
+- Cloudflare Siteverify accepted the installed production secret and returned the expected `invalid-input-response` result for an intentionally invalid token rather than `invalid-input-secret`. Migadu authenticated and accepted one clearly labeled Phase 7 delivery test addressed to `info@hudsonhelm.com`. These checks validate the two production credentials without printing them or submitting automated traffic through the public contact form.
+- Site commit `4b5959c` was pushed to `origin/website-refresh`. Production received `includes/.htaccess`, `includes/contact-config.php`, the untracked guarded credential file, `js/start-here.js`, and `starthere.html`; public response checks and a live browser render confirmed the activated compact form.
 - Production publication from site commit `8abd519` was verified over cache-busted HTTPS. `starthere.html` returned 200 with the approved response sentence, dedicated script, and Turnstile loader; `form-config.php` returned the intended no-store/nosniff 503 JSON because placeholders are not accepted as configuration; `mail.php` rejected GET with 405; direct access to `includes/contact-config.php` and the removed legacy `PHPMailer/class.phpmailer.php` returned 404; and `PHPMailer/VERSION` returned 7.1.0.
 - The superseding Start Here design revision from site commit `59b2480` was uploaded as the only production payload. Cache-busted source checks and a live 390px Firefox render confirmed the exact new copy, one form-first card, one H1, compact service-area/direct-contact block, removal of the duplicate heading and split columns, and preserved fail-closed behavior. Cloudflare's production email protection rewrites the `mailto:` link in the served response while retaining a visible clickable address; the tracked source retains the required `mailto:info@hudsonhelm.com` target.
 - The compact follow-up retains 46px touch-friendly inputs and uses an 88px default message area. At 1366×768 with a real Turnstile widget footprint, the primary form and orange **Submit** action are visible without scrolling; the secondary direct-contact/footer content may require a small scroll. A 390px Firefox check confirmed readable wrapping, compact field spacing, the shorter message area, and no overlap from the back-to-top control.
@@ -313,7 +318,7 @@ This is the canonical register for unresolved user inputs, blockers, and intenti
 - **OPEN — Exact registered LLC/legal entity name:** not yet confirmed for legal copy. Blocks only legal text that requires the exact entity name.
 - **TEMPORARY — Who We Are content:** real photographs and the three supporting team identities/biographies have not yet been supplied. The user authorized one reusable stock portrait and clearly disclosed fictional supporting profiles for the initial page and production publication. Replace Cameron Reed, Morgan Lee, Jordan Patel, their biographies, and all temporary photography/labels when approved real material is supplied.
 - **RESOLVED — Start Here response-time expectation:** the user approved **We'll usually respond within one business day.**
-- **PENDING VERIFICATION — Operational production contact form:** the user supplied real Migadu and Turnstile values, and they are stored locally outside the active repository. The guarded production-only server file, real widget, authenticated delivery, and live receipt still require publication and verification before this item can be resolved.
+- **RESOLVED — Operational production contact form:** real Migadu and Turnstile values are installed in the guarded production-only server file and retained in a local source file outside the repository. The real widget configuration is live, Cloudflare accepted the secret, Migadu accepted a clearly labeled delivery test, direct credential-file access returns 403, and supplied secret values are absent from tracked Git content.
 - **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
 - **RESOLVED — Intended baseline:** retain the committed local source following the user's instruction to commit. Local CSS/form JavaScript differences remain documented; production PHP cannot be compared from public responses.
 - **RESOLVED — PHP and hosting validation:** production PHP 8.2.33 and required cURL/OpenSSL/filter/JSON extensions were verified. Local PHP 8.5.10 plus an isolated SMTP sink and Cloudflare's official credentials validated Phase 7 without production email delivery.
@@ -1496,15 +1501,15 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Use the superseding one-card, form-first layout with responsive spacing — the redundant standalone contact section was removed and the revised hierarchy was verified at 1366px, 1024px, and an actual 390px Firefox viewport.
 - [x] Update locality language to **Serving New Jersey & New York** and remove the placeholder office address.
 - [x] Implement the approved fields and remove the user-editable Subject field — Name, Company, Email, optional Phone, and Message use visible labels and matched client/server limits.
-- BLOCKED — Authenticated Migadu SMTP delivery to `info@hudsonhelm.com` is implemented and passes an isolated SMTP-sink test, but the approved placeholder publication deliberately leaves delivery unavailable until real production credentials are configured and verified.
+- [x] Configure and verify authenticated Migadu SMTP delivery to `info@hudsonhelm.com` — the production credential is protected outside Git and Migadu accepted a clearly labeled Phase 7 delivery test.
 - [x] Implement the generated subject and protect against email-header injection — verified with embedded CR/LF input in the integration suite.
 - [x] Apply the approved high-priority mail headers — verified from the captured MIME message.
 - [x] Implement required validation, accessible messages, sending/success/failure states, and duplicate-submission protection.
 - [x] Add the approved response-time expectation: **We'll usually respond within one business day.**
-- BLOCKED — Cloudflare Turnstile Managed mode and server-side Siteverify validation are implemented; official pass/fail/duplicate tests pass, but the approved placeholder publication deliberately leaves the widget unavailable until real production sitekey/secret values are configured.
+- [x] Configure Cloudflare Turnstile Managed mode and server-side Siteverify validation — official pass/fail/duplicate tests pass, the real widget configuration is live, and Siteverify accepted the protected production secret.
 - [x] Implement the hidden honeypot and required input sanitization/security handling.
-- BLOCKED — The operational-contact-form portion of the Shared Definition of Done awaits real production secrets and a live non-automated delivery verification. The user separately authorized commit/push and fail-closed placeholder publication; the focused implementation and documentation diff review is complete.
-- [x] Commit, push, and publish the approved fail-closed placeholder implementation and superseding design revision — runtime site commit `8abd519` and presentation site commit `59b2480` were pushed and their exact production payloads were verified over HTTPS.
+- [x] Satisfy the operational-contact-form portion of the Shared Definition of Done — production credentials are securely installed, the real widget is live, Cloudflare accepted the Turnstile secret, Migadu accepted the delivery test, and public security/response checks passed.
+- [x] Commit, push, and publish the complete approved Phase 7 implementation and revisions — runtime commit `8abd519`, presentation commit `59b2480`, and compact operational commit `4b5959c` were pushed and their production payloads verified over HTTPS.
 
 ## Phase 8 — Support Portal Shell
 

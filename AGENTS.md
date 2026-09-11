@@ -95,7 +95,7 @@ Run the active phase's dedicated check listed in the Technical Runbook together 
 
 For contact-form or other mail-delivery work, use Cloudflare's official testing credentials and an isolated local SMTP sink for automated tests. Never point automated tests at production SMTP, never deploy Turnstile test credentials, and keep production secrets outside the public root and Git history.
 
-The Phase 7 placeholder production publication is intentionally fail-closed: until real Migadu and Turnstile values are securely installed, the public form must remain unavailable and must not attempt delivery or accept unverified submissions.
+Phase 7 is operational in production. Preserve fail-closed behavior whenever the protected production configuration is absent or invalid; never substitute test, placeholder, or client-visible secret values.
 
 Keep Start Here as one concise, form-first workflow. Do not reintroduce a separate introductory contact card or large Service Area, Email Address, and Phone Number rows; keep the compact direct-contact alternative below the form. Preserve the wider compact desktop card, inline response commitment, short message field, orange **Submit** action, and visually hidden Turnstile status copy unless the user explicitly revises them.
 
