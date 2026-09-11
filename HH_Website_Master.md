@@ -58,11 +58,11 @@ Phases 1–7 are complete, pushed, published, and verified. The compact Start He
 | --- | --- | --- |
 | 0 | Repository / Safety | Complete; documented runtime deferral |
 | 1 | Shared Structure | Complete, published, and pushed |
-| 2 | Homepage | Complete, published, and pushed; user review pending |
-| 3 | What We Do | Complete, published, and pushed; user review pending |
-| 4 | Why Hudson Helm | Complete, published, and pushed; user review pending |
-| 5 | Who We Are | Complete, published, and pushed; user review pending |
-| 6 | Are We a Good Fit? | Complete, published, and pushed; user review pending |
+| 2 | Homepage | Complete, published, pushed, and user-approved |
+| 3 | What We Do | Complete, published, pushed, and user-approved |
+| 4 | Why Hudson Helm | Complete, published, pushed, and user-approved |
+| 5 | Who We Are | Complete, published, pushed, and user-approved; temporary content remains disclosed |
+| 6 | Are We a Good Fit? | Complete, published, pushed, and user-approved |
 | 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Not started |
 | 9 | Global Completion | Not started |
@@ -146,6 +146,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Matched the header Start Here label to the form action typography. | Set the header CTA label to the same 17px bold treatment used by Submit and the direct-email action while preserving its existing button dimensions, blue gradient, and behavior. Publication and live verification remained pending at this checkpoint. |
 | 2026-09-11 | Temporarily removed Support from every shared public-site header. | Removed the dead `support.html` destination and its pending marker from the seven public root pages, reducing primary navigation to six real destinations. Support will be restored across those headers when Phase 8 builds the page. Publication and live verification remained pending at this checkpoint. |
 | 2026-09-11 | Pushed and published the six-item shared navigation and matched Start Here typography. | Pushed site commit `aa8a8b4`; uploaded `css/hudson-helm.css` and all seven public root HTML pages. Remote stats confirmed all eight files. Cache-busted HTTPS checks returned 200 for every page, found exactly six header links with Start Here present and Support absent, and confirmed the shared 17px bold header CTA rule. |
+| 2026-09-11 | Received the user's completed-site review for Phases 2–6. | The user approved the Homepage, What We Do, Why Hudson Helm, Who We Are, and Are We a Good Fit? pages. The separately disclosed temporary Who We Are identities, biographies, and photography remain pending replacement when real material is supplied. |
 
 ## Findings and Observations
 
