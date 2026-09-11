@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 9 is complete, pushed, published, and verified. A further user-approved footer refinement is locally complete and awaiting publication: remove the positioning sentence, place the Hudson Helm logo at left, move copyright/legal identity toward the center, and retain locality plus Privacy Policy at right with responsive stacking. Preserve the title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
+Phase 9 and the latest user-approved footer refinement are complete, pushed, published, and verified. Preserve the compact footer with the Hudson Helm logo at left, copyright/legal identity toward the center, and locality plus Privacy Policy at right before responsive stacking. Preserve the title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–9 and the first compact-footer refinement are complete, pushed, published, and verified. A second compact-footer refinement is locally complete and awaiting publication across all nine public root pages: the positioning sentence is gone, the Hudson Helm logo anchors the left, copyright/legal identity sits toward the center, and **Serving New Jersey & New York** plus Privacy Policy remain on the right before responsive stacking. The Privacy Policy hero remains title-only, the temporary 954 number remains removed, and the dedicated Privacy Policy and custom 404 pages remain intact. All Phase 1–9 checks and responsive local render review pass; the prior compact footer remains production-current until this revision is uploaded.
+Phases 1–9 and both compact-footer refinements are complete, pushed, published, and verified. Across all nine public root pages, the positioning sentence is gone, the Hudson Helm logo anchors the left, copyright/legal identity sits toward the center, and **Serving New Jersey & New York** plus Privacy Policy remain on the right before responsive stacking. The Privacy Policy hero remains title-only, the temporary 954 number remains removed, and the dedicated Privacy Policy and custom 404 pages remain intact. All Phase 1–9 checks and responsive local/live render review pass; cache-busted HTTPS verification confirmed the current structure and stylesheet on every published page.
 
 ### Phase Progress
 
@@ -160,6 +160,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Implemented and locally validated the approved compact-footer refinement. | Removed the tall logo/navigation/contact footer area across all nine public root pages; moved the short positioning statement and **Serving New Jersey & New York** into the legal row with copyright and Privacy Policy; removed the obsolete 60px template gap; and removed the Privacy Policy hero subtitle. Updated regression checks passed for Phases 1–9. Browser review at 1366px, 1024px, and 390px measured footer heights of approximately 76px, 111px, and 173px respectively with no horizontal overflow. GitHub push and FTP publication remained pending at this checkpoint. |
 | 2026-09-11 | Pushed, published, and verified the compact-footer refinement. | Pushed commit `4c22ddd` to `origin/website-refresh`; uploaded the nine public root HTML pages and `css/hudson-helm.css`; and confirmed all ten remote file stats. Cache-busted HTTPS returned 200 for all nine routes and the stylesheet, with the compact footer, new stylesheet version, retained positioning/locality/legal content, absent upper footer, and absent Privacy Policy subtitle. Live desktop and 390px mobile renders confirmed the published footer spacing and responsive stacking. |
 | 2026-09-11 | Implemented and locally validated the logo-centered footer refinement. | Removed the positioning sentence from all nine public footers, restored the Hudson Helm logo as the left anchor, shifted copyright/legal identity into the center column, and retained locality plus Privacy Policy at right. Phase 1–9 checks passed; browser review at 1366px, 1024px, and 390px measured approximately 74px desktop and 180px mobile footer heights, a 44px logo, no horizontal overflow, and no remaining positioning sentence. GitHub push and FTP publication remained pending at this checkpoint. |
+| 2026-09-11 | Pushed, published, and verified the logo-centered footer refinement. | Pushed commit `df04b4a` to `origin/website-refresh`; uploaded the nine public root HTML pages and `css/hudson-helm.css`; and confirmed all ten remote file stats. Cache-busted HTTPS returned 200 for every route and the stylesheet, with the footer logo, copyright, locality, Privacy Policy, and new asset version present and the removed sentence absent. Live 1366px and 390px renders confirmed the published desktop balance and mobile stacking. |
 
 ## Findings and Observations
 
@@ -268,6 +269,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - Implementation commits `bcc689e` and `17be72d` were pushed to `origin/website-refresh`. WinSCP uploaded only the nine public HTML pages, `css/hudson-helm.css`, and the one-line root `.htaccess`; documentation, tools, and protected configuration were excluded. Remote stats confirmed all payload files.
 - Cache-busted public HTTPS checks returned 200 for every explicit page and the stylesheet, with matching Phase 9 footer, legal, locality, privacy-link, and no-temporary-phone markers. An unknown route returned HTTP 404 while rendering the custom Hudson Helm content, confirming that the new `ErrorDocument` rule is active.
 - Compact-footer refinement commit `4c22ddd` is live on all nine public root pages. Remote file stats, cache-busted HTTPS content checks, and live desktop/mobile renders confirm the tall upper footer and Privacy Policy subtitle are absent while the legal identity, positioning statement, locality, and Privacy Policy link remain.
+- Logo-centered footer refinement commit `df04b4a` is live on all nine public root pages. Remote stats, cache-busted HTTPS checks, and live desktop/mobile renders confirm the positioning sentence is absent, the logo anchors the left, copyright is centered within the available middle column, and locality plus Privacy Policy remain responsive.
 
 ### Repository and File Structure
 
@@ -1592,7 +1594,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Create the Privacy Policy from the site's actual completed practices and integrations — added an effective-dated policy covering Start Here, the token-only portal boundary, operational/security data, Cloudflare Turnstile, Migadu, cookies/analytics, sharing, retention, safeguards, and privacy contact.
 - [x] Create the custom Hudson Helm 404 page — replaced the legacy template page with a branded single-H1 route containing clear Home, What We Do, and Start Here paths.
 - [x] Confirm global navigation/footer consistency across all public pages — Phase 1 and Phase 9 checks cover the same seven-destination header and complete footer across nine root pages.
-- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; structural, functional, responsive, accessibility-oriented, content, security, syntax, regression, diff, Git, FTP, and live production checks passed; commits `bcc689e`, `17be72d`, and compact-footer refinement `4c22ddd` were pushed, the narrow deployable payloads were published, and real missing-route plus live responsive behavior were verified.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; structural, functional, responsive, accessibility-oriented, content, security, syntax, regression, diff, Git, FTP, and live production checks passed; commits `bcc689e`, `17be72d`, `4c22ddd`, and latest footer refinement `df04b4a` were pushed, the narrow deployable payloads were published, and real missing-route plus live responsive behavior were verified.
 
 ## Phase 10 — QA
 
