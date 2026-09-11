@@ -52,8 +52,12 @@ for (const [file, currentPage] of pages) {
     fail(file, 'primary navigation is not labelled');
   }
 
-  if (!header.includes('mailto:info@hudsonhelm.com') || /tel:9542256560|954-225-6560/.test(header)) {
-    fail(file, 'shared contact details are inconsistent');
+  if (header.includes('pq-top-header') || header.includes('pq-header-contact') || header.includes('mailto:info@hudsonhelm.com')) {
+    fail(file, 'removed top contact bar remains');
+  }
+
+  if (/tel:9542256560|954-225-6560/.test(header)) {
+    fail(file, 'removed temporary phone details remain');
   }
 
   const menu = header.match(/<ul\b[^>]*id=["']pq-main-menu["'][^>]*>([\s\S]*?)<\/ul>/i)?.[1];
@@ -125,6 +129,17 @@ for (const requiredToken of [
 
 if (!/header#pq-header \.hh-desktop-cta \.pq-button-text\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;[\s\S]*line-height: 1;/.test(sharedCss)) {
   fail('css/hudson-helm.css', 'header Start Here CTA typography does not match the form actions');
+}
+
+if (!/header#pq-header \.pq-bottom-header \.navbar \.navbar-nav li > a\s*\{\s*color: #fd4a18 !important;\s*\}/.test(sharedCss)) {
+  fail('css/hudson-helm.css', 'standard navigation links are not orange by default');
+}
+
+if (!sharedCss.includes('navbar-nav li.current-menu-item > a,')
+    || !sharedCss.includes('navbar-nav li > a:hover,')
+    || !sharedCss.includes('navbar-nav li > a:focus-visible,')
+    || !/navbar-nav li:hover > a\s*\{\s*color: var\(--hh-color-accent-light\) !important;\s*\}/.test(sharedCss)) {
+  fail('css/hudson-helm.css', 'navigation hover, focus, and current-page states are not blue');
 }
 
 if (failures.length) {

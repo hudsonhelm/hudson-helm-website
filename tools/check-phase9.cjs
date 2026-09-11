@@ -43,8 +43,8 @@ for (const file of pages) {
     if (footer.includes(removed)) fail(file, `removed upper-footer content remains: ${removed}`);
   }
 
-  if (!/css\/hudson-helm\.css\?v=20260911-footer-logo/.test(html)) {
-    fail(file, 'logo-footer shared stylesheet version is missing');
+  if (!/css\/hudson-helm\.css\?v=20260911-header-compact/.test(html)) {
+    fail(file, 'compact-header shared stylesheet version is missing');
   }
 
   if (/954[- ]?225[- ]?6560|tel:9542256560|Northern New Jersey|\bNYC\b|Philadelphia/i.test(html)) {

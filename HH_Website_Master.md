@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 9 and the latest user-approved footer refinement are complete, pushed, published, and verified. Preserve the compact footer with the Hudson Helm logo at left, copyright/legal identity toward the center, and locality plus Privacy Policy at right before responsive stacking. Preserve the title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
+Phase 9 and the latest user-approved footer refinement are complete, pushed, published, and verified. The approved shared-header refinement is implemented locally and awaiting release validation: remove the entire top email/contact bar and its empty height across all nine public pages, use orange for standard navigation links, and use blue for hover, keyboard-focus, and current-page states. Preserve the Start Here CTA's button styling, compact footer, title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–9 and both compact-footer refinements are complete, pushed, published, and verified. Across all nine public root pages, the positioning sentence is gone, the Hudson Helm logo anchors the left, copyright/legal identity sits toward the center, and **Serving New Jersey & New York** plus Privacy Policy remain on the right before responsive stacking. The Privacy Policy hero remains title-only, the temporary 954 number remains removed, and the dedicated Privacy Policy and custom 404 pages remain intact. All Phase 1–9 checks and responsive local/live render review pass; cache-busted HTTPS verification confirmed the current structure and stylesheet on every published page.
+Phases 1–9 and both compact-footer refinements are complete, pushed, published, and verified. The current header refinement is implemented locally and pending publication: all nine public root pages omit the former top email/contact bar and its empty height, while standard navigation links are orange by default and blue on hover, keyboard focus, and the current page. The Start Here CTA retains its blue button treatment. The compact footer, title-only Privacy Policy hero, removed temporary 954 number, dedicated Privacy Policy, and custom 404 page remain intact.
 
 ### Phase Progress
 
@@ -163,6 +163,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Pushed, published, and verified the logo-centered footer refinement. | Pushed commit `df04b4a` to `origin/website-refresh`; uploaded the nine public root HTML pages and `css/hudson-helm.css`; and confirmed all ten remote file stats. Cache-busted HTTPS returned 200 for every route and the stylesheet, with the footer logo, copyright, locality, Privacy Policy, and new asset version present and the removed sentence absent. Live 1366px and 390px renders confirmed the published desktop balance and mobile stacking. |
 | 2026-09-11 | Corrected the Privacy Policy effective date. | Changed the displayed effective date from September 11, 2026 to the user-directed September 10, 2026 and updated Phase 9 regression coverage. GitHub push and FTP publication remained pending at this checkpoint. |
 | 2026-09-11 | Pushed, published, and verified the Privacy Policy effective-date correction. | Pushed commit `079bba5` to `origin/website-refresh`, uploaded only `privacy.html`, and confirmed its remote file stat. A cache-busted public HTTPS request returned 200 with September 10, 2026 present, September 11 absent, and the current footer intact. |
+| 2026-09-11 | Implemented the approved shared-header refinement. | Removed the top email/contact bar and its empty height from all nine public root pages, set standard navigation links to orange, and retained blue for hover, keyboard focus, and current-page states while leaving the Start Here CTA as a button. Shared regression checks were updated; commit, publication, and live verification remained pending at this checkpoint. |
 
 ## Findings and Observations
 
@@ -375,6 +376,7 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-11 | Replace the tall Phase 9 footer with a compact legal row and make the Privacy Policy hero title-only. | The user explicitly directed removal of the upper logo/navigation/contact area, relocation of the positioning and locality text into the lower row, tightening of whitespace, and removal of the explanatory Privacy Policy subtitle. |
 | 2026-09-11 | Refine the compact footer around logo, copyright, locality, and Privacy Policy only. | The user removed the positioning sentence, restored the company logo at left, and directed copyright toward the center while retaining a compact responsive layout. |
 | 2026-09-11 | Standardize public locality copy to **Serving New Jersey & New York**. | This is the approved concise global language and supersedes the broader Phase 7-specific Philadelphia wording. |
+| 2026-09-11 | Remove the shared header's top email row and use orange standard navigation links with blue interactive/current states. | The user directed removal of the contact row and its empty space on every page, then established the navigation color treatment. The Start Here CTA remains visually distinct as a blue button. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
