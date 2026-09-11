@@ -32,7 +32,10 @@ for (const file of pages) {
     'class="hh-footer-logo"',
     'class="hh-footer-brand-logo"',
     'class="hh-footer-locality"',
+    'class="hh-footer-phone"',
     'Serving New Jersey &amp; New York',
+    'href="tel:+18622328023"',
+    '862-232-8023',
     'Royal Court Holdings, LLC dba Hudson Helm',
     'href="privacy.html"',
   ]) {
@@ -43,8 +46,8 @@ for (const file of pages) {
     if (footer.includes(removed)) fail(file, `removed upper-footer content remains: ${removed}`);
   }
 
-  if (!/css\/hudson-helm\.css\?v=20260911-header-compact/.test(html)) {
-    fail(file, 'compact-header shared stylesheet version is missing');
+  if (!/css\/hudson-helm\.css\?v=20260911-header-phone/.test(html)) {
+    fail(file, 'header-and-phone shared stylesheet version is missing');
   }
 
   if (/954[- ]?225[- ]?6560|tel:9542256560|Northern New Jersey|\bNYC\b|Philadelphia/i.test(html)) {
@@ -89,7 +92,7 @@ if (/Techrix|Oops! This Page|404 Error/.test(notFound)) fail('404.html', 'legacy
 if (!/^ErrorDocument 404 \/404\.html\s*$/m.test(apacheConfig)) fail('.htaccess', 'custom 404 routing is missing');
 
 const sharedCss = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
-for (const required of ['.hh-footer-legal-row', '.hh-footer-logo', '.hh-footer-brand-logo', '.hh-footer-locality', '.hh-legal-copy', '.hh-not-found']) {
+for (const required of ['.hh-footer-legal-row', '.hh-footer-logo', '.hh-footer-brand-logo', '.hh-footer-locality', '.hh-footer-phone', '.hh-legal-copy', '.hh-not-found']) {
   if (!sharedCss.includes(required)) fail('css/hudson-helm.css', `missing ${required}`);
 }
 

@@ -423,7 +423,7 @@ footer#pq-footer .hh-footer-legal a {
 /* Compact global footer refinement. */
 footer#pq-footer .hh-footer-legal-row {
 	display: grid;
-	grid-template-columns: 170px minmax(360px, 1fr) auto auto;
+	grid-template-columns: 170px minmax(320px, 1fr) auto auto auto;
 	align-items: center;
 	gap: 16px 24px;
 	padding: 14px 0;
@@ -463,6 +463,16 @@ footer#pq-footer .hh-footer-locality {
 	white-space: nowrap;
 }
 
+footer#pq-footer .hh-footer-phone {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+}
+
+footer#pq-footer .hh-footer-phone i {
+	color: var(--hh-color-accent-light);
+}
+
 footer#pq-footer .hh-footer-legal a {
 	font-size: 13px;
 	white-space: nowrap;
@@ -470,7 +480,8 @@ footer#pq-footer .hh-footer-legal a {
 
 @media (max-width: 1199px) {
 	footer#pq-footer .hh-footer-legal-row {
-		grid-template-columns: 150px minmax(280px, 1fr) auto auto;
+		grid-template-columns: 140px minmax(240px, 1fr) auto auto auto;
+		gap: 12px;
 	}
 }
 
@@ -495,15 +506,20 @@ footer#pq-footer .hh-footer-legal a {
 		grid-row: 2;
 	}
 
+	footer#pq-footer .hh-footer-phone {
+		grid-column: 3;
+		grid-row: 1;
+	}
+
 	footer#pq-footer .hh-footer-privacy {
 		grid-column: 3;
-		grid-row: 1 / span 2;
+		grid-row: 2;
 	}
 }
 
 @media (max-width: 767px) {
 	footer#pq-footer .hh-footer-legal-row {
-		grid-template-columns: 1fr;
+		grid-template-columns: auto 1fr;
 		gap: 7px;
 		padding: 15px 0;
 	}
@@ -511,9 +527,27 @@ footer#pq-footer .hh-footer-legal a {
 	footer#pq-footer .hh-footer-logo,
 	footer#pq-footer .hh-footer-copyright,
 	footer#pq-footer .hh-footer-locality,
+	footer#pq-footer .hh-footer-phone,
 	footer#pq-footer .hh-footer-privacy {
 		grid-column: auto;
 		grid-row: auto;
+	}
+
+	footer#pq-footer .hh-footer-logo,
+	footer#pq-footer .hh-footer-copyright,
+	footer#pq-footer .hh-footer-locality {
+		grid-column: 1 / -1;
+	}
+
+	footer#pq-footer .hh-footer-phone {
+		grid-column: 1;
+		grid-row: 4;
+	}
+
+	footer#pq-footer .hh-footer-privacy {
+		grid-column: 2;
+		grid-row: 4;
+		justify-self: end;
 	}
 
 	footer#pq-footer .hh-footer-copyright {

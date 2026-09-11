@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 9 and the latest user-approved footer refinement are complete, pushed, published, and verified. The approved shared-header refinement is implemented locally and awaiting release validation: remove the entire top email/contact bar and its empty height across all nine public pages, use orange for standard navigation links, and use blue for hover, keyboard-focus, and current-page states. Preserve the Start Here CTA's button styling, compact footer, title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
+Phase 9 and the latest user-approved footer refinement are complete, pushed, published, and verified. The approved shared-header refinement is committed and pushed but awaiting production publication; the supplied New Jersey business number is implemented locally and awaiting validation, commit, push, and publication. Remove the entire top email/contact bar and its empty height across all nine public pages, use orange for standard navigation links, use blue for hover, keyboard-focus, and current-page states, and publish **862-232-8023** through the compact footer and appropriate direct-contact copy without restoring the header contact row. Preserve the Start Here CTA's button styling, title-only Privacy Policy hero, custom 404 page and routing, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–9 and both compact-footer refinements are complete, pushed, published, and verified. The current header refinement is implemented locally and pending publication: all nine public root pages omit the former top email/contact bar and its empty height, while standard navigation links are orange by default and blue on hover, keyboard focus, and the current page. The Start Here CTA retains its blue button treatment. The compact footer, title-only Privacy Policy hero, removed temporary 954 number, dedicated Privacy Policy, and custom 404 page remain intact.
+Phases 1–9 and both compact-footer refinements are complete, pushed, published, and verified. The current header refinement is committed and pushed but pending production publication; the new business-number addition is implemented locally and pending release. All nine public root pages omit the former top email/contact bar and its empty height, standard navigation links are orange by default and blue on hover, keyboard focus, and the current page, and the Start Here CTA retains its blue button treatment. The compact footer now includes **862-232-8023** with a `tel:` link; Start Here and the Privacy Policy expose the same approved number. The former 954 number remains absent.
 
 ### Phase Progress
 
@@ -65,7 +65,7 @@ Phases 1–9 and both compact-footer refinements are complete, pushed, published
 | 6 | Are We a Good Fit? | Complete, published, pushed, and user-approved |
 | 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Complete, operational, published, and pushed |
-| 9 | Global Completion | Complete, published, pushed, and verified; phone addition remains blocked on input |
+| 9 | Global Completion | Complete, published, pushed, and verified; supplied New Jersey phone addition pending release |
 | 10 | QA | Not started |
 | 11 | Regression / Review | Not started |
 
@@ -164,6 +164,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Corrected the Privacy Policy effective date. | Changed the displayed effective date from September 11, 2026 to the user-directed September 10, 2026 and updated Phase 9 regression coverage. GitHub push and FTP publication remained pending at this checkpoint. |
 | 2026-09-11 | Pushed, published, and verified the Privacy Policy effective-date correction. | Pushed commit `079bba5` to `origin/website-refresh`, uploaded only `privacy.html`, and confirmed its remote file stat. A cache-busted public HTTPS request returned 200 with September 10, 2026 present, September 11 absent, and the current footer intact. |
 | 2026-09-11 | Implemented the approved shared-header refinement. | Removed the top email/contact bar and its empty height from all nine public root pages, set standard navigation links to orange, and retained blue for hover, keyboard focus, and current-page states while leaving the Start Here CTA as a button. Shared regression checks were updated; commit, publication, and live verification remained pending at this checkpoint. |
+| 2026-09-11 | Received and implemented the permanent New Jersey business number. | Added **862-232-8023** as a click-to-call link in every compact footer and in appropriate Start Here and Privacy Policy contact copy without restoring the removed header contact bar. Updated regression coverage and responsive footer styling; validation, commit, push, and publication remained pending at this checkpoint. |
 
 ## Findings and Observations
 
@@ -373,6 +374,7 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-11 | Implement the Phase 8 portal with a strict token-only server boundary. | Credential fields have no submission names and remain in browser memory; the server rejects all fields except the Turnstile token. This makes the temporary shell safe now while keeping the visual frontend and verification layer reusable for future approved authentication. |
 | 2026-09-11 | Use **Royal Court Holdings, LLC dba Hudson Helm** as the exact legal identity. | The user supplied this wording for Phase 9 footer, privacy, and other appropriate legal copy. |
 | 2026-09-11 | Remove the temporary 954 phone number until its New Jersey replacement is supplied. | Phase 9 must not preserve knowingly temporary public contact information or invent a replacement; email remains the published direct-contact method. |
+| 2026-09-11 | Use **862-232-8023** as the permanent New Jersey business number, linked as `tel:+18622328023`. | The user supplied and approved the number for the website. It appears in the compact global footer and appropriate direct-contact copy, while the superseding header decision keeps the top contact row removed. |
 | 2026-09-11 | Replace the tall Phase 9 footer with a compact legal row and make the Privacy Policy hero title-only. | The user explicitly directed removal of the upper logo/navigation/contact area, relocation of the positioning and locality text into the lower row, tightening of whitespace, and removal of the explanatory Privacy Policy subtitle. |
 | 2026-09-11 | Refine the compact footer around logo, copyright, locality, and Privacy Policy only. | The user removed the positioning sentence, restored the company logo at left, and directed copyright toward the center while retaining a compact responsive layout. |
 | 2026-09-11 | Standardize public locality copy to **Serving New Jersey & New York**. | This is the approved concise global language and supersedes the broader Phase 7-specific Philadelphia wording. |
@@ -382,7 +384,7 @@ Record decisions that materially constrain or redirect future implementation. Do
 
 This is the canonical register for unresolved user inputs, blockers, and intentionally deferred decisions. Do not maintain a duplicate list elsewhere in this document. A missing input blocks only the affected feature unless explicitly stated otherwise.
 
-- **OPEN — New Jersey business phone number:** not yet provided. The temporary 954 number has been removed from all public root pages; adding the new number remains blocked until it is supplied and does not block other Phase 9 completion work.
+- **RESOLVED — New Jersey business phone number:** the user supplied **862-232-8023**. It is linked as `tel:+18622328023` in the compact global footer and appropriate direct-contact copy; the former 954 number remains removed.
 - **RESOLVED — Exact registered LLC/legal entity name:** the user confirmed **Royal Court Holdings, LLC dba Hudson Helm** for footer, privacy, and other appropriate legal copy.
 - **TEMPORARY — Who We Are content:** real photographs and the three supporting team identities/biographies have not yet been supplied. The user authorized one reusable stock portrait and clearly disclosed fictional supporting profiles for the initial page and production publication. Replace Cameron Reed, Morgan Lee, Jordan Patel, their biographies, and all temporary photography/labels when approved real material is supplied.
 - **RESOLVED — Start Here response-time expectation:** the user approved **We'll usually respond within one business day.**

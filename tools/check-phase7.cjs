@@ -35,7 +35,7 @@ requireMatch('compact action-row spacing', page, /\.hh-form-actions\s*\{[\s\S]*g
 requireMatch('emphasized wider Submit action', page, /\.hh-submit-action \.form-btn\s*\{\s*min-width: 136px;[\s\S]*\.hh-submit-action \.pq-button-text\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
 requireMatch('left-aligned email prompt', page, /\.hh-email-prompt\s*\{[\s\S]*margin: 0 0 10px;[\s\S]*font-size: 18px;[\s\S]*text-align: left;/);
 requireMatch('matching email button typography', page, /\.hh-email-button\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
-requireMatch('locality-only lower row', page, /<div class="hh-direct-contact"[^>]*>\s*<p><strong>Serving New Jersey &amp; New York\.<\/strong><\/p>\s*<\/div>/);
+requireMatch('locality and phone lower row', page, /<div class="hh-direct-contact"[^>]*>\s*<p><strong>Serving New Jersey &amp; New York\.<\/strong> Call <a href="tel:\+18622328023">862-232-8023<\/a>\.<\/p>\s*<\/div>/);
 requireMatch('centered service area', page, /\.hh-direct-contact\s*\{[\s\S]*text-align: center/);
 requireMatch('mobile back-to-top offset', page, /@media \(max-width: 575px\)[\s\S]*#back-to-top\s*\{[\s\S]*bottom: 12px/);
 requireMatch('name field label', page, /<label for="contact-name">Name/);
