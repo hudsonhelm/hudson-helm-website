@@ -45,7 +45,7 @@ const h1Count = (page.match(/<h1(?:\s|>)/g) || []).length;
 if (h1Count !== 1) failures.push(`expected one H1, found ${h1Count}`);
 
 const ctaLinks = (page.match(/href="starthere\.html"/g) || []).length;
-if (ctaLinks !== 3) failures.push(`expected header, mobile-menu, and final CTA Start Here links; found ${ctaLinks}`);
+if (ctaLinks !== 4) failures.push(`expected header, mobile-menu, final CTA, and footer Start Here links; found ${ctaLinks}`);
 
 forbid('Core Services navigation', /Core Services We Offer|class="pq-tabs-1"/);
 forbid('service-detail Read more button', />Read more</i);

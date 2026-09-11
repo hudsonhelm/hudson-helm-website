@@ -9,8 +9,8 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | --- | --- |
 | Document | `HH_Website_Master.md` |
 | Last updated | September 11, 2026 |
-| Current phase | Phase 8 — Support Portal Shell |
-| Phase status | **Phase 8 complete, pushed, published, and operational; Phase 9 not started** |
+| Current phase | Phase 9 — Global Completion |
+| Phase status | **Phase 9 implementation complete and locally verified; GitHub push and production publication pending** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 8 is complete, pushed, published, and operational. Preserve the portal's token-only verification boundary, generic local rejection, protected configuration, and restored seven-destination navigation. Await explicit direction before beginning Phase 9.
+Complete the approved Phase 9 publication workflow: preserve the verified global footer, locality wording, Privacy Policy, custom 404 page, removed temporary phone number, legal identity, and all Phase 1–8 contracts; then push the reviewed implementation, publish only the approved deployable payload, verify production, and record closeout evidence.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–8 are complete, pushed, published, and verified. The live `support.html` provides the approved professional Client Support Portal shell; credentials have no submission names and remain browser-local; `support-verify.php` accepts only a Turnstile token, rejects unexpected fields, and validates that token through Siteverify; and every successfully verified attempt is rejected locally with the same generic authentication message and password clearing. Support is restored in the approved position across all eight public root-page headers. The production implementation reuses Phase 7's protected Turnstile configuration without exposing its secret or coupling portal verification to mail delivery. Cache-busted HTTPS checks, matching CSS/JavaScript hashes, endpoint checks, and live desktop/mobile browser renders confirmed the deployed result and real Turnstile success.
+Phases 1–8 remain complete, pushed, published, and verified. Phase 9 is implemented and locally verified across nine public root pages: the placeholder footer is replaced with the approved brand/navigation/contact/legal structure; locality is standardized to **Serving New Jersey & New York**; the supplied legal identity is used in the legal row and Privacy Policy; the temporary 954 number is removed rather than replaced with invented data; and dedicated Privacy Policy and custom 404 pages are present. All Phase 1–9 structural checks and desktop/mobile render review pass. GitHub push and production publication remain pending under the user's explicit approval.
 
 ### Phase Progress
 
@@ -65,7 +65,7 @@ Phases 1–8 are complete, pushed, published, and verified. The live `support.ht
 | 6 | Are We a Good Fit? | Complete, published, pushed, and user-approved |
 | 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Complete, operational, published, and pushed |
-| 9 | Global Completion | Not started |
+| 9 | Global Completion | Implementation complete and locally verified; publication pending |
 | 10 | QA | Not started |
 | 11 | Regression / Review | Not started |
 
@@ -154,6 +154,8 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Top-aligned the Support introduction, split its heading into three lines, and published the revision. | Commit `8e22b37` changed “Client Support Portal” to one word per line and replaced the desktop grid's vertical centering with top alignment. The Support page now requests `css/hudson-helm.css?v=20260911-support-align`, and the Phase 8 checker preserves the heading structure and alignment rules. All Phase 1–8 checks, the inspection helper, and `git diff --check` passed; the commit was pushed and only `support.html` plus `css/hudson-helm.css` were uploaded. Cache-busted production requests returned 200, and live browser measurement confirmed a 0px top-position difference between the introduction and card, three block heading lines, the versioned stylesheet, and no horizontal overflow. |
 | 2026-09-11 | Tightened and published the empty space below the Support Sign In button. | Commit `1ba2c7b` added an empty-state rule that collapses the reserved status-message height and margin only while no response is displayed, preserving normal message spacing whenever working or error text appears. The Support page now requests `css/hudson-helm.css?v=20260911-support-tight`, and the Phase 8 regression check preserves the behavior. All Phase 1–8 checks, the inspection helper, and `git diff --check` passed; the commit was pushed and only `support.html` plus `css/hudson-helm.css` were uploaded. Cache-busted production requests returned 200, and live browser measurement confirmed the bottom gap fell from 84px to 43px, the empty status region is 0px tall with no top margin, and no horizontal overflow is present. |
 | 2026-09-11 | Added and published a Support email link in the portal's generic credential rejection. | Commit `47ac061` changed the generic local-only rejection to “Invalid username or password. Please contact Support,” with only Support linked to `mailto:support@hudsonhelm.com`. The link is created through DOM methods rather than HTML injection, inherits the error color, and is underlined; the token-only server boundary remains unchanged. All Phase 1–8 checks, JavaScript syntax, the inspection helper, and `git diff --check` passed. The commit was pushed, and only `support.html`, `css/hudson-helm.css`, and `js/support.js` were uploaded. Cache-busted production requests returned 200 and confirmed the exact message, mailto destination, link text, DOM construction, underline rule, and versioned asset URLs. |
+| 2026-09-11 | Received the Phase 9 legal identity and publication authorization. | The user confirmed **Royal Court Holdings, LLC dba Hudson Helm** and authorized Phase 9 implementation, GitHub push, and narrow FTP publication without further approval unless blocked. |
+| 2026-09-11 | Implemented and locally validated Phase 9 Global Completion. | Replaced the placeholder footer across nine public root pages, standardized locality to **Serving New Jersey & New York**, removed the temporary 954 number, created the practice-specific Privacy Policy and branded 404 page, and added Phase 9 regression coverage. All Phase 1–9 checks, the inspection helper, `git diff --check`, and desktop/mobile Chrome and Firefox render reviews passed after correcting the footer logo asset. GitHub push and production publication remained pending at this checkpoint. |
 
 ## Findings and Observations
 
@@ -252,6 +254,14 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - `node tools/check-phase1.cjs` through `node tools/check-phase8.cjs`, JavaScript syntax checks, PHP syntax checks, `git diff --check`, the official Siteverify pass/fail/duplicate Phase 8 suite, and the complete Phase 7 Turnstile/SMTP-sink regression suite passed. Browser checks at 1366px, 1024px, and 390px confirmed the visual hierarchy, field errors/focus, navigation, readable stacking, and no horizontal overflow. The in-app browser could not execute Cloudflare's local test challenge and reported test code `300030`; endpoint behavior was independently covered by the official Siteverify suite, and the real production widget subsequently rendered and reached success on both desktop and mobile checks.
 - Initial production rendering exposed a stale cached copy of `css/hudson-helm.css`. All eight public pages now request `css/hudson-helm.css?v=20260911-phase8`; commit `7f0b285` and the corresponding re-upload resolved the issue, and the final browser render plus local/remote SHA-256 comparison confirmed the Phase 8 styles are active.
 
+### Phase 9 implementation evidence — September 11, 2026
+
+- The shared footer now uses one consistent three-column desktop structure across all nine public root pages: brand and concise positioning with **Serving New Jersey & New York**, five useful navigation links, email plus Start Here and Support actions, and a restrained legal row linking Privacy Policy.
+- The supplied legal identity, **Royal Court Holdings, LLC dba Hudson Helm**, appears where legal identification is appropriate. The temporary 954 number was removed from every public root page and `tel:` link; no replacement was invented while the New Jersey number remains unavailable.
+- `privacy.html` documents the site's actual Start Here collection, browser-local Support credentials, normal technical/security information, Cloudflare Turnstile, Migadu email delivery, cookies/analytics posture, sharing, retention, safeguards, and contact path. Cloudflare's current Turnstile Privacy Addendum and Migadu's current Privacy Policy were reviewed before drafting.
+- `404.html` is now a concise Hudson Helm page with a single H1, `noindex, follow`, the shared header/footer, and clear paths to Home, What We Do, and Start Here; legacy Techrix and generic error copy are absent.
+- `node tools/check-phase1.cjs` through `node tools/check-phase9.cjs`, the inspection helper, syntax validation, stale phone/locality scans, and `git diff --check` passed. Chrome desktop renders and true 390px Firefox renders confirmed readable wrapping, responsive navigation, footer stacking, visible actions, and no apparent horizontal overflow. The connected browser surface was unavailable, so installed local headless browsers were used against the safe loopback preview.
+
 ### Repository and File Structure
 
 - `D:\HH_Website` is a containing workspace; the deployable site and Git repository root are `D:\HH_Website\HudsonHelm_Website_v64`.
@@ -348,13 +358,16 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-11 | Match the form Submit color to the header Start Here CTA while retaining the orange email action. | The user requested visual continuity between the primary form submission and the header CTA. Only Submit receives the header's blue gradient, shadow, and hover/focus colors. |
 | 2026-09-11 | Temporarily omit Support from shared navigation until Phase 8 builds it. | This superseded the September 10 decision to expose the missing destination. Phase 8 has now restored Support in the approved position across all eight public root-page headers. |
 | 2026-09-11 | Implement the Phase 8 portal with a strict token-only server boundary. | Credential fields have no submission names and remain in browser memory; the server rejects all fields except the Turnstile token. This makes the temporary shell safe now while keeping the visual frontend and verification layer reusable for future approved authentication. |
+| 2026-09-11 | Use **Royal Court Holdings, LLC dba Hudson Helm** as the exact legal identity. | The user supplied this wording for Phase 9 footer, privacy, and other appropriate legal copy. |
+| 2026-09-11 | Remove the temporary 954 phone number until its New Jersey replacement is supplied. | Phase 9 must not preserve knowingly temporary public contact information or invent a replacement; email remains the published direct-contact method. |
+| 2026-09-11 | Standardize public locality copy to **Serving New Jersey & New York**. | This is the approved concise global language and supersedes the broader Phase 7-specific Philadelphia wording. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
 This is the canonical register for unresolved user inputs, blockers, and intentionally deferred decisions. Do not maintain a duplicate list elsewhere in this document. A missing input blocks only the affected feature unless explicitly stated otherwise.
 
-- **OPEN — New Jersey business phone number:** not yet provided. Blocks final replacement of the temporary 954 number only.
-- **OPEN — Exact registered LLC/legal entity name:** not yet confirmed for legal copy. Blocks only legal text that requires the exact entity name.
+- **OPEN — New Jersey business phone number:** not yet provided. The temporary 954 number has been removed from all public root pages; adding the new number remains blocked until it is supplied and does not block other Phase 9 completion work.
+- **RESOLVED — Exact registered LLC/legal entity name:** the user confirmed **Royal Court Holdings, LLC dba Hudson Helm** for footer, privacy, and other appropriate legal copy.
 - **TEMPORARY — Who We Are content:** real photographs and the three supporting team identities/biographies have not yet been supplied. The user authorized one reusable stock portrait and clearly disclosed fictional supporting profiles for the initial page and production publication. Replace Cameron Reed, Morgan Lee, Jordan Patel, their biographies, and all temporary photography/labels when approved real material is supplied.
 - **RESOLVED — Start Here response-time expectation:** the user approved **We'll usually respond within one business day.**
 - **RESOLVED — Operational production contact form:** real Migadu and Turnstile values are installed in the guarded production-only server file and retained in a local source file outside the repository. The real widget configuration is live, Cloudflare accepted the secret, Migadu accepted a clearly labeled delivery test, direct credential-file access returns 403, and supplied secret values are absent from tracked Git content.
@@ -1223,14 +1236,13 @@ When the new number is supplied, replace the old number everywhere:
 
 ## Legal Status
 
-Hudson Helm is now:
+Hudson Helm operates as:
 
 - A New Jersey LLC
 - Registered/authorized to conduct business in New York
+- **Royal Court Holdings, LLC dba Hudson Helm**
 
-Do not invent the exact legal entity name.
-
-If the registered legal name is required for footer/privacy/legal language, request confirmation from the user.
+Use the confirmed legal identity above where footer, privacy, or other legal language requires it.
 
 ---
 
@@ -1565,13 +1577,13 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 9 — Global Completion
 
-- [ ] Redesign the global footer using the approved brand/navigation/contact/legal structure.
-- [ ] Apply approved locality language consistently.
-- [ ] Replace the temporary phone number everywhere only after the new number is supplied.
-- [ ] Create the Privacy Policy from the site's actual completed practices and integrations.
-- [ ] Create the custom Hudson Helm 404 page.
-- [ ] Confirm global navigation/footer consistency across all public pages.
-- [ ] Satisfy the Shared Definition of Done for this phase.
+- [x] Redesign the global footer using the approved brand/navigation/contact/legal structure — implemented the responsive three-part footer and legal row across all nine public root pages.
+- [x] Apply approved locality language consistently — public Phase 9 locality copy now uses **Serving New Jersey & New York** and the superseded broader Start Here wording is absent.
+- BLOCKED — The replacement New Jersey phone number has not been supplied. The temporary 954 number and all matching `tel:` links were removed from public root pages rather than preserved or replaced with invented data; adding the new number remains a narrow future update.
+- [x] Create the Privacy Policy from the site's actual completed practices and integrations — added an effective-dated policy covering Start Here, the token-only portal boundary, operational/security data, Cloudflare Turnstile, Migadu, cookies/analytics, sharing, retention, safeguards, and privacy contact.
+- [x] Create the custom Hudson Helm 404 page — replaced the legacy template page with a branded single-H1 route containing clear Home, What We Do, and Start Here paths.
+- [x] Confirm global navigation/footer consistency across all public pages — Phase 1 and Phase 9 checks cover the same seven-destination header and complete footer across nine root pages.
+- [ ] Satisfy the Shared Definition of Done for this phase — local structural, functional, responsive, accessibility-oriented, content, regression, diff, and browser checks pass; GitHub push, production publication, and live verification remain pending.
 
 ## Phase 10 — QA
 

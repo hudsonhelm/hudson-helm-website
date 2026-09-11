@@ -24,7 +24,7 @@ requireMatch('meta description', page, /<meta name="description" content="[^"]+"
 requireMatch('semantic main content', page, /<main>[\s\S]*<\/main>/);
 requireMatch('single Start Here H1', page, /<h1[^>]+id="start-here-title"[^>]*>Start Here<\/h1>/);
 requireMatch('revised introduction', page, /Tell us a little about your business, your current technology environment, and what's getting in the way\. Whether you need reliable day-to-day IT support, stronger cybersecurity, or a fresh set of eyes on your existing setup, we'll review your request and follow up with practical next steps\./);
-requireMatch('approved service area', page, /Serving the greater New Jersey \/ New York \/ Philadelphia metropolitan area\./);
+requireMatch('approved service area', page, /Serving New Jersey &amp; New York\./);
 requireMatch('inline response commitment', page, /practical next steps\. <span class="hh-response-time">We'll usually respond within one business day\.<\/span><\/p>/);
 requireMatch('single form workflow', page, /<div class="form-div">[\s\S]*id="start-here-title"[\s\S]*class="hh-response-time"[\s\S]*<form[^>]+aria-labelledby="start-here-title"[\s\S]*<div class="hh-direct-contact"/);
 requireMatch('wider desktop card', page, /\.hh-start-page \.container\s*\{[\s\S]*max-width: 1160px/);
@@ -35,7 +35,7 @@ requireMatch('compact action-row spacing', page, /\.hh-form-actions\s*\{[\s\S]*g
 requireMatch('emphasized wider Submit action', page, /\.hh-submit-action \.form-btn\s*\{\s*min-width: 136px;[\s\S]*\.hh-submit-action \.pq-button-text\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
 requireMatch('left-aligned email prompt', page, /\.hh-email-prompt\s*\{[\s\S]*margin: 0 0 10px;[\s\S]*font-size: 18px;[\s\S]*text-align: left;/);
 requireMatch('matching email button typography', page, /\.hh-email-button\s*\{[\s\S]*font-size: 17px;[\s\S]*font-weight: 700;/);
-requireMatch('locality-only lower row', page, /<div class="hh-direct-contact"[^>]*>\s*<p><strong>Serving the greater New Jersey \/ New York \/ Philadelphia metropolitan area\.<\/strong><\/p>\s*<\/div>/);
+requireMatch('locality-only lower row', page, /<div class="hh-direct-contact"[^>]*>\s*<p><strong>Serving New Jersey &amp; New York\.<\/strong><\/p>\s*<\/div>/);
 requireMatch('centered service area', page, /\.hh-direct-contact\s*\{[\s\S]*text-align: center/);
 requireMatch('mobile back-to-top offset', page, /@media \(max-width: 575px\)[\s\S]*#back-to-top\s*\{[\s\S]*bottom: 12px/);
 requireMatch('name field label', page, /<label for="contact-name">Name/);

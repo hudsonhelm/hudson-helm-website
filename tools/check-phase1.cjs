@@ -10,6 +10,7 @@ const pages = [
   ['areweagoodfit.html', 'areweagoodfit.html'],
   ['starthere.html', 'starthere.html'],
   ['support.html', 'support.html'],
+  ['privacy.html', null],
   ['404.html', null],
 ];
 const expectedNavigation = [
@@ -51,7 +52,7 @@ for (const [file, currentPage] of pages) {
     fail(file, 'primary navigation is not labelled');
   }
 
-  if (!header.includes('tel:9542256560') || !header.includes('mailto:info@hudsonhelm.com')) {
+  if (!header.includes('mailto:info@hudsonhelm.com') || /tel:9542256560|954-225-6560/.test(header)) {
     fail(file, 'shared contact details are inconsistent');
   }
 
@@ -94,11 +95,13 @@ for (const [file, currentPage] of pages) {
     fail(file, `expected ${expectedCurrentCount} current-page markers, found ${currentCount}`);
   }
 
-  if (!footer.includes('Copyright 2026 Hudson Helm. All Rights Reserved.')) {
+  if (!footer.includes('Royal Court Holdings, LLC dba Hudson Helm')) {
     fail(file, 'shared copyright text is inconsistent');
   }
 
-  if (!footer.includes('images/logos/hudson-helm-logo-w-trans.png')) {
+  if (!footer.includes('images/logos/wide_trans.png')
+      || !footer.includes('Serving New Jersey &amp; New York')
+      || !footer.includes('href="privacy.html"')) {
     fail(file, 'shared footer logo is inconsistent');
   }
 
