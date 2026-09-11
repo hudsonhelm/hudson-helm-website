@@ -99,7 +99,7 @@ for (const [file, currentPage] of pages) {
     fail(file, 'shared copyright text is inconsistent');
   }
 
-  if (!footer.includes('class="hh-footer-summary"')
+  if (!footer.includes('class="hh-footer-logo"')
       || !footer.includes('Serving New Jersey &amp; New York')
       || !footer.includes('href="privacy.html"')) {
     fail(file, 'shared compact footer is inconsistent');

@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 9 and the user-approved post-Phase 9 compact-footer refinement are complete, pushed, published, and verified. Preserve the compact footer, locality wording, title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
+Phase 9 is complete, pushed, published, and verified. A further user-approved footer refinement is locally complete and awaiting publication: remove the positioning sentence, place the Hudson Helm logo at left, move copyright/legal identity toward the center, and retain locality plus Privacy Policy at right with responsive stacking. Preserve the title-only Privacy Policy hero, custom 404 page and routing, removed temporary phone number, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–9 and the post-Phase 9 compact-footer refinement are complete, pushed, published, and verified. All nine public root pages now use one compact footer row containing copyright/legal identity, the short positioning statement, **Serving New Jersey & New York**, and Privacy Policy; the former tall logo/navigation/contact area is gone, and the Privacy Policy hero is title-only. The temporary 954 number remains removed rather than replaced with invented data, and the dedicated Privacy Policy and custom 404 pages remain intact. All Phase 1–9 checks and responsive local/live render review pass; cache-busted HTTPS verification confirmed the new structure and stylesheet on every published page.
+Phases 1–9 and the first compact-footer refinement are complete, pushed, published, and verified. A second compact-footer refinement is locally complete and awaiting publication across all nine public root pages: the positioning sentence is gone, the Hudson Helm logo anchors the left, copyright/legal identity sits toward the center, and **Serving New Jersey & New York** plus Privacy Policy remain on the right before responsive stacking. The Privacy Policy hero remains title-only, the temporary 954 number remains removed, and the dedicated Privacy Policy and custom 404 pages remain intact. All Phase 1–9 checks and responsive local render review pass; the prior compact footer remains production-current until this revision is uploaded.
 
 ### Phase Progress
 
@@ -159,6 +159,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Pushed, published, and verified Phase 9 Global Completion. | Pushed implementation commit `bcc689e`, uploaded the nine public HTML pages and shared stylesheet, and verified HTTP 200 plus Phase 9 markers across every route. The first real missing-route check revealed that the host was not using `404.html`; after confirming no root `.htaccess` existed, commit `17be72d` added the narrow `ErrorDocument 404 /404.html` rule and it was published. A final unknown-route request returned HTTP 404 with the custom page, Phase 9 stylesheet, footer, legal identity, and no legacy template copy. |
 | 2026-09-11 | Implemented and locally validated the approved compact-footer refinement. | Removed the tall logo/navigation/contact footer area across all nine public root pages; moved the short positioning statement and **Serving New Jersey & New York** into the legal row with copyright and Privacy Policy; removed the obsolete 60px template gap; and removed the Privacy Policy hero subtitle. Updated regression checks passed for Phases 1–9. Browser review at 1366px, 1024px, and 390px measured footer heights of approximately 76px, 111px, and 173px respectively with no horizontal overflow. GitHub push and FTP publication remained pending at this checkpoint. |
 | 2026-09-11 | Pushed, published, and verified the compact-footer refinement. | Pushed commit `4c22ddd` to `origin/website-refresh`; uploaded the nine public root HTML pages and `css/hudson-helm.css`; and confirmed all ten remote file stats. Cache-busted HTTPS returned 200 for all nine routes and the stylesheet, with the compact footer, new stylesheet version, retained positioning/locality/legal content, absent upper footer, and absent Privacy Policy subtitle. Live desktop and 390px mobile renders confirmed the published footer spacing and responsive stacking. |
+| 2026-09-11 | Implemented and locally validated the logo-centered footer refinement. | Removed the positioning sentence from all nine public footers, restored the Hudson Helm logo as the left anchor, shifted copyright/legal identity into the center column, and retained locality plus Privacy Policy at right. Phase 1–9 checks passed; browser review at 1366px, 1024px, and 390px measured approximately 74px desktop and 180px mobile footer heights, a 44px logo, no horizontal overflow, and no remaining positioning sentence. GitHub push and FTP publication remained pending at this checkpoint. |
 
 ## Findings and Observations
 
@@ -259,7 +260,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 
 ### Phase 9 implementation evidence — September 11, 2026
 
-- The original Phase 9 three-column footer was superseded by the user's September 11 compact-footer refinement. All nine public root pages now use one restrained responsive row containing copyright/legal identity, the short positioning statement, **Serving New Jersey & New York**, and Privacy Policy; the tall logo, navigation, contact, and action area is absent.
+- The original Phase 9 three-column footer and first compact row were superseded by the user's later September 11 refinement. All nine public root pages now use one restrained responsive row with the Hudson Helm logo at left, copyright/legal identity toward the center, and **Serving New Jersey & New York** plus Privacy Policy at right; the positioning sentence and tall navigation/contact/action area are absent.
 - The supplied legal identity, **Royal Court Holdings, LLC dba Hudson Helm**, appears where legal identification is appropriate. The temporary 954 number was removed from every public root page and `tel:` link; no replacement was invented while the New Jersey number remains unavailable.
 - `privacy.html` documents the site's actual Start Here collection, browser-local Support credentials, normal technical/security information, Cloudflare Turnstile, Migadu email delivery, cookies/analytics posture, sharing, retention, safeguards, and contact path. Cloudflare's current Turnstile Privacy Addendum and Migadu's current Privacy Policy were reviewed before drafting.
 - `404.html` is now a concise Hudson Helm page with a single H1, `noindex, follow`, the shared header/footer, and clear paths to Home, What We Do, and Start Here; legacy Techrix and generic error copy are absent.
@@ -367,6 +368,7 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-11 | Use **Royal Court Holdings, LLC dba Hudson Helm** as the exact legal identity. | The user supplied this wording for Phase 9 footer, privacy, and other appropriate legal copy. |
 | 2026-09-11 | Remove the temporary 954 phone number until its New Jersey replacement is supplied. | Phase 9 must not preserve knowingly temporary public contact information or invent a replacement; email remains the published direct-contact method. |
 | 2026-09-11 | Replace the tall Phase 9 footer with a compact legal row and make the Privacy Policy hero title-only. | The user explicitly directed removal of the upper logo/navigation/contact area, relocation of the positioning and locality text into the lower row, tightening of whitespace, and removal of the explanatory Privacy Policy subtitle. |
+| 2026-09-11 | Refine the compact footer around logo, copyright, locality, and Privacy Policy only. | The user removed the positioning sentence, restored the company logo at left, and directed copyright toward the center while retaining a compact responsive layout. |
 | 2026-09-11 | Standardize public locality copy to **Serving New Jersey & New York**. | This is the approved concise global language and supersedes the broader Phase 7-specific Philadelphia wording. |
 
 ## Open Questions, Inputs, and Deferred Decisions
@@ -1584,7 +1586,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 9 — Global Completion
 
-- [x] Redesign and later compact the global footer — the initially approved three-part Phase 9 footer was superseded by the user's September 11 refinement; all nine public root pages now use the approved single responsive legal row with the tall upper area removed.
+- [x] Redesign and later compact the global footer — the initial three-part footer and first compact row were superseded by the user's September 11 refinements; all nine public root pages now use the approved responsive logo/copyright/locality/privacy row with no positioning sentence or tall upper area.
 - [x] Apply approved locality language consistently — public Phase 9 locality copy now uses **Serving New Jersey & New York** and the superseded broader Start Here wording is absent.
 - BLOCKED — The replacement New Jersey phone number has not been supplied. The temporary 954 number and all matching `tel:` links were removed from public root pages rather than preserved or replaced with invented data; adding the new number remains a narrow future update.
 - [x] Create the Privacy Policy from the site's actual completed practices and integrations — added an effective-dated policy covering Start Here, the token-only portal boundary, operational/security data, Cloudflare Turnstile, Migadu, cookies/analytics, sharing, retention, safeguards, and privacy contact.

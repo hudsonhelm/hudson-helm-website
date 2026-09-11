@@ -29,7 +29,8 @@ for (const file of pages) {
 
   for (const required of [
     'class="hh-footer-legal-row"',
-    'class="hh-footer-summary"',
+    'class="hh-footer-logo"',
+    'class="hh-footer-brand-logo"',
     'class="hh-footer-locality"',
     'Serving New Jersey &amp; New York',
     'Royal Court Holdings, LLC dba Hudson Helm',
@@ -38,12 +39,12 @@ for (const file of pages) {
     if (!footer.includes(required)) fail(file, `footer is missing ${required}`);
   }
 
-  for (const removed of ['hh-footer-main', 'hh-footer-grid', 'hh-footer-brand-logo', '>Explore<', '>Connect<', 'hh-footer-email', 'hh-footer-actions']) {
+  for (const removed of ['hh-footer-main', 'hh-footer-grid', 'hh-footer-summary', '>Explore<', '>Connect<', 'hh-footer-email', 'hh-footer-actions', 'Experienced, responsive IT support and practical technology guidance for small businesses.']) {
     if (footer.includes(removed)) fail(file, `removed upper-footer content remains: ${removed}`);
   }
 
-  if (!/css\/hudson-helm\.css\?v=20260911-footer-compact/.test(html)) {
-    fail(file, 'compact-footer shared stylesheet version is missing');
+  if (!/css\/hudson-helm\.css\?v=20260911-footer-logo/.test(html)) {
+    fail(file, 'logo-footer shared stylesheet version is missing');
   }
 
   if (/954[- ]?225[- ]?6560|tel:9542256560|Northern New Jersey|\bNYC\b|Philadelphia/i.test(html)) {
@@ -88,7 +89,7 @@ if (/Techrix|Oops! This Page|404 Error/.test(notFound)) fail('404.html', 'legacy
 if (!/^ErrorDocument 404 \/404\.html\s*$/m.test(apacheConfig)) fail('.htaccess', 'custom 404 routing is missing');
 
 const sharedCss = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
-for (const required of ['.hh-footer-legal-row', '.hh-footer-summary', '.hh-footer-locality', '.hh-legal-copy', '.hh-not-found']) {
+for (const required of ['.hh-footer-legal-row', '.hh-footer-logo', '.hh-footer-brand-logo', '.hh-footer-locality', '.hh-legal-copy', '.hh-not-found']) {
   if (!sharedCss.includes(required)) fail('css/hudson-helm.css', `missing ${required}`);
 }
 

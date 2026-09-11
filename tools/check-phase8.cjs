@@ -21,7 +21,7 @@ requireMatch('portal title', page, /<title>Client Support Portal - Hudson Helm<\
 requireMatch('meta description', page, /<meta name="description" content="[^"]+">/);
 requireMatch('semantic main content', page, /<main class="hh-support-main">[\s\S]*<\/main>/);
 requireMatch('single portal H1', page, /<h1 id="support-title"><span>Client<\/span><span>Support<\/span><span>Portal<\/span><\/h1>/);
-requireMatch('versioned shared stylesheet', page, /css\/hudson-helm\.css\?v=20260911-footer-compact/);
+requireMatch('versioned shared stylesheet', page, /css\/hudson-helm\.css\?v=20260911-footer-logo/);
 requireMatch('username field', page, /<input id="support-username" type="text"[^>]+autocomplete="username"[^>]+required/);
 requireMatch('password field', page, /<input id="support-password" type="password"[^>]+autocomplete="current-password"[^>]+required/);
 requireMatch('Sign In action', page, /id="support-sign-in"[^>]+type="submit"[\s\S]*>Sign In</);
