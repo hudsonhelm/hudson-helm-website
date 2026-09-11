@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 11, 2026 |
 | Current phase | Phase 8 — Support Portal Shell |
-| Phase status | **Phase 7 complete, published, pushed, and operational; Phase 8 not started** |
+| Phase status | **Phase 8 implementation and local validation complete; approved commit, push, and publication pending** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 7 is complete, pushed, published, and operational. Preserve its compact form-first layout, protected production configuration, server-side Turnstile verification, and authenticated Migadu delivery. Await explicit direction before beginning Phase 8; do not expose production credentials or weaken the fail-closed configuration path.
+Complete the user-approved Phase 8 publication workflow: commit and push the locally validated Support Portal shell, publish its narrow deployable payload, verify production, and record the result. Preserve the token-only verification boundary and protected configuration. Do not begin Phase 9.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–7 are complete, pushed, published, and verified. The compact Start Here implementation provides the approved wider form-first layout, inline one-business-day response commitment, shorter message field, visually hidden status output, accessible client states, a honeypot, server-verified Turnstile, authenticated Migadu delivery, PHPMailer 7.1.0, generated priority subjects, and input/header hardening. Its current action row places the blue **Submit** action matching the header Start Here CTA at left, Turnstile immediately to its right with a deliberate gap, and the orange direct-email action at right; no logo occupies the row, and the service-area line is centered below. Production PHP 8.2.33 with cURL, OpenSSL, filter, and JSON is confirmed. Real credentials are stored only in a local source file outside the repository and a guarded untracked production file; Cloudflare accepted the production Turnstile secret, Migadu accepted a clearly labeled SMTP delivery test, and public checks confirmed the real widget configuration without exposing secrets. The unbuilt Support destination is intentionally omitted from all public headers until Phase 8 creates it.
+Phases 1–7 are complete, pushed, published, and verified. Phase 8 is implemented and locally validated: `support.html` provides the approved professional Client Support Portal shell; credentials have no submission names and remain browser-local; `support-verify.php` accepts only a Turnstile token, rejects unexpected fields, and validates that token through Siteverify; and every successfully verified attempt is rejected locally with the same generic authentication message and password clearing. Support has been restored in the approved position across all eight public root-page headers. The implementation reuses Phase 7's protected production Turnstile configuration without exposing its secret or coupling portal verification to mail delivery. Commit, push, publication, and production verification remain pending under the user's standing approval.
 
 ### Phase Progress
 
@@ -64,7 +64,7 @@ Phases 1–7 are complete, pushed, published, and verified. The compact Start He
 | 5 | Who We Are | Complete, published, pushed, and user-approved; temporary content remains disclosed |
 | 6 | Are We a Good Fit? | Complete, published, pushed, and user-approved |
 | 7 | Start Here | Complete, operational, published, and pushed |
-| 8 | Support Portal Shell | Not started |
+| 8 | Support Portal Shell | Complete locally; approved publication pending |
 | 9 | Global Completion | Not started |
 | 10 | QA | Not started |
 | 11 | Regression / Review | Not started |
@@ -147,6 +147,7 @@ Record meaningful project events only: phase transitions, significant inspection
 | 2026-09-11 | Temporarily removed Support from every shared public-site header. | Removed the dead `support.html` destination and its pending marker from the seven public root pages, reducing primary navigation to six real destinations. Support will be restored across those headers when Phase 8 builds the page. Publication and live verification remained pending at this checkpoint. |
 | 2026-09-11 | Pushed and published the six-item shared navigation and matched Start Here typography. | Pushed site commit `aa8a8b4`; uploaded `css/hudson-helm.css` and all seven public root HTML pages. Remote stats confirmed all eight files. Cache-busted HTTPS checks returned 200 for every page, found exactly six header links with Start Here present and Support absent, and confirmed the shared 17px bold header CTA rule. |
 | 2026-09-11 | Received the user's completed-site review for Phases 2–6. | The user approved the Homepage, What We Do, Why Hudson Helm, Who We Are, and Are We a Good Fit? pages. The separately disclosed temporary Who We Are identities, biographies, and photography remain pending replacement when real material is supplied. |
+| 2026-09-11 | Implemented and locally validated Phase 8 Support Portal Shell under the user's publication approval. | Built the responsive portal page, restored Support across all eight shared headers, added token-only Turnstile configuration/verification endpoints, kept credentials browser-local with no native submission names, and implemented the required generic local rejection and password clearing. Phase 1–8 checks, JavaScript/PHP syntax, official Siteverify pass/fail/duplicate integration tests, Phase 7 regression tests, and browser checks at 1366px, 1024px, and 390px passed. Commit, push, and publication remained pending at this checkpoint. |
 
 ## Findings and Observations
 
@@ -235,6 +236,15 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - The compact follow-up retains 46px touch-friendly inputs and uses an 88px default message area. At 1366×768 with a real Turnstile widget footprint, the primary form and orange **Submit** action are visible without scrolling; the secondary direct-contact/footer content may require a small scroll. A 390px Firefox check confirmed readable wrapping, compact field spacing, the shorter message area, and no overlap from the back-to-top control.
 - The saved production FTP account is chrooted at the public root and cannot reach the preferred parent-directory config location. The production loader therefore supports an untracked `/includes/contact-production.php` fallback, with direct-request protection inside the PHP file and a tracked `/includes/.htaccess` deny rule. The credential source is stored locally at `D:\HH_Website\PrivateConfig\HudsonHelmContactProduction.php`, outside the active Git repository and under an ignore-all local rule. No secret values are recorded in Git or this document.
 
+### Phase 8 implementation evidence — September 11, 2026
+
+- `support.html` presents a polished dark/blue Client Support Portal shell with one H1, visible Username and Password labels, Sign In, the exact active-customer statement, security context, accessible error/live regions, and no registration, password-reset, account, or ticket dead ends.
+- Username and password inputs intentionally have no `name` attributes. The form has no action or method and includes a native submit guard; `js/support.js` constructs a fresh `URLSearchParams` containing only `cf-turnstile-response`, never serializes the form, and uses no browser storage or cookies.
+- `support-verify.php` rejects methods other than POST, oversized requests, missing/oversized tokens, and every unexpected POST field before contacting Siteverify. It reads the existing protected Turnstile secret, validates the token server-side, enforces the `support` action and approved production hostnames, and returns no Cloudflare metadata or credential data.
+- After token acceptance, the browser alone displays **Invalid username or password.**, clears the password, resets Turnstile, and focuses the password field. Verification failures receive a separate security-check error without revealing account existence.
+- Support is restored between Are We a Good Fit? and Start Here across all eight public root-page headers, with the active state on the portal page and the existing responsive collapse behavior preserved.
+- `node tools/check-phase1.cjs` through `node tools/check-phase8.cjs`, JavaScript syntax checks, PHP syntax checks, `git diff --check`, the official Siteverify pass/fail/duplicate Phase 8 suite, and the complete Phase 7 Turnstile/SMTP-sink regression suite passed. Browser checks at 1366px, 1024px, and 390px confirmed the visual hierarchy, field errors/focus, navigation, readable stacking, and no horizontal overflow. The in-app browser could not execute Cloudflare's local test challenge and reported test code `300030`; endpoint behavior was independently covered by the official Siteverify suite and the real widget remains assigned to post-publication verification.
+
 ### Repository and File Structure
 
 - `D:\HH_Website` is a containing workspace; the deployable site and Git repository root are `D:\HH_Website\HudsonHelm_Website_v64`.
@@ -296,10 +306,10 @@ This section is the operational reference for future Codex sessions and maintain
 | Local/staging preview URL | `http://127.0.0.1:8087/` |
 | PHP version / runtime | Production PHP 8.2.33 verified September 10, 2026 through a temporary version/extension diagnostic; the diagnostic was removed and its public URL confirmed 404. Official portable PHP 8.5.10 was used for local Phase 7 syntax and integration tests. |
 | Required PHP extensions / dependencies | Production cURL, OpenSSL, filter, and JSON extensions were verified enabled. Phase 7 uses PHPMailer 7.1.0's namespaced source and requires PHP 8.1+ because the project handler uses current return types; production PHP 8.2.33 satisfies that requirement. |
-| Safe form-testing method | Run `tools/test-phase7.cjs` with `PHP_BIN` set to a PHP 8.1+ executable and, when the local PHP build requires it, `PHP_CA_BUNDLE` set to a trusted CA bundle. The test uses Cloudflare's official public Turnstile test credentials and a local SMTP sink; it never uses production SMTP. |
-| Turnstile local/staging test approach | `tools/test-phase7.cjs` verifies pass, fail, and `timeout-or-duplicate` behavior through the real Siteverify endpoint using Cloudflare's official public test credentials. Test credentials work on localhost but must never be deployed. Production must use a hostname-restricted real widget and secret. |
+| Safe form-testing method | Run `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN` set to a PHP 8.1+ executable and, when the local PHP build requires it, `PHP_CA_BUNDLE` set to a trusted CA bundle. Both use Cloudflare's official public Turnstile test credentials; Phase 7 captures mail in a local SMTP sink, while Phase 8 verifies the token-only request contract and rejects simulated credential leakage. They never use production SMTP or secrets. |
+| Turnstile local/staging test approach | `tools/test-phase7.cjs` and `tools/test-phase8.cjs` verify pass, fail, and `timeout-or-duplicate` behavior through the real Siteverify endpoint using Cloudflare's official public test credentials. Test credentials work on localhost but must never be deployed. Production uses the existing hostname-restricted real widget and secret, with separate `contact` and `support` action validation. |
 | Hosting/runtime assumptions | The origin is Namecheap-hosted PHP behind Cloudflare. PHP 8.2.33 and required extensions are confirmed. The handler prefers environment variables or `/home/<account>/hudson-helm-config.php`-style placement above the public root, but the saved FTP account is chrooted at `/`; it therefore also supports an untracked, direct-request-guarded `/includes/contact-production.php` protected by `/includes/.htaccess`. The local source copy lives outside the active repository under `D:\HH_Website\PrivateConfig`. |
-| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase7.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The Phase 7 integration test requires outbound HTTPS only to Cloudflare Siteverify and captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase8.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, `support-config.php`, `support-verify.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The integration tests require outbound HTTPS only to Cloudflare Siteverify; Phase 7 captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
 | Known local/staging vs. production differences | The full deployable checkout at site commit `5f42c02` was size-synchronized to production on September 10, 2026. Phase 2 `index.html` from site commit `eb72ad0`, Phase 3 `whatwedo.html` from site commit `140d6e3`, Phase 4 `whyhudsonhelm.html` from site commit `16fabd6`, the seven Phase 5 root-page HTML files from site commit `d6fb5ed`, Phase 6 `areweagoodfit.html` from site commit `d5b8f10`, the Phase 7 runtime from site commit `8abd519`, the superseding Start Here revisions through site commit `e7109cc`, and the six-item shared navigation/global header CTA typography from site commit `aa8a8b4` were subsequently uploaded and verified publicly. Phase 7 is operational with real protected credentials in an untracked server-only file. Cloudflare email protection, analytics injection, and robots content remain production-response additions; the protected production credential file intentionally exists only locally and server-side, never in Git. |
 
 Update this runbook when the environment or verified workflow materially changes.
@@ -329,7 +339,8 @@ Record decisions that materially constrain or redirect future implementation. Do
 | 2026-09-10 | Use a balanced three-part action row on Start Here and broaden its page-specific service-area line. | The user requested a second matching orange email button aligned opposite Submit, the Hudson Helm logo between them, removal of the prior lower-right email/phone text, the centered wording **Serving the greater New Jersey / New York / Philadelphia metropolitan area.**, and the revised successful-send confirmation. |
 | 2026-09-11 | Replace the Start Here action-row logo with Turnstile and collapse the separate widget row. | This supersedes only the logo placement from the September 10 action-row decision. The user requested Turnstile immediately to the right of Submit with breathing room, less whitespace below the message field, and an 18px email prompt that retains space above its button. |
 | 2026-09-11 | Match the form Submit color to the header Start Here CTA while retaining the orange email action. | The user requested visual continuity between the primary form submission and the header CTA. Only Submit receives the header's blue gradient, shadow, and hover/focus colors. |
-| 2026-09-11 | Temporarily omit Support from shared navigation until Phase 8 builds it. | This supersedes the September 10 decision to expose the missing destination. All seven public root-page headers now show only six real destinations; Support must be restored when its page exists. |
+| 2026-09-11 | Temporarily omit Support from shared navigation until Phase 8 builds it. | This superseded the September 10 decision to expose the missing destination. Phase 8 has now restored Support in the approved position across all eight public root-page headers. |
+| 2026-09-11 | Implement the Phase 8 portal with a strict token-only server boundary. | Credential fields have no submission names and remain in browser memory; the server rejects all fields except the Turnstile token. This makes the temporary shell safe now while keeping the visual frontend and verification layer reusable for future approved authentication. |
 
 ## Open Questions, Inputs, and Deferred Decisions
 
@@ -343,7 +354,7 @@ This is the canonical register for unresolved user inputs, blockers, and intenti
 - **DEFERRED — Customer endorsements:** approved as a future enhancement and not required for the initial refresh.
 - **RESOLVED — Intended baseline:** retain the committed local source following the user's instruction to commit. Local CSS/form JavaScript differences remain documented; production PHP cannot be compared from public responses.
 - **RESOLVED — PHP and hosting validation:** production PHP 8.2.33 and required cURL/OpenSSL/filter/JSON extensions were verified. Local PHP 8.5.10 plus an isolated SMTP sink and Cloudflare's official credentials validated Phase 7 without production email delivery.
-- **TEMPORARY — Support destination:** `support.html` is not yet built and is deliberately absent from all seven public root-page headers at the user's direction. Restore Support to the shared navigation when Phase 8 creates the destination. The Who We Are destination is resolved by Phase 5.
+- **IN PROGRESS — Support destination:** `support.html` and the restored eight-page shared navigation are complete and locally validated. Commit, push, publication, and production verification are pending under the user's approval.
 
 ---
 
@@ -1537,12 +1548,12 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 8 — Support Portal Shell
 
-- [ ] Build the approved Hudson Helm client-support login shell and supporting text.
-- [ ] Ensure username/password values never leave the browser and have no fallback submission path.
-- [ ] Implement Turnstile Managed mode and server-side verification of the Turnstile token only.
-- [ ] Implement the specified local generic authentication-failure behavior and password clearing.
-- [ ] Do not implement real/fake accounts, registration, password reset, ticket creation, or other prohibited dead-end workflows.
-- [ ] Structure the frontend/Turnstile integration so it can be reused with future real authentication.
+- [x] Build the approved Hudson Helm client-support login shell and supporting text — implemented the professional responsive portal page and exact active-customer statement.
+- [x] Ensure username/password values never leave the browser and have no fallback submission path — credential fields have no submission names, the native form is guarded, the client constructs a token-only body, and the server rejects unexpected fields.
+- [x] Implement Turnstile Managed mode and server-side verification of the Turnstile token only — the explicit widget uses action `support`; the dedicated endpoint validates only its token through Siteverify with action and hostname checks.
+- [x] Implement the specified local generic authentication-failure behavior and password clearing — every accepted verification produces the same local error, clears the password, resets Turnstile, and returns focus to the password field.
+- [x] Do not implement real/fake accounts, registration, password reset, ticket creation, or other prohibited dead-end workflows — source and page checks confirm these are absent.
+- [x] Structure the frontend/Turnstile integration so it can be reused with future real authentication — presentation, public configuration, token verification, and local temporary rejection are separated cleanly.
 - [ ] Satisfy the Shared Definition of Done for this phase.
 
 ## Phase 9 — Global Completion

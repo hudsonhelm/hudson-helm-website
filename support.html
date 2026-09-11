@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Support Portal - Hudson Helm</title>
+    <meta name="description" content="Secure Hudson Helm client support portal access for active customers.">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/hudson-helm.css">
+</head>
+<body class="hh-support-body">
+    <header id="pq-header" class="pq-header-default">
+        <div class="pq-top-header">
+            <div class="container">
+                <div class="row flex-row-reverse">
+                    <div class="col-md-12">
+                        <div class="pq-header-contact">
+                            <ul>
+                                <li><a href="tel:9542256560"><i aria-hidden="true" class="fas fa-phone-flip"></i><span>954-225-6560</span></a></li>
+                                <li><a href="mailto:info@hudsonhelm.com"><i aria-hidden="true" class="fas fa-envelope"></i><span>info@hudsonhelm.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pq-bottom-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav aria-label="Primary navigation" class="navbar navbar-expand-lg navbar-light">
+                            <a aria-label="Hudson Helm home" class="navbar-brand" href="index.html">
+                                <img alt="Hudson Helm" class="img-fluid logo" src="images/logos/wide_trans.png">
+                            </a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="pq-menu-contain" id="pq-menu-contain">
+                                    <ul class="navbar-nav" id="pq-main-menu">
+                                        <li class="menu-item"><a href="index.html">Home</a></li>
+                                        <li class="menu-item"><a href="whatwedo.html">What We Do</a></li>
+                                        <li class="menu-item"><a href="whyhudsonhelm.html">Why Hudson Helm</a></li>
+                                        <li class="menu-item"><a href="whoweare.html">Who We Are</a></li>
+                                        <li class="menu-item"><a href="areweagoodfit.html">Are We a Good Fit?</a></li>
+                                        <li class="menu-item current-menu-item"><a aria-current="page" href="support.html">Support</a></li>
+                                        <li class="menu-item hh-mobile-only"><a href="starthere.html">Start Here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="pq-button hh-desktop-cta" href="starthere.html"><span class="pq-button-text">Start Here</span></a>
+                            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                                <i aria-hidden="true" class="fas fa-bars"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="hh-support-main">
+        <section class="hh-support-section" aria-labelledby="support-title">
+            <div class="container">
+                <div class="hh-support-shell">
+                    <div class="hh-support-intro">
+                        <div class="hh-support-kicker"><i class="fas fa-shield-alt" aria-hidden="true"></i> Client access</div>
+                        <h1 id="support-title">Client Support Portal</h1>
+                        <p class="hh-support-lead">A direct, secure starting point for Hudson Helm customers.</p>
+                        <div class="hh-support-assurance">
+                            <span class="hh-support-assurance-icon" aria-hidden="true"><i class="fas fa-lock"></i></span>
+                            <div>
+                                <strong>Protected sign-in</strong>
+                                <p>Verification helps protect portal access from automated abuse.</p>
+                            </div>
+                        </div>
+                        <p class="hh-support-customer-note">Client portal access is provided to active Hudson Helm customers.</p>
+                    </div>
+
+                    <div class="hh-login-card">
+                        <div class="hh-login-heading">
+                            <span class="hh-login-mark" aria-hidden="true"><i class="fas fa-user-shield"></i></span>
+                            <div>
+                                <p class="hh-login-eyebrow">Customer sign-in</p>
+                                <h2>Access your support portal</h2>
+                            </div>
+                        </div>
+
+                        <form id="support-login" class="hh-login-form" novalidate onsubmit="return false" aria-describedby="support-form-note">
+                            <div class="hh-login-field">
+                                <label for="support-username">Username</label>
+                                <div class="hh-login-input-wrap">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                    <input id="support-username" type="text" autocomplete="username" maxlength="150" required aria-describedby="support-username-error">
+                                </div>
+                                <span id="support-username-error" class="hh-login-error"></span>
+                            </div>
+
+                            <div class="hh-login-field">
+                                <label for="support-password">Password</label>
+                                <div class="hh-login-input-wrap">
+                                    <i class="fas fa-key" aria-hidden="true"></i>
+                                    <input id="support-password" type="password" autocomplete="current-password" maxlength="300" required aria-describedby="support-password-error">
+                                </div>
+                                <span id="support-password-error" class="hh-login-error"></span>
+                            </div>
+
+                            <div class="hh-support-turnstile">
+                                <div id="support-turnstile-widget" aria-describedby="support-turnstile-status support-turnstile-error"></div>
+                                <span id="support-turnstile-status" class="hh-visually-hidden">Security verification is loading.</span>
+                                <span id="support-turnstile-error" class="hh-login-error"></span>
+                            </div>
+
+                            <button id="support-sign-in" class="pq-button hh-support-submit" type="submit">
+                                <span class="pq-button-text">Sign In</span>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                            <p id="support-login-response" class="hh-login-response" role="status" aria-live="polite" aria-atomic="true"></p>
+                            <p id="support-form-note" class="hh-login-privacy"><i class="fas fa-circle-check" aria-hidden="true"></i> Your sign-in details stay in this browser during this access check.</p>
+                            <noscript><p class="hh-login-response is-error">JavaScript is required to use client portal access.</p></noscript>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="pq-footer" class="style-1">
+        <div class="pq-footer-style-1">
+            <div class="pq-copyright-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="hh-footer-branding">
+                                <span class="pq-copyright">Copyright 2026 Hudson Helm. All Rights Reserved.</span>
+                                <div class="hh-footer-logo-wrap">
+                                    <img alt="Hudson Helm" class="hh-footer-logo" src="images/logos/hudson-helm-logo-w-trans.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="back-to-top">
+        <a class="top" id="#top" href="#"><i class="ion-ios-arrow-up"></i></a>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/progressbar.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.countTo.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/support.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onSupportTurnstileLoad&amp;render=explicit" async defer></script>
+</body>
+</html>

@@ -9,6 +9,7 @@ const pages = [
   ['whoweare.html', 'whoweare.html'],
   ['areweagoodfit.html', 'areweagoodfit.html'],
   ['starthere.html', 'starthere.html'],
+  ['support.html', 'support.html'],
   ['404.html', null],
 ];
 const expectedNavigation = [
@@ -17,6 +18,7 @@ const expectedNavigation = [
   ['Why Hudson Helm', 'whyhudsonhelm.html'],
   ['Who We Are', 'whoweare.html'],
   ['Are We a Good Fit?', 'areweagoodfit.html'],
+  ['Support', 'support.html'],
   ['Start Here', 'starthere.html'],
 ];
 
