@@ -67,6 +67,7 @@ for (const required of [
 if ((privacy.match(/<h1(?:\s|>)/g) || []).length !== 1) fail('privacy.html', 'must contain exactly one H1');
 
 const notFound = fs.readFileSync(path.join(root, '404.html'), 'utf8');
+const apacheConfig = fs.readFileSync(path.join(root, '.htaccess'), 'utf8');
 for (const required of [
   '<title>Page Not Found - Hudson Helm</title>',
   '<meta name="robots" content="noindex, follow">',
@@ -79,6 +80,7 @@ for (const required of [
 }
 if ((notFound.match(/<h1(?:\s|>)/g) || []).length !== 1) fail('404.html', 'must contain exactly one H1');
 if (/Techrix|Oops! This Page|404 Error/.test(notFound)) fail('404.html', 'legacy template copy remains');
+if (!/^ErrorDocument 404 \/404\.html\s*$/m.test(apacheConfig)) fail('.htaccess', 'custom 404 routing is missing');
 
 const sharedCss = fs.readFileSync(path.join(root, 'css', 'hudson-helm.css'), 'utf8');
 for (const required of ['.hh-footer-grid', '.hh-footer-legal-row', '.hh-legal-copy', '.hh-not-found']) {
