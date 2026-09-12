@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 12, 2026 |
 | Current phase | Phase 11 — Regression / Review |
-| Phase status | **Phase 11 complete; final branch ready for user review, with production deployment awaiting explicit approval** |
+| Phase status | **Phase 11 complete, published, verified, and synchronized to GitHub** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 11 regression and review are complete. Preserve all Phase 1–10 contracts and the reviewed Are We a Good Fit hero replacement. The completed `website-refresh` branch is ready for user review. Do not deploy the Phase 11 staging delta to production without explicit approval; the current production site remains on the verified Phase 10 release plus the published Emilia portrait.
+Phase 11 regression, review, publication, and live verification are complete. Preserve all Phase 1–10 contracts and the published Are We a Good Fit hero replacement, including its matching Open Graph metadata and focused regression coverage. The completed `website-refresh` branch is synchronized to GitHub and production.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–10 and their later refinements are complete, pushed, and verified; the Phase 10 deployable payload is published on production. Phase 11 reran the complete source, syntax, security-integration, external-link, diff, and four-viewport browser regression suite against the final staging state. The review found and corrected one metadata regression in the pending Are We a Good Fit hero replacement: its Open Graph image now matches the new visible team image. The final rendered desktop and mobile review shows the supplied 1300×780 hero crop fitting cleanly with all four people visible, no overflow, and intact page hierarchy. The approved portraits are in place, while the temporary supporting biographies and deferred customer endorsements remain accurately recorded as non-blocking open items. The Phase 11 branch is ready for user review; the new Are We a Good Fit hero and metadata have not been deployed to production.
+Phases 1–11 and their later refinements are complete, pushed, published, and verified. Phase 11 reran the complete source, syntax, security-integration, external-link, diff, and four-viewport browser regression suite against the final staging state. The review found and corrected one metadata regression in the Are We a Good Fit hero replacement: its Open Graph image now matches the visible team image. The final rendered desktop and mobile review shows the supplied 1300×780 hero crop fitting cleanly with all four people visible, no overflow, and intact page hierarchy. The narrow page/image delta was then published under explicit approval; cache-busted HTTPS, exact image hash comparison, and the full 36-combination production browser matrix passed. The approved portraits are in place, while the temporary supporting biographies and deferred customer endorsements remain accurately recorded as non-blocking open items.
 
 ### Phase Progress
 
@@ -67,7 +67,7 @@ Phases 1–10 and their later refinements are complete, pushed, and verified; th
 | 8 | Support Portal Shell | Complete, operational, published, and pushed |
 | 9 | Global Completion | Complete, published, pushed, and verified, including permanent New Jersey phone number |
 | 10 | QA | Complete, published, verified, and pushed |
-| 11 | Regression / Review | Complete; final branch ready for user review, production delta not deployed |
+| 11 | Regression / Review | Complete, published, verified, and pushed |
 
 ## Phase 0 Working Checklist
 
@@ -110,6 +110,7 @@ Record meaningful project events only: phase transitions, significant inspection
 
 | Date | Activity | Result |
 | --- | --- | --- |
+| 2026-09-12 | Published and verified the Phase 11 production delta under explicit approval. | Uploaded only `areweagoodfit.html` and `images/team/are-we-a-good-fit-team.jpg`. Remote stats confirmed 28,425 and 237,982 bytes. Cache-busted HTTPS returned 200 with the new hero and matching Open Graph metadata, the former hero reference was absent, the deployed image SHA-256 matched local (`B8BA8E1DB364D2BE8EB7FD828C861DCED15BF53842369E0CBFE940CA79DDC978`), and the full 36-combination production browser matrix passed. |
 | 2026-09-12 | Completed Phase 11 regression and final staging review. | Reran all Phase 1–10 source checks, inspection, JavaScript/PHP syntax, Phase 7/8 security integrations, external privacy-link checks, `git diff --check`, and the 36-combination browser matrix. Corrected the pending Are We a Good Fit hero's stale Open Graph image, added focused regression coverage, and reviewed desktop/mobile renders. All checks pass; temporary supporting biographies and deferred endorsements remain non-blocking. The final branch was prepared for user review without production deployment. |
 | 2026-09-12 | Replaced the Are We a Good Fit hero photograph at the user's direction. | Created an identity-preserving 5:3 crop of the supplied four-person team photograph, keeping every face, head, and hairstyle fully inside the frame. Optimized the asset as a 1300×780 JPEG matching the rendered hero ratio, updated its accessible text and intrinsic dimensions, and added Phase 6 regression coverage. |
 | 2026-09-12 | Corrected stale caching of Emilia's replacement profile photograph. | Versioned Emilia's profile-image URL as `images/team/emilia.jpg?v=20260912-server-room` so browsers and intermediary caches request the newly published server-room portrait. Prepared the live-page correction separately from the completed but unpublished Phase 10 files. |
@@ -323,7 +324,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - The automated Chrome matrix passed all nine public pages at 1440×900, 1366×768, 1024×768, and 390×844, covering loaded images, one H1, responsive navigation, keyboard focus, visible main/footer content, console errors, and horizontal overflow.
 - Final desktop and 390px rendered review confirmed the pending Are We a Good Fit team hero fits its frame cleanly and preserves every person's head and face. Review found its Open Graph image still pointed to the former stock photo; the metadata and Phase 6 regression check were corrected to match the new asset.
 - The canonical open-items register remains accurate: final supporting biographies are still temporary and customer endorsements remain deferred. Neither item blocks Phase 11 completion.
-- No Phase 11 files were uploaded to production. The final `website-refresh` branch is the review target, and production publication of its staging delta requires explicit user approval.
+- After explicit publication approval, only `areweagoodfit.html` and `images/team/are-we-a-good-fit-team.jpg` were uploaded. Remote stats reported 28,425 and 237,982 bytes; cache-busted HTTPS returned 200 with the new body/social image references and no former hero reference; the deployed image SHA-256 matched local (`B8BA8E1DB364D2BE8EB7FD828C861DCED15BF53842369E0CBFE940CA79DDC978`); and the full 36-combination production Chrome matrix passed.
 
 ### Repository and File Structure
 
@@ -1672,8 +1673,8 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Push the completed `website-refresh` branch — final Phase 11 commits were pushed normally after confirming no remote divergence.
 - [x] Confirm the master document accurately reflects final branch state, decisions, and any deferred items — the temporary supporting biographies and deferred endorsements remain in the canonical register.
 - [x] Present the finished local/staging site for user review — the safe local preview is available at `http://127.0.0.1:8087/`, with the changed page at `http://127.0.0.1:8087/areweagoodfit.html`.
-- [x] Do not deploy production until explicitly approved — no Phase 11 staging files were uploaded.
-- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; structural, functional, responsive, accessibility, security, content, syntax, integration, regression, diff, documentation, Git, and rendered-preview checks passed, with production deployment intentionally held for explicit approval.
+- [x] Do not deploy production until explicitly approved — explicit approval was received before the narrow page/image upload; no other Phase 11 files were published.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; structural, functional, responsive, accessibility, security, content, syntax, integration, regression, diff, documentation, Git, FTP, rendered-preview, and live-production checks passed.
 
 ---
 
