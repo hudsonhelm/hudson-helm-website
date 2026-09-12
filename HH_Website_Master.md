@@ -10,7 +10,7 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 12, 2026 |
 | Current phase | Phase 11 — Regression / Review |
-| Phase status | **Phase 10 complete, published, and verified; GitHub synchronization blocked by invalid local authentication** |
+| Phase status | **Phase 10 complete, published, verified, and synchronized to GitHub** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 10 is complete, published, and verified. Preserve the canonical/social metadata, homepage structured-data graph, `sitemap.xml`, `robots.txt`, logical heading hierarchy, intrinsic content-image dimensions, guarded optional-plugin calls, reduced public-page plugin payload, and all Phase 1–9 contracts. The local branch contains the Phase 10 and Emilia portrait commits, but GitHub synchronization is blocked until the `hudsonhelm` account is reauthenticated. Do not begin Phase 11 without explicit direction.
+Phase 10 is complete, published, verified, and synchronized to `origin/website-refresh`. Preserve the canonical/social metadata, homepage structured-data graph, `sitemap.xml`, `robots.txt`, logical heading hierarchy, intrinsic content-image dimensions, guarded optional-plugin calls, reduced public-page plugin payload, and all Phase 1–9 contracts. Do not begin Phase 11 without explicit direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–9 and their later refinements remain pushed, published, and verified. Phase 10 corrected the site-wide discovery, accessibility, technical-integrity, responsive, performance, and security findings identified by the approved QA pass. All eight indexable pages now have unique titles/descriptions, canonical URLs, Open Graph metadata, social-image metadata, and Twitter large-card metadata; the homepage also has an Organization/WebSite structured-data graph with its service catalog. `sitemap.xml` and `robots.txt` cover the eight indexable routes while `404.html` remains `noindex`. Why Hudson Helm now uses logical H3 card headings, decorative icon semantics were corrected, obsolete preloaders and unused plugin loads were removed, optional template plugins are guarded, and key content images reserve intrinsic dimensions. Phase 1–10 source checks, PHP syntax, Phase 7/8 security integration tests, external privacy-link checks, and the nine-page browser matrix at 1440px, 1366px, 1024px, and 390px pass. The narrow Phase 10 payload is published and verified on production. Local commits are complete, but `origin/website-refresh` remains behind because the saved GitHub authentication for `hudsonhelm` is invalid.
+Phases 1–9 and their later refinements remain pushed, published, and verified. Phase 10 corrected the site-wide discovery, accessibility, technical-integrity, responsive, performance, and security findings identified by the approved QA pass. All eight indexable pages now have unique titles/descriptions, canonical URLs, Open Graph metadata, social-image metadata, and Twitter large-card metadata; the homepage also has an Organization/WebSite structured-data graph with its service catalog. `sitemap.xml` and `robots.txt` cover the eight indexable routes while `404.html` remains `noindex`. Why Hudson Helm now uses logical H3 card headings, decorative icon semantics were corrected, obsolete preloaders and unused plugin loads were removed, optional template plugins are guarded, and key content images reserve intrinsic dimensions. Phase 1–10 source checks, PHP syntax, Phase 7/8 security integration tests, external privacy-link checks, and the nine-page browser matrix at 1440px, 1366px, 1024px, and 390px pass. The narrow Phase 10 payload is published and verified on production, and `origin/website-refresh` contains the completed release through closeout commit `1574f54`.
 
 ### Phase Progress
 
@@ -66,7 +66,7 @@ Phases 1–9 and their later refinements remain pushed, published, and verified.
 | 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Complete, operational, published, and pushed |
 | 9 | Global Completion | Complete, published, pushed, and verified, including permanent New Jersey phone number |
-| 10 | QA | Complete, published, and verified; GitHub synchronization blocked by authentication |
+| 10 | QA | Complete, published, verified, and pushed |
 | 11 | Regression / Review | Not started |
 
 ## Phase 0 Working Checklist
@@ -313,7 +313,7 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - `node tools/check-phase1.cjs` through `node tools/check-phase10.cjs`, `node tools/inspect.cjs`, JavaScript syntax checks, PHP syntax checks, `git diff --check`, the Phase 7 isolated SMTP/official Turnstile suite, and the Phase 8 token-only Turnstile suite passed. Cloudflare's Turnstile privacy page and Migadu's privacy page both returned HTTP 200. The local Firefox headless helper did not complete reliably, so the new repeatable automated matrix uses installed Chrome; prior phase-specific Firefox checks remain recorded and no Phase 10 requirement depends on one browser brand.
 - The approved production payload comprised the nine public HTML pages, `js/custom.js`, `robots.txt`, and `sitemap.xml`; no documentation, QA tools, or credentials were uploaded. WinSCP completed every transfer and remote stat. Cache-busted HTTPS returned 200 for all published assets, the unknown-route test returned the branded HTTP 404, and the live Chrome matrix passed all nine pages at 1440×900, 1366×768, 1024×768, and 390×844.
 - A concurrent portrait release briefly overwrote the Phase 10 version of `whoweare.html`. The current committed file was re-uploaded after that task finished; refreshing its source timestamp invalidated the LiteSpeed origin cache. The final live response contains the canonical and Open Graph metadata, `custom.js?v=20260912-phase10`, and `emilia.jpg?v=20260912-server-room` together.
-- Phase 10 is committed locally as `6195eff`, with the adjacent Emilia portrait commits `c87e0f6` and `06647a6`. GitHub publication is blocked because the saved `hudsonhelm` authentication is invalid; `origin/website-refresh` therefore remains at `18f9097` until the account is reauthenticated and the queued branch can be pushed normally.
+- Phase 10 is committed as `6195eff`, with adjacent Emilia portrait commits `c87e0f6` and `06647a6` and publication closeout `1574f54`. After the `hudsonhelm` account was reauthenticated, the branch was pushed normally with no remote divergence; `origin/website-refresh` now contains the complete sequence.
 
 ### Repository and File Structure
 
@@ -1652,7 +1652,7 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 - [x] Review image sizing/compression, unnecessary JavaScript/CSS, duplicate libraries, and realistically fixable render-blocking resources — key images reserve dimensions and use appropriate priority/lazy-loading hints; obsolete preloaders and unused plugin CSS/JavaScript loads were removed without reducing approved image quality.
 - [x] Complete the specified security verification — PHP syntax and Phase 7/8 integration suites pass using official Turnstile test credentials and an isolated SMTP sink; no production secret was used or exposed, Support remains token-only, and sanitization/header-injection controls remain intact.
 - [x] Record and fix QA findings — findings and repeatable Phase 10 source/browser checks are recorded above.
-- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; implementation, source, responsive, accessibility, security, performance, console, diff, documentation, FTP, and live-production checks passed. The approved payload is published and verified; the local commits are complete, while GitHub synchronization is explicitly blocked by invalid saved authentication and remains queued without rewriting history.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; implementation, source, responsive, accessibility, security, performance, console, diff, documentation, FTP, live-production, and GitHub synchronization checks passed. The approved payload is published and verified, and the completed commit sequence was pushed normally to `origin/website-refresh` without rewriting history.
 
 ## Phase 11 — Regression / Review
 
