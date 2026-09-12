@@ -36,7 +36,7 @@ If a genuine conflict remains, record it as an open item instead of silently cho
 
 - Repository: `hudsonhelm/hudson-helm-website`
 - Default branch: `main`
-- Active working branch: `website-refresh`
+- Active working branch: `main`
 - Master document: `HH_Website_Master.md`
 
 Treat repository setup recorded in the master as completed project state.

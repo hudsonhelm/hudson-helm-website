@@ -10,11 +10,11 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Document | `HH_Website_Master.md` |
 | Last updated | September 12, 2026 |
 | Current phase | Phase 11 — Regression / Review |
-| Phase status | **Phase 11 complete, published, verified, and synchronized to GitHub** |
+| Phase status | **Website refresh complete, published, verified, and merged into `main`** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
-| Active working branch | `website-refresh` |
+| Active working branch | `main` |
 
 Git and GitHub are the revision history for this document. Do not maintain a parallel document-version or archive-snapshot system.
 
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 11 regression, review, publication, and live verification are complete. Preserve all Phase 1–10 contracts and the published Are We a Good Fit hero replacement, including its matching Open Graph metadata and focused regression coverage. The completed `website-refresh` branch is synchronized to GitHub and production.
+The website refresh is complete. Phase 11 regression, review, publication, and live verification passed, and the completed refresh was fast-forwarded into `main` without a merge commit. Preserve all Phase 1–10 contracts and the published Are We a Good Fit hero replacement, including its matching Open Graph metadata and focused regression coverage. `main` is the active authoritative branch; `website-refresh` is retained at the same final commit for traceability.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–11 and their later refinements are complete, pushed, published, and verified. Phase 11 reran the complete source, syntax, security-integration, external-link, diff, and four-viewport browser regression suite against the final staging state. The review found and corrected one metadata regression in the Are We a Good Fit hero replacement: its Open Graph image now matches the visible team image. The final rendered desktop and mobile review shows the supplied 1300×780 hero crop fitting cleanly with all four people visible, no overflow, and intact page hierarchy. The narrow page/image delta was then published under explicit approval; cache-busted HTTPS, exact image hash comparison, and the full 36-combination production browser matrix passed. The approved portraits are in place, while the temporary supporting biographies and deferred customer endorsements remain accurately recorded as non-blocking open items.
+Phases 1–11 and their later refinements are complete, pushed, published, and verified. Phase 11 reran the complete source, syntax, security-integration, external-link, diff, and four-viewport browser regression suite against the final staging state. The review found and corrected one metadata regression in the Are We a Good Fit hero replacement: its Open Graph image now matches the visible team image. The final rendered desktop and mobile review shows the supplied 1300×780 hero crop fitting cleanly with all four people visible, no overflow, and intact page hierarchy. The narrow page/image delta was then published under explicit approval; cache-busted HTTPS, exact image hash comparison, and the full 36-combination production browser matrix passed. The completed refresh history was fast-forwarded into `main`, and `main` plus the retained `website-refresh` branch are synchronized to the same final state. The approved portraits are in place, while the temporary supporting biographies and deferred customer endorsements remain accurately recorded as non-blocking open items.
 
 ### Phase Progress
 
@@ -110,6 +110,7 @@ Record meaningful project events only: phase transitions, significant inspection
 
 | Date | Activity | Result |
 | --- | --- | --- |
+| 2026-09-12 | Merged the completed website refresh into the default branch. | Confirmed `origin/main` was an ancestor of `website-refresh` with no remote divergence, then fast-forwarded `main` through the full completed refresh without conflicts or a merge commit. Updated the governing branch records, synchronized the retained `website-refresh` branch to the same final commit, and left production unchanged because the deployed site already matched the completed release. |
 | 2026-09-12 | Published and verified the Phase 11 production delta under explicit approval. | Uploaded only `areweagoodfit.html` and `images/team/are-we-a-good-fit-team.jpg`. Remote stats confirmed 28,425 and 237,982 bytes. Cache-busted HTTPS returned 200 with the new hero and matching Open Graph metadata, the former hero reference was absent, the deployed image SHA-256 matched local (`B8BA8E1DB364D2BE8EB7FD828C861DCED15BF53842369E0CBFE940CA79DDC978`), and the full 36-combination production browser matrix passed. |
 | 2026-09-12 | Completed Phase 11 regression and final staging review. | Reran all Phase 1–10 source checks, inspection, JavaScript/PHP syntax, Phase 7/8 security integrations, external privacy-link checks, `git diff --check`, and the 36-combination browser matrix. Corrected the pending Are We a Good Fit hero's stale Open Graph image, added focused regression coverage, and reviewed desktop/mobile renders. All checks pass; temporary supporting biographies and deferred endorsements remain non-blocking. The final branch was prepared for user review without production deployment. |
 | 2026-09-12 | Replaced the Are We a Good Fit hero photograph at the user's direction. | Created an identity-preserving 5:3 crop of the supplied four-person team photograph, keeping every face, head, and hairstyle fully inside the frame. Optimized the asset as a 1300×780 JPEG matching the rendered hero ratio, updated its accessible text and intrinsic dimensions, and added Phase 6 regression coverage. |
