@@ -110,6 +110,7 @@ Record meaningful project events only: phase transitions, significant inspection
 
 | Date | Activity | Result |
 | --- | --- | --- |
+| 2026-09-11 | Removed the page-level temporary-profile notice from Who We Are at the user's direction. | Deleted the notice and its dedicated styles so the lead profile moves up without leaving the notice's 36px spacing; individual temporary photograph/profile labels remain in place. Updated the Phase 5 regression check to prevent the removed notice from returning. |
 | 2026-09-10 | Read and reviewed the complete original implementation brief. | Project scope and guardrails accepted as governing instructions. |
 | 2026-09-10 | Inspected the top-level folder and discovered existing personal-repository metadata inside the website directory. | Existing metadata was preserved outside the new repository rather than overwritten or deleted. |
 | 2026-09-10 | Authenticated GitHub CLI as `hudsonhelm`. | Confirmed access to the intended GitHub account. |

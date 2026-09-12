@@ -16,7 +16,6 @@ requireMatch('founder identification', /Hudson Helm's founder and Technical Dire
 requireMatch('network engineer profile', /<h3>Cameron Reed<\/h3>[\s\S]*?<span class="hh-profile-role">Network Engineer<\/span>/);
 requireMatch('systems engineer profile', /<h3>Morgan Lee<\/h3>[\s\S]*?<span class="hh-profile-role">Systems Engineer<\/span>/);
 requireMatch('cybersecurity specialist profile', /<h3>Jordan Patel<\/h3>[\s\S]*?<span class="hh-profile-role">Cybersecurity Specialist<\/span>/);
-requireMatch('temporary-content notice', /Team profiles in progress:[\s\S]*?temporary/);
 requireMatch('placeholder labels', /Placeholder profile/);
 requireMatch('shared placeholder image', /images\/team\/2\.jpg/);
 requireMatch('closing Start Here CTA', /<section class="hh-team-closing"[\s\S]*?href="starthere\.html"/);
@@ -32,6 +31,10 @@ if (imageUses !== 4) failures.push(`expected the shared placeholder image four t
 
 if (/data-pending-page="true" href="whoweare\.html"/.test(page)) {
   failures.push('Who We Are remains marked as a pending destination');
+}
+
+if (/Team profiles in progress:|hh-team-notice/.test(page)) {
+  failures.push('removed page-level temporary-content notice is present');
 }
 
 if (/rough-(?:script|notation\.iife|custom)\.js|owl\.carousel\.min\.(?:css|js)/.test(page)) {
