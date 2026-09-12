@@ -11,7 +11,9 @@ function requireMatch(label, pattern) {
 
 requireMatch('semantic main content', /<main>/);
 requireMatch('single page hero', /<section class="hh-team-hero"[\s\S]*?<h1 id="who-we-are-title">/);
+requireMatch('approved lean positioning', /Hudson Helm is deliberately lean\./);
 requireMatch('Nelson Abreu lead profile', /<article class="hh-lead-profile">[\s\S]*?<h2 id="team-title">Nelson Abreu<\/h2>[\s\S]*?<span class="hh-profile-role">Technical Director<\/span>/);
+requireMatch('Nelson Abreu portrait', /<img class="hh-lead-photo" src="images\/team\/nelson-abreu\.jpg" alt="Nelson Abreu">/);
 requireMatch('founder identification', /Hudson Helm's founder and Technical Director/);
 requireMatch('network engineer profile', /<h3>Cameron Reed<\/h3>[\s\S]*?<span class="hh-profile-role">Network Engineer<\/span>/);
 requireMatch('systems engineer profile', /<h3>Morgan Lee<\/h3>[\s\S]*?<span class="hh-profile-role">Systems Engineer<\/span>/);
@@ -27,7 +29,7 @@ const profileCount = (page.match(/<article class="hh-(?:lead-profile|profile-car
 if (profileCount !== 4) failures.push(`expected four profiles, found ${profileCount}`);
 
 const imageUses = (page.match(/src="images\/team\/2\.jpg"/g) || []).length;
-if (imageUses !== 4) failures.push(`expected the shared placeholder image four times, found ${imageUses}`);
+if (imageUses !== 3) failures.push(`expected the shared placeholder image three times, found ${imageUses}`);
 
 if (/data-pending-page="true" href="whoweare\.html"/.test(page)) {
   failures.push('Who We Are remains marked as a pending destination');
@@ -35,6 +37,10 @@ if (/data-pending-page="true" href="whoweare\.html"/.test(page)) {
 
 if (/Team profiles in progress:|hh-team-notice/.test(page)) {
   failures.push('removed page-level temporary-content notice is present');
+}
+
+if (/Hudson Helm is deliberately small\.|Temporary photograph|Temporary stock portrait for Nelson Abreu/.test(page)) {
+  failures.push('superseded Nelson profile content is present');
 }
 
 if (/rough-(?:script|notation\.iife|custom)\.js|owl\.carousel\.min\.(?:css|js)/.test(page)) {
