@@ -110,6 +110,7 @@ Record meaningful project events only: phase transitions, significant inspection
 
 | Date | Activity | Result |
 | --- | --- | --- |
+| 2026-09-11 | Pushed and published the Who We Are notice removal. | Pushed site commit `9899dcb` to `origin/website-refresh` and uploaded only `whoweare.html`. Remote `stat` confirmed the file at 18,201 bytes; a cache-busted HTTPS request returned 200 with the notice text and class absent, the lead profile present, and all three individual placeholder labels retained. |
 | 2026-09-11 | Removed the page-level temporary-profile notice from Who We Are at the user's direction. | Deleted the notice and its dedicated styles so the lead profile moves up without leaving the notice's 36px spacing; individual temporary photograph/profile labels remain in place. Updated the Phase 5 regression check to prevent the removed notice from returning. |
 | 2026-09-10 | Read and reviewed the complete original implementation brief. | Project scope and guardrails accepted as governing instructions. |
 | 2026-09-10 | Inspected the top-level folder and discovered existing personal-repository metadata inside the website directory. | Existing metadata was preserved outside the new repository rather than overwritten or deleted. |
