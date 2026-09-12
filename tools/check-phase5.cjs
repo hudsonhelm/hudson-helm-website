@@ -16,10 +16,11 @@ requireMatch('compact lead profile width', /\.hh-lead-profile\s*\{[\s\S]*?max-wi
 requireMatch('compact lead portrait height', /\.hh-lead-photo\s*\{[\s\S]*?min-height:\s*400px;/);
 requireMatch('Nelson Abreu lead profile', /<article class="hh-lead-profile">[\s\S]*?<h2 id="team-title">Nelson Abreu<\/h2>[\s\S]*?<span class="hh-profile-role">Technical Director<\/span>/);
 requireMatch('Nelson Abreu portrait', /<img class="hh-lead-photo" src="images\/team\/nelson-abreu\.jpg" alt="Nelson Abreu">/);
-requireMatch('founder identification', /Hudson Helm's founder and Technical Director/);
+requireMatch('Founder identification', /Hudson Helm's Founder and Technical Director/);
 requireMatch('network engineer profile', /<h3>Benjamin<\/h3>[\s\S]*?<span class="hh-profile-role">Network Engineer<\/span>[\s\S]*?Benjamin focuses/);
 requireMatch('systems engineer profile', /<h3>Emilia<\/h3>[\s\S]*?<span class="hh-profile-role">Systems Engineer<\/span>[\s\S]*?Emilia works/);
-requireMatch('cybersecurity specialist profile', /<h3>Emilia<\/h3>[\s\S]*?<span class="hh-profile-role">Cybersecurity Specialist<\/span>[\s\S]*?Emilia concentrates/);
+requireMatch('cybersecurity specialist profile', /<h3>Tiana<\/h3>[\s\S]*?<span class="hh-profile-role">Cybersecurity Specialist<\/span>[\s\S]*?Tiana concentrates/);
+requireMatch('contracted team-value heading', /You know who you're working with/);
 requireMatch('placeholder photo labels', /Placeholder Photo/);
 requireMatch('shared placeholder image', /images\/team\/2\.jpg/);
 requireMatch('closing Start Here CTA', /<section class="hh-team-closing"[\s\S]*?href="starthere\.html"/);
@@ -44,7 +45,7 @@ if (/Team profiles in progress:|hh-team-notice/.test(page)) {
   failures.push('removed page-level temporary-content notice is present');
 }
 
-if (/Hudson Helm is deliberately small\.|Temporary photograph|Temporary stock portrait for Nelson Abreu|Placeholder profile|Cameron|Morgan|Jordan/.test(page)) {
+if (/Hudson Helm is deliberately small\.|Hudson Helm's founder and Technical Director|Temporary photograph|Temporary stock portrait for Nelson Abreu|Placeholder profile|Cameron|Morgan|Jordan|Emilia concentrates|You know who you are working with/.test(page)) {
   failures.push('superseded Who We Are profile content is present');
 }
 
