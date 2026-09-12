@@ -18,11 +18,14 @@ requireMatch('Nelson Abreu lead profile', /<article class="hh-lead-profile">[\s\
 requireMatch('Nelson Abreu portrait', /<img class="hh-lead-photo" src="images\/team\/nelson-abreu\.jpg" alt="Nelson Abreu">/);
 requireMatch('Founder identification', /Hudson Helm's Founder and Technical Director/);
 requireMatch('network engineer profile', /<h3>Benjamin<\/h3>[\s\S]*?<span class="hh-profile-role">Network Engineer<\/span>[\s\S]*?Benjamin focuses/);
+requireMatch('Benjamin portrait', /<img class="hh-profile-photo" src="images\/team\/benjamin\.jpg" alt="Benjamin">/);
 requireMatch('systems engineer profile', /<h3>Emilia<\/h3>[\s\S]*?<span class="hh-profile-role">Systems Engineer<\/span>[\s\S]*?Emilia works/);
+requireMatch('Emilia portrait', /<img class="hh-profile-photo" src="images\/team\/emilia\.jpg" alt="Emilia">/);
 requireMatch('cybersecurity specialist profile', /<h3>Tiana<\/h3>[\s\S]*?<span class="hh-profile-role">Cybersecurity Specialist<\/span>[\s\S]*?Tiana concentrates/);
+requireMatch('Tiana portrait', /<img class="hh-profile-photo" src="images\/team\/tiana\.jpg" alt="Tiana">/);
+requireMatch('compact supporting profile grid', /\.hh-profile-grid\s*\{[\s\S]*?max-width:\s*1040px;/);
+requireMatch('compact supporting portrait ratio', /\.hh-profile-photo\s*\{[\s\S]*?aspect-ratio:\s*16\s*\/\s*10;/);
 requireMatch('contracted team-value heading', /You know who you're working with/);
-requireMatch('placeholder photo labels', /Placeholder Photo/);
-requireMatch('shared placeholder image', /images\/team\/2\.jpg/);
 requireMatch('closing Start Here CTA', /<section class="hh-team-closing"[\s\S]*?href="starthere\.html"/);
 
 const h1Count = (page.match(/<h1(?:\s|>)/g) || []).length;
@@ -31,11 +34,8 @@ if (h1Count !== 1) failures.push(`expected one H1, found ${h1Count}`);
 const profileCount = (page.match(/<article class="hh-(?:lead-profile|profile-card)"/g) || []).length;
 if (profileCount !== 4) failures.push(`expected four profiles, found ${profileCount}`);
 
-const imageUses = (page.match(/src="images\/team\/2\.jpg"/g) || []).length;
-if (imageUses !== 3) failures.push(`expected the shared placeholder image three times, found ${imageUses}`);
-
 const placeholderPhotoLabels = (page.match(/Placeholder Photo/g) || []).length;
-if (placeholderPhotoLabels !== 3) failures.push(`expected three placeholder photo labels, found ${placeholderPhotoLabels}`);
+if (placeholderPhotoLabels !== 0) failures.push(`expected no placeholder photo labels, found ${placeholderPhotoLabels}`);
 
 if (/data-pending-page="true" href="whoweare\.html"/.test(page)) {
   failures.push('Who We Are remains marked as a pending destination');
@@ -45,7 +45,7 @@ if (/Team profiles in progress:|hh-team-notice/.test(page)) {
   failures.push('removed page-level temporary-content notice is present');
 }
 
-if (/Hudson Helm is deliberately small\.|Hudson Helm's founder and Technical Director|Temporary photograph|Temporary stock portrait for Nelson Abreu|Placeholder profile|Cameron|Morgan|Jordan|Emilia concentrates|You know who you are working with/.test(page)) {
+if (/Hudson Helm is deliberately small\.|Hudson Helm's founder and Technical Director|Temporary photograph|Temporary stock portrait|images\/team\/2\.jpg|Placeholder Photo|Placeholder profile|Cameron|Morgan|Jordan|Emilia concentrates|You know who you are working with/.test(page)) {
   failures.push('superseded Who We Are profile content is present');
 }
 

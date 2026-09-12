@@ -138,6 +138,8 @@
         }
 
         .hh-profile-grid {
+            max-width: 1040px;
+            margin: 0 auto;
             row-gap: 24px;
         }
 
@@ -157,20 +159,17 @@
         .hh-profile-photo {
             display: block;
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 16 / 10;
             object-fit: cover;
+            object-position: center 18%;
         }
 
-        .hh-profile-card:nth-child(1) .hh-profile-photo { object-position: 46% 18%; }
-        .hh-profile-card:nth-child(2) .hh-profile-photo { object-position: 54% 22%; }
-        .hh-profile-card:nth-child(3) .hh-profile-photo { object-position: 50% 12%; }
-
         .hh-profile-body {
-            padding: 28px 26px 30px;
+            padding: 22px 22px 24px;
         }
 
         .hh-profile-card h3 {
-            font-size: 26px;
+            font-size: 24px;
         }
 
         .hh-profile-card .hh-profile-status {
@@ -178,8 +177,12 @@
         }
 
         .hh-profile-card .hh-profile-role {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-size: 15px;
+        }
+
+        .hh-profile-card p {
+            line-height: 1.6;
         }
 
         .hh-team-values {
@@ -338,9 +341,8 @@
                 <div class="row hh-profile-grid">
                     <div class="col-lg-4 col-md-6">
                         <article class="hh-profile-card">
-                            <img class="hh-profile-photo" src="images/team/2.jpg" alt="Temporary stock portrait for placeholder network engineer profile">
+                            <img class="hh-profile-photo" src="images/team/benjamin.jpg" alt="Benjamin">
                             <div class="hh-profile-body">
-                                <span class="hh-profile-status">Placeholder Photo</span>
                                 <h3>Benjamin</h3>
                                 <span class="hh-profile-role">Network Engineer</span>
                                 <p class="mb-0">Benjamin focuses on reliable wired and wireless networks, secure connectivity, and practical troubleshooting. The goal is a network that supports the way a business works without unnecessary complexity.</p>
@@ -349,9 +351,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <article class="hh-profile-card">
-                            <img class="hh-profile-photo" src="images/team/2.jpg" alt="Temporary stock portrait for placeholder systems engineer profile">
+                            <img class="hh-profile-photo" src="images/team/emilia.jpg" alt="Emilia">
                             <div class="hh-profile-body">
-                                <span class="hh-profile-status">Placeholder Photo</span>
                                 <h3>Emilia</h3>
                                 <span class="hh-profile-role">Systems Engineer</span>
                                 <p class="mb-0">Emilia works across servers, cloud services, identity, backups, and endpoint systems. The focus is on stable, well-documented environments that are easier to support and recover.</p>
@@ -360,9 +361,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <article class="hh-profile-card">
-                            <img class="hh-profile-photo" src="images/team/2.jpg" alt="Temporary stock portrait for placeholder cybersecurity specialist profile">
+                            <img class="hh-profile-photo" src="images/team/tiana.jpg" alt="Tiana">
                             <div class="hh-profile-body">
-                                <span class="hh-profile-status">Placeholder Photo</span>
                                 <h3>Tiana</h3>
                                 <span class="hh-profile-role">Cybersecurity Specialist</span>
                                 <p class="mb-0">Tiana concentrates on sensible risk reduction, from identity protection and endpoint security to policy and incident readiness. Recommendations are grounded in the needs and budget of each business.</p>
