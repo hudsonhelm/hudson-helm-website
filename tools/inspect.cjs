@@ -2,7 +2,7 @@
 const fs = require('node:fs'), path = require('node:path');
 const root = path.resolve(__dirname,'..');
 const files = fs.readdirSync(root).filter(f=>f.endsWith('.html'));
-function attrs(tag) { return Object.fromEntries([...tag.matchAll(/([\w-]+)\s*=\s*["']([^"']*)["']/g)].map(m=>[m[1],m[2]])); }
+function attrs(tag) { return Object.fromEntries([...tag.matchAll(/([\w-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g)].map(m=>[m[1],m[2] ?? m[3]])); }
 for (const file of files) {
  const html=fs.readFileSync(path.join(root,file),'utf8');
  const ids=[...html.matchAll(/\bid=["']([^"']+)["']/g)].map(m=>m[1]);

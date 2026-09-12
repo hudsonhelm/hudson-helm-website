@@ -8,9 +8,9 @@ This is the authoritative living document for the Hudson Helm website refresh. I
 | Field | Value |
 | --- | --- |
 | Document | `HH_Website_Master.md` |
-| Last updated | September 11, 2026 |
-| Current phase | Phase 10 — QA |
-| Phase status | **Phase 9 complete, pushed, published, and verified; Phase 10 not started** |
+| Last updated | September 12, 2026 |
+| Current phase | Phase 11 — Regression / Review |
+| Phase status | **Phase 10 implementation and local QA complete; approved GitHub push and FTP publication pending** |
 | Repository | `https://github.com/hudsonhelm/hudson-helm-website` |
 | Repository visibility | Private |
 | Default branch | `main` |
@@ -34,7 +34,7 @@ Completed setup or implementation must not be repeated merely because an older r
 
 ### Current Objective
 
-Phase 9, the shared-header refinement, the permanent New Jersey business-number addition, and the latest page refinements are complete, pushed, published, and verified. Preserve the header without the former top email/contact bar or its empty height; keep standard navigation links orange and hover, keyboard-focus, and current-page states blue except for the intentionally page-scoped Start Here inversion, where all navigation links are blue and the desktop Start Here CTA is orange. Preserve **862-232-8023** as the click-to-call business number in the compact footer and appropriate direct-contact copy without restoring the header contact row. Retain the shared blue back-to-top control with its orange border, title-only Privacy Policy hero, custom 404 page and routing, supplied legal identity, and all Phase 1–8 contracts. Do not begin Phase 10 without explicit direction.
+Phase 10 implementation and local QA are complete. Publish the approved Phase 10 payload to `origin/website-refresh` and production, verify it over cache-busted HTTPS, and record the release result. Preserve the new canonical/social metadata, homepage structured-data graph, `sitemap.xml`, `robots.txt`, logical heading hierarchy, intrinsic content-image dimensions, guarded optional-plugin calls, and reduced public-page plugin payload. Preserve all Phase 1–9 contracts. Do not begin Phase 11 without explicit direction.
 
 The completed Phase 1 and Phase 2 implementation may be reviewed locally or on production; this does not reopen or invalidate the completed Phase 0, Phase 1, or Phase 2 checklists.
 
@@ -50,7 +50,7 @@ When marking a substantial inspection or implementation item complete, record en
 
 ## Current Project Status
 
-Phases 1–9, both compact-footer refinements, the shared-header refinement, the permanent business-number addition, and the latest page refinements are complete, pushed, published, and verified. Why Hudson Helm now uses number-free compact blue principle cards on black. Are We a Good Fit now uses the revised blue sentence-case hero, sentence-completing fit-card headings, and lowered content in the two shorter not-fit cards. All nine public root pages omit the former top email/contact bar and its empty height. Standard navigation links remain orange with blue interactive/current states and the desktop Start Here CTA remains blue on every page except Start Here itself; that page alone uses blue navigation links and an orange desktop CTA. Every public page includes the wired, accessibly labeled back-to-top control, with one shared blue-gradient and 2px orange-border treatment. Every compact footer includes **862-232-8023** linked as `tel:+18622328023`; Start Here and the Privacy Policy expose the same approved number. The former 954 number remains absent. All Phase 1–9 checks pass, and the Start Here header inversion is pushed, published, and verified over cache-busted HTTPS and live desktop/mobile rendering.
+Phases 1–9 and their later refinements remain pushed, published, and verified. Phase 10 corrected the site-wide discovery, accessibility, technical-integrity, responsive, performance, and security findings identified by the approved QA pass. All eight indexable pages now have unique titles/descriptions, canonical URLs, Open Graph metadata, social-image metadata, and Twitter large-card metadata; the homepage also has an Organization/WebSite structured-data graph with its service catalog. `sitemap.xml` and `robots.txt` cover the eight indexable routes while `404.html` remains `noindex`. Why Hudson Helm now uses logical H3 card headings, decorative icon semantics were corrected, obsolete preloaders and unused plugin loads were removed, optional template plugins are guarded, and key content images reserve intrinsic dimensions. Phase 1–10 source checks, PHP syntax, Phase 7/8 security integration tests, external privacy-link checks, and the nine-page browser matrix at 1440px, 1366px, 1024px, and 390px pass. GitHub push, FTP publication, and production verification remain pending under the user's approval.
 
 ### Phase Progress
 
@@ -66,7 +66,7 @@ Phases 1–9, both compact-footer refinements, the shared-header refinement, the
 | 7 | Start Here | Complete, operational, published, and pushed |
 | 8 | Support Portal Shell | Complete, operational, published, and pushed |
 | 9 | Global Completion | Complete, published, pushed, and verified, including permanent New Jersey phone number |
-| 10 | QA | Not started |
+| 10 | QA | Complete locally; approved push/publication pending |
 | 11 | Regression / Review | Not started |
 
 ## Phase 0 Working Checklist
@@ -110,6 +110,7 @@ Record meaningful project events only: phase transitions, significant inspection
 
 | Date | Activity | Result |
 | --- | --- | --- |
+| 2026-09-12 | Completed Phase 10 implementation and local QA under the user's GitHub/FTP publication approval. | Added complete discovery/social metadata, homepage structured data, sitemap and robots files; corrected heading/icon semantics and What We Do overflow; removed obsolete preloaders and unused plugin loads; guarded optional template plugins; and added intrinsic dimensions to key images. Phase 1–10 checks, inspection, JavaScript/PHP syntax, external privacy-link checks, Cloudflare test-credential security suites, `git diff --check`, and 36 rendered page/viewport combinations passed. GitHub push, narrow FTP publication, and live verification remained pending at this checkpoint. |
 | 2026-09-12 | Published Emilia's replacement profile photograph. | Uploaded only `images/team/emilia.jpg`; the remote file stat confirmed 112,695 bytes. Cache-busted HTTPS returned 200 for both the Who We Are page and portrait, the page retained Emilia's image reference, and the deployed SHA-256 matched local (`2E6DC0FD5729C9D6EA2841E7427A56DBE7653B77C6E891B939E976D4F1B487FE`). The change was committed locally, but repeated GitHub push attempts did not complete, so the commit remains queued locally for a later push. |
 | 2026-09-12 | Replaced Emilia's Who We Are profile photograph at the user's direction. | Created an identity-preserving 4:3 crop of the newly supplied portrait and optimized it as an 800×600 JPEG for the existing profile card. Kept Emilia's full head and hair comfortably in frame while preserving the office and server-room setting. |
 | 2026-09-11 | Pushed and published the replacement What We Do hero photograph. | Pushed site commit `c01bb96`, then uploaded only `whatwedo.html` and `images/benefits/what-we-do-team.jpg`. Remote stats confirmed both files. Cache-busted HTTPS returned 200 for the page and image; the new image reference and accessible text were present, the former hero reference was absent, and the deployed image SHA-256 matched local (`9F12117A0D8BD9A77028D6E0BCD0919FC65899E5A50D971EB67E7F6F2DA87004`). |
@@ -300,6 +301,15 @@ Record confirmed inspection findings and evidence that materially inform impleme
 - Logo-centered footer refinement commit `df04b4a` is live on all nine public root pages. Remote stats, cache-busted HTTPS checks, and live desktop/mobile renders confirm the positioning sentence is absent, the logo anchors the left, copyright is centered within the available middle column, and locality plus Privacy Policy remain responsive.
 - Privacy Policy correction commit `079bba5` is pushed and live; the displayed and regression-enforced effective date is **September 10, 2026**.
 
+### Phase 10 implementation evidence — September 12, 2026
+
+- Every indexable route now has a unique title and meta description, one absolute HTTPS canonical URL, Open Graph title/description/URL/site/image metadata, and `summary_large_image` Twitter metadata. The homepage includes parseable Schema.org Organization and WebSite nodes plus an eight-service offer catalog. The custom 404 remains excluded with `noindex, follow`.
+- New root `sitemap.xml` and `robots.txt` files expose the eight indexable canonical routes and the sitemap location without including the custom 404 page.
+- The Why Hudson Helm differentiator headings were corrected from H4 to H3, decorative icons were hidden from assistive technology, and obsolete visual preloaders were removed. Existing labels, live regions, keyboard focus, accessible navigation, and token-only Support behavior remain covered by the phase checks and rendered browser pass.
+- Unused progress, Isotope, counter, popup, and animation scripts were removed from the current public pages. `js/custom.js` now guards every optional plugin call, and all public pages request its Phase 10 cache-busted URL. Key hero, service, and profile images now reserve intrinsic dimensions; below-the-fold profile/service images use native lazy loading.
+- The first browser run exposed a real 12px What We Do overflow at 1024px and 390px caused by legacy Bootstrap gutter behavior. The service rows now remain within the viewport. The final Chromium pass covered all nine public pages at 1440×900, 1366×768, 1024×768, and 390×844 with one H1, visible main/footer content, loaded images, correct desktop/mobile navigation, visible keyboard focus, no unexpected console errors, and no horizontal overflow.
+- `node tools/check-phase1.cjs` through `node tools/check-phase10.cjs`, `node tools/inspect.cjs`, JavaScript syntax checks, PHP syntax checks, `git diff --check`, the Phase 7 isolated SMTP/official Turnstile suite, and the Phase 8 token-only Turnstile suite passed. Cloudflare's Turnstile privacy page and Migadu's privacy page both returned HTTP 200. The local Firefox headless helper did not complete reliably, so the new repeatable automated matrix uses installed Chrome; prior phase-specific Firefox checks remain recorded and no Phase 10 requirement depends on one browser brand.
+
 ### Repository and File Structure
 
 - `D:\HH_Website` is a containing workspace; the deployable site and Git repository root are `D:\HH_Website\HudsonHelm_Website_v64`.
@@ -364,7 +374,7 @@ This section is the operational reference for future Codex sessions and maintain
 | Safe form-testing method | Run `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN` set to a PHP 8.1+ executable and, when the local PHP build requires it, `PHP_CA_BUNDLE` set to a trusted CA bundle. Both use Cloudflare's official public Turnstile test credentials; Phase 7 captures mail in a local SMTP sink, while Phase 8 verifies the token-only request contract and rejects simulated credential leakage. They never use production SMTP or secrets. |
 | Turnstile local/staging test approach | `tools/test-phase7.cjs` and `tools/test-phase8.cjs` verify pass, fail, and `timeout-or-duplicate` behavior through the real Siteverify endpoint using Cloudflare's official public test credentials. Test credentials work on localhost but must never be deployed. Production uses the existing hostname-restricted real widget and secret, with separate `contact` and `support` action validation. |
 | Hosting/runtime assumptions | The origin is Namecheap-hosted PHP behind Cloudflare. PHP 8.2.33 and required extensions are confirmed. The handler prefers environment variables or `/home/<account>/hudson-helm-config.php`-style placement above the public root, but the saved FTP account is chrooted at `/`; it therefore also supports an untracked, direct-request-guarded `/includes/contact-production.php` protected by `/includes/.htaccess`. The local source copy lives outside the active repository under `D:\HH_Website\PrivateConfig`. |
-| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase9.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, `support-config.php`, `support-verify.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; and `git diff --check`. The integration tests require outbound HTTPS only to Cloudflare Siteverify; Phase 7 captures SMTP locally. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
+| Validation / lint / scanning commands | `node tools/check-phase1.cjs` through `node tools/check-phase10.cjs`; `node tools/inspect.cjs`; `node --check` for project JavaScript and `.cjs` tools; PHP `-l` for `mail.php`, `form-config.php`, `support-config.php`, `support-verify.php`, and `includes/contact-config.php`; `tools/test-phase7.cjs` and `tools/test-phase8.cjs` with `PHP_BIN`/optional `PHP_CA_BUNDLE`; `tools/test-phase10-browser.cjs` with bundled Playwright on `NODE_PATH`; and `git diff --check`. The integration tests require outbound HTTPS only to Cloudflare Siteverify; Phase 7 captures SMTP locally. The browser matrix defaults to installed Chrome and covers all nine public pages at 1440, 1366, 1024, and 390px. Use `rg --no-ignore` with explicit paths for reliable source searches in this environment. |
 | Known local/staging vs. production differences | Phase 9 commits `bcc689e` and `17be72d` are live, as are shared-header commit `f635693` and permanent-phone commit `e0c122c`: nine root pages use the compact global footer, omit the former top contact row, load the current shared stylesheet, and expose **862-232-8023** through the approved click-to-call locations. `privacy.html` is public, and the root `.htaccess` serves the custom `404.html` while retaining HTTP 404 status. Phase 7 and Phase 8 share real protected Turnstile credentials in an untracked server-only file. Cloudflare email protection, analytics injection, and robots content remain production-response additions; the protected production credential file intentionally exists only locally and server-side, never in Git. |
 
 Update this runbook when the environment or verified workflow materially changes.
@@ -1629,15 +1639,15 @@ Use the canonical **Phase 0 Working Checklist** near the top of this document. D
 
 ## Phase 10 — QA
 
-- [ ] Review and correct page titles, meta descriptions, canonical URLs, sitemap, robots, Open Graph/social metadata, and appropriate structured data.
-- [ ] Verify logical heading structure.
-- [ ] Complete the specified accessibility checks.
-- [ ] Complete responsive QA at the specified desktop, laptop, tablet, and phone widths.
-- [ ] Scan for broken links, missing assets, duplicate IDs, invalid HTML, console errors, mixed content, obsolete template references, and stale phone/locality/carousel remnants.
-- [ ] Review image sizing/compression, unnecessary JavaScript/CSS, duplicate libraries, and realistically fixable render-blocking resources.
-- [ ] Complete the specified security verification.
-- [ ] Record and fix QA findings.
-- [ ] Satisfy the Shared Definition of Done for this phase.
+- [x] Review and correct page titles, meta descriptions, canonical URLs, sitemap, robots, Open Graph/social metadata, and appropriate structured data — all eight indexable routes now have unique discovery/social metadata; the homepage has Organization/WebSite/service-catalog JSON-LD; root sitemap and crawler files are present; 404 remains excluded.
+- [x] Verify logical heading structure — every public page has one H1, no level skips remain, and Why Hudson Helm differentiator cards now use H3 beneath their H2 section heading.
+- [x] Complete the specified accessibility checks — image alternatives, decorative semantics, labels, live regions, names, menu behavior, keyboard navigation/focus, and established color treatments were reviewed through source checks and rendered interaction tests.
+- [x] Complete responsive QA at the specified desktop, laptop, tablet, and phone widths — nine pages passed at 1440×900, 1366×768, 1024×768, and 390×844 with mobile-menu interaction and overflow checks.
+- [x] Scan for broken links, missing assets, duplicate IDs, invalid HTML, console errors, mixed content, obsolete template references, and stale phone/locality/carousel remnants — local references/fragments and external privacy links resolve; source and browser checks found no remaining failures after the What We Do gutter correction.
+- [x] Review image sizing/compression, unnecessary JavaScript/CSS, duplicate libraries, and realistically fixable render-blocking resources — key images reserve dimensions and use appropriate priority/lazy-loading hints; obsolete preloaders and unused plugin CSS/JavaScript loads were removed without reducing approved image quality.
+- [x] Complete the specified security verification — PHP syntax and Phase 7/8 integration suites pass using official Turnstile test credentials and an isolated SMTP sink; no production secret was used or exposed, Support remains token-only, and sanitization/header-injection controls remain intact.
+- [x] Record and fix QA findings — findings and repeatable Phase 10 source/browser checks are recorded above.
+- [x] Satisfy the Shared Definition of Done for this phase — requirements were rereviewed; implementation, source, responsive, accessibility, security, performance, console, diff, and documentation checks passed; approved GitHub/FTP publication and live verification remain the release closeout steps.
 
 ## Phase 11 — Regression / Review
 

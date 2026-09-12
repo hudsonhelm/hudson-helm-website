@@ -125,7 +125,7 @@ Design and Developed by: PeacefulQode
         /*==================================================
         [ Owl Carousel ]
         ==================================================*/
-        jQuery('.owl-carousel').each(function () {
+        if (typeof jQuery.fn.owlCarousel === 'function') jQuery('.owl-carousel').each(function () {
             var app_slider = jQuery(this);
             app_slider.owlCarousel({
                 items: app_slider.data("desk_num"),
@@ -450,7 +450,7 @@ Design and Developed by: PeacefulQode
 
     }
 
-    jQuery('.pq-masonry').isotope({
+    if (typeof jQuery.fn.isotope === 'function') jQuery('.pq-masonry').isotope({
         itemSelector: '.pq-masonry-item',
         masonry: {
             columnWidth: '.grid-sizer',
@@ -458,11 +458,11 @@ Design and Developed by: PeacefulQode
         }
     });
 
-    jQuery('.pq-grid').isotope({
+    if (typeof jQuery.fn.isotope === 'function') jQuery('.pq-grid').isotope({
         itemSelector: '.pq-grid-item',
     });
 
-    jQuery('.pq-filter-button-group').on('click', '.pq-filter-btn', function () {
+    if (typeof jQuery.fn.isotope === 'function') jQuery('.pq-filter-button-group').on('click', '.pq-filter-btn', function () {
 
         var filterValue = jQuery(this).attr('data-filter');
         jQuery('.pq-masonry').isotope({
@@ -501,20 +501,20 @@ Design and Developed by: PeacefulQode
     /*==================================================
     [ counter ]
     ==================================================*/
-    jQuery('.timer').countTo();
+    if (typeof jQuery.fn.countTo === 'function') jQuery('.timer').countTo();
 
     /*==================================================
     [ wow ]
     ==================================================*/
 
-    new WOW().init();
+    if (typeof window.WOW === 'function') new WOW().init();
 
 
     /*==================================================
     [ Map ]
     ==================================================*/
     $(document).ready(function () {
-        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+        if (typeof $.fn.magnificPopup === 'function') $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
             disableOn: 700,
             type: 'iframe',
             mainClass: 'mfp-fade',
