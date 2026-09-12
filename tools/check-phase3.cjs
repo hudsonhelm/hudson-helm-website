@@ -26,7 +26,7 @@ const services = [
 
 requireMatch('semantic main content', /<main>/);
 requireMatch('approved hero', /<section class="hh-services-hero">[\s\S]*?<h1>Dependable IT Without Enterprise-Level Overhead<\/h1>/);
-requireMatch('hero image', /src="images\/benefits\/1\.jpg"/);
+requireMatch('supplied team hero image', /alt="Emilia and Tiana smiling in an office" src="images\/benefits\/what-we-do-team\.jpg"/);
 requireMatch('eight-card service navigation', /<section aria-labelledby="service-overview-title" class="hh-service-nav">/);
 requireMatch('single final Start Here CTA', /<section aria-labelledby="services-cta-title" class="hh-services-cta">[\s\S]*?href="starthere\.html"/);
 
@@ -56,6 +56,7 @@ forbid('merged Vendor Coordination category', /<h[23][^>]*>Vendor Coordination<\
 forbid('combined Cybersecurity and Backups category', /<h[23][^>]*>Cybersecurity &amp; Backups<\/h[23]>/);
 forbid('What We Do Rough Notation dependency', /js\/rough-(?:script|notation\.iife|custom)\.js/);
 forbid('What We Do Owl Carousel dependency', /owl\.carousel\.min\.(?:css|js)/);
+forbid('former What We Do hero image', /src="images\/benefits\/1\.jpg"/);
 
 if (failures.length) {
   console.error('Phase 3 What We Do checks failed:');
