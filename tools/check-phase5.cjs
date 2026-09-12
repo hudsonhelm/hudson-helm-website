@@ -20,7 +20,7 @@ requireMatch('Founder identification', /Hudson Helm's Founder and Technical Dire
 requireMatch('network engineer profile', /<h3>Benjamin<\/h3>[\s\S]*?<span class="hh-profile-role">Network Engineer<\/span>[\s\S]*?Benjamin focuses/);
 requireMatch('Benjamin portrait', /<img\b(?=[^>]*class="hh-profile-photo")(?=[^>]*src="images\/team\/benjamin\.jpg")(?=[^>]*alt="Benjamin")[^>]*>/);
 requireMatch('systems engineer profile', /<h3>Emilia<\/h3>[\s\S]*?<span class="hh-profile-role">Systems Engineer<\/span>[\s\S]*?Emilia works/);
-requireMatch('Emilia portrait', /<img\b(?=[^>]*class="hh-profile-photo")(?=[^>]*src="images\/team\/emilia\.jpg")(?=[^>]*alt="Emilia")[^>]*>/);
+requireMatch('Emilia portrait', /<img\b(?=[^>]*class="hh-profile-photo")(?=[^>]*src="images\/team\/emilia\.jpg\?v=20260912-server-room")(?=[^>]*alt="Emilia")[^>]*>/);
 requireMatch('cybersecurity specialist profile', /<h3>Tiana<\/h3>[\s\S]*?<span class="hh-profile-role">Cybersecurity Specialist<\/span>[\s\S]*?Tiana concentrates/);
 requireMatch('Tiana portrait', /<img\b(?=[^>]*class="hh-profile-photo")(?=[^>]*src="images\/team\/tiana\.jpg")(?=[^>]*alt="Tiana")[^>]*>/);
 requireMatch('compact supporting profile grid', /\.hh-profile-grid\s*\{[\s\S]*?max-width:\s*1040px;/);
